@@ -31,6 +31,8 @@ public class Repos {
                 .listRepositories().asList().stream()
                 .map(ObjectMap::new)
                 .map(template::format)
+                .map(s -> s.replace("\\n", "\n"))
+                .map(s -> s.replace("\\t", "\t"))
                 .sorted()
                 .forEach(out::println);
 
@@ -58,8 +60,19 @@ public class Repos {
         return os -> {
             final PrintStream out = new PrintStream(os);
 
-
+            for (final GHRepository repo : github.getOrganization("eclipse-ee4j").listRepositories()) {
+                out.printf("Cloning repo %s%n", repo.getName());
+                try {
+                    jgit("clone", repo.getSshUrl(), new File(dir, repo.getName()).getAbsolutePath());
+                } catch (Exception e) {
+                    e.printStackTrace(out);
+                }
+            }
         };
+    }
+
+    public static void jgit(final String... args) throws Exception {
+        org.eclipse.jgit.pgm.Main.main(args);
     }
 
     @Command
