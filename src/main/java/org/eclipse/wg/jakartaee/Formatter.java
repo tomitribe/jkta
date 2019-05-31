@@ -18,25 +18,24 @@
  */
 package org.eclipse.wg.jakartaee;
 
-import org.kohsuke.github.GitHub;
+import org.tomitribe.util.Escapes;
+import org.tomitribe.util.StringTemplate;
+import org.tomitribe.util.collect.ObjectMap;
 
-import java.io.IOException;
-import java.util.Optional;
+import java.util.function.Function;
 
-public class Env {
+public class Formatter<Object> implements Function<Object, String> {
 
-    public static GitHub github() {
+    private final StringTemplate template;
 
-        final String user = Optional.ofNullable(System.getenv("GITHUB_USER"))
-                .orElse(System.getenv("USER"));
+    public Formatter(final String template) {
+        this.template = new StringTemplate(template);
+    }
 
-        final String token = Optional.ofNullable(System.getenv("GITHUB_TOKEN"))
-                .orElseThrow(() -> new IllegalStateException("GITHUB_TOKEN must be set as an env variable\nFollow instructions here: https://github.com/settings/tokens/new"));
-
-        try {
-            return GitHub.connect(user, token);
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to log into Github", e);
-        }
+    @Override
+    public String apply(final Object object) {
+        final ObjectMap map = new ObjectMap(object);
+        final String formatted = template.format(map);
+        return Escapes.unescape(formatted);
     }
 }

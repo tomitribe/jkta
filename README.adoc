@@ -56,3 +56,4 @@ url: https://api.github.com/repos/eclipse-ee4j/jakartaee-platform
 viewTraffic: org.kohsuke.github.GHRepositoryViewTraffic@16f15ae9
 watchers: 22
 ----
+
