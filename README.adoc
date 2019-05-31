@@ -1,0 +1,58 @@
+
+
+
+
+[source,properties]
+----
+archived: false
+branches: {README-update=Branch:README-update in https://api.github.com/repos/ec
+class: class org.kohsuke.github.GHRepository
+cloneTraffic: org.kohsuke.github.GHRepositoryCloneTraffic@d6b532f
+collaboratorNames: dblevins, edbratt, ivargrimstad, keilw, bshannon, yaminikb, w
+collaborators: David Blevins, Ed Bratt, Ivar Grimstad, Werner Keil, Bill Shannon
+createdAt: 2018-12-19T17:50:42Z
+defaultBranch: master
+deployKeys: RuntimeException org.kohsuke.github.GHFileNotFoundException: {"messa
+description: The Jakarta EE Platform project produces the Jakarta EE platform sp
+fork: false
+forks: 10
+fullName: eclipse-ee4j/jakartaee-platform
+gitTransportUrl: git://github.com/eclipse-ee4j/jakartaee-platform.git
+homepage: https://projects.eclipse.org/projects/ee4j.jakartaee-platform
+hooks: RuntimeException org.kohsuke.github.GHFileNotFoundException: {"message":"
+htmlUrl: https://github.com/eclipse-ee4j/jakartaee-platform
+httpTransportUrl: https://github.com/eclipse-ee4j/jakartaee-platform.git
+id: 162472013
+language:
+latestRelease:
+license: Eclipse Public License 2.0
+licenseContent: org.kohsuke.github.GHContentWithLicense@2bdab835
+masterBranch: master
+milestones: {}
+mirrorUrl:
+name: jakartaee-platform
+networkCount: 10
+openIssueCount: 15
+owner: Eclipse EE4J
+ownerName: eclipse-ee4j
+parent:
+postCommitHooks: GHException Failed to retrieve post-commit hooks
+private: false
+pushedAt: Thu May 30 01:23:35 PDT 2019
+readme: org.kohsuke.github.GHContent@2f15a964
+refs: [Lorg.kohsuke.github.GHRef;@da09250
+releases:
+responseHeaderFields: {null=[HTTP/1.1 200 OK], X-Accepted-OAuth-Scopes=[repo], S
+size: 39
+source:
+sshUrl: git@github.com:eclipse-ee4j/jakartaee-platform.git
+stargazersCount: 22
+subscribersCount: 28
+subscription: org.kohsuke.github.GHSubscription@7767bd4e
+svnUrl: https://github.com/eclipse-ee4j/jakartaee-platform
+teams: RuntimeException org.kohsuke.github.GHFileNotFoundException: {"message":"
+updatedAt: Thu May 23 14:13:59 PDT 2019
+url: https://api.github.com/repos/eclipse-ee4j/jakartaee-platform
+viewTraffic: org.kohsuke.github.GHRepositoryViewTraffic@16f15ae9
+watchers: 22
+----
