@@ -18,6 +18,7 @@
  */
 package org.eclipse.wg.jakartaee;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -43,6 +44,9 @@ public class Paths {
         return paths.stream().map(Paths::toClassName).collect(Collectors.toList());
     }
 
+    public static boolean isMain(final File path) {
+        return isTest().negate().test(path.toURI().getPath());
+    }
     public static boolean isMain(final String path) {
         return isTest().negate().test(path);
     }
@@ -106,4 +110,16 @@ public class Paths {
         return new Path(remaining, dir);
     }
 
+    public static boolean isNonStandard(final String className) {
+        return !isStandard(className);
+    }
+
+    public static boolean isStandard(final String className) {
+        if (className.startsWith("java.")) return true;
+        if (className.startsWith("javax.")) return true;
+        if (className.startsWith("org.w3c.")) return true;
+        if (className.startsWith("org.xml.")) return true;
+        if (className.startsWith("org.omg.")) return true;
+        return false;
+    }
 }

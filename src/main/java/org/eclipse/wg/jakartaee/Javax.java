@@ -37,23 +37,20 @@ import java.util.stream.Stream;
 @Command
 public class Javax {
 
+    private static final String FOMRAT = "{status}\t{name}\t[{packageList}]\tjavax({classesCount} classes, {packagesCount} packages)\t\t{nonstandardImportsCount} nonstandardImports";
+
+    //    Project{name=javamail, javax=[javax.activation, javax.mail], classes=120, packages=6, nonportable=48}
     @Command
-    public StreamingOutput repos(@Directory final File dir) {
+    public StreamingOutput repos(@Option("format") @Default(FOMRAT) Formatter format, @Directory final File dir) {
         return os -> {
             final PrintStream out = new PrintStream(os);
-            out.println("Listing " + dir.getAbsolutePath());
 
-            final List<File> clones = getDirectories(dir);
-            for (final File clone : clones) {
-
-
-                final List<File> javaxFiles = getJavaxFiles(clone)
-                        .stream()
-                        .collect(Collectors.toList());
-
-                if (javaxFiles.size() > 0) out.printf("%s %s%n", javaxFiles.size(), clone.getName());
-
-            }
+            getDirectories(dir).stream()
+                    .map(Project::parse)
+                    .sorted()
+                    .sorted((o1, o2) -> o1.getStatus().compareTo(o2.getStatus()))
+                    .map(format)
+                    .forEach(out::println);
         };
     }
 
@@ -64,7 +61,7 @@ public class Javax {
             final PrintStream out = new PrintStream(os);
 
             getDirectories(dir).stream()
-                    .map(this::getJavaxFiles)
+                    .map(Javax::getJavaxFiles)
                     .flatMap(Collection::stream)
                     .map(format)
                     .forEach(out::println);
@@ -91,29 +88,41 @@ public class Javax {
     }
 
 
-    private List<File> getJavaxFiles(final File clone) {
+    public static List<File> getJavaxFiles(final File clone) {
         try {
             return (List<File>) Files.walk(clone.toPath())
                     .map(Path::toFile)
                     .filter(File::isFile)
-                    .filter(this::isJava)
-                    .filter(this::isJavax)
-                    .filter(this::isNotFake)
+                    .filter(Javax::isJava)
+                    .filter(Javax::isJavax)
+                    .filter(Javax::isNotFake)
                     .collect(Collectors.toList());
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
     }
 
-    private boolean isNotFake(final File file) {
+    public static List<File> getJavaFiles(final File clone) {
+        try {
+            return (List<File>) Files.walk(clone.toPath())
+                    .map(Path::toFile)
+                    .filter(File::isFile)
+                    .filter(Javax::isJava)
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
+        }
+    }
+
+    private static boolean isNotFake(final File file) {
         return !file.getName().equals("Hello.java");
     }
 
-    private boolean isJavax(final File file) {
+    private static boolean isJavax(final File file) {
         return file.toURI().getPath().contains("/javax/");
     }
 
-    private boolean isJava(final File file) {
+    private static boolean isJava(final File file) {
         return file.getName().endsWith(".java");
     }
 
