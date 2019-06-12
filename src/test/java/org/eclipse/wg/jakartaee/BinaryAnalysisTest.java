@@ -50,10 +50,22 @@ public class BinaryAnalysisTest extends Assert {
     public void test() throws Exception {
         final List<File> list = getUniqueJarFiles();
 
+        final List<Jar> jars = parseJars(list).stream()
+                .map(Classes::javaxUses)
+                .collect(Collectors.toList());
+
+        jars.size();
+    }
+
+    public List<Jar> parseJars(final List<File> list) {
+        final List<Jar> jars = new ArrayList<Jar>();
+
         for (final File file : list) {
             final File dir = extract(file);
 
-            final DependencyVisitor analysis = new DependencyVisitor();
+            final Jar jar = new Jar(dir.getName());
+            jars.add(jar);
+            final DependencyVisitor analysis = new DependencyVisitor(jar);
             Dependencies.dir(dir, analysis);
 
             System.out.println();
@@ -62,6 +74,7 @@ public class BinaryAnalysisTest extends Assert {
                     .map(s -> String.format(" - %s", s))
                     .forEach(System.out::println);
         }
+        return jars;
     }
 
     private File extract(final File file) {

@@ -65,11 +65,19 @@ import java.util.Set;
  * @version $Rev$ $Date$
  */
 public class DependencyVisitor extends EmptyVisitor {
+
+    private final Jar jar;
+
+    public DependencyVisitor(final Jar jar) {
+        this.jar = jar;
+    }
+
     Set<String> packages = new HashSet<>();
 
     Map<String, Map<String, Integer>> groups = new HashMap<>();
 
     Map<String, Integer> current;
+    Clazz currentClazz;
 
     public Map<String, Map<String, Integer>> getGlobals() {
         return groups;
@@ -81,16 +89,14 @@ public class DependencyVisitor extends EmptyVisitor {
 
     // ClassVisitor
 
-    public void visit(
-        final int version,
-        final int access,
-        final String name,
-        final String signature,
-        final String superName,
-        final String[] interfaces) {
+    public void visit(final int version, final int access, final String name, final String signature, final String superName, final String[] interfaces) {
 
         final String p = getGroupKey(name);
-        current = groups.computeIfAbsent(p, k -> new HashMap<>());
+        this.current = groups.computeIfAbsent(p, k -> new HashMap<>());
+
+        final Clazz clazz = new Clazz(name.replace('/', '.'));
+        this.currentClazz = clazz;
+        this.jar.getClasses().add(clazz);
 
         if (signature == null) {
             addName(superName);
@@ -101,22 +107,14 @@ public class DependencyVisitor extends EmptyVisitor {
 
     }
 
-    public AnnotationVisitor visitAnnotation(
-        final String desc,
-        final boolean visible) {
+    public AnnotationVisitor visitAnnotation(final String desc, final boolean visible) {
+
         addDesc(desc);
+
         return super.visitAnnotation(desc, visible);
     }
 
-    public void visitAttribute(final Attribute attr) {
-    }
-
-    public FieldVisitor visitField(
-        final int access,
-        final String name,
-        final String desc,
-        final String signature,
-        final Object value) {
+    public FieldVisitor visitField(final int access, final String name, final String desc, final String signature, final Object value) {
         if (signature == null) {
             addDesc(desc);
         } else {
@@ -128,12 +126,7 @@ public class DependencyVisitor extends EmptyVisitor {
         return super.visitField(access, name, desc, signature, value);
     }
 
-    public MethodVisitor visitMethod(
-        final int access,
-        final String name,
-        final String desc,
-        final String signature,
-        final String[] exceptions) {
+    public MethodVisitor visitMethod(final int access, final String name, final String desc, final String signature, final String[] exceptions) {
         if (signature == null) {
             addMethodDesc(desc);
         } else {
@@ -143,29 +136,9 @@ public class DependencyVisitor extends EmptyVisitor {
         return super.visitMethod(access, name, desc, signature, exceptions);
     }
 
-    public void visitInnerClass(
-        final String name,
-        final String outerName,
-        final String innerName,
-        final int access) {
-        // addName( outerName);
-        // addName( innerName);
-    }
-
-    public void visitOuterClass(
-        final String owner,
-        final String name,
-        final String desc) {
-        // addName(owner);
-        // addMethodDesc(desc);
-    }
 
     // MethodVisitor
-
-    public AnnotationVisitor visitParameterAnnotation(
-        final int parameter,
-        final String desc,
-        final boolean visible) {
+    public AnnotationVisitor visitParameterAnnotation(final int parameter, final String desc, final boolean visible) {
         addDesc(desc);
         return super.visitParameterAnnotation(parameter, desc, visible);
     }
@@ -178,30 +151,18 @@ public class DependencyVisitor extends EmptyVisitor {
         }
     }
 
-    public void visitFieldInsn(
-        final int opcode,
-        final String owner,
-        final String name,
-        final String desc) {
+    public void visitFieldInsn(final int opcode, final String owner, final String name, final String desc) {
         addName(owner);
         addDesc(desc);
     }
 
-    public void visitMethodInsn(
-        final int opcode,
-        final String owner,
-        final String name,
-        final String desc) {
+    public void visitMethodInsn(final int opcode, final String owner, final String name, final String desc) {
         addName(owner);
         addMethodDesc(desc);
     }
 
-    public void visitMethodInsn(
-        final int opcode,
-        final String owner,
-        final String name,
-        final String desc,
-        final boolean itf) {
+
+    public void visitMethodInsn(final int opcode, final String owner, final String name, final String desc, final boolean itf) {
         addName(owner);
         addMethodDesc(desc);
     }
@@ -216,25 +177,31 @@ public class DependencyVisitor extends EmptyVisitor {
         addDesc(desc);
     }
 
-    public void visitLocalVariable(
-        final String name,
-        final String desc,
-        final String signature,
-        final Label start,
-        final Label end,
-        final int index) {
+    public void visitLocalVariable(final String name, final String desc, final String signature, final Label start, final Label end, final int index) {
         addTypeSignature(signature);
+    }
+
+    public void visitTryCatchBlock(final Label start, final Label end, final Label handler, final String type) {
+        addName(type);
+    }
+
+    public void visitAttribute(final Attribute attr) {
+    }
+
+    public void visitInnerClass(final String name, final String outerName, final String innerName, final int access) {
+        // addName( outerName);
+        // addName( innerName);
+    }
+
+    public void visitOuterClass(final String owner, final String name, final String desc) {
+        // addName(owner);
+        // addMethodDesc(desc);
     }
 
     public void visitCode() {
     }
 
-    public void visitFrame(
-        final int type,
-        final int nLocal,
-        final Object[] local,
-        final int nStack,
-        final Object[] stack) {
+    public void visitFrame(final int type, final int nLocal, final Object[] local, final int nStack, final Object[] stack) {
     }
 
     public void visitInsn(final int opcode) {
@@ -255,26 +222,12 @@ public class DependencyVisitor extends EmptyVisitor {
     public void visitIincInsn(final int var, final int increment) {
     }
 
-    public void visitTableSwitchInsn(
-        final int min,
-        final int max,
-        final Label dflt,
-        final Label[] labels) {
+    public void visitTableSwitchInsn(final int min, final int max, final Label dflt, final Label[] labels) {
     }
 
-    public void visitLookupSwitchInsn(
-        final Label dflt,
-        final int[] keys,
-        final Label[] labels) {
+    public void visitLookupSwitchInsn(final Label dflt, final int[] keys, final Label[] labels) {
     }
 
-    public void visitTryCatchBlock(
-        final Label start,
-        final Label end,
-        final Label handler,
-        final String type) {
-        addName(type);
-    }
 
     public void visitLineNumber(final int line, final Label start) {
     }
@@ -290,16 +243,11 @@ public class DependencyVisitor extends EmptyVisitor {
         }
     }
 
-    public void visitEnum(
-        final String name,
-        final String desc,
-        final String value) {
+    public void visitEnum(final String name, final String desc, final String value) {
         addDesc(desc);
     }
 
-    public AnnotationVisitor visitAnnotation(
-        final String name,
-        final String desc) {
+    public AnnotationVisitor visitAnnotation(final String name, final String desc) {
         addDesc(desc);
         return super.visitAnnotation(name, desc);
     }
@@ -340,6 +288,9 @@ public class DependencyVisitor extends EmptyVisitor {
         if (name == null) {
             return;
         }
+
+        currentClazz.getReferences().add(name.replace('/', '.'));
+
         final String p = getGroupKey(name);
         if (current.containsKey(p)) {
             current.put(p, current.get(p) + 1);
