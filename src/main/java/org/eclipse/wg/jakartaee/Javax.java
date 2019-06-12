@@ -68,6 +68,24 @@ public class Javax {
         };
     }
 
+    @Command
+    public StreamingOutput classes(@Option("format") @Default("{className}") Formatter format, @Directory final File dir) {
+        return os -> {
+            final PrintStream out = new PrintStream(os);
+
+            getDirectories(dir).stream()
+                    .map(Javax::getJavaxFiles)
+                    .flatMap(Collection::stream)
+                    .filter(Paths::isMain)
+                    .map(Source::parse)
+//                    .peek(System.out::println)
+//                    .filter(Source::isJavax)
+//                    .sorted()
+                    .map(Source::getClassName)
+                    .forEach(out::println);
+        };
+    }
+
     public static class Repo {
         private final String name;
         private final List<File> javaxFiles;
