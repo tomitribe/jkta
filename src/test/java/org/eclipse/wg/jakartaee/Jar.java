@@ -17,6 +17,8 @@
 package org.eclipse.wg.jakartaee;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 
 public class Jar {
@@ -33,6 +35,33 @@ public class Jar {
 
     public String getName() {
         return name;
+    }
+
+    public List<String> getReferences() {
+        final List<String> references = new ArrayList<>();
+        for (final Clazz clazz : classes) {
+            references.addAll(clazz.getReferences());
+        }
+        return references;
+    }
+
+    public List<String> getDistinctReferences() {
+        final HashSet<String> references = new HashSet<>();
+
+        for (final Clazz clazz : classes) {
+            references.addAll(clazz.getReferences());
+        }
+
+        final List<String> strings = new ArrayList<>(references);
+        Collections.sort(strings);
+        return strings;
+    }
+
+    public boolean hasReferences() {
+        for (final Clazz clazz : classes) {
+            if (clazz.hasReferences()) return true;
+        }
+        return false;
     }
 
     @Override

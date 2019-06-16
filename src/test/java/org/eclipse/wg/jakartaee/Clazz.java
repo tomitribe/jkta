@@ -30,6 +30,15 @@ public class Clazz {
         this.name = name;
     }
 
+    public Clazz(final String name, final List<String> references) {
+        this.name = name;
+        this.references.addAll(references);
+    }
+
+    public boolean hasReferences() {
+        return references.size() > 0;
+    }
+
     public List<String> getReferences() {
         return references;
     }

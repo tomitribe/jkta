@@ -16,6 +16,10 @@
  */
 package org.eclipse.wg.jakartaee;
 
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public class Classes {
 
     public static boolean isJavax(final Clazz clazz) {
@@ -28,6 +32,53 @@ public class Classes {
                 .filter(s -> s.startsWith("javax."))
                 .forEach(filtered.getReferences()::add);
 
+        return filtered;
+    }
+
+    public static Jar externalUses(final Jar jar) {
+        final Jar filtered = new Jar(jar.getName());
+
+        final Set<String> classes = jar.getClasses().stream()
+                .map(Clazz::getName)
+                .collect(Collectors.toSet());
+
+        for (final Clazz clazz : jar.getClasses()) {
+            final List<String> references = clazz.getReferences().stream()
+                    .filter(s -> !classes.contains(s))
+                    .collect(Collectors.toList());
+            filtered.getClasses().add(new Clazz(clazz.getName(), references));
+        }
+
+
+        return filtered;
+    }
+
+    public static Jar trimEmptyReferences(final Jar jar) {
+        final Jar filtered = new Jar(jar.getName());
+
+        for (final Clazz clazz : jar.getClasses()) {
+            if (!clazz.hasReferences()) continue;
+            filtered.getClasses().add(clazz);
+        }
+
+        return filtered;
+    }
+
+    public static Clazz distinctUses(final Clazz clazz) {
+        final Clazz filtered = new Clazz(clazz.getName());
+        clazz.getReferences().stream()
+                .sorted()
+                .distinct()
+                .forEach(filtered.getReferences()::add);
+
+        return filtered;
+    }
+
+    public static Jar distinctUses(final Jar jar) {
+        final Jar filtered = new Jar(jar.getName());
+        jar.getClasses().stream()
+                .map(Classes::distinctUses)
+                .forEach(filtered.getClasses()::add);
         return filtered;
     }
 

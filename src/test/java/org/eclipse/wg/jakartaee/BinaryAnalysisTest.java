@@ -24,6 +24,8 @@ import org.tomitribe.util.Files;
 import org.tomitribe.util.IO;
 import org.tomitribe.util.Join;
 
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
 import javax.ws.rs.core.Response;
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -52,7 +54,23 @@ public class BinaryAnalysisTest extends Assert {
 
         final List<Jar> jars = parseJars(list).stream()
                 .map(Classes::javaxUses)
+                .map(Classes::externalUses)
+                .map(Classes::distinctUses)
+                .map(Classes::trimEmptyReferences)
+                .filter(Jar::hasReferences)
                 .collect(Collectors.toList());
+
+        for (final Jar jar : jars) {
+            System.out.printf("%n## %s%n%n", jar.getName());
+
+            for (final String ref : jar.getDistinctReferences()) {
+                System.out.printf(" - %s%n", ref);
+            }
+        }
+
+//        Jsonb jsonb = JsonbBuilder.create();
+//        IO.copy(IO.read(jsonb.toJson(jars)), new File("/tmp/dependencies.json"));
+
 
         jars.size();
     }
