@@ -1,0 +1,1056 @@
+{
+  "name": "jakarta.servlet.jsp-api.jar",
+  "classes": [
+    {
+      "name": "javax.servlet.jsp.ErrorData",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.HttpJspPage",
+      "references": [
+        "java.io.IOException",
+        "java.lang.Object",
+        "javax.servlet.ServletException",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletResponse",
+        "javax.servlet.jsp.JspPage"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.JspApplicationContext",
+      "references": [
+        "java.lang.Object",
+        "javax.el.ELContextListener",
+        "javax.el.ELResolver",
+        "javax.el.ExpressionFactory"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.JspContext",
+      "references": [
+        "java.io.Writer",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.el.ELContext",
+        "javax.servlet.jsp.JspWriter",
+        "javax.servlet.jsp.JspWriter",
+        "javax.servlet.jsp.JspWriter",
+        "javax.servlet.jsp.el.ExpressionEvaluator",
+        "javax.servlet.jsp.el.VariableResolver"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.JspEngineInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.JspException",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.JspFactory",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.servlet.Servlet",
+        "javax.servlet.ServletContext",
+        "javax.servlet.ServletRequest",
+        "javax.servlet.ServletResponse",
+        "javax.servlet.jsp.JspApplicationContext",
+        "javax.servlet.jsp.JspEngineInfo",
+        "javax.servlet.jsp.JspFactory",
+        "javax.servlet.jsp.JspFactory",
+        "javax.servlet.jsp.JspFactory",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.JspPage",
+      "references": [
+        "java.lang.Object",
+        "javax.servlet.Servlet"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.JspTagException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.servlet.jsp.JspException"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.JspWriter",
+      "references": [
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.Writer",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.PageContext",
+      "references": [
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.IllegalArgumentException",
+        "java.lang.IllegalStateException",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "javax.servlet.Servlet",
+        "javax.servlet.ServletConfig",
+        "javax.servlet.ServletContext",
+        "javax.servlet.ServletException",
+        "javax.servlet.ServletException",
+        "javax.servlet.ServletException",
+        "javax.servlet.ServletException",
+        "javax.servlet.ServletException",
+        "javax.servlet.ServletRequest",
+        "javax.servlet.ServletRequest",
+        "javax.servlet.ServletResponse",
+        "javax.servlet.ServletResponse",
+        "javax.servlet.http.HttpSession",
+        "javax.servlet.jsp.ErrorData",
+        "javax.servlet.jsp.JspContext",
+        "javax.servlet.jsp.tagext.BodyContent"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.SkipPageException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.servlet.jsp.JspException"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ELException",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ELParseException",
+      "references": [
+        "java.lang.String",
+        "javax.servlet.jsp.el.ELException"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.Expression",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.servlet.jsp.el.ELException",
+        "javax.servlet.jsp.el.VariableResolver"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ExpressionEvaluator",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.el.ELException",
+        "javax.servlet.jsp.el.ELException",
+        "javax.servlet.jsp.el.Expression",
+        "javax.servlet.jsp.el.FunctionMapper",
+        "javax.servlet.jsp.el.FunctionMapper",
+        "javax.servlet.jsp.el.VariableResolver"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.FunctionMapper",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.reflect.Method"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver",
+      "references": [
+        "java.beans.FeatureDescriptor",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.Iterator",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$1",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.Collection",
+        "java.util.Enumeration",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map$Entry",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$1"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "javax.servlet.http.Cookie",
+        "javax.servlet.http.Cookie",
+        "javax.servlet.http.Cookie",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$1",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$2",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$3",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$4",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$5",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$6",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$7",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$8",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ImplicitObjectELResolver$ImplicitObjects$9",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "javax.servlet.ServletContext",
+        "javax.servlet.ServletContext",
+        "javax.servlet.jsp.el.ImplicitObjectELResolver$EnumeratedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.ScopedAttributeELResolver",
+      "references": [
+        "java.beans.FeatureDescriptor",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.Iterator",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.el.VariableResolver",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.servlet.jsp.el.ELException"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.BodyContent",
+      "references": [
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.Reader",
+        "java.io.Writer",
+        "java.lang.String",
+        "javax.servlet.jsp.JspWriter",
+        "javax.servlet.jsp.JspWriter",
+        "javax.servlet.jsp.JspWriter",
+        "javax.servlet.jsp.JspWriter"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.BodyTag",
+      "references": [
+        "java.lang.Object",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.tagext.BodyContent",
+        "javax.servlet.jsp.tagext.IterationTag"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.BodyTagSupport",
+      "references": [
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspWriter",
+        "javax.servlet.jsp.tagext.BodyContent",
+        "javax.servlet.jsp.tagext.BodyContent",
+        "javax.servlet.jsp.tagext.BodyContent",
+        "javax.servlet.jsp.tagext.BodyTag",
+        "javax.servlet.jsp.tagext.TagSupport"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.DynamicAttributes",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.JspException"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.FunctionInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.IterationTag",
+      "references": [
+        "java.lang.Object",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.tagext.Tag"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.JspFragment",
+      "references": [
+        "java.io.IOException",
+        "java.io.Writer",
+        "java.lang.Object",
+        "javax.servlet.jsp.JspContext",
+        "javax.servlet.jsp.JspException"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.JspIdConsumer",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.JspTag",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.PageData",
+      "references": [
+        "java.io.InputStream",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.SimpleTag",
+      "references": [
+        "java.io.IOException",
+        "java.lang.Object",
+        "javax.servlet.jsp.JspContext",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.tagext.JspFragment",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.JspTag"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.SimpleTagSupport",
+      "references": [
+        "java.io.IOException",
+        "java.lang.Class",
+        "java.lang.Object",
+        "javax.servlet.jsp.JspContext",
+        "javax.servlet.jsp.JspContext",
+        "javax.servlet.jsp.JspContext",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.tagext.JspFragment",
+        "javax.servlet.jsp.tagext.JspFragment",
+        "javax.servlet.jsp.tagext.JspFragment",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.SimpleTag"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.Tag",
+      "references": [
+        "java.lang.Object",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.Tag",
+        "javax.servlet.jsp.tagext.Tag"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagAdapter",
+      "references": [
+        "java.lang.Object",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.tagext.JspTag",
+        "javax.servlet.jsp.tagext.SimpleTag",
+        "javax.servlet.jsp.tagext.SimpleTag",
+        "javax.servlet.jsp.tagext.Tag",
+        "javax.servlet.jsp.tagext.Tag",
+        "javax.servlet.jsp.tagext.Tag",
+        "javax.servlet.jsp.tagext.Tag"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagAttributeInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.tagext.TagAttributeInfo",
+        "javax.servlet.jsp.tagext.TagAttributeInfo"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagData",
+      "references": [
+        "java.lang.Cloneable",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "java.util.Hashtable",
+        "java.util.Hashtable"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagExtraInfo",
+      "references": [
+        "java.lang.Object",
+        "javax.servlet.jsp.tagext.TagData",
+        "javax.servlet.jsp.tagext.TagData",
+        "javax.servlet.jsp.tagext.TagData",
+        "javax.servlet.jsp.tagext.TagInfo",
+        "javax.servlet.jsp.tagext.TagInfo",
+        "javax.servlet.jsp.tagext.TagInfo",
+        "javax.servlet.jsp.tagext.ValidationMessage",
+        "javax.servlet.jsp.tagext.VariableInfo",
+        "javax.servlet.jsp.tagext.VariableInfo"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagFileInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.tagext.TagInfo",
+        "javax.servlet.jsp.tagext.TagInfo",
+        "javax.servlet.jsp.tagext.TagInfo"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.tagext.TagAttributeInfo",
+        "javax.servlet.jsp.tagext.TagAttributeInfo",
+        "javax.servlet.jsp.tagext.TagAttributeInfo",
+        "javax.servlet.jsp.tagext.TagAttributeInfo",
+        "javax.servlet.jsp.tagext.TagAttributeInfo",
+        "javax.servlet.jsp.tagext.TagData",
+        "javax.servlet.jsp.tagext.TagData",
+        "javax.servlet.jsp.tagext.TagData",
+        "javax.servlet.jsp.tagext.TagExtraInfo",
+        "javax.servlet.jsp.tagext.TagExtraInfo",
+        "javax.servlet.jsp.tagext.TagExtraInfo",
+        "javax.servlet.jsp.tagext.TagExtraInfo",
+        "javax.servlet.jsp.tagext.TagExtraInfo",
+        "javax.servlet.jsp.tagext.TagExtraInfo",
+        "javax.servlet.jsp.tagext.TagLibraryInfo",
+        "javax.servlet.jsp.tagext.TagLibraryInfo",
+        "javax.servlet.jsp.tagext.TagLibraryInfo",
+        "javax.servlet.jsp.tagext.TagLibraryInfo",
+        "javax.servlet.jsp.tagext.TagLibraryInfo",
+        "javax.servlet.jsp.tagext.TagLibraryInfo",
+        "javax.servlet.jsp.tagext.TagVariableInfo",
+        "javax.servlet.jsp.tagext.TagVariableInfo",
+        "javax.servlet.jsp.tagext.TagVariableInfo",
+        "javax.servlet.jsp.tagext.TagVariableInfo",
+        "javax.servlet.jsp.tagext.ValidationMessage",
+        "javax.servlet.jsp.tagext.VariableInfo"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagLibraryInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.tagext.FunctionInfo",
+        "javax.servlet.jsp.tagext.FunctionInfo",
+        "javax.servlet.jsp.tagext.FunctionInfo",
+        "javax.servlet.jsp.tagext.TagFileInfo",
+        "javax.servlet.jsp.tagext.TagFileInfo",
+        "javax.servlet.jsp.tagext.TagFileInfo",
+        "javax.servlet.jsp.tagext.TagInfo",
+        "javax.servlet.jsp.tagext.TagInfo",
+        "javax.servlet.jsp.tagext.TagInfo",
+        "javax.servlet.jsp.tagext.TagLibraryInfo"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagLibraryValidator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "javax.servlet.jsp.tagext.PageData",
+        "javax.servlet.jsp.tagext.ValidationMessage"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagSupport",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "java.util.Hashtable",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.tagext.IterationTag",
+        "javax.servlet.jsp.tagext.Tag",
+        "javax.servlet.jsp.tagext.Tag",
+        "javax.servlet.jsp.tagext.Tag",
+        "javax.servlet.jsp.tagext.Tag",
+        "javax.servlet.jsp.tagext.Tag"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TagVariableInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.TryCatchFinally",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.ValidationMessage",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.tagext.VariableInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    }
+  ]
+}

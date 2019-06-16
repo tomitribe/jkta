@@ -1,0 +1,628 @@
+{
+  "name": "jakarta.websocket-client-api.jar",
+  "classes": [
+    {
+      "name": "javax.websocket.ClientEndpoint",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.websocket.ClientEndpointConfig$Configurator",
+        "javax.websocket.ClientEndpointConfig$Configurator",
+        "javax.websocket.Decoder",
+        "javax.websocket.Encoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.ClientEndpointConfig",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.List",
+        "java.util.List",
+        "javax.websocket.ClientEndpointConfig$Configurator",
+        "javax.websocket.EndpointConfig",
+        "javax.websocket.Extension"
+      ]
+    },
+    {
+      "name": "javax.websocket.ClientEndpointConfig$Builder",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "javax.websocket.ClientEndpointConfig",
+        "javax.websocket.ClientEndpointConfig$Builder",
+        "javax.websocket.ClientEndpointConfig$Builder",
+        "javax.websocket.ClientEndpointConfig$Builder",
+        "javax.websocket.ClientEndpointConfig$Builder",
+        "javax.websocket.ClientEndpointConfig$Builder",
+        "javax.websocket.ClientEndpointConfig$Builder",
+        "javax.websocket.ClientEndpointConfig$Configurator",
+        "javax.websocket.ClientEndpointConfig$Configurator",
+        "javax.websocket.Decoder",
+        "javax.websocket.Decoder",
+        "javax.websocket.Encoder",
+        "javax.websocket.Encoder",
+        "javax.websocket.Extension",
+        "javax.websocket.Extension"
+      ]
+    },
+    {
+      "name": "javax.websocket.ClientEndpointConfig$Builder$1",
+      "references": [
+        "javax.websocket.ClientEndpointConfig$Builder",
+        "javax.websocket.ClientEndpointConfig$Builder",
+        "javax.websocket.ClientEndpointConfig$Configurator"
+      ]
+    },
+    {
+      "name": "javax.websocket.ClientEndpointConfig$Configurator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.List",
+        "java.util.Map",
+        "javax.websocket.HandshakeResponse"
+      ]
+    },
+    {
+      "name": "javax.websocket.CloseReason",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.websocket.CloseReason$CloseCode",
+        "javax.websocket.CloseReason$CloseCode",
+        "javax.websocket.CloseReason$CloseCode"
+      ]
+    },
+    {
+      "name": "javax.websocket.CloseReason$CloseCode",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.websocket.CloseReason$CloseCodes",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.websocket.CloseReason$CloseCode",
+        "javax.websocket.CloseReason$CloseCode",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes",
+        "javax.websocket.CloseReason$CloseCodes"
+      ]
+    },
+    {
+      "name": "javax.websocket.CloseReason$CloseCodes$1",
+      "references": [
+        "java.lang.Object",
+        "javax.websocket.CloseReason$CloseCode"
+      ]
+    },
+    {
+      "name": "javax.websocket.ContainerProvider",
+      "references": [
+        "java.lang.Object",
+        "javax.websocket.WebSocketContainer",
+        "javax.websocket.WebSocketContainer"
+      ]
+    },
+    {
+      "name": "javax.websocket.DecodeException",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.nio.ByteBuffer",
+        "java.nio.ByteBuffer",
+        "java.nio.ByteBuffer",
+        "java.nio.ByteBuffer"
+      ]
+    },
+    {
+      "name": "javax.websocket.Decoder",
+      "references": [
+        "java.lang.Object",
+        "javax.websocket.EndpointConfig"
+      ]
+    },
+    {
+      "name": "javax.websocket.Decoder$Binary",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.nio.ByteBuffer",
+        "java.nio.ByteBuffer",
+        "javax.websocket.DecodeException",
+        "javax.websocket.Decoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.Decoder$BinaryStream",
+      "references": [
+        "java.io.IOException",
+        "java.io.InputStream",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.websocket.DecodeException",
+        "javax.websocket.Decoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.Decoder$Text",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.websocket.DecodeException",
+        "javax.websocket.Decoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.Decoder$TextStream",
+      "references": [
+        "java.io.IOException",
+        "java.io.Reader",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.websocket.DecodeException",
+        "javax.websocket.Decoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.DefaultClientEndpointConfig",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.Map",
+        "java.util.Map",
+        "javax.websocket.ClientEndpointConfig",
+        "javax.websocket.ClientEndpointConfig$Configurator",
+        "javax.websocket.ClientEndpointConfig$Configurator",
+        "javax.websocket.ClientEndpointConfig$Configurator",
+        "javax.websocket.Decoder",
+        "javax.websocket.Decoder",
+        "javax.websocket.Decoder",
+        "javax.websocket.Encoder",
+        "javax.websocket.Encoder",
+        "javax.websocket.Encoder",
+        "javax.websocket.Extension",
+        "javax.websocket.Extension",
+        "javax.websocket.Extension"
+      ]
+    },
+    {
+      "name": "javax.websocket.DeploymentException",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.websocket.EncodeException",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.websocket.Encoder",
+      "references": [
+        "java.lang.Object",
+        "javax.websocket.EndpointConfig"
+      ]
+    },
+    {
+      "name": "javax.websocket.Encoder$Binary",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.nio.ByteBuffer",
+        "javax.websocket.EncodeException",
+        "javax.websocket.Encoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.Encoder$BinaryStream",
+      "references": [
+        "java.io.IOException",
+        "java.io.OutputStream",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.websocket.EncodeException",
+        "javax.websocket.Encoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.Encoder$Text",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.websocket.EncodeException",
+        "javax.websocket.Encoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.Encoder$TextStream",
+      "references": [
+        "java.io.IOException",
+        "java.io.Writer",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.websocket.EncodeException",
+        "javax.websocket.Encoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.Endpoint",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "javax.websocket.CloseReason",
+        "javax.websocket.EndpointConfig",
+        "javax.websocket.Session",
+        "javax.websocket.Session",
+        "javax.websocket.Session"
+      ]
+    },
+    {
+      "name": "javax.websocket.EndpointConfig",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.List",
+        "java.util.List",
+        "java.util.Map",
+        "javax.websocket.Decoder",
+        "javax.websocket.Encoder"
+      ]
+    },
+    {
+      "name": "javax.websocket.Extension",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.List",
+        "javax.websocket.Extension$Parameter"
+      ]
+    },
+    {
+      "name": "javax.websocket.Extension$Parameter",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.websocket.HandshakeResponse",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.List",
+        "java.util.Map"
+      ]
+    },
+    {
+      "name": "javax.websocket.MessageHandler",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.websocket.MessageHandler$Partial",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.websocket.MessageHandler"
+      ]
+    },
+    {
+      "name": "javax.websocket.MessageHandler$Whole",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.websocket.MessageHandler"
+      ]
+    },
+    {
+      "name": "javax.websocket.OnClose",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.websocket.OnError",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.websocket.OnMessage",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.websocket.OnOpen",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.websocket.PongMessage",
+      "references": [
+        "java.lang.Object",
+        "java.nio.ByteBuffer"
+      ]
+    },
+    {
+      "name": "javax.websocket.RemoteEndpoint",
+      "references": [
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.lang.IllegalArgumentException",
+        "java.lang.IllegalArgumentException",
+        "java.lang.Object",
+        "java.nio.ByteBuffer",
+        "java.nio.ByteBuffer"
+      ]
+    },
+    {
+      "name": "javax.websocket.RemoteEndpoint$Async",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Void",
+        "java.lang.Void",
+        "java.lang.Void",
+        "java.nio.ByteBuffer",
+        "java.nio.ByteBuffer",
+        "java.util.concurrent.Future",
+        "java.util.concurrent.Future",
+        "java.util.concurrent.Future",
+        "javax.websocket.RemoteEndpoint",
+        "javax.websocket.SendHandler",
+        "javax.websocket.SendHandler",
+        "javax.websocket.SendHandler"
+      ]
+    },
+    {
+      "name": "javax.websocket.RemoteEndpoint$Basic",
+      "references": [
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.OutputStream",
+        "java.io.Writer",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.nio.ByteBuffer",
+        "java.nio.ByteBuffer",
+        "javax.websocket.EncodeException",
+        "javax.websocket.RemoteEndpoint"
+      ]
+    },
+    {
+      "name": "javax.websocket.SendHandler",
+      "references": [
+        "java.lang.Object",
+        "javax.websocket.SendResult"
+      ]
+    },
+    {
+      "name": "javax.websocket.SendResult",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.websocket.Session",
+      "references": [
+        "java.io.Closeable",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.IllegalStateException",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.net.URI",
+        "java.security.Principal",
+        "java.util.List",
+        "java.util.List",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.websocket.CloseReason",
+        "javax.websocket.Extension",
+        "javax.websocket.MessageHandler",
+        "javax.websocket.MessageHandler",
+        "javax.websocket.MessageHandler",
+        "javax.websocket.MessageHandler$Partial",
+        "javax.websocket.MessageHandler$Whole",
+        "javax.websocket.RemoteEndpoint$Async",
+        "javax.websocket.RemoteEndpoint$Basic",
+        "javax.websocket.Session",
+        "javax.websocket.WebSocketContainer"
+      ]
+    },
+    {
+      "name": "javax.websocket.SessionException",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "javax.websocket.Session",
+        "javax.websocket.Session",
+        "javax.websocket.Session"
+      ]
+    },
+    {
+      "name": "javax.websocket.WebSocketContainer",
+      "references": [
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.net.URI",
+        "java.net.URI",
+        "java.net.URI",
+        "java.net.URI",
+        "java.util.Set",
+        "javax.websocket.ClientEndpointConfig",
+        "javax.websocket.ClientEndpointConfig",
+        "javax.websocket.DeploymentException",
+        "javax.websocket.DeploymentException",
+        "javax.websocket.DeploymentException",
+        "javax.websocket.DeploymentException",
+        "javax.websocket.Endpoint",
+        "javax.websocket.Endpoint",
+        "javax.websocket.Extension",
+        "javax.websocket.Session",
+        "javax.websocket.Session",
+        "javax.websocket.Session",
+        "javax.websocket.Session"
+      ]
+    }
+  ]
+}

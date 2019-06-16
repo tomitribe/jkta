@@ -16,10 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.eclipse.wg.jakartaee.deps;
+package org.eclipse.wg.jakartaee.repos;
 
 
-import org.eclipse.wg.jakartaee.repos.Repos;
 import org.junit.Assert;
 import org.junit.Test;
 import org.tomitribe.crest.Main;

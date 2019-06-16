@@ -1,0 +1,2214 @@
+{
+  "name": "jakarta.enterprise.cdi-api.jar",
+  "classes": [
+    {
+      "name": "javax.decorator.Decorator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.inject.Stereotype"
+      ]
+    },
+    {
+      "name": "javax.decorator.Delegate",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.ApplicationScoped",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.context.NormalScope"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.ApplicationScoped$Literal",
+      "references": [
+        "javax.enterprise.context.ApplicationScoped",
+        "javax.enterprise.context.ApplicationScoped",
+        "javax.enterprise.context.ApplicationScoped$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.BeforeDestroyed",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.BeforeDestroyed$Literal",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "javax.enterprise.context.BeforeDestroyed",
+        "javax.enterprise.context.BeforeDestroyed",
+        "javax.enterprise.context.BeforeDestroyed$Literal",
+        "javax.enterprise.context.BeforeDestroyed$Literal",
+        "javax.enterprise.context.BeforeDestroyed$Literal",
+        "javax.enterprise.context.BeforeDestroyed$Literal",
+        "javax.enterprise.context.BeforeDestroyed$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.BusyConversationException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.context.ContextException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.ContextException",
+      "references": [
+        "java.lang.RuntimeException",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.ContextNotActiveException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.context.ContextException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.Conversation",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.ConversationScoped",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.context.NormalScope"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.ConversationScoped$Literal",
+      "references": [
+        "javax.enterprise.context.ConversationScoped",
+        "javax.enterprise.context.ConversationScoped",
+        "javax.enterprise.context.ConversationScoped$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.Dependent",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.inject.Scope"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.Dependent$Literal",
+      "references": [
+        "javax.enterprise.context.Dependent",
+        "javax.enterprise.context.Dependent",
+        "javax.enterprise.context.Dependent$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.Destroyed",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.Destroyed$Literal",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "javax.enterprise.context.Destroyed",
+        "javax.enterprise.context.Destroyed",
+        "javax.enterprise.context.Destroyed$Literal",
+        "javax.enterprise.context.Destroyed$Literal",
+        "javax.enterprise.context.Destroyed$Literal",
+        "javax.enterprise.context.Destroyed$Literal",
+        "javax.enterprise.context.Destroyed$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.Initialized",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.Initialized$Literal",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "javax.enterprise.context.Initialized",
+        "javax.enterprise.context.Initialized",
+        "javax.enterprise.context.Initialized$Literal",
+        "javax.enterprise.context.Initialized$Literal",
+        "javax.enterprise.context.Initialized$Literal",
+        "javax.enterprise.context.Initialized$Literal",
+        "javax.enterprise.context.Initialized$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.NonexistentConversationException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.context.ContextException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.NormalScope",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.RequestScoped",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.context.NormalScope"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.RequestScoped$Literal",
+      "references": [
+        "javax.enterprise.context.RequestScoped",
+        "javax.enterprise.context.RequestScoped",
+        "javax.enterprise.context.RequestScoped$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.SessionScoped",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.context.NormalScope"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.SessionScoped$Literal",
+      "references": [
+        "javax.enterprise.context.SessionScoped",
+        "javax.enterprise.context.SessionScoped",
+        "javax.enterprise.context.SessionScoped$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.control.ActivateRequestContext",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.interceptor.InterceptorBinding"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.control.RequestContextController",
+      "references": [
+        "java.lang.Object",
+        "javax.enterprise.context.ContextNotActiveException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.spi.AlterableContext",
+      "references": [
+        "java.lang.Object",
+        "javax.enterprise.context.spi.Context",
+        "javax.enterprise.context.spi.Contextual"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.spi.Context",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "javax.enterprise.context.spi.Contextual",
+        "javax.enterprise.context.spi.Contextual",
+        "javax.enterprise.context.spi.CreationalContext"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.spi.Contextual",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.context.spi.CreationalContext"
+      ]
+    },
+    {
+      "name": "javax.enterprise.context.spi.CreationalContext",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.Event",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.util.concurrent.CompletionStage",
+        "java.util.concurrent.CompletionStage",
+        "javax.enterprise.event.Event",
+        "javax.enterprise.event.Event",
+        "javax.enterprise.event.Event",
+        "javax.enterprise.event.NotificationOptions",
+        "javax.enterprise.util.TypeLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.ImmutableNotificationOptions",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.concurrent.Executor",
+        "java.util.concurrent.Executor",
+        "java.util.concurrent.Executor",
+        "java.util.concurrent.Executor",
+        "javax.enterprise.event.ImmutableNotificationOptions$1",
+        "javax.enterprise.event.NotificationOptions"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.ImmutableNotificationOptions$1",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.ImmutableNotificationOptions$Builder",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.concurrent.Executor",
+        "java.util.concurrent.Executor",
+        "java.util.concurrent.Executor",
+        "javax.enterprise.event.ImmutableNotificationOptions",
+        "javax.enterprise.event.ImmutableNotificationOptions$Builder",
+        "javax.enterprise.event.ImmutableNotificationOptions$Builder",
+        "javax.enterprise.event.NotificationOptions",
+        "javax.enterprise.event.NotificationOptions$Builder",
+        "javax.enterprise.event.NotificationOptions$Builder",
+        "javax.enterprise.event.NotificationOptions$Builder"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.NotificationOptions",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.concurrent.Executor",
+        "java.util.concurrent.Executor",
+        "javax.enterprise.event.NotificationOptions",
+        "javax.enterprise.event.NotificationOptions",
+        "javax.enterprise.event.NotificationOptions$Builder"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.NotificationOptions$Builder",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.concurrent.Executor",
+        "javax.enterprise.event.NotificationOptions",
+        "javax.enterprise.event.NotificationOptions$Builder",
+        "javax.enterprise.event.NotificationOptions$Builder"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.ObserverException",
+      "references": [
+        "java.lang.RuntimeException",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.Observes",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.ObservesAsync",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.Reception"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.Reception",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.Reception"
+      ]
+    },
+    {
+      "name": "javax.enterprise.event.TransactionPhase",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.event.TransactionPhase"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Alternative",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Alternative$Literal",
+      "references": [
+        "javax.enterprise.inject.Alternative",
+        "javax.enterprise.inject.Alternative",
+        "javax.enterprise.inject.Alternative$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.AmbiguousResolutionException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.ResolutionException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Any",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Any$Literal",
+      "references": [
+        "javax.enterprise.inject.Any",
+        "javax.enterprise.inject.Any",
+        "javax.enterprise.inject.Any$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.CreationException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.InjectionException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Decorated",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Default",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Default$Literal",
+      "references": [
+        "javax.enterprise.inject.Default",
+        "javax.enterprise.inject.Default",
+        "javax.enterprise.inject.Default$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Disposes",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.IllegalProductException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.InjectionException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.InjectionException",
+      "references": [
+        "java.lang.RuntimeException",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Instance",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Iterable",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.util.stream.Stream",
+        "javax.enterprise.inject.Instance",
+        "javax.enterprise.inject.Instance",
+        "javax.enterprise.inject.Instance",
+        "javax.enterprise.util.TypeLiteral",
+        "javax.inject.Provider"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Intercepted",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Model",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.context.RequestScoped",
+        "javax.enterprise.inject.Stereotype",
+        "javax.inject.Named"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.New",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.inject.New",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.New$Literal",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "javax.enterprise.inject.New",
+        "javax.enterprise.inject.New",
+        "javax.enterprise.inject.New$Literal",
+        "javax.enterprise.inject.New$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Produces",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.ResolutionException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.InjectionException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Specializes",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Specializes$Literal",
+      "references": [
+        "javax.enterprise.inject.Specializes",
+        "javax.enterprise.inject.Specializes",
+        "javax.enterprise.inject.Specializes$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Stereotype",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.TransientReference",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.TransientReference$Literal",
+      "references": [
+        "javax.enterprise.inject.TransientReference",
+        "javax.enterprise.inject.TransientReference",
+        "javax.enterprise.inject.TransientReference$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Typed",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Typed$Literal",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "javax.enterprise.inject.Typed",
+        "javax.enterprise.inject.Typed",
+        "javax.enterprise.inject.Typed$Literal",
+        "javax.enterprise.inject.Typed$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.UnproxyableResolutionException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.ResolutionException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.UnsatisfiedResolutionException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.ResolutionException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Vetoed",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.Vetoed$Literal",
+      "references": [
+        "javax.enterprise.inject.Vetoed",
+        "javax.enterprise.inject.Vetoed",
+        "javax.enterprise.inject.Vetoed$Literal",
+        "javax.enterprise.util.AnnotationLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.literal.InjectLiteral",
+      "references": [
+        "javax.enterprise.inject.literal.InjectLiteral",
+        "javax.enterprise.util.AnnotationLiteral",
+        "javax.inject.Inject",
+        "javax.inject.Inject"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.literal.NamedLiteral",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.enterprise.inject.literal.NamedLiteral",
+        "javax.enterprise.util.AnnotationLiteral",
+        "javax.inject.Named",
+        "javax.inject.Named",
+        "javax.inject.Named"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.literal.QualifierLiteral",
+      "references": [
+        "javax.enterprise.inject.literal.QualifierLiteral",
+        "javax.enterprise.util.AnnotationLiteral",
+        "javax.inject.Qualifier",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.literal.SingletonLiteral",
+      "references": [
+        "javax.enterprise.inject.literal.SingletonLiteral",
+        "javax.enterprise.util.AnnotationLiteral",
+        "javax.inject.Singleton",
+        "javax.inject.Singleton"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.se.SeContainer",
+      "references": [
+        "java.lang.AutoCloseable",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.Instance",
+        "javax.enterprise.inject.spi.BeanManager"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.se.SeContainerInitializer",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.ClassLoader",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Package",
+        "java.lang.Package",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.util.Map",
+        "javax.enterprise.inject.se.SeContainer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.se.SeContainerInitializer",
+        "javax.enterprise.inject.spi.Extension",
+        "javax.enterprise.inject.spi.Extension"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AfterBeanDiscovery",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Iterable",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "javax.enterprise.context.spi.Context",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.ObserverMethod",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AfterDeploymentValidation",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AfterTypeDiscovery",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Annotated",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AnnotatedCallable",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.List",
+        "javax.enterprise.inject.spi.AnnotatedMember",
+        "javax.enterprise.inject.spi.AnnotatedParameter"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AnnotatedConstructor",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Constructor",
+        "java.lang.reflect.Member",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.AnnotatedCallable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AnnotatedField",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Field",
+        "java.lang.reflect.Member",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.AnnotatedMember"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AnnotatedMember",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.reflect.Member",
+        "javax.enterprise.inject.spi.Annotated",
+        "javax.enterprise.inject.spi.AnnotatedType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AnnotatedMethod",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Member",
+        "java.lang.reflect.Method",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.AnnotatedCallable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AnnotatedParameter",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Parameter",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.Annotated",
+        "javax.enterprise.inject.spi.AnnotatedCallable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.AnnotatedType",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.Annotated",
+        "javax.enterprise.inject.spi.AnnotatedConstructor",
+        "javax.enterprise.inject.spi.AnnotatedField",
+        "javax.enterprise.inject.spi.AnnotatedMethod"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Bean",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.Set",
+        "javax.enterprise.context.spi.Contextual",
+        "javax.enterprise.inject.spi.BeanAttributes",
+        "javax.enterprise.inject.spi.InjectionPoint"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.BeanAttributes",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.BeanManager",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.util.List",
+        "java.util.List",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.el.ELResolver",
+        "javax.el.ExpressionFactory",
+        "javax.el.ExpressionFactory",
+        "javax.enterprise.context.spi.Context",
+        "javax.enterprise.context.spi.Contextual",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.event.Event",
+        "javax.enterprise.inject.Instance",
+        "javax.enterprise.inject.spi.AnnotatedField",
+        "javax.enterprise.inject.spi.AnnotatedField",
+        "javax.enterprise.inject.spi.AnnotatedMember",
+        "javax.enterprise.inject.spi.AnnotatedMethod",
+        "javax.enterprise.inject.spi.AnnotatedParameter",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.BeanAttributes",
+        "javax.enterprise.inject.spi.BeanAttributes",
+        "javax.enterprise.inject.spi.BeanAttributes",
+        "javax.enterprise.inject.spi.BeanAttributes",
+        "javax.enterprise.inject.spi.Decorator",
+        "javax.enterprise.inject.spi.Extension",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionTarget",
+        "javax.enterprise.inject.spi.InjectionTargetFactory",
+        "javax.enterprise.inject.spi.InjectionTargetFactory",
+        "javax.enterprise.inject.spi.InterceptionFactory",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.Interceptor",
+        "javax.enterprise.inject.spi.ObserverMethod",
+        "javax.enterprise.inject.spi.ProducerFactory",
+        "javax.enterprise.inject.spi.ProducerFactory",
+        "javax.enterprise.inject.spi.ProducerFactory"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.BeforeBeanDiscovery",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.BeforeShutdown",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.CDI",
+      "references": [
+        "java.lang.IllegalStateException",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.Set",
+        "javax.enterprise.inject.Instance",
+        "javax.enterprise.inject.spi.BeanManager",
+        "javax.enterprise.inject.spi.CDI",
+        "javax.enterprise.inject.spi.CDIProvider",
+        "javax.enterprise.inject.spi.CDIProvider",
+        "javax.enterprise.inject.spi.CDIProvider",
+        "javax.enterprise.inject.spi.CDIProvider",
+        "javax.enterprise.inject.spi.CDIProvider"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.CDIProvider",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.CDI",
+        "javax.enterprise.inject.spi.Prioritized"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Decorator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.Bean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.DefinitionException",
+      "references": [
+        "java.lang.RuntimeException",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.DeploymentException",
+      "references": [
+        "java.lang.RuntimeException",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.EventContext",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.EventMetadata"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.EventMetadata",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.InjectionPoint"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Extension",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.InjectionPoint",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Member",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.Annotated",
+        "javax.enterprise.inject.spi.Bean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.InjectionTarget",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.inject.spi.Producer"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.InjectionTargetFactory",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.InjectionTarget",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.InterceptionFactory",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.InterceptionFactory",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.InterceptionType",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Interceptor",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.enterprise.inject.spi.InterceptionType",
+        "javax.interceptor.InvocationContext"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ObserverMethod",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.inject.spi.EventContext",
+        "javax.enterprise.inject.spi.Prioritized"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.PassivationCapable",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Prioritized",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessAnnotatedType",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessBean",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.spi.Annotated",
+        "javax.enterprise.inject.spi.Bean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessBeanAttributes",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.spi.Annotated",
+        "javax.enterprise.inject.spi.BeanAttributes",
+        "javax.enterprise.inject.spi.BeanAttributes",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessInjectionPoint",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessInjectionTarget",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.InjectionTarget",
+        "javax.enterprise.inject.spi.InjectionTarget"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessManagedBean",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.ProcessBean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessObserverMethod",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.spi.AnnotatedMethod",
+        "javax.enterprise.inject.spi.ObserverMethod",
+        "javax.enterprise.inject.spi.ObserverMethod",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessProducer",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "javax.enterprise.inject.spi.AnnotatedMember",
+        "javax.enterprise.inject.spi.Producer",
+        "javax.enterprise.inject.spi.Producer",
+        "javax.enterprise.inject.spi.configurator.ProducerConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessProducerField",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.AnnotatedField",
+        "javax.enterprise.inject.spi.AnnotatedParameter",
+        "javax.enterprise.inject.spi.ProcessBean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessProducerMethod",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.AnnotatedMethod",
+        "javax.enterprise.inject.spi.AnnotatedParameter",
+        "javax.enterprise.inject.spi.ProcessBean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessSessionBean",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.enterprise.inject.spi.ProcessManagedBean",
+        "javax.enterprise.inject.spi.SessionBeanType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessSyntheticAnnotatedType",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.Extension",
+        "javax.enterprise.inject.spi.ProcessAnnotatedType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessSyntheticBean",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.Extension",
+        "javax.enterprise.inject.spi.ProcessBean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProcessSyntheticObserverMethod",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.Extension",
+        "javax.enterprise.inject.spi.ProcessObserverMethod"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Producer",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.Set",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.inject.spi.InjectionPoint"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.ProducerFactory",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.Bean",
+        "javax.enterprise.inject.spi.Producer"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.SecurityActions",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.ServiceLoader",
+        "java.util.ServiceLoader"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.SessionBeanType",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.enterprise.inject.spi.SessionBeanType",
+        "javax.enterprise.inject.spi.SessionBeanType",
+        "javax.enterprise.inject.spi.SessionBeanType",
+        "javax.enterprise.inject.spi.SessionBeanType",
+        "javax.enterprise.inject.spi.SessionBeanType",
+        "javax.enterprise.inject.spi.SessionBeanType",
+        "javax.enterprise.inject.spi.SessionBeanType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Unmanaged",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.BeanManager",
+        "javax.enterprise.inject.spi.BeanManager",
+        "javax.enterprise.inject.spi.InjectionTarget",
+        "javax.enterprise.inject.spi.Unmanaged$UnmanagedInstance"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Unmanaged$1",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.Unmanaged$UnmanagedInstance",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.inject.spi.BeanManager",
+        "javax.enterprise.inject.spi.BeanManager",
+        "javax.enterprise.inject.spi.InjectionTarget",
+        "javax.enterprise.inject.spi.InjectionTarget",
+        "javax.enterprise.inject.spi.InjectionTarget",
+        "javax.enterprise.inject.spi.Unmanaged$1",
+        "javax.enterprise.inject.spi.Unmanaged$UnmanagedInstance",
+        "javax.enterprise.inject.spi.Unmanaged$UnmanagedInstance",
+        "javax.enterprise.inject.spi.Unmanaged$UnmanagedInstance",
+        "javax.enterprise.inject.spi.Unmanaged$UnmanagedInstance",
+        "javax.enterprise.inject.spi.Unmanaged$UnmanagedInstance"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.WithAnnotations",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.AnnotatedConstructorConfigurator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.util.List",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.stream.Stream",
+        "javax.enterprise.inject.spi.AnnotatedConstructor",
+        "javax.enterprise.inject.spi.AnnotatedParameter",
+        "javax.enterprise.inject.spi.configurator.AnnotatedConstructorConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedConstructorConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedConstructorConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.AnnotatedFieldConfigurator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.util.function.Predicate",
+        "javax.enterprise.inject.spi.AnnotatedField",
+        "javax.enterprise.inject.spi.configurator.AnnotatedFieldConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedFieldConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedFieldConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.AnnotatedMethodConfigurator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.util.List",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.stream.Stream",
+        "javax.enterprise.inject.spi.AnnotatedMethod",
+        "javax.enterprise.inject.spi.AnnotatedParameter",
+        "javax.enterprise.inject.spi.configurator.AnnotatedMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.util.function.Predicate",
+        "javax.enterprise.inject.spi.AnnotatedParameter",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedParameterConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.function.Predicate",
+        "java.util.stream.Stream",
+        "java.util.stream.Stream",
+        "java.util.stream.Stream",
+        "javax.enterprise.inject.spi.AnnotatedConstructor",
+        "javax.enterprise.inject.spi.AnnotatedField",
+        "javax.enterprise.inject.spi.AnnotatedMethod",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.configurator.AnnotatedConstructorConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedConstructorConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedConstructorConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedFieldConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedFieldConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedFieldConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator",
+        "javax.enterprise.inject.spi.configurator.AnnotatedTypeConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanAttributesConfigurator",
+        "javax.enterprise.util.TypeLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.function.BiConsumer",
+        "java.util.function.BiConsumer",
+        "java.util.function.Function",
+        "java.util.function.Function",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.inject.Instance",
+        "javax.enterprise.inject.Instance",
+        "javax.enterprise.inject.spi.AnnotatedType",
+        "javax.enterprise.inject.spi.BeanAttributes",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.InjectionPoint",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.inject.spi.configurator.BeanConfigurator",
+        "javax.enterprise.util.TypeLiteral"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator",
+        "javax.enterprise.inject.spi.configurator.InjectionPointConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Method",
+        "java.lang.reflect.Type",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.enterprise.event.Reception",
+        "javax.enterprise.event.TransactionPhase",
+        "javax.enterprise.inject.spi.AnnotatedMethod",
+        "javax.enterprise.inject.spi.ObserverMethod",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator",
+        "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator$EventConsumer"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.ObserverMethodConfigurator$EventConsumer",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.FunctionalInterface",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.enterprise.inject.spi.EventContext"
+      ]
+    },
+    {
+      "name": "javax.enterprise.inject.spi.configurator.ProducerConfigurator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.function.Consumer",
+        "java.util.function.Function",
+        "javax.enterprise.context.spi.CreationalContext",
+        "javax.enterprise.inject.spi.configurator.ProducerConfigurator",
+        "javax.enterprise.inject.spi.configurator.ProducerConfigurator"
+      ]
+    },
+    {
+      "name": "javax.enterprise.util.AnnotationLiteral",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Integer",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.StringBuilder",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Annotation",
+        "java.lang.reflect.Method",
+        "java.lang.reflect.Method",
+        "java.lang.reflect.Method",
+        "java.lang.reflect.Method"
+      ]
+    },
+    {
+      "name": "javax.enterprise.util.Nonbinding",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.enterprise.util.Nonbinding$Literal",
+      "references": [
+        "javax.enterprise.util.AnnotationLiteral",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding$Literal"
+      ]
+    },
+    {
+      "name": "javax.enterprise.util.SecurityActions",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.reflect.Method",
+        "java.lang.reflect.Method",
+        "java.lang.reflect.Method",
+        "java.lang.reflect.Method"
+      ]
+    },
+    {
+      "name": "javax.enterprise.util.TypeLiteral",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type",
+        "java.lang.reflect.Type"
+      ]
+    }
+  ]
+}

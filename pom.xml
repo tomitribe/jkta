@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.eclipse.wg.jakartaee</groupId>
   <artifactId>jkta</artifactId>
@@ -32,14 +32,14 @@
       <version>1.1.2</version>
     </dependency>
     <dependency>
-        <groupId>org.apache.geronimo.specs</groupId>
-        <artifactId>geronimo-json_1.1_spec</artifactId>
-        <version>1.0</version>
+      <groupId>org.apache.geronimo.specs</groupId>
+      <artifactId>geronimo-json_1.1_spec</artifactId>
+      <version>1.0</version>
     </dependency>
     <dependency>
-        <groupId>org.apache.johnzon</groupId>
-        <artifactId>johnzon-jsonb</artifactId>
-        <version>1.1.4</version>
+      <groupId>org.apache.johnzon</groupId>
+      <artifactId>johnzon-jsonb</artifactId>
+      <version>1.1.4</version>
     </dependency>
     <dependency>
       <groupId>org.eclipse.jgit</groupId>
@@ -71,7 +71,6 @@
       <groupId>org.apache.tomee</groupId>
       <artifactId>openejb-cxf-rs</artifactId>
       <version>8.0.0-M3</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
   <build>
@@ -96,11 +95,12 @@
                 <filter>
                   <artifact>*:*</artifact>
                   <excludes>
-                      <exclude>META-INF/*.SF</exclude>
-                      <exclude>META-INF/*.DSA</exclude>
-                      <exclude>META-INF/*.RSA</exclude>
-                      <exclude>META-INF/LICENSE</exclude>
-                      <exclude>LICENSE</exclude> <!--if this is same as above, not required-->
+                    <exclude>META-INF/*.SF</exclude>
+                    <exclude>META-INF/*.DSA</exclude>
+                    <exclude>META-INF/*.RSA</exclude>
+                    <exclude>META-INF/LICENSE</exclude>
+                    <exclude>LICENSE</exclude>
+                    <!--if this is same as above, not required-->
                   </excludes>
                 </filter>
               </filters>
@@ -126,14 +126,14 @@
         </configuration>
       </plugin>
       <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-         <artifactId>maven-compiler-plugin</artifactId>
-         <version>3.8.1</version>
-         <configuration>
-           <source>1.8</source>
-           <target>1.8</target>
-         </configuration>
-       </plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 </project>

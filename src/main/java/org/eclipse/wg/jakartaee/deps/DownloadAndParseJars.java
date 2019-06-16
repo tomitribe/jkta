@@ -17,10 +17,9 @@
 package org.eclipse.wg.jakartaee.deps;
 
 import org.apache.cxf.jaxrs.client.WebClient;
-import org.junit.Assert;
-import org.junit.Test;
 import org.tomitribe.util.Files;
 import org.tomitribe.util.IO;
+import org.tomitribe.util.JarLocation;
 import org.tomitribe.util.Join;
 import org.tomitribe.util.Zips;
 
@@ -29,52 +28,87 @@ import javax.json.bind.JsonbBuilder;
 import javax.ws.rs.core.Response;
 import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class BinaryAnalysisTest extends Assert {
+/**
+ * Walk Maven Central and download all jars in the jakartaee groupId
+ * Use ASM to parse each jar and create a json dump of the results
+ *
+ *
+ */
+public class DownloadAndParseJars {
 
-    private final File downloads = new File("/Users/dblevins/work/jakartaee/downloads");
-    private final File tmp = new File("/tmp");
+    private final File downloads;
+    private final File tmp;
 
-    public BinaryAnalysisTest() {
-        downloads.mkdirs();
+    public DownloadAndParseJars(final File tmp) {
+        this.tmp = tmp;
+        this.downloads = new File(tmp, "downloads");
+        this.downloads.mkdirs();
     }
 
-    @Test
-    public void test() throws Exception {
+    public static void main(String[] args) throws Exception {
+
+        final File tmp = new File("/tmp/jakartaee");
+        final File targetClasses = JarLocation.jarLocation(DownloadAndParseJars.class);
+        final File projectDir = targetClasses.getParentFile().getParentFile();
+
+        new DownloadAndParseJars(tmp).dump(new File(projectDir, "src/main/resources/deps/raw"));
+    }
+
+    public void dump(final File dest) throws Exception {
+        // Download and cache jar files from Maven Central
         final List<File> list = getUniqueJarFiles();
 
+        // Parse them with ASM
         final List<Jar> jars = parseJars(list).stream()
-                .map(Classes::javaxUses)
-                .map(Classes::distinctUses)
                 .collect(Collectors.toList());
 
+        // Sort the output before dumping
+        // just to make it easier to see diffs
+        for (final Jar jar : jars) {
+            Collections.sort(jar.getClasses());
+            for (final Clazz clazz : jar.getClasses()) {
+                Collections.sort(clazz.getReferences());
+            }
+        }
+
+        // Write unfiltered data to json
+        for (final Jar jar : jars) {
+            toJson(dest, jar);
+        }
+
+        // Create a slightly filtered "jakartaee" uberjar for convenience
         final List<Clazz> classes = jars.stream()
                 .map(Jar::getClasses)
                 .flatMap(Collection::stream)
                 .distinct()
+                .filter(Classes::isJavax)
+                .map(Classes::javaxUses)
                 .collect(Collectors.toList());
 
-        final Jar jakartaee = new Jar("jakartaee", classes);
 
-        Jsonb jsonb = JsonbBuilder.create();
-        IO.copy(IO.read(jsonb.toJson(jakartaee)), new File("/tmp/jakartaee-classes.json"));
+        final Jar jakartaee = new Jar("jakartaee-classes", classes);
+        toJson(dest, jakartaee);
+    }
 
-
-        jars.size();
+    public static void toJson(final File dest, final Jar jar) throws FileNotFoundException {
+        JsonbBuilder.create().toJson(jar, IO.write(new File(dest, jar.getName() + ".json")));
     }
 
     public List<Jar> parseJars(final List<File> list) {
-        final List<Jar> jars = new ArrayList<Jar>();
+        final List<Jar> jars = new ArrayList<>();
 
         for (final File file : list) {
             final File dir = extract(file);
@@ -213,7 +247,7 @@ public class BinaryAnalysisTest extends Assert {
     private File download(final URI uri) {
         final WebClient client = WebClient.create(uri.toASCIIString());
         final Response response = client.get();
-        assertEquals(200, response.getStatus());
+        if (response.getStatus() != 200) throw new IllegalStateException(String.format("Response %s from URL %s", response.getStatus(), uri));
 
         final InputStream entity = (InputStream) response.getEntity();
         final BufferedInputStream buffer = new BufferedInputStream(entity);

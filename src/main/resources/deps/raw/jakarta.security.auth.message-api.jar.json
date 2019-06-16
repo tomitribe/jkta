@@ -1,0 +1,433 @@
+{
+  "name": "jakarta.security.auth.message-api.jar",
+  "classes": [
+    {
+      "name": "javax.security.auth.message.AuthException",
+      "references": [
+        "java.lang.String",
+        "javax.security.auth.login.LoginException"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.AuthStatus",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.security.auth.message.AuthStatus",
+        "javax.security.auth.message.AuthStatus",
+        "javax.security.auth.message.AuthStatus",
+        "javax.security.auth.message.AuthStatus",
+        "javax.security.auth.message.AuthStatus"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.ClientAuth",
+      "references": [
+        "java.lang.Object",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.AuthStatus",
+        "javax.security.auth.message.AuthStatus",
+        "javax.security.auth.message.MessageInfo",
+        "javax.security.auth.message.MessageInfo",
+        "javax.security.auth.message.MessageInfo"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.MessageInfo",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.Map"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.MessagePolicy",
+      "references": [
+        "java.lang.Object",
+        "javax.security.auth.message.MessagePolicy$TargetPolicy",
+        "javax.security.auth.message.MessagePolicy$TargetPolicy",
+        "javax.security.auth.message.MessagePolicy$TargetPolicy"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.MessagePolicy$ProtectionPolicy",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.MessagePolicy$Target",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.security.auth.message.MessageInfo",
+        "javax.security.auth.message.MessageInfo",
+        "javax.security.auth.message.MessageInfo"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.MessagePolicy$TargetPolicy",
+      "references": [
+        "java.lang.Object",
+        "javax.security.auth.message.MessagePolicy$ProtectionPolicy",
+        "javax.security.auth.message.MessagePolicy$ProtectionPolicy",
+        "javax.security.auth.message.MessagePolicy$ProtectionPolicy",
+        "javax.security.auth.message.MessagePolicy$Target",
+        "javax.security.auth.message.MessagePolicy$Target",
+        "javax.security.auth.message.MessagePolicy$Target"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.ServerAuth",
+      "references": [
+        "java.lang.Object",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.AuthStatus",
+        "javax.security.auth.message.AuthStatus",
+        "javax.security.auth.message.MessageInfo",
+        "javax.security.auth.message.MessageInfo",
+        "javax.security.auth.message.MessageInfo"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.CallerPrincipalCallback",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.Principal",
+        "java.security.Principal",
+        "java.security.Principal",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.callback.Callback"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.CertStoreCallback",
+      "references": [
+        "java.lang.Object",
+        "java.security.cert.CertStore",
+        "java.security.cert.CertStore",
+        "java.security.cert.CertStore",
+        "javax.security.auth.callback.Callback"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.GroupPrincipalCallback",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.callback.Callback"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.PasswordValidationCallback",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.callback.Callback"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.PrivateKeyCallback",
+      "references": [
+        "java.lang.Object",
+        "java.security.PrivateKey",
+        "java.security.PrivateKey",
+        "java.security.PrivateKey",
+        "java.security.cert.Certificate",
+        "java.security.cert.Certificate",
+        "java.security.cert.Certificate",
+        "javax.security.auth.callback.Callback",
+        "javax.security.auth.message.callback.PrivateKeyCallback$Request",
+        "javax.security.auth.message.callback.PrivateKeyCallback$Request",
+        "javax.security.auth.message.callback.PrivateKeyCallback$Request"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.PrivateKeyCallback$AliasRequest",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.auth.message.callback.PrivateKeyCallback$Request"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.PrivateKeyCallback$DigestRequest",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.auth.message.callback.PrivateKeyCallback$Request"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.PrivateKeyCallback$IssuerSerialNumRequest",
+      "references": [
+        "java.lang.Object",
+        "java.math.BigInteger",
+        "java.math.BigInteger",
+        "java.math.BigInteger",
+        "javax.security.auth.message.callback.PrivateKeyCallback$Request",
+        "javax.security.auth.x500.X500Principal",
+        "javax.security.auth.x500.X500Principal",
+        "javax.security.auth.x500.X500Principal"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.PrivateKeyCallback$Request",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.PrivateKeyCallback$SubjectKeyIDRequest",
+      "references": [
+        "java.lang.Object",
+        "javax.security.auth.message.callback.PrivateKeyCallback$Request"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.SecretKeyCallback",
+      "references": [
+        "java.lang.Object",
+        "javax.crypto.SecretKey",
+        "javax.crypto.SecretKey",
+        "javax.crypto.SecretKey",
+        "javax.security.auth.callback.Callback",
+        "javax.security.auth.message.callback.SecretKeyCallback$Request",
+        "javax.security.auth.message.callback.SecretKeyCallback$Request",
+        "javax.security.auth.message.callback.SecretKeyCallback$Request"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.SecretKeyCallback$AliasRequest",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.auth.message.callback.SecretKeyCallback$Request"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.SecretKeyCallback$Request",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.callback.TrustStoreCallback",
+      "references": [
+        "java.lang.Object",
+        "java.security.KeyStore",
+        "java.security.KeyStore",
+        "java.security.KeyStore",
+        "javax.security.auth.callback.Callback"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.AuthConfig",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.auth.message.MessageInfo"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.AuthConfigFactory",
+      "references": [
+        "java.lang.Object",
+        "java.lang.SecurityException",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.Permission",
+        "java.security.SecurityPermission",
+        "java.security.SecurityPermission",
+        "java.security.SecurityPermission",
+        "java.util.Map",
+        "javax.security.auth.message.config.AuthConfigFactory",
+        "javax.security.auth.message.config.AuthConfigFactory",
+        "javax.security.auth.message.config.AuthConfigFactory",
+        "javax.security.auth.message.config.AuthConfigFactory$RegistrationContext",
+        "javax.security.auth.message.config.AuthConfigProvider",
+        "javax.security.auth.message.config.AuthConfigProvider",
+        "javax.security.auth.message.config.AuthConfigProvider",
+        "javax.security.auth.message.config.RegistrationListener",
+        "javax.security.auth.message.config.RegistrationListener"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.AuthConfigFactory$1",
+      "references": [
+        "java.lang.ClassNotFoundException",
+        "java.lang.Exception",
+        "java.lang.IllegalAccessException",
+        "java.lang.InstantiationException",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.PrivilegedExceptionAction",
+        "javax.security.auth.message.config.AuthConfigFactory",
+        "javax.security.auth.message.config.AuthConfigFactory"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.AuthConfigFactory$RegistrationContext",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.AuthConfigProvider",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.auth.callback.CallbackHandler",
+        "javax.security.auth.callback.CallbackHandler",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.config.ClientAuthConfig",
+        "javax.security.auth.message.config.ServerAuthConfig"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.ClientAuthConfig",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.Map",
+        "javax.security.auth.Subject",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.config.AuthConfig",
+        "javax.security.auth.message.config.ClientAuthContext"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.ClientAuthContext",
+      "references": [
+        "java.lang.Object",
+        "javax.security.auth.message.ClientAuth"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.RegistrationListener",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.ServerAuthConfig",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.Map",
+        "javax.security.auth.Subject",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.config.AuthConfig",
+        "javax.security.auth.message.config.ServerAuthContext"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.config.ServerAuthContext",
+      "references": [
+        "java.lang.Object",
+        "javax.security.auth.message.ServerAuth"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.module.ClientAuthModule",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.util.Map",
+        "javax.security.auth.callback.CallbackHandler",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.ClientAuth",
+        "javax.security.auth.message.MessagePolicy",
+        "javax.security.auth.message.MessagePolicy"
+      ]
+    },
+    {
+      "name": "javax.security.auth.message.module.ServerAuthModule",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.util.Map",
+        "javax.security.auth.callback.CallbackHandler",
+        "javax.security.auth.message.AuthException",
+        "javax.security.auth.message.MessagePolicy",
+        "javax.security.auth.message.MessagePolicy",
+        "javax.security.auth.message.ServerAuth"
+      ]
+    }
+  ]
+}

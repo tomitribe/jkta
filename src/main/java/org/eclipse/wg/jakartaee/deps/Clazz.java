@@ -16,10 +16,12 @@
  */
 package org.eclipse.wg.jakartaee.deps;
 
+import javax.json.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Clazz {
+@JsonbPropertyOrder({"name", "references"})
+public class Clazz implements Comparable<Clazz> {
     /**
      * Intentionally accepts duplicates to facilitate counting
      */
@@ -53,6 +55,11 @@ public class Clazz {
                 "name='" + name + '\'' +
                 ", references=" + references.size() +
                 '}';
+    }
+
+    @Override
+    public int compareTo(final Clazz o) {
+        return this.getName().compareTo(o.getName());
     }
 
     @Override

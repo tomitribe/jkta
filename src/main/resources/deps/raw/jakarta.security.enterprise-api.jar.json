@@ -1,0 +1,553 @@
+{
+  "name": "jakarta.security.enterprise-api.jar",
+  "classes": [
+    {
+      "name": "javax.security.enterprise.AuthenticationException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.security.GeneralSecurityException"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.AuthenticationStatus",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.CallerPrincipal",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.Principal"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.SecurityContext",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.Principal",
+        "java.security.Principal",
+        "java.util.Set",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletResponse"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters",
+      "references": [
+        "java.lang.Object",
+        "javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters",
+        "javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters",
+        "javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters",
+        "javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters",
+        "javax.security.enterprise.credential.Credential",
+        "javax.security.enterprise.credential.Credential",
+        "javax.security.enterprise.credential.Credential",
+        "javax.security.enterprise.credential.Credential"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.AutoApplySession",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.interceptor.InterceptorBinding"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.BasicAuthenticationMechanismDefinition",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.CustomFormAuthenticationMechanismDefinition",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.util.Nonbinding",
+        "javax.security.enterprise.authentication.mechanism.http.LoginToContinue"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.FormAuthenticationMechanismDefinition",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.util.Nonbinding",
+        "javax.security.enterprise.authentication.mechanism.http.LoginToContinue"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.HttpAuthenticationMechanism",
+      "references": [
+        "java.lang.Object",
+        "javax.security.enterprise.AuthenticationException",
+        "javax.security.enterprise.AuthenticationException",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletResponse",
+        "javax.servlet.http.HttpServletResponse",
+        "javax.servlet.http.HttpServletResponse"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.Principal",
+        "java.security.Principal",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.security.auth.Subject",
+        "javax.security.auth.callback.CallbackHandler",
+        "javax.security.auth.message.MessageInfo",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.security.enterprise.identitystore.CredentialValidationResult",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletResponse",
+        "javax.servlet.http.HttpServletResponse"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.HttpMessageContextWrapper",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.Principal",
+        "java.security.Principal",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.security.auth.Subject",
+        "javax.security.auth.callback.CallbackHandler",
+        "javax.security.auth.message.MessageInfo",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.AuthenticationStatus",
+        "javax.security.enterprise.authentication.mechanism.http.AuthenticationParameters",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.security.enterprise.authentication.mechanism.http.HttpMessageContext",
+        "javax.security.enterprise.identitystore.CredentialValidationResult",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletResponse",
+        "javax.servlet.http.HttpServletResponse"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.LoginToContinue",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.interceptor.InterceptorBinding"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.authentication.mechanism.http.RememberMe",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.interceptor.InterceptorBinding"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.credential.AbstractClearableCredential",
+      "references": [
+        "java.lang.Object",
+        "javax.security.enterprise.credential.Credential"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.credential.BasicAuthenticationCredential",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.enterprise.credential.Password",
+        "javax.security.enterprise.credential.UsernamePasswordCredential"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.credential.CallerOnlyCredential",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.enterprise.credential.Credential"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.credential.Credential",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.credential.Password",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.credential.RememberMeCredential",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.enterprise.credential.Credential"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.credential.UsernamePasswordCredential",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.security.enterprise.credential.AbstractClearableCredential",
+        "javax.security.enterprise.credential.Password",
+        "javax.security.enterprise.credential.Password",
+        "javax.security.enterprise.credential.Password"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.CredentialValidationResult",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.security.enterprise.CallerPrincipal",
+        "javax.security.enterprise.CallerPrincipal",
+        "javax.security.enterprise.CallerPrincipal",
+        "javax.security.enterprise.CallerPrincipal",
+        "javax.security.enterprise.CallerPrincipal",
+        "javax.security.enterprise.CallerPrincipal",
+        "javax.security.enterprise.identitystore.CredentialValidationResult",
+        "javax.security.enterprise.identitystore.CredentialValidationResult",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status",
+        "javax.security.enterprise.identitystore.CredentialValidationResult$Status"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.DatabaseIdentityStoreDefinition",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.PasswordHash",
+        "javax.security.enterprise.identitystore.Pbkdf2PasswordHash"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.IdentityStore",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.security.enterprise.credential.Credential",
+        "javax.security.enterprise.identitystore.CredentialValidationResult",
+        "javax.security.enterprise.identitystore.CredentialValidationResult",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.IdentityStoreHandler",
+      "references": [
+        "java.lang.Object",
+        "javax.security.enterprise.credential.Credential",
+        "javax.security.enterprise.identitystore.CredentialValidationResult"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.IdentityStorePermission",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.BasicPermission"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.IdentityStore$ValidationType",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope",
+        "javax.security.enterprise.identitystore.LdapIdentityStoreDefinition$LdapSearchScope"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.PasswordHash",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.Pbkdf2PasswordHash",
+      "references": [
+        "java.lang.Object",
+        "javax.security.enterprise.identitystore.PasswordHash"
+      ]
+    },
+    {
+      "name": "javax.security.enterprise.identitystore.RememberMeIdentityStore",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Set",
+        "javax.security.enterprise.CallerPrincipal",
+        "javax.security.enterprise.credential.RememberMeCredential",
+        "javax.security.enterprise.identitystore.CredentialValidationResult"
+      ]
+    }
+  ]
+}

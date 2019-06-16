@@ -1,0 +1,405 @@
+{
+  "name": "jakarta.servlet.jsp.jstl-api.jar",
+  "classes": [
+    {
+      "name": "javax.servlet.jsp.jstl.core.ConditionalTagSupport",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.tagext.TagSupport"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.Config",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.ServletContext",
+        "javax.servlet.ServletContext",
+        "javax.servlet.ServletContext",
+        "javax.servlet.ServletRequest",
+        "javax.servlet.ServletRequest",
+        "javax.servlet.ServletRequest",
+        "javax.servlet.http.HttpSession",
+        "javax.servlet.http.HttpSession",
+        "javax.servlet.http.HttpSession",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.IndexedValueExpression",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Integer",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.IteratedExpression",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "java.util.Iterator",
+        "java.util.Iterator",
+        "java.util.Iterator",
+        "javax.el.ELContext",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.IteratedExpression$1",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.Enumeration",
+        "java.util.Enumeration",
+        "java.util.Iterator",
+        "javax.servlet.jsp.jstl.core.IteratedExpression",
+        "javax.servlet.jsp.jstl.core.IteratedExpression"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.IteratedValueExpression",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ValueExpression",
+        "javax.servlet.jsp.jstl.core.IteratedExpression",
+        "javax.servlet.jsp.jstl.core.IteratedExpression"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.LoopTag",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.servlet.jsp.jstl.core.LoopTagStatus",
+        "javax.servlet.jsp.tagext.Tag"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.LoopTagStatus",
+      "references": [
+        "java.lang.Integer",
+        "java.lang.Integer",
+        "java.lang.Integer",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.LoopTagSupport",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.JspTagException",
+        "javax.servlet.jsp.jstl.core.IteratedExpression",
+        "javax.servlet.jsp.jstl.core.LoopTag",
+        "javax.servlet.jsp.jstl.core.LoopTagStatus",
+        "javax.servlet.jsp.jstl.core.LoopTagStatus",
+        "javax.servlet.jsp.jstl.core.LoopTagSupport",
+        "javax.servlet.jsp.jstl.core.LoopTagSupport",
+        "javax.servlet.jsp.jstl.core.LoopTagSupport",
+        "javax.servlet.jsp.tagext.IterationTag",
+        "javax.servlet.jsp.tagext.TagSupport",
+        "javax.servlet.jsp.tagext.TryCatchFinally"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.core.LoopTagSupport$1Status",
+      "references": [
+        "java.lang.Integer",
+        "java.lang.Integer",
+        "java.lang.Integer",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.servlet.jsp.jstl.core.LoopTagStatus",
+        "javax.servlet.jsp.jstl.core.LoopTagSupport",
+        "javax.servlet.jsp.jstl.core.LoopTagSupport"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.fmt.LocaleSupport",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Enumeration",
+        "java.util.Locale",
+        "java.util.Locale",
+        "java.util.Locale",
+        "java.util.Locale",
+        "java.util.Locale",
+        "java.util.Locale",
+        "java.util.ResourceBundle",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.PageContext",
+        "javax.servlet.jsp.jstl.fmt.LocalizationContext",
+        "javax.servlet.jsp.jstl.fmt.LocalizationContext",
+        "javax.servlet.jsp.jstl.fmt.LocalizationContext"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.fmt.LocalizationContext",
+      "references": [
+        "java.lang.Object",
+        "java.util.Locale",
+        "java.util.Locale",
+        "java.util.Locale",
+        "java.util.ResourceBundle",
+        "java.util.ResourceBundle",
+        "java.util.ResourceBundle",
+        "java.util.ResourceBundle"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.sql.Result",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.SortedMap"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.sql.ResultImpl",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.sql.ResultSet",
+        "java.sql.SQLException",
+        "java.util.List",
+        "java.util.List",
+        "java.util.SortedMap",
+        "java.util.SortedMap",
+        "javax.servlet.jsp.jstl.sql.Result"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.sql.ResultSupport",
+      "references": [
+        "java.lang.Object",
+        "java.sql.ResultSet",
+        "java.sql.ResultSet",
+        "javax.servlet.jsp.jstl.sql.Result",
+        "javax.servlet.jsp.jstl.sql.Result"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.sql.SQLExecutionTag",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Set",
+        "java.util.Set",
+        "java.util.Set",
+        "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV",
+        "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV",
+        "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV",
+        "javax.servlet.jsp.tagext.PageData",
+        "javax.servlet.jsp.tagext.TagLibraryValidator",
+        "javax.servlet.jsp.tagext.ValidationMessage",
+        "javax.servlet.jsp.tagext.ValidationMessage"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV$1",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV$PermittedTaglibsHandler",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV",
+        "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV",
+        "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV",
+        "javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV$1",
+        "org.xml.sax.Attributes",
+        "org.xml.sax.helpers.DefaultHandler"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV",
+        "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV",
+        "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV",
+        "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV",
+        "javax.servlet.jsp.tagext.PageData",
+        "javax.servlet.jsp.tagext.TagLibraryValidator",
+        "javax.servlet.jsp.tagext.ValidationMessage",
+        "javax.servlet.jsp.tagext.ValidationMessage",
+        "javax.servlet.jsp.tagext.ValidationMessage",
+        "javax.xml.parsers.SAXParserFactory"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV$1",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV$MyContentHandler",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV",
+        "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV",
+        "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV",
+        "javax.servlet.jsp.jstl.tlv.ScriptFreeTLV$1",
+        "javax.servlet.jsp.tagext.ValidationMessage",
+        "org.xml.sax.Attributes",
+        "org.xml.sax.Attributes",
+        "org.xml.sax.helpers.DefaultHandler"
+      ]
+    }
+  ]
+}

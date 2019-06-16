@@ -1,0 +1,2198 @@
+{
+  "name": "jakarta.xml.bind-api.jar",
+  "classes": [
+    {
+      "name": "javax.xml.bind.Binder",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.Deprecated",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.reflect.InvocationTargetException",
+        "java.net.URL",
+        "java.net.URL",
+        "java.net.URL",
+        "java.net.URL",
+        "java.net.URL",
+        "java.net.URL",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Properties",
+        "java.util.logging.Logger",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$1",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$2",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.security.PrivilegedExceptionAction"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$3",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.security.PrivilegedAction"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$4",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.security.PrivilegedAction"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$5",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.security.PrivilegedAction"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.DataBindingException",
+      "references": [
+        "java.lang.RuntimeException",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.DatatypeConverter",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.math.BigDecimal",
+        "java.math.BigDecimal",
+        "java.math.BigInteger",
+        "java.math.BigInteger",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "javax.xml.bind.DatatypeConverterInterface",
+        "javax.xml.bind.DatatypeConverterInterface",
+        "javax.xml.bind.JAXBPermission",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.DatatypeConverterImpl",
+      "references": [
+        "java.lang.Boolean",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.math.BigDecimal",
+        "java.math.BigDecimal",
+        "java.math.BigDecimal",
+        "java.math.BigDecimal",
+        "java.math.BigInteger",
+        "java.math.BigInteger",
+        "java.math.BigInteger",
+        "java.math.BigInteger",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.GregorianCalendar",
+        "javax.xml.bind.DatatypeConverterInterface",
+        "javax.xml.bind.DatatypeConverterInterface",
+        "javax.xml.datatype.DatatypeFactory",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.DatatypeConverterImpl$CalendarFormatter",
+      "references": [
+        "java.lang.IllegalArgumentException",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.StringBuilder",
+        "java.lang.StringBuilder",
+        "java.lang.StringBuilder",
+        "java.lang.StringBuilder",
+        "java.lang.StringBuilder",
+        "java.lang.StringBuilder",
+        "java.lang.StringBuilder",
+        "java.lang.StringBuilder",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.DatatypeConverterInterface",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.math.BigDecimal",
+        "java.math.BigDecimal",
+        "java.math.BigInteger",
+        "java.math.BigInteger",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "java.util.Calendar",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Element",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.GetPropertyAction",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.security.PrivilegedAction"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXB",
+      "references": [
+        "java.io.File",
+        "java.io.File",
+        "java.io.IOException",
+        "java.io.IOException",
+        "java.io.InputStream",
+        "java.io.OutputStream",
+        "java.io.Reader",
+        "java.io.Writer",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.ref.WeakReference",
+        "java.net.URI",
+        "java.net.URI",
+        "java.net.URL",
+        "java.net.URL",
+        "javax.xml.bind.JAXB$Cache",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXB$Cache",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBContext",
+      "references": [
+        "java.io.IOException",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.Deprecated",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.Map",
+        "javax.xml.bind.Binder",
+        "javax.xml.bind.Binder",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBIntrospector",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.SchemaOutputResolver",
+        "javax.xml.bind.Unmarshaller",
+        "javax.xml.bind.Validator",
+        "org.w3c.dom.Node"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBContext$1",
+      "references": [
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.security.PrivilegedAction"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBContextFactory",
+      "references": [
+        "java.lang.Class",
+        "java.lang.ClassLoader",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.Map",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBElement",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBElement$GlobalScope",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBException",
+      "references": [
+        "java.io.PrintStream",
+        "java.io.PrintWriter",
+        "java.lang.Exception",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBIntrospector",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBPermission",
+      "references": [
+        "java.lang.String",
+        "java.security.BasicPermission"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.MarshalException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Marshaller",
+      "references": [
+        "java.io.File",
+        "java.io.OutputStream",
+        "java.io.Writer",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.Marshaller$Listener",
+        "javax.xml.bind.Marshaller$Listener",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.attachment.AttachmentMarshaller",
+        "javax.xml.bind.attachment.AttachmentMarshaller",
+        "javax.xml.stream.XMLEventWriter",
+        "javax.xml.stream.XMLStreamWriter",
+        "javax.xml.transform.Result",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema",
+        "org.w3c.dom.Node",
+        "org.w3c.dom.Node",
+        "org.xml.sax.ContentHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Marshaller$Listener",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Messages",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ModuleUtil",
+      "references": [
+        "java.io.IOException",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ModuleUtil",
+      "references": [
+        "java.io.IOException",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.logging.Logger",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.NotIdentifiableEvent",
+      "references": [
+        "java.lang.Object",
+        "javax.xml.bind.ValidationEvent"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ParseConversionEvent",
+      "references": [
+        "java.lang.Object",
+        "javax.xml.bind.ValidationEvent"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.PrintConversionEvent",
+      "references": [
+        "java.lang.Object",
+        "javax.xml.bind.ValidationEvent"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.PropertyException",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.SchemaOutputResolver",
+      "references": [
+        "java.io.IOException",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.transform.Result"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ServiceLoaderUtil",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassLoader",
+        "java.lang.ClassNotFoundException",
+        "java.lang.ClassNotFoundException",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.logging.Logger",
+        "java.util.logging.Logger",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.TypeConstraintException",
+      "references": [
+        "java.io.PrintStream",
+        "java.lang.RuntimeException",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.UnmarshalException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Unmarshaller",
+      "references": [
+        "java.io.File",
+        "java.io.InputStream",
+        "java.io.Reader",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.net.URL",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.Unmarshaller$Listener",
+        "javax.xml.bind.Unmarshaller$Listener",
+        "javax.xml.bind.UnmarshallerHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.attachment.AttachmentUnmarshaller",
+        "javax.xml.bind.attachment.AttachmentUnmarshaller",
+        "javax.xml.stream.XMLEventReader",
+        "javax.xml.stream.XMLEventReader",
+        "javax.xml.stream.XMLStreamReader",
+        "javax.xml.stream.XMLStreamReader",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema",
+        "org.w3c.dom.Node",
+        "org.w3c.dom.Node",
+        "org.xml.sax.InputSource"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Unmarshaller$Listener",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.UnmarshallerHandler",
+      "references": [
+        "java.lang.IllegalStateException",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.xml.bind.JAXBException",
+        "org.xml.sax.ContentHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ValidationEvent",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "javax.xml.bind.ValidationEventLocator"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ValidationEventHandler",
+      "references": [
+        "java.lang.Object",
+        "javax.xml.bind.ValidationEvent"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ValidationEventLocator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.net.URL",
+        "org.w3c.dom.Node"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ValidationException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Validator",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.WhiteSpaceProcessor",
+      "references": [
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.CharSequence",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.DomHandler",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Source"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.W3CDomHandler",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.DomHandler",
+        "javax.xml.parsers.DocumentBuilder",
+        "javax.xml.parsers.DocumentBuilder",
+        "javax.xml.parsers.DocumentBuilder",
+        "javax.xml.parsers.DocumentBuilder",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.dom.DOMResult",
+        "javax.xml.transform.dom.DOMResult",
+        "javax.xml.transform.dom.DOMResult",
+        "org.w3c.dom.Element",
+        "org.w3c.dom.Element",
+        "org.w3c.dom.Element"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAccessOrder",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAccessType",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAccessorOrder",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAccessorType",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Inherited",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAnyAttribute",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAnyElement",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.DomHandler",
+        "javax.xml.bind.annotation.W3CDomHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAttachmentRef",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAttribute",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElement",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlElement$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElement$DEFAULT",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementDecl",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlElementDecl$GLOBAL"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementDecl$GLOBAL",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementRef",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlElementRef$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementRef$DEFAULT",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementRefs",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlElementRef"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementWrapper",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElements",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlElement"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlEnum",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlEnumValue",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlID",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlIDREF",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlInlineBinaryData",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlList",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlMimeType",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlMixed",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlNs",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlNsForm",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlRegistry",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlRootElement",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSchema",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlNs",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSchemaType",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlSchemaType$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSchemaType$DEFAULT",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSchemaTypes",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlSchemaType"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSeeAlso",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlTransient",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlType",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.XmlType$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlType$DEFAULT",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlValue",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.CollapsedStringAdapter",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.annotation.adapters.XmlAdapter"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.HexBinaryAdapter",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.annotation.adapters.XmlAdapter"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.NormalizedStringAdapter",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.annotation.adapters.XmlAdapter"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.XmlAdapter",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter$DEFAULT",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.attachment.AttachmentMarshaller",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.activation.DataHandler",
+        "javax.activation.DataHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.attachment.AttachmentUnmarshaller",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.activation.DataHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.AbstractMarshallerImpl",
+      "references": [
+        "java.io.File",
+        "java.io.OutputStream",
+        "java.io.UnsupportedEncodingException",
+        "java.io.Writer",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.Marshaller$Listener",
+        "javax.xml.bind.Marshaller$Listener",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.attachment.AttachmentMarshaller",
+        "javax.xml.bind.attachment.AttachmentMarshaller",
+        "javax.xml.stream.XMLEventWriter",
+        "javax.xml.stream.XMLStreamWriter",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema",
+        "org.w3c.dom.Node",
+        "org.w3c.dom.Node",
+        "org.xml.sax.ContentHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.AbstractUnmarshallerImpl",
+      "references": [
+        "java.io.File",
+        "java.io.InputStream",
+        "java.io.Reader",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.net.URL",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.UnmarshalException",
+        "javax.xml.bind.Unmarshaller",
+        "javax.xml.bind.Unmarshaller$Listener",
+        "javax.xml.bind.Unmarshaller$Listener",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.attachment.AttachmentUnmarshaller",
+        "javax.xml.bind.attachment.AttachmentUnmarshaller",
+        "javax.xml.stream.XMLEventReader",
+        "javax.xml.stream.XMLEventReader",
+        "javax.xml.stream.XMLStreamReader",
+        "javax.xml.stream.XMLStreamReader",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.sax.SAXSource",
+        "javax.xml.transform.stream.StreamSource",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema",
+        "org.w3c.dom.Node",
+        "org.xml.sax.InputSource",
+        "org.xml.sax.InputSource",
+        "org.xml.sax.InputSource",
+        "org.xml.sax.SAXException",
+        "org.xml.sax.XMLReader",
+        "org.xml.sax.XMLReader",
+        "org.xml.sax.XMLReader"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.DefaultValidationEventHandler",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEventHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.Messages",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.NotIdentifiableEventImpl",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "javax.xml.bind.NotIdentifiableEvent",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.helpers.ValidationEventImpl"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.ParseConversionEventImpl",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "javax.xml.bind.ParseConversionEvent",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.helpers.ValidationEventImpl"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.PrintConversionEventImpl",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "javax.xml.bind.PrintConversionEvent",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.helpers.ValidationEventImpl"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.ValidationEventImpl",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.ValidationEventLocatorImpl",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.net.URL",
+        "java.net.URL",
+        "java.net.URL",
+        "java.net.URL",
+        "javax.xml.bind.ValidationEventLocator",
+        "org.w3c.dom.Node",
+        "org.w3c.dom.Node",
+        "org.w3c.dom.Node",
+        "org.w3c.dom.Node",
+        "org.xml.sax.Locator",
+        "org.xml.sax.SAXParseException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.JAXBResult",
+      "references": [
+        "java.lang.Object",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.Unmarshaller",
+        "javax.xml.bind.Unmarshaller",
+        "javax.xml.bind.UnmarshallerHandler",
+        "javax.xml.transform.sax.SAXResult"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.JAXBSource",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.util.JAXBSource",
+        "javax.xml.bind.util.JAXBSource",
+        "javax.xml.transform.sax.SAXSource",
+        "org.xml.sax.XMLReader"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.JAXBSource$1",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "javax.xml.bind.util.JAXBSource",
+        "javax.xml.bind.util.JAXBSource",
+        "org.xml.sax.ContentHandler",
+        "org.xml.sax.ContentHandler",
+        "org.xml.sax.DTDHandler",
+        "org.xml.sax.DTDHandler",
+        "org.xml.sax.DTDHandler",
+        "org.xml.sax.EntityResolver",
+        "org.xml.sax.EntityResolver",
+        "org.xml.sax.EntityResolver",
+        "org.xml.sax.ErrorHandler",
+        "org.xml.sax.ErrorHandler",
+        "org.xml.sax.ErrorHandler",
+        "org.xml.sax.InputSource",
+        "org.xml.sax.SAXException",
+        "org.xml.sax.SAXException",
+        "org.xml.sax.SAXException",
+        "org.xml.sax.SAXNotRecognizedException",
+        "org.xml.sax.SAXNotRecognizedException",
+        "org.xml.sax.SAXNotRecognizedException",
+        "org.xml.sax.SAXNotRecognizedException",
+        "org.xml.sax.XMLFilter",
+        "org.xml.sax.XMLReader",
+        "org.xml.sax.ext.LexicalHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.Messages",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.ValidationEventCollector",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.List",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEventHandler"
+      ]
+    },
+    {
+      "name": "module-info",
+      "references": []
+    }
+  ]
+}

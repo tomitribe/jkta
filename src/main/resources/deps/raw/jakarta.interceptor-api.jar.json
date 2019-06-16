@@ -1,0 +1,124 @@
+{
+  "name": "jakarta.interceptor-api.jar",
+  "classes": [
+    {
+      "name": "javax.interceptor.AroundConstruct",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.interceptor.AroundInvoke",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.interceptor.AroundTimeout",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.interceptor.ExcludeClassInterceptors",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.interceptor.ExcludeDefaultInterceptors",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.interceptor.Interceptor",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.interceptor.Interceptor$Priority",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.interceptor.InterceptorBinding",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.Documented",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.interceptor.Interceptors",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.interceptor.InvocationContext",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.reflect.Constructor",
+        "java.lang.reflect.Method",
+        "java.util.Map"
+      ]
+    }
+  ]
+}

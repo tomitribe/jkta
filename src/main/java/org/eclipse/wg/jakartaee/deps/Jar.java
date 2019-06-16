@@ -16,12 +16,15 @@
  */
 package org.eclipse.wg.jakartaee.deps;
 
+import javax.json.bind.annotation.JsonbPropertyOrder;
+import javax.json.bind.annotation.JsonbTransient;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
+@JsonbPropertyOrder({"name", "classes"})
 public class Jar {
     private final String name;
     private final List<Clazz> classes = new ArrayList<>();
@@ -43,6 +46,7 @@ public class Jar {
         return name;
     }
 
+    @JsonbTransient
     public List<String> getReferences() {
         final List<String> references = new ArrayList<>();
         for (final Clazz clazz : classes) {
@@ -51,6 +55,7 @@ public class Jar {
         return references;
     }
 
+    @JsonbTransient
     public List<String> getDistinctReferences() {
         final HashSet<String> references = new HashSet<>();
 

@@ -1,0 +1,716 @@
+{
+  "name": "jakarta.batch-api.jar",
+  "classes": [
+    {
+      "name": "javax.batch.api.AbstractBatchlet",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.batch.api.Batchlet"
+      ]
+    },
+    {
+      "name": "javax.batch.api.BatchProperty",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.enterprise.util.Nonbinding",
+        "javax.inject.Qualifier"
+      ]
+    },
+    {
+      "name": "javax.batch.api.Batchlet",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.batch.api.Decider",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.batch.runtime.StepExecution"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.AbstractCheckpointAlgorithm",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "javax.batch.api.chunk.CheckpointAlgorithm"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.AbstractItemReader",
+      "references": [
+        "java.io.Serializable",
+        "java.io.Serializable",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.batch.api.chunk.ItemReader"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.AbstractItemWriter",
+      "references": [
+        "java.io.Serializable",
+        "java.io.Serializable",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.List",
+        "javax.batch.api.chunk.ItemWriter"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.CheckpointAlgorithm",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.ItemProcessor",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.ItemReader",
+      "references": [
+        "java.io.Serializable",
+        "java.io.Serializable",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.ItemWriter",
+      "references": [
+        "java.io.Serializable",
+        "java.io.Serializable",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.List"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.AbstractChunkListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "javax.batch.api.chunk.listener.ChunkListener"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.AbstractItemProcessListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.batch.api.chunk.listener.ItemProcessListener"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.AbstractItemReadListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "javax.batch.api.chunk.listener.ItemReadListener"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.AbstractItemWriteListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "javax.batch.api.chunk.listener.ItemWriteListener"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.ChunkListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.ItemProcessListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.ItemReadListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.ItemWriteListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.RetryProcessListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.RetryReadListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.RetryWriteListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.List"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.SkipProcessListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.SkipReadListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.chunk.listener.SkipWriteListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.util.List"
+      ]
+    },
+    {
+      "name": "javax.batch.api.listener.AbstractJobListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "javax.batch.api.listener.JobListener"
+      ]
+    },
+    {
+      "name": "javax.batch.api.listener.AbstractStepListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "javax.batch.api.listener.StepListener"
+      ]
+    },
+    {
+      "name": "javax.batch.api.listener.JobListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.listener.StepListener",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.AbstractPartitionAnalyzer",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.batch.api.partition.PartitionAnalyzer",
+        "javax.batch.runtime.BatchStatus"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.AbstractPartitionReducer",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "javax.batch.api.partition.PartitionReducer",
+        "javax.batch.api.partition.PartitionReducer$PartitionStatus"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.PartitionAnalyzer",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.String",
+        "javax.batch.runtime.BatchStatus"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.PartitionCollector",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Exception",
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.PartitionMapper",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Object",
+        "javax.batch.api.partition.PartitionPlan"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.PartitionPlan",
+      "references": [
+        "java.lang.Object",
+        "java.util.Properties",
+        "java.util.Properties"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.PartitionPlanImpl",
+      "references": [
+        "java.lang.Object",
+        "java.util.Properties",
+        "java.util.Properties",
+        "java.util.Properties",
+        "javax.batch.api.partition.PartitionPlan"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.PartitionReducer",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "javax.batch.api.partition.PartitionReducer$PartitionStatus"
+      ]
+    },
+    {
+      "name": "javax.batch.api.partition.PartitionReducer$PartitionStatus",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.batch.api.partition.PartitionReducer$PartitionStatus",
+        "javax.batch.api.partition.PartitionReducer$PartitionStatus",
+        "javax.batch.api.partition.PartitionReducer$PartitionStatus",
+        "javax.batch.api.partition.PartitionReducer$PartitionStatus",
+        "javax.batch.api.partition.PartitionReducer$PartitionStatus",
+        "javax.batch.api.partition.PartitionReducer$PartitionStatus"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.BatchRuntimeException",
+      "references": [
+        "java.lang.RuntimeException",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.JobExecutionAlreadyCompleteException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.JobExecutionIsRunningException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.JobExecutionNotMostRecentException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.JobExecutionNotRunningException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.JobOperator",
+      "references": [
+        "java.lang.Long",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.List",
+        "java.util.Properties",
+        "java.util.Properties",
+        "java.util.Properties",
+        "java.util.Set",
+        "javax.batch.operations.JobExecutionAlreadyCompleteException",
+        "javax.batch.operations.JobExecutionIsRunningException",
+        "javax.batch.operations.JobExecutionNotMostRecentException",
+        "javax.batch.operations.JobExecutionNotRunningException",
+        "javax.batch.operations.JobRestartException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobSecurityException",
+        "javax.batch.operations.JobStartException",
+        "javax.batch.operations.NoSuchJobException",
+        "javax.batch.operations.NoSuchJobException",
+        "javax.batch.operations.NoSuchJobException",
+        "javax.batch.operations.NoSuchJobExecutionException",
+        "javax.batch.operations.NoSuchJobExecutionException",
+        "javax.batch.operations.NoSuchJobExecutionException",
+        "javax.batch.operations.NoSuchJobExecutionException",
+        "javax.batch.operations.NoSuchJobExecutionException",
+        "javax.batch.operations.NoSuchJobExecutionException",
+        "javax.batch.operations.NoSuchJobExecutionException",
+        "javax.batch.operations.NoSuchJobInstanceException",
+        "javax.batch.runtime.JobExecution",
+        "javax.batch.runtime.JobExecution",
+        "javax.batch.runtime.JobInstance",
+        "javax.batch.runtime.JobInstance",
+        "javax.batch.runtime.JobInstance",
+        "javax.batch.runtime.StepExecution"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.JobRestartException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.JobSecurityException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.JobStartException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.NoSuchJobException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.NoSuchJobExecutionException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.operations.NoSuchJobInstanceException",
+      "references": [
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "javax.batch.operations.BatchRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.BatchRuntime",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.logging.Logger",
+        "java.util.logging.Logger",
+        "javax.batch.operations.JobOperator"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.BatchRuntime$1",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.security.PrivilegedAction",
+        "javax.batch.operations.JobOperator",
+        "javax.batch.operations.JobOperator"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.BatchStatus",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.BatchStatus"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.JobExecution",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Date",
+        "java.util.Date",
+        "java.util.Date",
+        "java.util.Date",
+        "java.util.Properties",
+        "javax.batch.runtime.BatchStatus"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.JobInstance",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.Metric",
+      "references": [
+        "java.lang.Object",
+        "javax.batch.runtime.Metric$MetricType"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.Metric$MetricType",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType",
+        "javax.batch.runtime.Metric$MetricType"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.StepExecution",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Date",
+        "java.util.Date",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.Metric"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.context.JobContext",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Properties",
+        "javax.batch.runtime.BatchStatus"
+      ]
+    },
+    {
+      "name": "javax.batch.runtime.context.StepContext",
+      "references": [
+        "java.io.Serializable",
+        "java.io.Serializable",
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Properties",
+        "javax.batch.runtime.BatchStatus",
+        "javax.batch.runtime.Metric"
+      ]
+    }
+  ]
+}

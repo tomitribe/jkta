@@ -1,0 +1,234 @@
+{
+  "name": "jakarta.enterprise.concurrent-api.jar",
+  "classes": [
+    {
+      "name": "javax.enterprise.concurrent.AbortedException",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.util.concurrent.ExecutionException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ContextService",
+      "references": [
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Class",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.LastExecution",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.util.Date",
+        "java.util.Date",
+        "java.util.Date"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManageableThread",
+      "references": [
+        "java.lang.Object"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedExecutorService",
+      "references": [
+        "java.lang.Object",
+        "java.util.concurrent.ExecutorService"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedExecutors",
+      "references": [
+        "java.lang.IllegalArgumentException",
+        "java.lang.IllegalArgumentException",
+        "java.lang.IllegalArgumentException",
+        "java.lang.IllegalArgumentException",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Runnable",
+        "java.lang.Runnable",
+        "java.lang.Runnable",
+        "java.lang.Runnable",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.concurrent.Callable",
+        "java.util.concurrent.Callable",
+        "java.util.concurrent.Callable",
+        "java.util.concurrent.Callable",
+        "javax.enterprise.concurrent.ManagedTaskListener",
+        "javax.enterprise.concurrent.ManagedTaskListener",
+        "javax.enterprise.concurrent.ManagedTaskListener",
+        "javax.enterprise.concurrent.ManagedTaskListener"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedExecutors$Adapter",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "java.util.Map",
+        "javax.enterprise.concurrent.ManagedTask",
+        "javax.enterprise.concurrent.ManagedTask",
+        "javax.enterprise.concurrent.ManagedTask",
+        "javax.enterprise.concurrent.ManagedTaskListener",
+        "javax.enterprise.concurrent.ManagedTaskListener",
+        "javax.enterprise.concurrent.ManagedTaskListener"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedExecutors$CallableAdapter",
+      "references": [
+        "java.lang.Exception",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "java.util.concurrent.Callable",
+        "java.util.concurrent.Callable",
+        "java.util.concurrent.Callable",
+        "javax.enterprise.concurrent.ManagedExecutors$Adapter",
+        "javax.enterprise.concurrent.ManagedTaskListener"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedExecutors$RunnableAdapter",
+      "references": [
+        "java.lang.Runnable",
+        "java.lang.Runnable",
+        "java.lang.Runnable",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "javax.enterprise.concurrent.ManagedExecutors$Adapter",
+        "javax.enterprise.concurrent.ManagedTaskListener"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedScheduledExecutorService",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Runnable",
+        "java.util.concurrent.Callable",
+        "java.util.concurrent.ScheduledExecutorService",
+        "java.util.concurrent.ScheduledFuture",
+        "java.util.concurrent.ScheduledFuture",
+        "javax.enterprise.concurrent.ManagedExecutorService",
+        "javax.enterprise.concurrent.Trigger",
+        "javax.enterprise.concurrent.Trigger"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedTask",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.util.Map",
+        "javax.enterprise.concurrent.ManagedTaskListener"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedTaskListener",
+      "references": [
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Object",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.util.concurrent.Future",
+        "java.util.concurrent.Future",
+        "java.util.concurrent.Future",
+        "java.util.concurrent.Future",
+        "javax.enterprise.concurrent.ManagedExecutorService",
+        "javax.enterprise.concurrent.ManagedExecutorService",
+        "javax.enterprise.concurrent.ManagedExecutorService",
+        "javax.enterprise.concurrent.ManagedExecutorService"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.ManagedThreadFactory",
+      "references": [
+        "java.lang.Object",
+        "java.util.concurrent.ThreadFactory"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.SkippedException",
+      "references": [
+        "java.io.Serializable",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.Throwable",
+        "java.lang.Throwable",
+        "java.util.concurrent.ExecutionException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.concurrent.Trigger",
+      "references": [
+        "java.lang.Object",
+        "java.util.Date",
+        "java.util.Date",
+        "java.util.Date",
+        "javax.enterprise.concurrent.LastExecution",
+        "javax.enterprise.concurrent.LastExecution"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "name": "jakarta.jws-api.jar",
+  "classes": [
+    {
+      "name": "javax.jws.HandlerChain",
+      "references": [
+        "java.lang.Deprecated",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.jws.Oneway",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.jws.WebMethod",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.jws.WebParam",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.jws.WebParam$Mode",
+        "javax.jws.WebParam$Mode"
+      ]
+    },
+    {
+      "name": "javax.jws.WebParam$Mode",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.jws.WebParam$Mode",
+        "javax.jws.WebParam$Mode",
+        "javax.jws.WebParam$Mode",
+        "javax.jws.WebParam$Mode",
+        "javax.jws.WebParam$Mode",
+        "javax.jws.WebParam$Mode",
+        "javax.jws.WebParam$Mode"
+      ]
+    },
+    {
+      "name": "javax.jws.WebResult",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.jws.WebService",
+      "references": [
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target"
+      ]
+    },
+    {
+      "name": "javax.jws.soap.InitParam",
+      "references": [
+        "java.lang.Deprecated",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation"
+      ]
+    },
+    {
+      "name": "javax.jws.soap.SOAPBinding",
+      "references": [
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.jws.soap.SOAPBinding$ParameterStyle",
+        "javax.jws.soap.SOAPBinding$ParameterStyle",
+        "javax.jws.soap.SOAPBinding$Style",
+        "javax.jws.soap.SOAPBinding$Style",
+        "javax.jws.soap.SOAPBinding$Use",
+        "javax.jws.soap.SOAPBinding$Use"
+      ]
+    },
+    {
+      "name": "javax.jws.soap.SOAPBinding$ParameterStyle",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.jws.soap.SOAPBinding$ParameterStyle",
+        "javax.jws.soap.SOAPBinding$ParameterStyle",
+        "javax.jws.soap.SOAPBinding$ParameterStyle",
+        "javax.jws.soap.SOAPBinding$ParameterStyle",
+        "javax.jws.soap.SOAPBinding$ParameterStyle",
+        "javax.jws.soap.SOAPBinding$ParameterStyle"
+      ]
+    },
+    {
+      "name": "javax.jws.soap.SOAPBinding$Style",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.jws.soap.SOAPBinding$Style",
+        "javax.jws.soap.SOAPBinding$Style",
+        "javax.jws.soap.SOAPBinding$Style",
+        "javax.jws.soap.SOAPBinding$Style",
+        "javax.jws.soap.SOAPBinding$Style",
+        "javax.jws.soap.SOAPBinding$Style"
+      ]
+    },
+    {
+      "name": "javax.jws.soap.SOAPBinding$Use",
+      "references": [
+        "java.lang.Enum",
+        "java.lang.String",
+        "javax.jws.soap.SOAPBinding$Use",
+        "javax.jws.soap.SOAPBinding$Use",
+        "javax.jws.soap.SOAPBinding$Use",
+        "javax.jws.soap.SOAPBinding$Use",
+        "javax.jws.soap.SOAPBinding$Use",
+        "javax.jws.soap.SOAPBinding$Use"
+      ]
+    },
+    {
+      "name": "javax.jws.soap.SOAPMessageHandler",
+      "references": [
+        "java.lang.Deprecated",
+        "java.lang.Object",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.String",
+        "java.lang.annotation.Annotation",
+        "javax.jws.soap.InitParam"
+      ]
+    },
+    {
+      "name": "javax.jws.soap.SOAPMessageHandlers",
+      "references": [
+        "java.lang.Deprecated",
+        "java.lang.Object",
+        "java.lang.annotation.Annotation",
+        "java.lang.annotation.ElementType",
+        "java.lang.annotation.Retention",
+        "java.lang.annotation.RetentionPolicy",
+        "java.lang.annotation.Target",
+        "javax.jws.soap.SOAPMessageHandler"
+      ]
+    },
+    {
+      "name": "module-info",
+      "references": []
+    }
+  ]
+}
