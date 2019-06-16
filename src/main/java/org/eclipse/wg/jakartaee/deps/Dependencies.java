@@ -1,9 +1,8 @@
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.deps;
 
-import junit.framework.TestCase;
-import org.apache.openejb.loader.IO;
 import org.apache.xbean.asm7.ClassReader;
 import org.apache.xbean.asm7.ClassWriter;
+import org.tomitribe.util.IO;
 
 import java.io.File;
 import java.io.IOException;
@@ -34,8 +33,7 @@ public class Dependencies {
                 IO.close(in);
             }
         } catch (final IOException e) {
-            e.printStackTrace();
-            TestCase.fail(e.getMessage());
+            throw new IllegalStateException(e);
         }
     }
 }

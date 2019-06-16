@@ -1,8 +1,8 @@
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.deps;
 
-import org.apache.openejb.util.Join;
 import org.junit.Assert;
 import org.junit.Test;
+import org.tomitribe.util.Join;
 
 public class ClassesTest extends Assert {
 

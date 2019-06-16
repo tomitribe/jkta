@@ -16,8 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.repos;
 
+import org.eclipse.wg.jakartaee.util.Strings;
+import org.eclipse.wg.jakartaee.util.Formatter;
 import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import org.tomitribe.crest.api.Command;

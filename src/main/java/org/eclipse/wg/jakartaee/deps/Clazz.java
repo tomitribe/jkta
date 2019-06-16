@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.deps;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,5 +53,22 @@ public class Clazz {
                 "name='" + name + '\'' +
                 ", references=" + references.size() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        final Clazz clazz = (Clazz) o;
+
+        if (!name.equals(clazz.name)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
     }
 }

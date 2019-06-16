@@ -18,6 +18,7 @@
  */
 package org.eclipse.wg.jakartaee;
 
+import org.eclipse.wg.jakartaee.deps.PathsTest;
 import org.tomitribe.util.IO;
 
 import java.io.IOException;

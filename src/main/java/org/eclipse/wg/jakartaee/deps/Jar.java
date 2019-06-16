@@ -14,9 +14,10 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.deps;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -27,6 +28,11 @@ public class Jar {
 
     public Jar(final String name) {
         this.name = name;
+    }
+
+    public Jar(final String name, final Collection<Clazz> c) {
+        this(name);
+        this.classes.addAll(c);
     }
 
     public List<Clazz> getClasses() {

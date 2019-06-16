@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.util;
 
 import org.tomitribe.util.Join;
 import org.tomitribe.util.collect.ObjectMap;

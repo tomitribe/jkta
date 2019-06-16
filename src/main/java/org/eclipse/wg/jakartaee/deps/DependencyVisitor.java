@@ -43,7 +43,7 @@
 
  *
  */
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.deps;
 
 import org.apache.xbean.asm7.AnnotationVisitor;
 import org.apache.xbean.asm7.Attribute;

@@ -4,8 +4,10 @@
  *
  * =====================================================================
  */
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.deps;
 
+import org.eclipse.wg.jakartaee.Resources;
+import org.eclipse.wg.jakartaee.repos.Paths;
 import org.junit.Assert;
 import org.junit.Test;
 import org.tomitribe.util.Join;

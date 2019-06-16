@@ -14,15 +14,15 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.eclipse.wg.jakartaee;
+package org.eclipse.wg.jakartaee.deps;
 
 import org.apache.cxf.jaxrs.client.WebClient;
-import org.apache.openejb.loader.Zips;
 import org.junit.Assert;
 import org.junit.Test;
 import org.tomitribe.util.Files;
 import org.tomitribe.util.IO;
 import org.tomitribe.util.Join;
+import org.tomitribe.util.Zips;
 
 import javax.json.bind.Jsonb;
 import javax.json.bind.JsonbBuilder;
@@ -33,6 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,22 +55,19 @@ public class BinaryAnalysisTest extends Assert {
 
         final List<Jar> jars = parseJars(list).stream()
                 .map(Classes::javaxUses)
-                .map(Classes::externalUses)
                 .map(Classes::distinctUses)
-                .map(Classes::trimEmptyReferences)
-                .filter(Jar::hasReferences)
                 .collect(Collectors.toList());
 
-        for (final Jar jar : jars) {
-            System.out.printf("%n## %s%n%n", jar.getName());
+        final List<Clazz> classes = jars.stream()
+                .map(Jar::getClasses)
+                .flatMap(Collection::stream)
+                .distinct()
+                .collect(Collectors.toList());
 
-            for (final String ref : jar.getDistinctReferences()) {
-                System.out.printf(" - %s%n", ref);
-            }
-        }
+        final Jar jakartaee = new Jar("jakartaee", classes);
 
-//        Jsonb jsonb = JsonbBuilder.create();
-//        IO.copy(IO.read(jsonb.toJson(jars)), new File("/tmp/dependencies.json"));
+        Jsonb jsonb = JsonbBuilder.create();
+        IO.copy(IO.read(jsonb.toJson(jakartaee)), new File("/tmp/jakartaee-classes.json"));
 
 
         jars.size();
