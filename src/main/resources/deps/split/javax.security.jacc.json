@@ -1,0 +1,121 @@
+{
+  "name": "javax.security.jacc",
+  "classes": [
+    {
+      "name": "javax.security.jacc.EJBMethodPermission",
+      "references": []
+    },
+    {
+      "name": "javax.security.jacc.EJBRoleRefPermission",
+      "references": []
+    },
+    {
+      "name": "javax.security.jacc.HttpMethodSpec",
+      "references": [
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.HttpMethodSpec"
+      ]
+    },
+    {
+      "name": "javax.security.jacc.PolicyConfiguration",
+      "references": [
+        "javax.security.jacc.PolicyConfiguration",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException"
+      ]
+    },
+    {
+      "name": "javax.security.jacc.PolicyConfigurationFactory",
+      "references": [
+        "javax.security.jacc.PolicyConfiguration",
+        "javax.security.jacc.PolicyConfigurationFactory",
+        "javax.security.jacc.PolicyConfigurationFactory",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException"
+      ]
+    },
+    {
+      "name": "javax.security.jacc.PolicyConfigurationFactory$1",
+      "references": []
+    },
+    {
+      "name": "javax.security.jacc.PolicyContext",
+      "references": [
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextHandler",
+        "javax.security.jacc.PolicyContextHandler"
+      ]
+    },
+    {
+      "name": "javax.security.jacc.PolicyContextException",
+      "references": []
+    },
+    {
+      "name": "javax.security.jacc.PolicyContextHandler",
+      "references": [
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException",
+        "javax.security.jacc.PolicyContextException"
+      ]
+    },
+    {
+      "name": "javax.security.jacc.URLPattern",
+      "references": [
+        "javax.security.jacc.URLPattern",
+        "javax.security.jacc.URLPattern",
+        "javax.security.jacc.URLPattern"
+      ]
+    },
+    {
+      "name": "javax.security.jacc.URLPatternSpec",
+      "references": [
+        "javax.security.jacc.URLPattern",
+        "javax.security.jacc.URLPattern",
+        "javax.security.jacc.URLPatternSpec"
+      ]
+    },
+    {
+      "name": "javax.security.jacc.WebResourcePermission",
+      "references": [
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.URLPatternSpec",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest"
+      ]
+    },
+    {
+      "name": "javax.security.jacc.WebRoleRefPermission",
+      "references": []
+    },
+    {
+      "name": "javax.security.jacc.WebUserDataPermission",
+      "references": [
+        "javax.security.jacc.HttpMethodSpec",
+        "javax.security.jacc.URLPatternSpec",
+        "javax.servlet.http.HttpServletRequest",
+        "javax.servlet.http.HttpServletRequest"
+      ]
+    }
+  ]
+}

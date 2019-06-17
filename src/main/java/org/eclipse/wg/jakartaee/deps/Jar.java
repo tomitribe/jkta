@@ -16,6 +16,8 @@
  */
 package org.eclipse.wg.jakartaee.deps;
 
+import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
 import javax.json.bind.annotation.JsonbPropertyOrder;
 import javax.json.bind.annotation.JsonbTransient;
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ import java.util.List;
 
 @JsonbPropertyOrder({"name", "classes"})
 public class Jar {
+
     private final String name;
     private final List<Clazz> classes = new ArrayList<>();
 
@@ -33,7 +36,9 @@ public class Jar {
         this.name = name;
     }
 
-    public Jar(final String name, final Collection<Clazz> c) {
+    @JsonbCreator
+    public Jar(@JsonbProperty("name") final String name,
+               @JsonbProperty("classes") final Collection<Clazz> c) {
         this(name);
         this.classes.addAll(c);
     }

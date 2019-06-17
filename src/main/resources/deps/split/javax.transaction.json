@@ -1,0 +1,147 @@
+{
+  "name": "javax.transaction",
+  "classes": [
+    {
+      "name": "javax.transaction.HeuristicCommitException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.HeuristicMixedException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.HeuristicRollbackException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.InvalidTransactionException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.NotSupportedException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.RollbackException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.Status",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.Synchronization",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.SystemException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.Transaction",
+      "references": [
+        "javax.transaction.HeuristicMixedException",
+        "javax.transaction.HeuristicRollbackException",
+        "javax.transaction.RollbackException",
+        "javax.transaction.RollbackException",
+        "javax.transaction.RollbackException",
+        "javax.transaction.Synchronization",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.xa.XAResource",
+        "javax.transaction.xa.XAResource"
+      ]
+    },
+    {
+      "name": "javax.transaction.TransactionManager",
+      "references": [
+        "javax.transaction.HeuristicMixedException",
+        "javax.transaction.HeuristicRollbackException",
+        "javax.transaction.InvalidTransactionException",
+        "javax.transaction.NotSupportedException",
+        "javax.transaction.RollbackException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.Transaction",
+        "javax.transaction.Transaction",
+        "javax.transaction.Transaction"
+      ]
+    },
+    {
+      "name": "javax.transaction.TransactionRequiredException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.TransactionRolledbackException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.TransactionScoped",
+      "references": [
+        "javax.enterprise.context.NormalScope"
+      ]
+    },
+    {
+      "name": "javax.transaction.TransactionSynchronizationRegistry",
+      "references": [
+        "javax.transaction.Synchronization"
+      ]
+    },
+    {
+      "name": "javax.transaction.Transactional",
+      "references": [
+        "javax.enterprise.util.Nonbinding",
+        "javax.enterprise.util.Nonbinding",
+        "javax.interceptor.InterceptorBinding",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType"
+      ]
+    },
+    {
+      "name": "javax.transaction.Transactional$TxType",
+      "references": [
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType",
+        "javax.transaction.Transactional$TxType"
+      ]
+    },
+    {
+      "name": "javax.transaction.TransactionalException",
+      "references": []
+    },
+    {
+      "name": "javax.transaction.UserTransaction",
+      "references": [
+        "javax.transaction.HeuristicMixedException",
+        "javax.transaction.HeuristicRollbackException",
+        "javax.transaction.NotSupportedException",
+        "javax.transaction.RollbackException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException",
+        "javax.transaction.SystemException"
+      ]
+    }
+  ]
+}

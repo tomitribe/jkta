@@ -1,0 +1,451 @@
+{
+  "name": "javax.xml.soap",
+  "classes": [
+    {
+      "name": "javax.xml.soap.AttachmentPart",
+      "references": [
+        "javax.activation.DataHandler",
+        "javax.activation.DataHandler",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.Detail",
+      "references": [
+        "javax.xml.namespace.QName",
+        "javax.xml.soap.DetailEntry",
+        "javax.xml.soap.DetailEntry",
+        "javax.xml.soap.DetailEntry",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPFaultElement"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.DetailEntry",
+      "references": [
+        "javax.xml.soap.SOAPElement"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.FactoryFinder",
+      "references": [
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.FactoryFinder$1",
+      "references": [
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.FactoryFinder$2",
+      "references": []
+    },
+    {
+      "name": "javax.xml.soap.MessageFactory",
+      "references": [
+        "javax.xml.soap.MessageFactory",
+        "javax.xml.soap.MessageFactory",
+        "javax.xml.soap.MimeHeaders",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPMessage",
+        "javax.xml.soap.SOAPMessage"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.MimeHeader",
+      "references": []
+    },
+    {
+      "name": "javax.xml.soap.MimeHeaders",
+      "references": [
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.MimeHeaders$MatchingIterator",
+      "references": [
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.Name",
+      "references": []
+    },
+    {
+      "name": "javax.xml.soap.Node",
+      "references": [
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SAAJMetaFactory",
+      "references": [
+        "javax.xml.soap.MessageFactory",
+        "javax.xml.soap.SAAJMetaFactory",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPFactory"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SAAJResult",
+      "references": [
+        "javax.xml.soap.Node",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPMessage",
+        "javax.xml.transform.dom.DOMResult"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPBody",
+      "references": [
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.SOAPBodyElement",
+        "javax.xml.soap.SOAPBodyElement",
+        "javax.xml.soap.SOAPBodyElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPFault",
+        "javax.xml.soap.SOAPFault",
+        "javax.xml.soap.SOAPFault",
+        "javax.xml.soap.SOAPFault",
+        "javax.xml.soap.SOAPFault",
+        "javax.xml.soap.SOAPFault"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPBodyElement",
+      "references": [
+        "javax.xml.soap.SOAPElement"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPConnection",
+      "references": [
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPMessage",
+        "javax.xml.soap.SOAPMessage",
+        "javax.xml.soap.SOAPMessage"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPConnectionFactory",
+      "references": [
+        "javax.xml.soap.SOAPConnection",
+        "javax.xml.soap.SOAPConnectionFactory",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPConstants",
+      "references": [
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPElement",
+      "references": [
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Node",
+        "javax.xml.soap.Node",
+        "javax.xml.soap.Node",
+        "javax.xml.soap.Node",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPElementFactory",
+      "references": [
+        "javax.xml.soap.Name",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElementFactory",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPFactory",
+        "javax.xml.soap.SOAPFactory"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPEnvelope",
+      "references": [
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.SOAPBody",
+        "javax.xml.soap.SOAPBody",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPHeader",
+        "javax.xml.soap.SOAPHeader"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPException",
+      "references": []
+    },
+    {
+      "name": "javax.xml.soap.SOAPFactory",
+      "references": [
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.soap.Detail",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPFactory",
+        "javax.xml.soap.SOAPFactory",
+        "javax.xml.soap.SOAPFault",
+        "javax.xml.soap.SOAPFault"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPFault",
+      "references": [
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.soap.Detail",
+        "javax.xml.soap.Detail",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.SOAPBodyElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPFaultElement",
+      "references": [
+        "javax.xml.soap.SOAPElement"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPHeader",
+      "references": [
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.soap.Name",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement",
+        "javax.xml.soap.SOAPHeaderElement"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPHeaderElement",
+      "references": [
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPMessage",
+      "references": [
+        "javax.activation.DataHandler",
+        "javax.xml.soap.AttachmentPart",
+        "javax.xml.soap.AttachmentPart",
+        "javax.xml.soap.AttachmentPart",
+        "javax.xml.soap.AttachmentPart",
+        "javax.xml.soap.AttachmentPart",
+        "javax.xml.soap.AttachmentPart",
+        "javax.xml.soap.AttachmentPart",
+        "javax.xml.soap.MimeHeaders",
+        "javax.xml.soap.MimeHeaders",
+        "javax.xml.soap.MimeHeaders",
+        "javax.xml.soap.SOAPBody",
+        "javax.xml.soap.SOAPElement",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPHeader",
+        "javax.xml.soap.SOAPPart"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.SOAPPart",
+      "references": [
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.MimeHeader",
+        "javax.xml.soap.Node",
+        "javax.xml.soap.SOAPEnvelope",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.soap.SOAPException",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.ServiceLoaderUtil",
+      "references": [
+        "javax.xml.soap.ServiceLoaderUtil$ExceptionHandler",
+        "javax.xml.soap.ServiceLoaderUtil$ExceptionHandler",
+        "javax.xml.soap.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.soap.ServiceLoaderUtil$ExceptionHandler",
+      "references": []
+    },
+    {
+      "name": "javax.xml.soap.Text",
+      "references": [
+        "javax.xml.soap.Node"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,896 @@
+{
+  "name": "javax.xml.bind",
+  "classes": [
+    {
+      "name": "javax.xml.bind.Binder",
+      "references": [
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder",
+      "references": [
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$1",
+      "references": [
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$2",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$3",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$4",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.ContextFinder$5",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.DataBindingException",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.DatatypeConverter",
+      "references": [
+        "javax.xml.bind.DatatypeConverterInterface",
+        "javax.xml.bind.DatatypeConverterInterface",
+        "javax.xml.bind.JAXBPermission",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.DatatypeConverterImpl",
+      "references": [
+        "javax.xml.bind.DatatypeConverterInterface",
+        "javax.xml.bind.DatatypeConverterInterface",
+        "javax.xml.datatype.DatatypeFactory",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.DatatypeConverterImpl$CalendarFormatter",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.DatatypeConverterInterface",
+      "references": [
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.NamespaceContext",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Element",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.GetPropertyAction",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.JAXB",
+      "references": [
+        "javax.xml.bind.JAXB$Cache",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXB$Cache",
+      "references": [
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBContext",
+      "references": [
+        "javax.xml.bind.Binder",
+        "javax.xml.bind.Binder",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBIntrospector",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.SchemaOutputResolver",
+        "javax.xml.bind.Unmarshaller",
+        "javax.xml.bind.Validator"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBContext$1",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.JAXBContextFactory",
+      "references": [
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBElement",
+      "references": [
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName",
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBElement$GlobalScope",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.JAXBException",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.JAXBIntrospector",
+      "references": [
+        "javax.xml.namespace.QName"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.JAXBPermission",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.MarshalException",
+      "references": [
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Marshaller",
+      "references": [
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.Marshaller$Listener",
+        "javax.xml.bind.Marshaller$Listener",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.attachment.AttachmentMarshaller",
+        "javax.xml.bind.attachment.AttachmentMarshaller",
+        "javax.xml.stream.XMLEventWriter",
+        "javax.xml.stream.XMLStreamWriter",
+        "javax.xml.transform.Result",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Marshaller$Listener",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.Messages",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.ModuleUtil",
+      "references": [
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.NotIdentifiableEvent",
+      "references": [
+        "javax.xml.bind.ValidationEvent"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ParseConversionEvent",
+      "references": [
+        "javax.xml.bind.ValidationEvent"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.PrintConversionEvent",
+      "references": [
+        "javax.xml.bind.ValidationEvent"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.PropertyException",
+      "references": [
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.SchemaOutputResolver",
+      "references": [
+        "javax.xml.transform.Result"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ServiceLoaderUtil",
+      "references": [
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler",
+        "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ServiceLoaderUtil$ExceptionHandler",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.TypeConstraintException",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.UnmarshalException",
+      "references": [
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Unmarshaller",
+      "references": [
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.Unmarshaller$Listener",
+        "javax.xml.bind.Unmarshaller$Listener",
+        "javax.xml.bind.UnmarshallerHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.attachment.AttachmentUnmarshaller",
+        "javax.xml.bind.attachment.AttachmentUnmarshaller",
+        "javax.xml.stream.XMLEventReader",
+        "javax.xml.stream.XMLEventReader",
+        "javax.xml.stream.XMLStreamReader",
+        "javax.xml.stream.XMLStreamReader",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Unmarshaller$Listener",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.UnmarshallerHandler",
+      "references": [
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ValidationEvent",
+      "references": [
+        "javax.xml.bind.ValidationEventLocator"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ValidationEventHandler",
+      "references": [
+        "javax.xml.bind.ValidationEvent"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.ValidationEventLocator",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.ValidationException",
+      "references": [
+        "javax.xml.bind.JAXBException"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.Validator",
+      "references": [
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.WhiteSpaceProcessor",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.DomHandler",
+      "references": [
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Source"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.W3CDomHandler",
+      "references": [
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.DomHandler",
+        "javax.xml.parsers.DocumentBuilder",
+        "javax.xml.parsers.DocumentBuilder",
+        "javax.xml.parsers.DocumentBuilder",
+        "javax.xml.parsers.DocumentBuilder",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Result",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.dom.DOMResult",
+        "javax.xml.transform.dom.DOMResult",
+        "javax.xml.transform.dom.DOMResult"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAccessOrder",
+      "references": [
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAccessType",
+      "references": [
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAccessorOrder",
+      "references": [
+        "javax.xml.bind.annotation.XmlAccessOrder",
+        "javax.xml.bind.annotation.XmlAccessOrder"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAccessorType",
+      "references": [
+        "javax.xml.bind.annotation.XmlAccessType",
+        "javax.xml.bind.annotation.XmlAccessType"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAnyAttribute",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAnyElement",
+      "references": [
+        "javax.xml.bind.annotation.DomHandler",
+        "javax.xml.bind.annotation.W3CDomHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAttachmentRef",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlAttribute",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElement",
+      "references": [
+        "javax.xml.bind.annotation.XmlElement$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElement$DEFAULT",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementDecl",
+      "references": [
+        "javax.xml.bind.annotation.XmlElementDecl$GLOBAL"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementDecl$GLOBAL",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementRef",
+      "references": [
+        "javax.xml.bind.annotation.XmlElementRef$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementRef$DEFAULT",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementRefs",
+      "references": [
+        "javax.xml.bind.annotation.XmlElementRef"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElementWrapper",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlElements",
+      "references": [
+        "javax.xml.bind.annotation.XmlElement"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlEnum",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlEnumValue",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlID",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlIDREF",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlInlineBinaryData",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlList",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlMimeType",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlMixed",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlNs",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlNsForm",
+      "references": [
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlRegistry",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlRootElement",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSchema",
+      "references": [
+        "javax.xml.bind.annotation.XmlNs",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm",
+        "javax.xml.bind.annotation.XmlNsForm"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSchemaType",
+      "references": [
+        "javax.xml.bind.annotation.XmlSchemaType$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSchemaType$DEFAULT",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSchemaTypes",
+      "references": [
+        "javax.xml.bind.annotation.XmlSchemaType"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlSeeAlso",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlTransient",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlType",
+      "references": [
+        "javax.xml.bind.annotation.XmlType$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlType$DEFAULT",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.XmlValue",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.CollapsedStringAdapter",
+      "references": [
+        "javax.xml.bind.annotation.adapters.XmlAdapter"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.HexBinaryAdapter",
+      "references": [
+        "javax.xml.bind.annotation.adapters.XmlAdapter"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.NormalizedStringAdapter",
+      "references": [
+        "javax.xml.bind.annotation.adapters.XmlAdapter"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.XmlAdapter",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter",
+      "references": [
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter$DEFAULT"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter$DEFAULT",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters",
+      "references": [
+        "javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.attachment.AttachmentMarshaller",
+      "references": [
+        "javax.activation.DataHandler",
+        "javax.activation.DataHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.attachment.AttachmentUnmarshaller",
+      "references": [
+        "javax.activation.DataHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.AbstractMarshallerImpl",
+      "references": [
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.Marshaller$Listener",
+        "javax.xml.bind.Marshaller$Listener",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.attachment.AttachmentMarshaller",
+        "javax.xml.bind.attachment.AttachmentMarshaller",
+        "javax.xml.stream.XMLEventWriter",
+        "javax.xml.stream.XMLStreamWriter",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.AbstractUnmarshallerImpl",
+      "references": [
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBElement",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.PropertyException",
+        "javax.xml.bind.UnmarshalException",
+        "javax.xml.bind.Unmarshaller",
+        "javax.xml.bind.Unmarshaller$Listener",
+        "javax.xml.bind.Unmarshaller$Listener",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.ValidationEventHandler",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.annotation.adapters.XmlAdapter",
+        "javax.xml.bind.attachment.AttachmentUnmarshaller",
+        "javax.xml.bind.attachment.AttachmentUnmarshaller",
+        "javax.xml.stream.XMLEventReader",
+        "javax.xml.stream.XMLEventReader",
+        "javax.xml.stream.XMLStreamReader",
+        "javax.xml.stream.XMLStreamReader",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.Source",
+        "javax.xml.transform.sax.SAXSource",
+        "javax.xml.transform.stream.StreamSource",
+        "javax.xml.validation.Schema",
+        "javax.xml.validation.Schema"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.DefaultValidationEventHandler",
+      "references": [
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEventHandler"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.Messages",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.helpers.NotIdentifiableEventImpl",
+      "references": [
+        "javax.xml.bind.NotIdentifiableEvent",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.helpers.ValidationEventImpl"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.ParseConversionEventImpl",
+      "references": [
+        "javax.xml.bind.ParseConversionEvent",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.helpers.ValidationEventImpl"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.PrintConversionEventImpl",
+      "references": [
+        "javax.xml.bind.PrintConversionEvent",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.helpers.ValidationEventImpl"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.ValidationEventImpl",
+      "references": [
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator",
+        "javax.xml.bind.ValidationEventLocator"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.helpers.ValidationEventLocatorImpl",
+      "references": [
+        "javax.xml.bind.ValidationEventLocator"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.JAXBResult",
+      "references": [
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.Unmarshaller",
+        "javax.xml.bind.Unmarshaller",
+        "javax.xml.bind.UnmarshallerHandler",
+        "javax.xml.transform.sax.SAXResult"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.JAXBSource",
+      "references": [
+        "javax.xml.bind.JAXBContext",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.JAXBException",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.Marshaller",
+        "javax.xml.bind.util.JAXBSource",
+        "javax.xml.bind.util.JAXBSource",
+        "javax.xml.transform.sax.SAXSource"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.JAXBSource$1",
+      "references": [
+        "javax.xml.bind.util.JAXBSource",
+        "javax.xml.bind.util.JAXBSource"
+      ]
+    },
+    {
+      "name": "javax.xml.bind.util.Messages",
+      "references": []
+    },
+    {
+      "name": "javax.xml.bind.util.ValidationEventCollector",
+      "references": [
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEvent",
+        "javax.xml.bind.ValidationEventHandler"
+      ]
+    }
+  ]
+}

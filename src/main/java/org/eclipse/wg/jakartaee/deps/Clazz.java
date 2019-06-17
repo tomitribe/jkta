@@ -16,7 +16,9 @@
  */
 package org.eclipse.wg.jakartaee.deps;
 
-import javax.json.bind.annotation.*;
+import javax.json.bind.annotation.JsonbCreator;
+import javax.json.bind.annotation.JsonbProperty;
+import javax.json.bind.annotation.JsonbPropertyOrder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +34,9 @@ public class Clazz implements Comparable<Clazz> {
         this.name = name;
     }
 
-    public Clazz(final String name, final List<String> references) {
+    @JsonbCreator
+    public Clazz(@JsonbProperty("name") final String name,
+                 @JsonbProperty("references") final List<String> references) {
         this.name = name;
         this.references.addAll(references);
     }

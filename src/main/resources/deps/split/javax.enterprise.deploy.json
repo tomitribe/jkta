@@ -1,0 +1,319 @@
+{
+  "name": "javax.enterprise.deploy",
+  "classes": [
+    {
+      "name": "javax.enterprise.deploy.model.DDBean",
+      "references": [
+        "javax.enterprise.deploy.model.DDBean",
+        "javax.enterprise.deploy.model.DDBeanRoot",
+        "javax.enterprise.deploy.model.XpathListener",
+        "javax.enterprise.deploy.model.XpathListener"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.model.DDBeanRoot",
+      "references": [
+        "javax.enterprise.deploy.model.DDBean",
+        "javax.enterprise.deploy.model.DeployableObject",
+        "javax.enterprise.deploy.shared.ModuleType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.model.DeployableObject",
+      "references": [
+        "javax.enterprise.deploy.model.DDBean",
+        "javax.enterprise.deploy.model.DDBeanRoot",
+        "javax.enterprise.deploy.model.DDBeanRoot",
+        "javax.enterprise.deploy.model.exceptions.DDBeanCreateException",
+        "javax.enterprise.deploy.shared.ModuleType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.model.J2eeApplicationObject",
+      "references": [
+        "javax.enterprise.deploy.model.DDBean",
+        "javax.enterprise.deploy.model.DeployableObject",
+        "javax.enterprise.deploy.model.DeployableObject",
+        "javax.enterprise.deploy.model.DeployableObject",
+        "javax.enterprise.deploy.model.DeployableObject",
+        "javax.enterprise.deploy.model.XpathListener",
+        "javax.enterprise.deploy.model.XpathListener",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.model.XpathEvent",
+      "references": [
+        "javax.enterprise.deploy.model.DDBean",
+        "javax.enterprise.deploy.model.DDBean",
+        "javax.enterprise.deploy.model.DDBean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.model.XpathListener",
+      "references": [
+        "javax.enterprise.deploy.model.XpathEvent"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.model.exceptions.DDBeanCreateException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.shared.ActionType",
+      "references": [
+        "javax.enterprise.deploy.shared.ActionType",
+        "javax.enterprise.deploy.shared.ActionType",
+        "javax.enterprise.deploy.shared.ActionType",
+        "javax.enterprise.deploy.shared.ActionType",
+        "javax.enterprise.deploy.shared.ActionType",
+        "javax.enterprise.deploy.shared.ActionType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.shared.CommandType",
+      "references": [
+        "javax.enterprise.deploy.shared.CommandType",
+        "javax.enterprise.deploy.shared.CommandType",
+        "javax.enterprise.deploy.shared.CommandType",
+        "javax.enterprise.deploy.shared.CommandType",
+        "javax.enterprise.deploy.shared.CommandType",
+        "javax.enterprise.deploy.shared.CommandType",
+        "javax.enterprise.deploy.shared.CommandType",
+        "javax.enterprise.deploy.shared.CommandType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+      "references": [
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.shared.ModuleType",
+      "references": [
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.shared.StateType",
+      "references": [
+        "javax.enterprise.deploy.shared.StateType",
+        "javax.enterprise.deploy.shared.StateType",
+        "javax.enterprise.deploy.shared.StateType",
+        "javax.enterprise.deploy.shared.StateType",
+        "javax.enterprise.deploy.shared.StateType",
+        "javax.enterprise.deploy.shared.StateType",
+        "javax.enterprise.deploy.shared.StateType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.shared.factories.DeploymentFactoryManager",
+      "references": [
+        "javax.enterprise.deploy.shared.factories.DeploymentFactoryManager",
+        "javax.enterprise.deploy.shared.factories.DeploymentFactoryManager",
+        "javax.enterprise.deploy.spi.DeploymentManager",
+        "javax.enterprise.deploy.spi.DeploymentManager",
+        "javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException",
+        "javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException",
+        "javax.enterprise.deploy.spi.factories.DeploymentFactory",
+        "javax.enterprise.deploy.spi.factories.DeploymentFactory"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.DConfigBean",
+      "references": [
+        "javax.enterprise.deploy.model.DDBean",
+        "javax.enterprise.deploy.model.DDBean",
+        "javax.enterprise.deploy.model.XpathEvent",
+        "javax.enterprise.deploy.spi.DConfigBean",
+        "javax.enterprise.deploy.spi.DConfigBean",
+        "javax.enterprise.deploy.spi.exceptions.BeanNotFoundException",
+        "javax.enterprise.deploy.spi.exceptions.ConfigurationException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.DConfigBeanRoot",
+      "references": [
+        "javax.enterprise.deploy.model.DDBeanRoot",
+        "javax.enterprise.deploy.spi.DConfigBean",
+        "javax.enterprise.deploy.spi.DConfigBean"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.DeploymentConfiguration",
+      "references": [
+        "javax.enterprise.deploy.model.DDBeanRoot",
+        "javax.enterprise.deploy.model.DDBeanRoot",
+        "javax.enterprise.deploy.model.DeployableObject",
+        "javax.enterprise.deploy.spi.DConfigBeanRoot",
+        "javax.enterprise.deploy.spi.DConfigBeanRoot",
+        "javax.enterprise.deploy.spi.DConfigBeanRoot",
+        "javax.enterprise.deploy.spi.DConfigBeanRoot",
+        "javax.enterprise.deploy.spi.exceptions.BeanNotFoundException",
+        "javax.enterprise.deploy.spi.exceptions.ConfigurationException",
+        "javax.enterprise.deploy.spi.exceptions.ConfigurationException",
+        "javax.enterprise.deploy.spi.exceptions.ConfigurationException",
+        "javax.enterprise.deploy.spi.exceptions.ConfigurationException",
+        "javax.enterprise.deploy.spi.exceptions.ConfigurationException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.DeploymentManager",
+      "references": [
+        "javax.enterprise.deploy.model.DeployableObject",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.DConfigBeanVersionType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.shared.ModuleType",
+        "javax.enterprise.deploy.spi.DeploymentConfiguration",
+        "javax.enterprise.deploy.spi.Target",
+        "javax.enterprise.deploy.spi.Target",
+        "javax.enterprise.deploy.spi.Target",
+        "javax.enterprise.deploy.spi.Target",
+        "javax.enterprise.deploy.spi.Target",
+        "javax.enterprise.deploy.spi.Target",
+        "javax.enterprise.deploy.spi.Target",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.exceptions.DConfigBeanVersionUnsupportedException",
+        "javax.enterprise.deploy.spi.exceptions.InvalidModuleException",
+        "javax.enterprise.deploy.spi.exceptions.TargetException",
+        "javax.enterprise.deploy.spi.exceptions.TargetException",
+        "javax.enterprise.deploy.spi.exceptions.TargetException",
+        "javax.enterprise.deploy.spi.status.ProgressObject",
+        "javax.enterprise.deploy.spi.status.ProgressObject",
+        "javax.enterprise.deploy.spi.status.ProgressObject",
+        "javax.enterprise.deploy.spi.status.ProgressObject",
+        "javax.enterprise.deploy.spi.status.ProgressObject",
+        "javax.enterprise.deploy.spi.status.ProgressObject",
+        "javax.enterprise.deploy.spi.status.ProgressObject",
+        "javax.enterprise.deploy.spi.status.ProgressObject"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.Target",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.TargetModuleID",
+      "references": [
+        "javax.enterprise.deploy.spi.Target",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.exceptions.BeanNotFoundException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.exceptions.ClientExecuteException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.exceptions.ConfigurationException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.exceptions.DConfigBeanVersionUnsupportedException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.exceptions.InvalidModuleException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.exceptions.OperationUnsupportedException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.exceptions.TargetException",
+      "references": []
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.factories.DeploymentFactory",
+      "references": [
+        "javax.enterprise.deploy.spi.DeploymentManager",
+        "javax.enterprise.deploy.spi.DeploymentManager",
+        "javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException",
+        "javax.enterprise.deploy.spi.exceptions.DeploymentManagerCreationException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.status.ClientConfiguration",
+      "references": [
+        "javax.enterprise.deploy.spi.exceptions.ClientExecuteException"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.status.DeploymentStatus",
+      "references": [
+        "javax.enterprise.deploy.shared.ActionType",
+        "javax.enterprise.deploy.shared.CommandType",
+        "javax.enterprise.deploy.shared.StateType"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.status.ProgressEvent",
+      "references": [
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.status.DeploymentStatus",
+        "javax.enterprise.deploy.spi.status.DeploymentStatus",
+        "javax.enterprise.deploy.spi.status.DeploymentStatus"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.status.ProgressListener",
+      "references": [
+        "javax.enterprise.deploy.spi.status.ProgressEvent"
+      ]
+    },
+    {
+      "name": "javax.enterprise.deploy.spi.status.ProgressObject",
+      "references": [
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.TargetModuleID",
+        "javax.enterprise.deploy.spi.exceptions.OperationUnsupportedException",
+        "javax.enterprise.deploy.spi.exceptions.OperationUnsupportedException",
+        "javax.enterprise.deploy.spi.status.ClientConfiguration",
+        "javax.enterprise.deploy.spi.status.DeploymentStatus",
+        "javax.enterprise.deploy.spi.status.ProgressListener",
+        "javax.enterprise.deploy.spi.status.ProgressListener"
+      ]
+    }
+  ]
+}

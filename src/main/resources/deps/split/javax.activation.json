@@ -1,0 +1,234 @@
+{
+  "name": "javax.activation",
+  "classes": [
+    {
+      "name": "javax.activation.ActivationDataFlavor",
+      "references": [
+        "javax.activation.MimeType"
+      ]
+    },
+    {
+      "name": "javax.activation.CommandInfo",
+      "references": [
+        "javax.activation.DataHandler"
+      ]
+    },
+    {
+      "name": "javax.activation.CommandInfo$Beans",
+      "references": []
+    },
+    {
+      "name": "javax.activation.CommandInfo$Beans$1",
+      "references": []
+    },
+    {
+      "name": "javax.activation.CommandMap",
+      "references": [
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandMap",
+        "javax.activation.CommandMap",
+        "javax.activation.CommandMap",
+        "javax.activation.CommandMap",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource"
+      ]
+    },
+    {
+      "name": "javax.activation.CommandObject",
+      "references": [
+        "javax.activation.DataHandler"
+      ]
+    },
+    {
+      "name": "javax.activation.DataContentHandler",
+      "references": [
+        "javax.activation.DataSource",
+        "javax.activation.DataSource"
+      ]
+    },
+    {
+      "name": "javax.activation.DataContentHandlerFactory",
+      "references": [
+        "javax.activation.DataContentHandler"
+      ]
+    },
+    {
+      "name": "javax.activation.DataHandler",
+      "references": [
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandMap",
+        "javax.activation.CommandMap",
+        "javax.activation.CommandMap",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandlerFactory",
+        "javax.activation.DataContentHandlerFactory",
+        "javax.activation.DataContentHandlerFactory",
+        "javax.activation.DataHandler",
+        "javax.activation.DataHandler",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource"
+      ]
+    },
+    {
+      "name": "javax.activation.DataHandler$1",
+      "references": [
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataHandler",
+        "javax.activation.DataHandler"
+      ]
+    },
+    {
+      "name": "javax.activation.DataHandlerDataSource",
+      "references": [
+        "javax.activation.DataHandler",
+        "javax.activation.DataHandler",
+        "javax.activation.DataSource"
+      ]
+    },
+    {
+      "name": "javax.activation.DataSource",
+      "references": []
+    },
+    {
+      "name": "javax.activation.DataSourceDataContentHandler",
+      "references": [
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource"
+      ]
+    },
+    {
+      "name": "javax.activation.FileDataSource",
+      "references": [
+        "javax.activation.DataSource",
+        "javax.activation.FileTypeMap",
+        "javax.activation.FileTypeMap"
+      ]
+    },
+    {
+      "name": "javax.activation.FileTypeMap",
+      "references": [
+        "javax.activation.FileTypeMap",
+        "javax.activation.FileTypeMap",
+        "javax.activation.FileTypeMap",
+        "javax.activation.FileTypeMap"
+      ]
+    },
+    {
+      "name": "javax.activation.MailcapCommandMap",
+      "references": [
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandInfo",
+        "javax.activation.CommandMap",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler"
+      ]
+    },
+    {
+      "name": "javax.activation.MailcapCommandMap$1",
+      "references": []
+    },
+    {
+      "name": "javax.activation.MimeType",
+      "references": [
+        "javax.activation.MimeType",
+        "javax.activation.MimeTypeParameterList",
+        "javax.activation.MimeTypeParameterList",
+        "javax.activation.MimeTypeParseException",
+        "javax.activation.MimeTypeParseException",
+        "javax.activation.MimeTypeParseException",
+        "javax.activation.MimeTypeParseException",
+        "javax.activation.MimeTypeParseException",
+        "javax.activation.MimeTypeParseException"
+      ]
+    },
+    {
+      "name": "javax.activation.MimeTypeParameterList",
+      "references": [
+        "javax.activation.MimeTypeParseException",
+        "javax.activation.MimeTypeParseException"
+      ]
+    },
+    {
+      "name": "javax.activation.MimeTypeParseException",
+      "references": []
+    },
+    {
+      "name": "javax.activation.MimetypesFileTypeMap",
+      "references": [
+        "javax.activation.FileTypeMap"
+      ]
+    },
+    {
+      "name": "javax.activation.MimetypesFileTypeMap$1",
+      "references": []
+    },
+    {
+      "name": "javax.activation.ObjectDataContentHandler",
+      "references": [
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataContentHandler",
+        "javax.activation.DataSource",
+        "javax.activation.DataSource"
+      ]
+    },
+    {
+      "name": "javax.activation.SecuritySupport",
+      "references": []
+    },
+    {
+      "name": "javax.activation.SecuritySupport$1",
+      "references": []
+    },
+    {
+      "name": "javax.activation.SecuritySupport$2",
+      "references": []
+    },
+    {
+      "name": "javax.activation.SecuritySupport$3",
+      "references": []
+    },
+    {
+      "name": "javax.activation.SecuritySupport$4",
+      "references": []
+    },
+    {
+      "name": "javax.activation.SecuritySupport$5",
+      "references": []
+    },
+    {
+      "name": "javax.activation.URLDataSource",
+      "references": [
+        "javax.activation.DataSource"
+      ]
+    },
+    {
+      "name": "javax.activation.UnsupportedDataTypeException",
+      "references": []
+    }
+  ]
+}

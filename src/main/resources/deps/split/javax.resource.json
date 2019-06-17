@@ -1,0 +1,686 @@
+{
+  "name": "javax.resource",
+  "classes": [
+    {
+      "name": "javax.resource.AdministeredObjectDefinition",
+      "references": []
+    },
+    {
+      "name": "javax.resource.AdministeredObjectDefinitions",
+      "references": [
+        "javax.resource.AdministeredObjectDefinition"
+      ]
+    },
+    {
+      "name": "javax.resource.ConnectionFactoryDefinition",
+      "references": [
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel"
+      ]
+    },
+    {
+      "name": "javax.resource.ConnectionFactoryDefinitions",
+      "references": [
+        "javax.resource.ConnectionFactoryDefinition"
+      ]
+    },
+    {
+      "name": "javax.resource.NotSupportedException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.Referenceable",
+      "references": [
+        "javax.naming.Reference",
+        "javax.naming.Referenceable"
+      ]
+    },
+    {
+      "name": "javax.resource.ResourceException",
+      "references": []
+    },
+    {
+      "name": "javax.resource.cci.Connection",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.cci.ConnectionMetaData",
+        "javax.resource.cci.Interaction",
+        "javax.resource.cci.LocalTransaction",
+        "javax.resource.cci.ResultSetInfo"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.ConnectionFactory",
+      "references": [
+        "javax.resource.Referenceable",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.cci.Connection",
+        "javax.resource.cci.Connection",
+        "javax.resource.cci.ConnectionSpec",
+        "javax.resource.cci.RecordFactory",
+        "javax.resource.cci.ResourceAdapterMetaData"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.ConnectionMetaData",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.ConnectionSpec",
+      "references": []
+    },
+    {
+      "name": "javax.resource.cci.IndexedRecord",
+      "references": [
+        "javax.resource.cci.Record"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.Interaction",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.cci.Connection",
+        "javax.resource.cci.InteractionSpec",
+        "javax.resource.cci.InteractionSpec",
+        "javax.resource.cci.Record",
+        "javax.resource.cci.Record",
+        "javax.resource.cci.Record",
+        "javax.resource.cci.Record",
+        "javax.resource.cci.ResourceWarning"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.InteractionSpec",
+      "references": []
+    },
+    {
+      "name": "javax.resource.cci.LocalTransaction",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.MappedRecord",
+      "references": [
+        "javax.resource.cci.Record"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.MessageListener",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.cci.Record",
+        "javax.resource.cci.Record"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.Record",
+      "references": []
+    },
+    {
+      "name": "javax.resource.cci.RecordFactory",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.cci.IndexedRecord",
+        "javax.resource.cci.MappedRecord"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.ResourceAdapterMetaData",
+      "references": []
+    },
+    {
+      "name": "javax.resource.cci.ResourceWarning",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.cci.ResourceWarning",
+        "javax.resource.cci.ResourceWarning"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.ResultSet",
+      "references": [
+        "javax.resource.cci.Record"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.ResultSetInfo",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.cci.Streamable",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.Activation",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.ActivationSpec",
+      "references": [
+        "javax.resource.spi.InvalidPropertyException",
+        "javax.resource.spi.ResourceAdapterAssociation"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.AdministeredObject",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.ApplicationServerInternalException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.AuthenticationMechanism",
+      "references": [
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface",
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.AuthenticationMechanism$CredentialInterface",
+      "references": [
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface",
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface",
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface",
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface",
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface",
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface",
+        "javax.resource.spi.AuthenticationMechanism$CredentialInterface"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.BootstrapContext",
+      "references": [
+        "javax.resource.spi.UnavailableException",
+        "javax.resource.spi.XATerminator",
+        "javax.resource.spi.work.WorkContext",
+        "javax.resource.spi.work.WorkManager",
+        "javax.transaction.TransactionSynchronizationRegistry"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.CommException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ConfigProperty",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.ConnectionDefinition",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.ConnectionDefinitions",
+      "references": [
+        "javax.resource.spi.ConnectionDefinition"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ConnectionEvent",
+      "references": [
+        "javax.resource.spi.ManagedConnection",
+        "javax.resource.spi.ManagedConnection"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ConnectionEventListener",
+      "references": [
+        "javax.resource.spi.ConnectionEvent",
+        "javax.resource.spi.ConnectionEvent",
+        "javax.resource.spi.ConnectionEvent",
+        "javax.resource.spi.ConnectionEvent",
+        "javax.resource.spi.ConnectionEvent"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ConnectionManager",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.spi.ConnectionRequestInfo",
+        "javax.resource.spi.ManagedConnectionFactory"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ConnectionRequestInfo",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.Connector",
+      "references": [
+        "javax.resource.spi.AuthenticationMechanism",
+        "javax.resource.spi.SecurityPermission",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.work.WorkContext"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.DissociatableManagedConnection",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.EISSystemException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.IllegalStateException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.InvalidPropertyException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.LazyAssociatableConnectionManager",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.spi.ConnectionRequestInfo",
+        "javax.resource.spi.ManagedConnectionFactory",
+        "javax.resource.spi.ManagedConnectionFactory"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.LazyEnlistableConnectionManager",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.spi.ManagedConnection"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.LazyEnlistableManagedConnection",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.LocalTransaction",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.LocalTransactionException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ManagedConnection",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.spi.ConnectionEventListener",
+        "javax.resource.spi.ConnectionEventListener",
+        "javax.resource.spi.ConnectionRequestInfo",
+        "javax.resource.spi.LocalTransaction",
+        "javax.resource.spi.ManagedConnectionMetaData",
+        "javax.security.auth.Subject",
+        "javax.transaction.xa.XAResource"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ManagedConnectionFactory",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.spi.ConnectionManager",
+        "javax.resource.spi.ConnectionRequestInfo",
+        "javax.resource.spi.ConnectionRequestInfo",
+        "javax.resource.spi.ManagedConnection",
+        "javax.resource.spi.ManagedConnection",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ManagedConnectionMetaData",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ResourceAdapter",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException",
+        "javax.resource.spi.ActivationSpec",
+        "javax.resource.spi.ActivationSpec",
+        "javax.resource.spi.ActivationSpec",
+        "javax.resource.spi.BootstrapContext",
+        "javax.resource.spi.ResourceAdapterInternalException",
+        "javax.resource.spi.endpoint.MessageEndpointFactory",
+        "javax.resource.spi.endpoint.MessageEndpointFactory",
+        "javax.transaction.xa.XAResource"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ResourceAdapterAssociation",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.spi.ResourceAdapter",
+        "javax.resource.spi.ResourceAdapter"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ResourceAdapterInternalException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ResourceAllocationException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.RetryableException",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.RetryableUnavailableException",
+      "references": [
+        "javax.resource.spi.RetryableException",
+        "javax.resource.spi.UnavailableException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.SecurityException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.SecurityPermission",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.SharingViolationException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.TransactionSupport",
+      "references": [
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+      "references": [
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel",
+        "javax.resource.spi.TransactionSupport$TransactionSupportLevel"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.UnavailableException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.ValidatingManagedConnectionFactory",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.XATerminator",
+      "references": [
+        "javax.transaction.xa.XAException",
+        "javax.transaction.xa.XAException",
+        "javax.transaction.xa.XAException",
+        "javax.transaction.xa.XAException",
+        "javax.transaction.xa.XAException",
+        "javax.transaction.xa.Xid",
+        "javax.transaction.xa.Xid",
+        "javax.transaction.xa.Xid",
+        "javax.transaction.xa.Xid",
+        "javax.transaction.xa.Xid"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.endpoint.MessageEndpoint",
+      "references": [
+        "javax.resource.ResourceException",
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.endpoint.MessageEndpointFactory",
+      "references": [
+        "javax.resource.spi.UnavailableException",
+        "javax.resource.spi.UnavailableException",
+        "javax.resource.spi.endpoint.MessageEndpoint",
+        "javax.resource.spi.endpoint.MessageEndpoint",
+        "javax.transaction.xa.XAResource",
+        "javax.transaction.xa.XAResource"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.security.GenericCredential",
+      "references": [
+        "javax.resource.spi.SecurityException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.security.PasswordCredential",
+      "references": [
+        "javax.resource.spi.ManagedConnectionFactory",
+        "javax.resource.spi.ManagedConnectionFactory",
+        "javax.resource.spi.ManagedConnectionFactory"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.DistributableWork",
+      "references": [
+        "javax.resource.spi.work.Work"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.DistributableWorkManager",
+      "references": [
+        "javax.resource.spi.work.WorkManager"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.ExecutionContext",
+      "references": [
+        "javax.resource.NotSupportedException",
+        "javax.transaction.xa.Xid",
+        "javax.transaction.xa.Xid",
+        "javax.transaction.xa.Xid"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.HintsContext",
+      "references": [
+        "javax.resource.spi.work.WorkContext"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.RetryableWorkRejectedException",
+      "references": [
+        "javax.resource.spi.RetryableException",
+        "javax.resource.spi.work.WorkRejectedException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.SecurityContext",
+      "references": [
+        "javax.resource.spi.work.WorkContext",
+        "javax.security.auth.Subject",
+        "javax.security.auth.Subject",
+        "javax.security.auth.callback.CallbackHandler"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.TransactionContext",
+      "references": [
+        "javax.resource.spi.work.ExecutionContext",
+        "javax.resource.spi.work.WorkContext"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.Work",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.work.WorkAdapter",
+      "references": [
+        "javax.resource.spi.work.WorkEvent",
+        "javax.resource.spi.work.WorkEvent",
+        "javax.resource.spi.work.WorkEvent",
+        "javax.resource.spi.work.WorkEvent",
+        "javax.resource.spi.work.WorkListener"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.WorkCompletedException",
+      "references": [
+        "javax.resource.spi.work.WorkException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.WorkContext",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.work.WorkContextErrorCodes",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.work.WorkContextLifecycleListener",
+      "references": []
+    },
+    {
+      "name": "javax.resource.spi.work.WorkContextProvider",
+      "references": [
+        "javax.resource.spi.work.WorkContext"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.WorkEvent",
+      "references": [
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.WorkException",
+      "references": [
+        "javax.resource.ResourceException"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.WorkListener",
+      "references": [
+        "javax.resource.spi.work.WorkEvent",
+        "javax.resource.spi.work.WorkEvent",
+        "javax.resource.spi.work.WorkEvent",
+        "javax.resource.spi.work.WorkEvent"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.WorkManager",
+      "references": [
+        "javax.resource.spi.work.ExecutionContext",
+        "javax.resource.spi.work.ExecutionContext",
+        "javax.resource.spi.work.ExecutionContext",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.Work",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkException",
+        "javax.resource.spi.work.WorkListener",
+        "javax.resource.spi.work.WorkListener",
+        "javax.resource.spi.work.WorkListener"
+      ]
+    },
+    {
+      "name": "javax.resource.spi.work.WorkRejectedException",
+      "references": [
+        "javax.resource.spi.work.WorkException"
+      ]
+    }
+  ]
+}

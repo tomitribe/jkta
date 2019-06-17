@@ -1,0 +1,1022 @@
+{
+  "name": "javax.jms",
+  "classes": [
+    {
+      "name": "javax.jms.BytesMessage",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.CompletionListener",
+      "references": [
+        "javax.jms.Message",
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.Connection",
+      "references": [
+        "javax.jms.ConnectionConsumer",
+        "javax.jms.ConnectionConsumer",
+        "javax.jms.ConnectionConsumer",
+        "javax.jms.ConnectionConsumer",
+        "javax.jms.ConnectionMetaData",
+        "javax.jms.Destination",
+        "javax.jms.ExceptionListener",
+        "javax.jms.ExceptionListener",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.ServerSessionPool",
+        "javax.jms.ServerSessionPool",
+        "javax.jms.ServerSessionPool",
+        "javax.jms.ServerSessionPool",
+        "javax.jms.Session",
+        "javax.jms.Session",
+        "javax.jms.Session",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic"
+      ]
+    },
+    {
+      "name": "javax.jms.ConnectionConsumer",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.ServerSessionPool"
+      ]
+    },
+    {
+      "name": "javax.jms.ConnectionFactory",
+      "references": [
+        "javax.jms.Connection",
+        "javax.jms.Connection",
+        "javax.jms.JMSContext",
+        "javax.jms.JMSContext",
+        "javax.jms.JMSContext",
+        "javax.jms.JMSContext",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.ConnectionMetaData",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.DeliveryMode",
+      "references": []
+    },
+    {
+      "name": "javax.jms.Destination",
+      "references": []
+    },
+    {
+      "name": "javax.jms.ExceptionListener",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.IllegalStateException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.IllegalStateRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.InvalidClientIDException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.InvalidClientIDRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.InvalidDestinationException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.InvalidDestinationRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.InvalidSelectorException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.InvalidSelectorRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.JMSConnectionFactory",
+      "references": []
+    },
+    {
+      "name": "javax.jms.JMSConnectionFactoryDefinition",
+      "references": []
+    },
+    {
+      "name": "javax.jms.JMSConnectionFactoryDefinitions",
+      "references": [
+        "javax.jms.JMSConnectionFactoryDefinition"
+      ]
+    },
+    {
+      "name": "javax.jms.JMSConsumer",
+      "references": [
+        "javax.jms.JMSRuntimeException",
+        "javax.jms.JMSRuntimeException",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.MessageListener",
+        "javax.jms.MessageListener"
+      ]
+    },
+    {
+      "name": "javax.jms.JMSContext",
+      "references": [
+        "javax.jms.BytesMessage",
+        "javax.jms.ConnectionMetaData",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.ExceptionListener",
+        "javax.jms.ExceptionListener",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSConsumer",
+        "javax.jms.JMSContext",
+        "javax.jms.JMSProducer",
+        "javax.jms.MapMessage",
+        "javax.jms.Message",
+        "javax.jms.ObjectMessage",
+        "javax.jms.ObjectMessage",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.QueueBrowser",
+        "javax.jms.QueueBrowser",
+        "javax.jms.StreamMessage",
+        "javax.jms.TemporaryQueue",
+        "javax.jms.TemporaryTopic",
+        "javax.jms.TextMessage",
+        "javax.jms.TextMessage",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic"
+      ]
+    },
+    {
+      "name": "javax.jms.JMSDestinationDefinition",
+      "references": []
+    },
+    {
+      "name": "javax.jms.JMSDestinationDefinitions",
+      "references": [
+        "javax.jms.JMSDestinationDefinition"
+      ]
+    },
+    {
+      "name": "javax.jms.JMSException",
+      "references": []
+    },
+    {
+      "name": "javax.jms.JMSPasswordCredential",
+      "references": []
+    },
+    {
+      "name": "javax.jms.JMSProducer",
+      "references": [
+        "javax.jms.CompletionListener",
+        "javax.jms.CompletionListener",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.JMSProducer",
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.JMSRuntimeException",
+      "references": []
+    },
+    {
+      "name": "javax.jms.JMSSecurityException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.JMSSecurityRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.JMSSessionMode",
+      "references": []
+    },
+    {
+      "name": "javax.jms.MapMessage",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.Message",
+      "references": [
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageConsumer",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.MessageListener",
+        "javax.jms.MessageListener"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageEOFException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageFormatException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageFormatRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageListener",
+      "references": [
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageNotReadableException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageNotWriteableException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageNotWriteableRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.MessageProducer",
+      "references": [
+        "javax.jms.CompletionListener",
+        "javax.jms.CompletionListener",
+        "javax.jms.CompletionListener",
+        "javax.jms.CompletionListener",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.ObjectMessage",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.Queue",
+      "references": [
+        "javax.jms.Destination",
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.QueueBrowser",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Queue"
+      ]
+    },
+    {
+      "name": "javax.jms.QueueConnection",
+      "references": [
+        "javax.jms.Connection",
+        "javax.jms.ConnectionConsumer",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Queue",
+        "javax.jms.QueueSession",
+        "javax.jms.ServerSessionPool"
+      ]
+    },
+    {
+      "name": "javax.jms.QueueConnectionFactory",
+      "references": [
+        "javax.jms.ConnectionFactory",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.QueueConnection",
+        "javax.jms.QueueConnection"
+      ]
+    },
+    {
+      "name": "javax.jms.QueueReceiver",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.MessageConsumer",
+        "javax.jms.Queue"
+      ]
+    },
+    {
+      "name": "javax.jms.QueueRequestor",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Queue",
+        "javax.jms.QueueReceiver",
+        "javax.jms.QueueSender",
+        "javax.jms.QueueSession",
+        "javax.jms.QueueSession",
+        "javax.jms.TemporaryQueue"
+      ]
+    },
+    {
+      "name": "javax.jms.QueueSender",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.MessageProducer",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.Queue"
+      ]
+    },
+    {
+      "name": "javax.jms.QueueSession",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.QueueBrowser",
+        "javax.jms.QueueBrowser",
+        "javax.jms.QueueReceiver",
+        "javax.jms.QueueReceiver",
+        "javax.jms.QueueSender",
+        "javax.jms.Session",
+        "javax.jms.TemporaryQueue"
+      ]
+    },
+    {
+      "name": "javax.jms.ResourceAllocationException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.ResourceAllocationRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.ServerSession",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Session"
+      ]
+    },
+    {
+      "name": "javax.jms.ServerSessionPool",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.ServerSession"
+      ]
+    },
+    {
+      "name": "javax.jms.Session",
+      "references": [
+        "javax.jms.BytesMessage",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.Destination",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.MapMessage",
+        "javax.jms.Message",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageConsumer",
+        "javax.jms.MessageListener",
+        "javax.jms.MessageListener",
+        "javax.jms.MessageProducer",
+        "javax.jms.ObjectMessage",
+        "javax.jms.ObjectMessage",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.Queue",
+        "javax.jms.QueueBrowser",
+        "javax.jms.QueueBrowser",
+        "javax.jms.StreamMessage",
+        "javax.jms.TemporaryQueue",
+        "javax.jms.TemporaryTopic",
+        "javax.jms.TextMessage",
+        "javax.jms.TextMessage",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.TopicSubscriber",
+        "javax.jms.TopicSubscriber"
+      ]
+    },
+    {
+      "name": "javax.jms.StreamMessage",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.TemporaryQueue",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.Queue"
+      ]
+    },
+    {
+      "name": "javax.jms.TemporaryTopic",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.Topic"
+      ]
+    },
+    {
+      "name": "javax.jms.TextMessage",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message"
+      ]
+    },
+    {
+      "name": "javax.jms.Topic",
+      "references": [
+        "javax.jms.Destination",
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.TopicConnection",
+      "references": [
+        "javax.jms.Connection",
+        "javax.jms.ConnectionConsumer",
+        "javax.jms.ConnectionConsumer",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.ServerSessionPool",
+        "javax.jms.ServerSessionPool",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.TopicSession"
+      ]
+    },
+    {
+      "name": "javax.jms.TopicConnectionFactory",
+      "references": [
+        "javax.jms.ConnectionFactory",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.TopicConnection",
+        "javax.jms.TopicConnection"
+      ]
+    },
+    {
+      "name": "javax.jms.TopicPublisher",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.MessageProducer",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic"
+      ]
+    },
+    {
+      "name": "javax.jms.TopicRequestor",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Message",
+        "javax.jms.Message",
+        "javax.jms.TemporaryTopic",
+        "javax.jms.Topic",
+        "javax.jms.TopicPublisher",
+        "javax.jms.TopicSession",
+        "javax.jms.TopicSession",
+        "javax.jms.TopicSubscriber"
+      ]
+    },
+    {
+      "name": "javax.jms.TopicSession",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Session",
+        "javax.jms.TemporaryTopic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.Topic",
+        "javax.jms.TopicPublisher",
+        "javax.jms.TopicSubscriber",
+        "javax.jms.TopicSubscriber",
+        "javax.jms.TopicSubscriber",
+        "javax.jms.TopicSubscriber"
+      ]
+    },
+    {
+      "name": "javax.jms.TopicSubscriber",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.MessageConsumer",
+        "javax.jms.Topic"
+      ]
+    },
+    {
+      "name": "javax.jms.TransactionInProgressException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.TransactionInProgressRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.TransactionRolledBackException",
+      "references": [
+        "javax.jms.JMSException"
+      ]
+    },
+    {
+      "name": "javax.jms.TransactionRolledBackRuntimeException",
+      "references": [
+        "javax.jms.JMSRuntimeException"
+      ]
+    },
+    {
+      "name": "javax.jms.XAConnection",
+      "references": [
+        "javax.jms.Connection",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Session",
+        "javax.jms.XASession"
+      ]
+    },
+    {
+      "name": "javax.jms.XAConnectionFactory",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.XAConnection",
+        "javax.jms.XAConnection",
+        "javax.jms.XAJMSContext",
+        "javax.jms.XAJMSContext"
+      ]
+    },
+    {
+      "name": "javax.jms.XAJMSContext",
+      "references": [
+        "javax.jms.JMSContext",
+        "javax.jms.JMSContext",
+        "javax.transaction.xa.XAResource"
+      ]
+    },
+    {
+      "name": "javax.jms.XAQueueConnection",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.QueueConnection",
+        "javax.jms.QueueSession",
+        "javax.jms.XAConnection",
+        "javax.jms.XAQueueSession"
+      ]
+    },
+    {
+      "name": "javax.jms.XAQueueConnectionFactory",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.QueueConnectionFactory",
+        "javax.jms.XAConnectionFactory",
+        "javax.jms.XAQueueConnection",
+        "javax.jms.XAQueueConnection"
+      ]
+    },
+    {
+      "name": "javax.jms.XAQueueSession",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.QueueSession",
+        "javax.jms.XASession"
+      ]
+    },
+    {
+      "name": "javax.jms.XASession",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.Session",
+        "javax.jms.Session",
+        "javax.transaction.xa.XAResource"
+      ]
+    },
+    {
+      "name": "javax.jms.XATopicConnection",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.TopicConnection",
+        "javax.jms.TopicSession",
+        "javax.jms.XAConnection",
+        "javax.jms.XATopicSession"
+      ]
+    },
+    {
+      "name": "javax.jms.XATopicConnectionFactory",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.JMSException",
+        "javax.jms.TopicConnectionFactory",
+        "javax.jms.XAConnectionFactory",
+        "javax.jms.XATopicConnection",
+        "javax.jms.XATopicConnection"
+      ]
+    },
+    {
+      "name": "javax.jms.XATopicSession",
+      "references": [
+        "javax.jms.JMSException",
+        "javax.jms.TopicSession",
+        "javax.jms.XASession"
+      ]
+    }
+  ]
+}

@@ -19,16 +19,12 @@ package org.eclipse.wg.jakartaee.deps;
 import org.apache.cxf.jaxrs.client.WebClient;
 import org.tomitribe.util.Files;
 import org.tomitribe.util.IO;
-import org.tomitribe.util.JarLocation;
 import org.tomitribe.util.Join;
 import org.tomitribe.util.Zips;
 
-import javax.json.bind.Jsonb;
-import javax.json.bind.JsonbBuilder;
 import javax.ws.rs.core.Response;
 import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
@@ -61,10 +57,10 @@ public class DownloadAndParseJars {
     public static void main(String[] args) throws Exception {
 
         final File tmp = new File("/tmp/jakartaee");
-        final File targetClasses = JarLocation.jarLocation(DownloadAndParseJars.class);
-        final File projectDir = targetClasses.getParentFile().getParentFile();
 
-        new DownloadAndParseJars(tmp).dump(new File(projectDir, "src/main/resources/deps/raw"));
+        final File dest = Src.main().resources().deps().raw().mkdir();
+
+        new DownloadAndParseJars(tmp).dump(dest);
     }
 
     public void dump(final File dest) throws Exception {
@@ -86,7 +82,7 @@ public class DownloadAndParseJars {
 
         // Write unfiltered data to json
         for (final Jar jar : jars) {
-            toJson(dest, jar);
+            Jars.toJson(dest, jar);
         }
 
         // Create a slightly filtered "jakartaee" uberjar for convenience
@@ -100,11 +96,7 @@ public class DownloadAndParseJars {
 
 
         final Jar jakartaee = new Jar("jakartaee-classes", classes);
-        toJson(dest, jakartaee);
-    }
-
-    public static void toJson(final File dest, final Jar jar) throws FileNotFoundException {
-        JsonbBuilder.create().toJson(jar, IO.write(new File(dest, jar.getName() + ".json")));
+        Jars.toJson(dest, jakartaee);
     }
 
     public List<Jar> parseJars(final List<File> list) {

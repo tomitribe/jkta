@@ -1,0 +1,446 @@
+{
+  "name": "javax.el",
+  "classes": [
+    {
+      "name": "javax.el.ArrayELResolver",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.BeanELResolver",
+      "references": [
+        "javax.el.BeanELResolver$BeanProperty",
+        "javax.el.BeanELResolver$SoftConcurrentHashMap",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.BeanELResolver$1",
+      "references": []
+    },
+    {
+      "name": "javax.el.BeanELResolver$BPSoftReference",
+      "references": [
+        "javax.el.BeanELResolver$BeanProperties",
+        "javax.el.BeanELResolver$BeanProperties",
+        "javax.el.BeanELResolver$BeanProperties"
+      ]
+    },
+    {
+      "name": "javax.el.BeanELResolver$BeanProperties",
+      "references": [
+        "javax.el.BeanELResolver$BeanProperty",
+        "javax.el.BeanELResolver$BeanProperty"
+      ]
+    },
+    {
+      "name": "javax.el.BeanELResolver$BeanProperty",
+      "references": []
+    },
+    {
+      "name": "javax.el.BeanELResolver$SoftConcurrentHashMap",
+      "references": [
+        "javax.el.BeanELResolver$1",
+        "javax.el.BeanELResolver$BPSoftReference",
+        "javax.el.BeanELResolver$BeanProperties",
+        "javax.el.BeanELResolver$BeanProperties",
+        "javax.el.BeanELResolver$BeanProperties",
+        "javax.el.BeanELResolver$BeanProperties",
+        "javax.el.BeanELResolver$BeanProperties",
+        "javax.el.BeanELResolver$BeanProperties",
+        "javax.el.BeanELResolver$BeanProperties"
+      ]
+    },
+    {
+      "name": "javax.el.BeanNameELResolver",
+      "references": [
+        "javax.el.BeanNameResolver",
+        "javax.el.BeanNameResolver",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.BeanNameResolver",
+      "references": [
+        "javax.el.PropertyNotWritableException"
+      ]
+    },
+    {
+      "name": "javax.el.CompositeELResolver",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver",
+        "javax.el.ELResolver",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.CompositeELResolver$CompositeIterator",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.ELClass",
+      "references": []
+    },
+    {
+      "name": "javax.el.ELContext",
+      "references": [
+        "javax.el.ELResolver",
+        "javax.el.EvaluationListener",
+        "javax.el.EvaluationListener",
+        "javax.el.EvaluationListener",
+        "javax.el.FunctionMapper",
+        "javax.el.ImportHandler",
+        "javax.el.ImportHandler",
+        "javax.el.VariableMapper"
+      ]
+    },
+    {
+      "name": "javax.el.ELContextEvent",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext"
+      ]
+    },
+    {
+      "name": "javax.el.ELContextListener",
+      "references": [
+        "javax.el.ELContextEvent"
+      ]
+    },
+    {
+      "name": "javax.el.ELException",
+      "references": []
+    },
+    {
+      "name": "javax.el.ELManager",
+      "references": [
+        "javax.el.BeanNameResolver",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELException",
+        "javax.el.ELException",
+        "javax.el.ELResolver",
+        "javax.el.EvaluationListener",
+        "javax.el.ExpressionFactory",
+        "javax.el.StandardELContext",
+        "javax.el.StandardELContext",
+        "javax.el.ValueExpression"
+      ]
+    },
+    {
+      "name": "javax.el.ELProcessor",
+      "references": [
+        "javax.el.ELManager",
+        "javax.el.ELManager",
+        "javax.el.ExpressionFactory"
+      ]
+    },
+    {
+      "name": "javax.el.ELResolver",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext"
+      ]
+    },
+    {
+      "name": "javax.el.ELUtil",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELUtil$Wrapper",
+        "javax.el.ELUtil$Wrapper",
+        "javax.el.ELUtil$Wrapper",
+        "javax.el.ELUtil$Wrapper",
+        "javax.el.ELUtil$Wrapper",
+        "javax.el.ELUtil$Wrapper",
+        "javax.el.ExpressionFactory",
+        "javax.el.ExpressionFactory"
+      ]
+    },
+    {
+      "name": "javax.el.ELUtil$1",
+      "references": []
+    },
+    {
+      "name": "javax.el.ELUtil$ConstructorWrapper",
+      "references": [
+        "javax.el.ELUtil$Wrapper"
+      ]
+    },
+    {
+      "name": "javax.el.ELUtil$MethodWrapper",
+      "references": [
+        "javax.el.ELUtil$Wrapper"
+      ]
+    },
+    {
+      "name": "javax.el.ELUtil$Wrapper",
+      "references": [
+        "javax.el.ELUtil$1",
+        "javax.el.ELUtil$Wrapper",
+        "javax.el.ELUtil$Wrapper"
+      ]
+    },
+    {
+      "name": "javax.el.EvaluationListener",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext"
+      ]
+    },
+    {
+      "name": "javax.el.Expression",
+      "references": []
+    },
+    {
+      "name": "javax.el.ExpressionFactory",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver",
+        "javax.el.ExpressionFactory",
+        "javax.el.ExpressionFactory",
+        "javax.el.MethodExpression",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression"
+      ]
+    },
+    {
+      "name": "javax.el.FactoryFinder",
+      "references": []
+    },
+    {
+      "name": "javax.el.FunctionMapper",
+      "references": []
+    },
+    {
+      "name": "javax.el.ImportHandler",
+      "references": [
+        "javax.el.ELException",
+        "javax.el.ELException"
+      ]
+    },
+    {
+      "name": "javax.el.LambdaExpression",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELException",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression"
+      ]
+    },
+    {
+      "name": "javax.el.ListELResolver",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.MapELResolver",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.MethodExpression",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.Expression",
+        "javax.el.MethodInfo"
+      ]
+    },
+    {
+      "name": "javax.el.MethodInfo",
+      "references": []
+    },
+    {
+      "name": "javax.el.MethodNotFoundException",
+      "references": [
+        "javax.el.ELException"
+      ]
+    },
+    {
+      "name": "javax.el.PropertyNotFoundException",
+      "references": [
+        "javax.el.ELException"
+      ]
+    },
+    {
+      "name": "javax.el.PropertyNotWritableException",
+      "references": [
+        "javax.el.ELException"
+      ]
+    },
+    {
+      "name": "javax.el.ResourceBundleELResolver",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.StandardELContext",
+      "references": [
+        "javax.el.CompositeELResolver",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver",
+        "javax.el.ELResolver",
+        "javax.el.ELResolver",
+        "javax.el.ELResolver",
+        "javax.el.ExpressionFactory",
+        "javax.el.FunctionMapper",
+        "javax.el.FunctionMapper",
+        "javax.el.StandardELContext",
+        "javax.el.VariableMapper",
+        "javax.el.VariableMapper"
+      ]
+    },
+    {
+      "name": "javax.el.StandardELContext$1",
+      "references": []
+    },
+    {
+      "name": "javax.el.StandardELContext$DefaultFunctionMapper",
+      "references": [
+        "javax.el.FunctionMapper"
+      ]
+    },
+    {
+      "name": "javax.el.StandardELContext$DefaultVariableMapper",
+      "references": [
+        "javax.el.StandardELContext$1",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.el.VariableMapper"
+      ]
+    },
+    {
+      "name": "javax.el.StandardELContext$LocalBeanNameResolver",
+      "references": [
+        "javax.el.BeanNameResolver",
+        "javax.el.StandardELContext",
+        "javax.el.StandardELContext",
+        "javax.el.StandardELContext",
+        "javax.el.StandardELContext$1"
+      ]
+    },
+    {
+      "name": "javax.el.StaticFieldELResolver",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.TypeConverter",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELResolver"
+      ]
+    },
+    {
+      "name": "javax.el.ValueExpression",
+      "references": [
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.ELContext",
+        "javax.el.Expression",
+        "javax.el.ValueReference"
+      ]
+    },
+    {
+      "name": "javax.el.ValueReference",
+      "references": []
+    },
+    {
+      "name": "javax.el.VariableMapper",
+      "references": [
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression",
+        "javax.el.ValueExpression"
+      ]
+    }
+  ]
+}

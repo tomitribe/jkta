@@ -1,0 +1,290 @@
+{
+  "name": "javax.management.j2ee",
+  "classes": [
+    {
+      "name": "javax.management.j2ee.ListenerRegistration",
+      "references": [
+        "javax.management.InstanceNotFoundException",
+        "javax.management.InstanceNotFoundException",
+        "javax.management.ListenerNotFoundException",
+        "javax.management.NotificationFilter",
+        "javax.management.NotificationListener",
+        "javax.management.NotificationListener",
+        "javax.management.ObjectName",
+        "javax.management.ObjectName"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.Management",
+      "references": [
+        "javax.ejb.EJBObject",
+        "javax.management.Attribute",
+        "javax.management.AttributeList",
+        "javax.management.AttributeList",
+        "javax.management.AttributeList",
+        "javax.management.AttributeNotFoundException",
+        "javax.management.AttributeNotFoundException",
+        "javax.management.InstanceNotFoundException",
+        "javax.management.InstanceNotFoundException",
+        "javax.management.InstanceNotFoundException",
+        "javax.management.InstanceNotFoundException",
+        "javax.management.InstanceNotFoundException",
+        "javax.management.InstanceNotFoundException",
+        "javax.management.IntrospectionException",
+        "javax.management.InvalidAttributeValueException",
+        "javax.management.MBeanException",
+        "javax.management.MBeanException",
+        "javax.management.MBeanException",
+        "javax.management.MBeanInfo",
+        "javax.management.ObjectName",
+        "javax.management.ObjectName",
+        "javax.management.ObjectName",
+        "javax.management.ObjectName",
+        "javax.management.ObjectName",
+        "javax.management.ObjectName",
+        "javax.management.ObjectName",
+        "javax.management.ObjectName",
+        "javax.management.QueryExp",
+        "javax.management.ReflectionException",
+        "javax.management.ReflectionException",
+        "javax.management.ReflectionException",
+        "javax.management.ReflectionException",
+        "javax.management.ReflectionException",
+        "javax.management.ReflectionException",
+        "javax.management.j2ee.ListenerRegistration"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.ManagementHome",
+      "references": [
+        "javax.ejb.CreateException",
+        "javax.ejb.EJBHome",
+        "javax.management.j2ee.Management"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.BoundaryStatistic",
+      "references": [
+        "javax.management.j2ee.statistics.Statistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.BoundedRangeStatistic",
+      "references": [
+        "javax.management.j2ee.statistics.BoundaryStatistic",
+        "javax.management.j2ee.statistics.RangeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.CountStatistic",
+      "references": [
+        "javax.management.j2ee.statistics.Statistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.EJBStats",
+      "references": [
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.Stats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.EntityBeanStats",
+      "references": [
+        "javax.management.j2ee.statistics.EJBStats",
+        "javax.management.j2ee.statistics.RangeStatistic",
+        "javax.management.j2ee.statistics.RangeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JCAConnectionPoolStats",
+      "references": [
+        "javax.management.j2ee.statistics.BoundedRangeStatistic",
+        "javax.management.j2ee.statistics.BoundedRangeStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.JCAConnectionStats",
+        "javax.management.j2ee.statistics.RangeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JCAConnectionStats",
+      "references": [
+        "javax.management.j2ee.statistics.Stats",
+        "javax.management.j2ee.statistics.TimeStatistic",
+        "javax.management.j2ee.statistics.TimeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JCAStats",
+      "references": [
+        "javax.management.j2ee.statistics.JCAConnectionPoolStats",
+        "javax.management.j2ee.statistics.JCAConnectionStats",
+        "javax.management.j2ee.statistics.Stats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JDBCConnectionPoolStats",
+      "references": [
+        "javax.management.j2ee.statistics.BoundedRangeStatistic",
+        "javax.management.j2ee.statistics.BoundedRangeStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.JDBCConnectionStats",
+        "javax.management.j2ee.statistics.RangeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JDBCConnectionStats",
+      "references": [
+        "javax.management.j2ee.statistics.Stats",
+        "javax.management.j2ee.statistics.TimeStatistic",
+        "javax.management.j2ee.statistics.TimeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JDBCStats",
+      "references": [
+        "javax.management.j2ee.statistics.JDBCConnectionPoolStats",
+        "javax.management.j2ee.statistics.JDBCConnectionStats",
+        "javax.management.j2ee.statistics.Stats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JMSConnectionStats",
+      "references": [
+        "javax.management.j2ee.statistics.JMSSessionStats",
+        "javax.management.j2ee.statistics.Stats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JMSConsumerStats",
+      "references": [
+        "javax.management.j2ee.statistics.JMSEndpointStats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JMSEndpointStats",
+      "references": [
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.Stats",
+        "javax.management.j2ee.statistics.TimeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JMSProducerStats",
+      "references": [
+        "javax.management.j2ee.statistics.JMSEndpointStats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JMSSessionStats",
+      "references": [
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.JMSConsumerStats",
+        "javax.management.j2ee.statistics.JMSProducerStats",
+        "javax.management.j2ee.statistics.Stats",
+        "javax.management.j2ee.statistics.TimeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JMSStats",
+      "references": [
+        "javax.management.j2ee.statistics.JMSConnectionStats",
+        "javax.management.j2ee.statistics.Stats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JTAStats",
+      "references": [
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.Stats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JVMStats",
+      "references": [
+        "javax.management.j2ee.statistics.BoundedRangeStatistic",
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.Stats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.JavaMailStats",
+      "references": [
+        "javax.management.j2ee.statistics.CountStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.MessageDrivenBeanStats",
+      "references": [
+        "javax.management.j2ee.statistics.CountStatistic",
+        "javax.management.j2ee.statistics.EJBStats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.RangeStatistic",
+      "references": [
+        "javax.management.j2ee.statistics.Statistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.ServletStats",
+      "references": [
+        "javax.management.j2ee.statistics.Stats",
+        "javax.management.j2ee.statistics.TimeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.SessionBeanStats",
+      "references": [
+        "javax.management.j2ee.statistics.EJBStats",
+        "javax.management.j2ee.statistics.RangeStatistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.StatefulSessionBeanStats",
+      "references": [
+        "javax.management.j2ee.statistics.RangeStatistic",
+        "javax.management.j2ee.statistics.SessionBeanStats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.StatelessSessionBeanStats",
+      "references": [
+        "javax.management.j2ee.statistics.SessionBeanStats"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.Statistic",
+      "references": []
+    },
+    {
+      "name": "javax.management.j2ee.statistics.Stats",
+      "references": [
+        "javax.management.j2ee.statistics.Statistic",
+        "javax.management.j2ee.statistics.Statistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.TimeStatistic",
+      "references": [
+        "javax.management.j2ee.statistics.Statistic"
+      ]
+    },
+    {
+      "name": "javax.management.j2ee.statistics.URLStats",
+      "references": [
+        "javax.management.j2ee.statistics.Stats"
+      ]
+    }
+  ]
+}

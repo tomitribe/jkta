@@ -1,0 +1,15 @@
+{
+  "name": "javax.decorator",
+  "classes": [
+    {
+      "name": "javax.decorator.Decorator",
+      "references": [
+        "javax.enterprise.inject.Stereotype"
+      ]
+    },
+    {
+      "name": "javax.decorator.Delegate",
+      "references": []
+    }
+  ]
+}
