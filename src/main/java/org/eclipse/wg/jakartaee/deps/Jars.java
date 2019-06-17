@@ -29,7 +29,11 @@ public class Jars {
         JsonbBuilder.create().toJson(jar, IO.write(new File(dest, jar.getName() + ".json")));
     }
 
-    public static Jar fromJson(final File file) throws FileNotFoundException {
-        return JsonbBuilder.create().fromJson(IO.read(file), Jar.class);
+    public static Jar fromJson(final File file)  {
+        try {
+            return JsonbBuilder.create().fromJson(IO.read(file), Jar.class);
+        } catch (FileNotFoundException e) {
+            throw new IllegalStateException(e);
+        }
     }
 }

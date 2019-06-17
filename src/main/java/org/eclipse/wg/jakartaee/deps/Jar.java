@@ -87,4 +87,21 @@ public class Jar {
                 ", classes=" + classes.size() +
                 '}';
     }
+
+    @Override
+    public boolean equals(final Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        final Jar jar = (Jar) o;
+
+        if (!name.equals(jar.name)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
 }
