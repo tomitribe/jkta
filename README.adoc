@@ -1,59 +1,44 @@
+#  Jakarta EE Source Code and Bytecode Analysis
 
+There are actually two different unrelated side projects in this repo.  Excuse the
+code and disorganization as the goal was to get one-time answers, not to build
+ something that lasted forever.
 
+## Renaming javax classes to jakarta
 
+Everything under `org.eclipse.wg.jakartaee.deps` is attempting to help answer questions about the impact
+of renaming `javax` packages to `jakarta`
 
-[source,properties]
-----
-archived: false
-branches: {README-update=Branch:README-update in https://api.github.com/repos/ec
-class: class org.kohsuke.github.GHRepository
-cloneTraffic: org.kohsuke.github.GHRepositoryCloneTraffic@d6b532f
-collaboratorNames: dblevins, edbratt, ivargrimstad, keilw, bshannon, yaminikb, w
-collaborators: David Blevins, Ed Bratt, Ivar Grimstad, Werner Keil, Bill Shannon
-createdAt: 2018-12-19T17:50:42Z
-defaultBranch: master
-deployKeys: RuntimeException org.kohsuke.github.GHFileNotFoundException: {"messa
-description: The Jakarta EE Platform project produces the Jakarta EE platform sp
-fork: false
-forks: 10
-fullName: eclipse-ee4j/jakartaee-platform
-gitTransportUrl: git://github.com/eclipse-ee4j/jakartaee-platform.git
-homepage: https://projects.eclipse.org/projects/ee4j.jakartaee-platform
-hooks: RuntimeException org.kohsuke.github.GHFileNotFoundException: {"message":"
-htmlUrl: https://github.com/eclipse-ee4j/jakartaee-platform
-httpTransportUrl: https://github.com/eclipse-ee4j/jakartaee-platform.git
-id: 162472013
-language:
-latestRelease:
-license: Eclipse Public License 2.0
-licenseContent: org.kohsuke.github.GHContentWithLicense@2bdab835
-masterBranch: master
-milestones: {}
-mirrorUrl:
-name: jakartaee-platform
-networkCount: 10
-openIssueCount: 15
-owner: Eclipse EE4J
-ownerName: eclipse-ee4j
-parent:
-postCommitHooks: GHException Failed to retrieve post-commit hooks
-private: false
-pushedAt: Thu May 30 01:23:35 PDT 2019
-readme: org.kohsuke.github.GHContent@2f15a964
-refs: [Lorg.kohsuke.github.GHRef;@da09250
-releases:
-responseHeaderFields: {null=[HTTP/1.1 200 OK], X-Accepted-OAuth-Scopes=[repo], S
-size: 39
-source:
-sshUrl: git@github.com:eclipse-ee4j/jakartaee-platform.git
-stargazersCount: 22
-subscribersCount: 28
-subscription: org.kohsuke.github.GHSubscription@7767bd4e
-svnUrl: https://github.com/eclipse-ee4j/jakartaee-platform
-teams: RuntimeException org.kohsuke.github.GHFileNotFoundException: {"message":"
-updatedAt: Thu May 23 14:13:59 PDT 2019
-url: https://api.github.com/repos/eclipse-ee4j/jakartaee-platform
-viewTraffic: org.kohsuke.github.GHRepositoryViewTraffic@16f15ae9
-watchers: 22
-----
+This code uses Maven Central and Bytecode Analysis.
+
+- walk the `jakarta` groupId in Maven Central
+- download each jar and cache it locally
+- extract each jar into a temp directory
+- parse the bytecode code via ASM
+- serialize a json representation of the ASM findings (see `src/main/resources/deps/raw`)
+- properly split each class out by logical package (see `src/main/resources/deps/split`)
+- analyze dependencies between each package
+
+## Moving API repos to a dedicated `jakartaee` github org
+
+There was a recent conversation in the Working Group on potentially moving specification repos from `eclipse-ee4j` into the https://github.com/jakartaee org so that specifications were separate from implementations.
+
+Everything under `org.eclipse.wg.jakartaee.repos` is attempting to help answer questions about the impact
+of that split by analyzing all 107 `eclipse-ee4j` repos.
+
+This code uses Github API and Source Code Analysis
+
+- walk the eclipse-ee4j org in Github via the Github API
+- clone each repo via jgit
+- parse the source code via JavaParser
+- look for `javax` source code
+- analyze that code for non-javax imports such as com.sun.*
+
+Analysis results of all 107 repos can be found here:
+
+ - https://docs.google.com/spreadsheets/d/1uoCebbw2ucpFO389VwTIEd6cqwBXhgE3Cq2fhS6g6ps/edit?usp=sharing
+
+A preview of the proposed move is here:
+
+ - https://github.com/jakarta-ee
 
