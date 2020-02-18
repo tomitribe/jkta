@@ -36,12 +36,12 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Transitive2Json {
+public class TransitiveJson {
 
     private final List<Jar> apis;
     private final Map<String, Jar> classes = new HashMap<>();
 
-    public Transitive2Json() throws FileNotFoundException {
+    public TransitiveJson() throws FileNotFoundException {
         apis = Stream.of(Src.main().resources().deps().split().dir().listFiles())
                 .filter(file1 -> file1.getName().endsWith(".json"))
                 .map(Jars::fromJson)
@@ -57,7 +57,7 @@ public class Transitive2Json {
     }
 
     public static void main(String[] args) throws Exception {
-        new Transitive2Json().main();
+        new TransitiveJson().main();
     }
 
     private void main() throws Exception {
@@ -155,7 +155,7 @@ public class Transitive2Json {
             affected.remove(analysis.api);
             System.out.printf("%s.references.addAll(Arrays.asList(%n%s%n));%n",
                     enumName(analysis.api),
-                    Join.join(",\n", Transitive2Json::enumName, affected)
+                    Join.join(",\n", TransitiveJson::enumName, affected)
             );
         }
 
