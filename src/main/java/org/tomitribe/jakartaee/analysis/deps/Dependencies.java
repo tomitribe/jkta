@@ -23,7 +23,7 @@ public class Dependencies {
         }
     }
 
-    private static void file(final File classFile, final DependencyVisitor dependencyVisitor) {
+    public static void file(final File classFile, final DependencyVisitor dependencyVisitor) {
         try {
             final InputStream in = IO.read(classFile);
             try {

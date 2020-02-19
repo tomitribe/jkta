@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Implementation-Title: ActiveMQ :: Pool
+Implementation-Version: 5.12.4-SNAPSHOT
+Archiver-Version: Plexus Archiver
+Built-By: dblevins
+Specification-Vendor: The Apache Software Foundation
+Specification-Title: ActiveMQ :: Pool
+Implementation-Vendor-Id: org.apache.activemq
+Created-By: Apache Maven 3.6.2
+Build-Jdk: 1.8.0_242
+Specification-Version: 5.12.4-SNAPSHOT
+Implementation-Vendor: The Apache Software Foundation
+

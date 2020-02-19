@@ -72,6 +72,10 @@ public class DependencyVisitor extends EmptyVisitor {
         this.jar = new Jar("anonymous");
     }
 
+    public Jar getJar() {
+        return jar;
+    }
+
     public DependencyVisitor(final Jar jar) {
         this.jar = jar;
     }
