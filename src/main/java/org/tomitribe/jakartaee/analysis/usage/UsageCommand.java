@@ -22,17 +22,35 @@ import org.tomitribe.crest.api.Option;
 import org.tomitribe.crest.api.PrintOutput;
 import org.tomitribe.crest.val.Exists;
 import org.tomitribe.crest.val.Readable;
+import org.tomitribe.util.Join;
 import org.tomitribe.util.PrintString;
 
 import java.io.File;
 import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
 @Command("usage")
 public class UsageCommand {
+
+    @Command("tsv-columns")
+    public String tsvColumns() throws IOException, NoSuchAlgorithmException {
+        final ArrayList<String> columns = new ArrayList<>();
+        columns.add("SHA-1");
+        columns.add("Date stamp");
+        columns.add("name");
+        columns.add("javax uses total");
+        columns.add("jakarta uses total");
+        Stream.of(Package.values())
+                .map(Package::getName)
+                .forEach(columns::add);
+
+        return Join.join("\t", columns);
+    }
 
     @Command
     public String jar(@Option("format") @Default("tsv") final Format format,
@@ -61,18 +79,23 @@ public class UsageCommand {
         switch (format) {
             case tsv:
                 return out -> {
-                    final Usage<Jar> total = usageStream.peek(jarUsage -> out.println(JarUsage.toTsv(jarUsage, dir.dir())))
+                    final AtomicInteger scanned = new AtomicInteger();
+                    final AtomicInteger affected = new AtomicInteger();
+                    final Usage<Jar> total = usageStream
+                            .peek(jarUsage -> scanned.incrementAndGet())
+                            .peek(jarUsage -> {
+                                if (jarUsage.getJavax() > 0) affected.incrementAndGet();
+                            })
+                            .peek(jarUsage -> out.println(JarUsage.toTsv(jarUsage, dir.dir())))
                             .reduce(Usage::add)
                             .orElse(null);
+
                     if (total == null) {
                         out.println("No jars found");
-                    } else {
-                        out.print("Total ");
-                        out.println(total.toTsv());
-                        out.println();
-                        out.println(toPlain(total));
-
+                        return;
                     }
+
+                    out.println(toTotalTsv(scanned.get(), affected.get(), total));
                 };
             case plain:
                 return out -> {
@@ -114,7 +137,17 @@ public class UsageCommand {
         return out.toString();
     }
 
+    public static String toTotalTsv(final double scanned, final double affected, final Usage total) {
+        final int percent = (int) ((affected / scanned) * 100);
+        final String t = "\t";
+        return "0000000000000000000000000000000000000000" + t +
+                System.currentTimeMillis() + t +
+                String.format("total affected %s%% (%s of %s scanned)", percent, (int) affected, (int) scanned) + t +
+                total.toTsv();
+    }
 
+    //c9f864572dbda9eda2f588df9c71915a2ae04aac
+//
     enum Format {
         tsv,
         json,
