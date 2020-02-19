@@ -23,17 +23,21 @@ public class Dependencies {
         }
     }
 
-    private static void file(final File file, final DependencyVisitor dependencyVisitor) {
+    private static void file(final File classFile, final DependencyVisitor dependencyVisitor) {
         try {
-            final InputStream in = IO.read(file);
+            final InputStream in = IO.read(classFile);
             try {
-                final ClassReader classReader = new ClassReader(in);
-                classReader.accept(dependencyVisitor, ClassWriter.COMPUTE_MAXS);
+                classStream(dependencyVisitor, in);
             } finally {
                 IO.close(in);
             }
         } catch (final IOException e) {
             throw new IllegalStateException(e);
         }
+    }
+
+    public static void classStream(final DependencyVisitor dependencyVisitor, final InputStream in) throws IOException {
+        final ClassReader classReader = new ClassReader(in);
+        classReader.accept(dependencyVisitor, ClassWriter.COMPUTE_MAXS);
     }
 }

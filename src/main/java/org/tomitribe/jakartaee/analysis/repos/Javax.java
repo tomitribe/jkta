@@ -18,6 +18,9 @@
  */
 package org.tomitribe.jakartaee.analysis.repos;
 
+import org.tomitribe.crest.val.Exists;
+import org.tomitribe.crest.val.Readable;
+import org.tomitribe.jakartaee.analysis.usage.Usage;
 import org.tomitribe.jakartaee.analysis.util.Formatter;
 import org.tomitribe.crest.api.Command;
 import org.tomitribe.crest.api.Default;
@@ -86,26 +89,6 @@ public class Javax {
                     .forEach(out::println);
         };
     }
-
-    public static class Repo {
-        private final String name;
-        private final List<File> javaxFiles;
-
-        public Repo(final String name, final List<File> javaxFiles) {
-            this.name = name;
-            this.javaxFiles = javaxFiles;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public List<File> getJavaxFiles() {
-            return javaxFiles;
-        }
-
-    }
-
 
     public static List<File> getJavaxFiles(final File clone) {
         try {
