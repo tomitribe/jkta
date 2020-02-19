@@ -41,7 +41,7 @@ public class Usage<Context> {
         this.context = context;
     }
 
-    public void count(final String reference) {
+    public void visit(final String reference) {
         final Package match = match(reference);
         if (match == null) return;
 

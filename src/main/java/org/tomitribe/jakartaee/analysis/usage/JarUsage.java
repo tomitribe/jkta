@@ -16,6 +16,7 @@
  */
 package org.tomitribe.jakartaee.analysis.usage;
 
+import org.tomitribe.jakartaee.analysis.deps.Clazz;
 import org.tomitribe.jakartaee.analysis.deps.Dependencies;
 import org.tomitribe.jakartaee.analysis.deps.DependencyVisitor;
 import org.tomitribe.util.Hex;
@@ -27,6 +28,7 @@ import java.io.OutputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Collection;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -58,7 +60,10 @@ public class JarUsage {
 
         final Usage<Jar> usage = new Usage(new Jar(jar, hash, jar.lastModified()));
 
-        analysis.getPackages().forEach(usage::count);
+        analysis.getJar().getClasses().stream()
+                .map(Clazz::getReferences)
+                .flatMap(Collection::stream)
+                .forEach(usage::visit);
 
         return usage;
     }
@@ -81,7 +86,7 @@ public class JarUsage {
         if (strings.length != 4) {
             throw new IllegalStateException("Incomplete TSV format: " + line);
         }
-        
+
         final String hash = strings[0];
         final long lastModified = new Long(strings[1]);
         final File file = new File(strings[2]);
