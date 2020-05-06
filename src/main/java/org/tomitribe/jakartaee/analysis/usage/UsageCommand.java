@@ -22,6 +22,7 @@ import org.tomitribe.crest.api.Option;
 import org.tomitribe.crest.api.PrintOutput;
 import org.tomitribe.crest.val.Exists;
 import org.tomitribe.crest.val.Readable;
+import org.tomitribe.jakartaee.analysis.util.Predicates;
 import org.tomitribe.util.Join;
 import org.tomitribe.util.PrintString;
 
@@ -32,13 +33,15 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.function.Predicate;
+import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 @Command("usage")
 public class UsageCommand {
 
     @Command("tsv-columns")
-    public String tsvColumns() throws IOException, NoSuchAlgorithmException {
+    public String tsvColumns() {
         final ArrayList<String> columns = new ArrayList<>();
         columns.add("SHA-1");
         columns.add("Date stamp");
@@ -70,8 +73,12 @@ public class UsageCommand {
 
     @Command
     public PrintOutput dir(@Option("format") @Default("tsv") final Format format,
+                           @Option("include") Pattern include,
+                           @Option("exclude") Pattern exclude,
                            final Dir dir) {
+        final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
         final Stream<Usage<Jar>> usageStream = dir.searcJars()
+                .filter(fileFilter)
                 .map(this::jarUsage)
                 .filter(Objects::nonNull);
 
@@ -79,6 +86,7 @@ public class UsageCommand {
         switch (format) {
             case tsv:
                 return out -> {
+                    out.println(tsvColumns());
                     final AtomicInteger scanned = new AtomicInteger();
                     final AtomicInteger affected = new AtomicInteger();
                     final Usage<Jar> total = usageStream

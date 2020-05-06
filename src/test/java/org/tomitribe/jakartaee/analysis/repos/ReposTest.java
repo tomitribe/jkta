@@ -20,9 +20,11 @@ package org.tomitribe.jakartaee.analysis.repos;
 
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.tomitribe.crest.Main;
 
+@Ignore
 public class ReposTest extends Assert {
 
     @Test
