@@ -14,25 +14,22 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.jakartaee.analysis;
+package org.tomitribe.jakartaee.analysis.s3;
 
-import org.tomitribe.jakartaee.analysis.repos.Javax;
-import org.tomitribe.jakartaee.analysis.repos.Repos;
-import org.tomitribe.jakartaee.analysis.s3.ScanCommand;
-import org.tomitribe.jakartaee.analysis.usage.UsageCommand;
+import com.amazonaws.services.s3.AmazonS3;
 
-import java.util.Arrays;
-import java.util.Iterator;
+import java.io.OutputStream;
 
-public class Loader implements org.tomitribe.crest.api.Loader {
+public class Bucket {
+    private final AmazonS3 client;
+    private final String name;
 
-    @Override
-    public Iterator<Class<?>> iterator() {
-        return Arrays.asList(
-                Javax.class,
-                Repos.class,
-                ScanCommand.class,
-                UsageCommand.class
-        ).iterator();
+    public Bucket(final AmazonS3 client, final String name) {
+        this.client = client;
+        this.name = name;
+    }
+
+    public OutputStream upload(final String key) {
+        return new S3OutputStream(client, name, key);
     }
 }

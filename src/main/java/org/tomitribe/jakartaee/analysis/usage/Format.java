@@ -14,25 +14,12 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.jakartaee.analysis;
+package org.tomitribe.jakartaee.analysis.usage;
 
-import org.tomitribe.jakartaee.analysis.repos.Javax;
-import org.tomitribe.jakartaee.analysis.repos.Repos;
-import org.tomitribe.jakartaee.analysis.s3.ScanCommand;
-import org.tomitribe.jakartaee.analysis.usage.UsageCommand;
-
-import java.util.Arrays;
-import java.util.Iterator;
-
-public class Loader implements org.tomitribe.crest.api.Loader {
-
-    @Override
-    public Iterator<Class<?>> iterator() {
-        return Arrays.asList(
-                Javax.class,
-                Repos.class,
-                ScanCommand.class,
-                UsageCommand.class
-        ).iterator();
-    }
+//c9f864572dbda9eda2f588df9c71915a2ae04aac
+//
+public enum Format {
+    tsv,
+    json,
+    plain
 }

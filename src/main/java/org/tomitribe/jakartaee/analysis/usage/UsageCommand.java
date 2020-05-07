@@ -154,11 +154,4 @@ public class UsageCommand {
                 total.toTsv();
     }
 
-    //c9f864572dbda9eda2f588df9c71915a2ae04aac
-//
-    enum Format {
-        tsv,
-        json,
-        plain
-    }
 }
