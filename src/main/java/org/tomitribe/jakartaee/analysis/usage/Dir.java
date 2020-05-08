@@ -8,18 +8,6 @@ import java.util.stream.Stream;
 
 public interface Dir extends org.tomitribe.util.dir.Dir {
 
-    static String childPath(final File parent, final File file) {
-        final String parentPath = parent.getAbsolutePath();
-        final String childPath = file.getAbsolutePath();
-
-        if (childPath.startsWith(parentPath)) {
-            final int base = parentPath.length();
-            return childPath.substring(base + 1);
-        } else {
-            return childPath;
-        }
-    }
-
     /**
      * Recursively find all *.java files contained anywhere in this Git repository
      *
