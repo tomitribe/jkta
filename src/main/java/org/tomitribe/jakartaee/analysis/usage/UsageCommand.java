@@ -75,6 +75,7 @@ public class UsageCommand {
     public PrintOutput dir(@Option("format") @Default("tsv") final Format format,
                            @Option("include") Pattern include,
                            @Option("exclude") Pattern exclude,
+                           @Option("repository") @Default("${user.dir}") Dir root,
                            final Dir dir) {
         final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
         final Stream<Usage<Jar>> usageStream = dir.searcJars()
@@ -94,7 +95,7 @@ public class UsageCommand {
                             .peek(jarUsage -> {
                                 if (jarUsage.getJavax() > 0) affected.incrementAndGet();
                             })
-                            .peek(jarUsage -> out.println(JarUsage.toTsv(jarUsage, dir.dir())))
+                            .peek(jarUsage -> out.println(JarUsage.toTsv(jarUsage, root.dir())))
                             .reduce(Usage::add)
                             .orElse(null);
 

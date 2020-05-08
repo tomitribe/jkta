@@ -18,9 +18,11 @@ package org.tomitribe.jakartaee.analysis.s3;
 
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.tomitribe.crest.api.Command;
+import org.tomitribe.crest.api.Default;
 import org.tomitribe.crest.api.Option;
 import org.tomitribe.crest.api.PrintOutput;
 import org.tomitribe.crest.api.Required;
@@ -28,9 +30,12 @@ import org.tomitribe.jakartaee.analysis.s3.Bucket;
 import org.tomitribe.jakartaee.analysis.usage.Dir;
 import org.tomitribe.jakartaee.analysis.usage.Format;
 import org.tomitribe.jakartaee.analysis.usage.UsageCommand;
+import org.tomitribe.util.Join;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPOutputStream;
 
@@ -41,6 +46,7 @@ public class ScanCommand {
      * the specified Amazon S3 bucket.  Contents will be a gzip compressed
      * TSV file detailing which javax and jakarta packages are used.
      *
+     * 
      * 
      * @param include
      * @param exclude
@@ -53,11 +59,12 @@ public class ScanCommand {
     public void scanAndStream(@Option("include") Pattern include,
                               @Option("exclude") Pattern exclude,
                               @Option("bucket") @Required final String bucket,
-                              @Option("region") @Required final String region,
+                              @Option("region") @Required final Regions region,
+                              @Option("repository") @Default("${user.dir}") Dir root,
                               final Dir dir
     ) throws Exception {
         final UsageCommand usage = new UsageCommand();
-        final PrintOutput results = usage.dir(Format.tsv, include, exclude, dir);
+        final PrintOutput results = usage.dir(Format.tsv, include, exclude, root, dir);
 
         final String accessKey = System.getenv("JKTA_ACCESS_KEY");
         final String secretKey = System.getenv("JKTA_SECRET_KEY");
@@ -67,8 +74,12 @@ public class ScanCommand {
                 .withRegion(region)
                 .build();
 
+        final String date = new SimpleDateFormat("yyyy_MM_dd_HH_mm").format(new Date());
+
+        final String keyName = String.format("scan-%s-%s.tsv.gz", date, Id.generate().get());
+
         final Bucket javax2jakarta = new Bucket(client, bucket);
-        final OutputStream entry = javax2jakarta.upload("foo.tsv.gz"); // TODO format the name
+        final OutputStream entry = javax2jakarta.upload(keyName);
         final GZIPOutputStream gzip = new GZIPOutputStream(entry);
         try (final PrintStream out = new PrintStream(gzip)) {
             results.write(out);
