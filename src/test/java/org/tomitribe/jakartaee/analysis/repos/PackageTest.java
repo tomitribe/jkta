@@ -19,7 +19,8 @@ package org.tomitribe.jakartaee.analysis.repos;
 import org.junit.Test;
 import org.tomitribe.jakartaee.analysis.usage.Package;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 public class PackageTest {
 
@@ -28,5 +29,11 @@ public class PackageTest {
         assertTrue(Package.JAVAX_ENTERPRISE.matches("javax.enterprise.Foo"));
         assertTrue(Package.JAVAX_ENTERPRISE.matches("javax.enterprise.bar.Foo"));
         assertFalse(Package.JAVAX_ENTERPRISE.matches("javax.enterprise.deploy.Foo"));
+    }
+
+    @Test
+    public void transaction() {
+        assertTrue(Package.JAVAX_TRANSACTION.matches("javax.transaction.Transaction"));
+        assertFalse(Package.JAVAX_TRANSACTION.matches("javax.transaction.xa.XAResource"));
     }
 }
