@@ -43,7 +43,7 @@ public enum Package {
     JAVAX_SERVLET("javax.servlet", "javax.servlet.jsp"),
     JAVAX_SERVLET_JSP("javax.servlet.jsp", "javax.servlet.jsp.jstl"),
     JAVAX_SERVLET_JSP_JSTL("javax.servlet.jsp.jstl"),
-    JAVAX_TRANSACTION("javax.transaction"),
+    JAVAX_TRANSACTION("javax.transaction", "javax.transaction.xa"),
     JAVAX_VALIDATION("javax.validation"),
     JAVAX_WEBSOCKET("javax.websocket"),
     JAVAX_WS_RS("javax.ws.rs"),
