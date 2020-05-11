@@ -28,6 +28,9 @@ import java.util.Map;
 
 public class Strings {
 
+    private Strings() {
+    }
+
     public static String toString(final Map.Entry<String, Object> entry) {
         final String key = entry.getKey();
         try {

@@ -66,6 +66,7 @@ public class UsageCommand {
                 return JarUsage.toTsv(usage, new File(""));
             case plain:
                 return toPlain(usage);
+            default: { /* ignored */}
         }
 
         return "Unsupported format: " + format;
@@ -117,6 +118,7 @@ public class UsageCommand {
                         out.println(toPlain(total));
                     }
                 };
+            default: { /* ignored */}
         }
 
         return printStream -> printStream.println("Unsupported format: " + format);

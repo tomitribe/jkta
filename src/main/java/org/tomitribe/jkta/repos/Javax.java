@@ -38,7 +38,8 @@ import java.util.stream.Stream;
 @Command
 public class Javax {
 
-    private static final String FOMRAT = "{status}\t{name}\t[{packageList}]\tjavax({classesCount} classes, {packagesCount} packages)\t\t{nonstandardImportsCount} nonstandardImports";
+    private static final String FOMRAT = "{status}\t{name}\t[{packageList}]\tjavax({classesCount} " +
+            "classes, {packagesCount} packages)\t\t{nonstandardImportsCount} nonstandardImports";
 
     //    Project{name=javamail, javax=[javax.activation, javax.mail], classes=120, packages=6, nonportable=48}
     @Command

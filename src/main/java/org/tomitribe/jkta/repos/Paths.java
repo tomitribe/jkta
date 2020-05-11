@@ -26,6 +26,9 @@ import java.util.stream.Collectors;
 
 public class Paths {
 
+    private Paths() {
+    }
+
     public static String toClassName(final String s) {
         return s.replaceAll(".*/(javax.*).java", "$1")
                 .replace('/', '.');

@@ -34,6 +34,9 @@ import java.util.zip.ZipInputStream;
 
 public class JarUsage {
 
+    private JarUsage() {
+    }
+
     public static Usage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
         final DependencyVisitor analysis = new DependencyVisitor();
 

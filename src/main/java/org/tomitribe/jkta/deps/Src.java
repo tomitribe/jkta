@@ -24,6 +24,9 @@ import java.io.File;
 
 public class Src {
 
+    private Src() {
+    }
+
     public static Main main() {
         final File targetClasses = JarLocation.jarLocation(Src.class);
         final File projectDir = targetClasses.getParentFile().getParentFile();

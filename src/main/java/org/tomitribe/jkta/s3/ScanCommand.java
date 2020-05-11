@@ -76,13 +76,13 @@ public class ScanCommand {
      * to avoid collisions when doing parallel processing.  For example a scan at
      * May 7, 2020 4:11 PM:
      *
-     *     	scan-2020_05_07_16_11-a6f0usy.tsv.gz
+     *      scan-2020_05_07_16_11-a6f0usy.tsv.gz
      *
      * The suffix on the end is a Base32 encoded 32-bit hash of random data.  For
      * example a scan kicked off in parallel also at May 7, 2020 4:11 PM may look
      * as follows:
      *
-     *     	scan-2020_05_07_16_11-reqsd6a.tsv.gz
+     *      scan-2020_05_07_16_11-reqsd6a.tsv.gz
      *
      * The S3 entry name is printed to the console output at the start of the scan.
      *
@@ -130,7 +130,7 @@ public class ScanCommand {
 
         if (accessKey == null) throw new AccessKeyNotSpecified();
         if (secretKey == null) throw new SecretKeyNotSpecified();
-        
+
         final AmazonS3 client = AmazonS3ClientBuilder.standard()
                 .withCredentials(new AWSStaticCredentialsProvider(new BasicAWSCredentials(accessKey, secretKey)))
                 .withRegion(region)

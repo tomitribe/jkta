@@ -1,4 +1,0 @@
-javax.xml.rpc
-javax.xml.registry
-javax.management.j2ee
-javax.enterprise.deploy

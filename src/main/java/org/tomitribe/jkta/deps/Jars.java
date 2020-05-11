@@ -24,6 +24,8 @@ import java.io.FileNotFoundException;
 
 public class Jars {
 
+    private Jars() {
+    }
 
     public static void toJson(final File dest, final Jar jar) throws FileNotFoundException {
         JsonbBuilder.create().toJson(jar, IO.write(new File(dest, jar.getName() + ".json")));

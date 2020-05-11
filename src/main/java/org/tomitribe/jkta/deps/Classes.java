@@ -22,6 +22,9 @@ import java.util.stream.Collectors;
 
 public class Classes {
 
+    private Classes() {
+    }
+
     public static boolean isJavax(final Clazz clazz) {
         return clazz.getName().startsWith("javax.");
     }

@@ -67,39 +67,39 @@ public class DependsDiagram {
 
         out.printf("@startuml\n");
         for (Jar api : apis) {
-        	long trouve = simple.stream()
-        		.map(analysis -> analysis.api)
-        		.filter(a -> a.getName().equals(api.getName()))
-				.count();
-        	if (trouve == 1) {
-        		out.printf("[%s] #SeaGreen\n", api.getName());
-        	} else {
-        		out.printf("[%s]\n", api.getName());
-        	}
-			out.printf("note top : %d classes. \n", api.getClasses().size(), api.getName());
-		}
+            long trouve = simple.stream()
+                    .map(analysis -> analysis.api)
+                    .filter(a -> a.getName().equals(api.getName()))
+                    .count();
+            if (trouve == 1) {
+                out.printf("[%s] #SeaGreen\n", api.getName());
+            } else {
+                out.printf("[%s]\n", api.getName());
+            }
+            out.printf("note top : %d classes. \n", api.getClasses().size(), api.getName());
+        }
 
         for (Jar api : apis) {
-        	// Construct List for remove duplicate entry
+            // Construct List for remove duplicate entry
             Set<String> dependsComponentList = new HashSet<>();
             Set<String> dependsClassList = new HashSet<>();
-        	List<String> references = api.getReferences();
-        	for (String reference : references) {
-            	Jar dependJar = classes.get(reference);
-            	if (dependJar != null) {
-            		if (!dependJar.getName().equals(api.getName())) { // Exclude self
-            			dependsComponentList.add(dependJar.getName());
-            		}
-            	} else {
-            		dependsClassList.add(reference);
-            	}
-			}
-        	for (String depend : dependsComponentList) {
-        		out.printf("[%s] --> [%s] : use\n", api.getName(), depend);
-			}
-//        	for (String depend : dependsClassList) {
-//        		out.printf("[%s] --> %s : use\n", api.getName(), depend);
-//			}
+            List<String> references = api.getReferences();
+            for (String reference : references) {
+                Jar dependJar = classes.get(reference);
+                if (dependJar != null) {
+                    if (!dependJar.getName().equals(api.getName())) { // Exclude self
+                        dependsComponentList.add(dependJar.getName());
+                    }
+                } else {
+                    dependsClassList.add(reference);
+                }
+            }
+            for (String depend : dependsComponentList) {
+                out.printf("[%s] --> [%s] : use\n", api.getName(), depend);
+            }
+//            for (String depend : dependsClassList) {
+//                out.printf("[%s] --> %s : use\n", api.getName(), depend);
+//            }
         }
         out.println("legend top left");
         out.println("   Jakarta EE");
