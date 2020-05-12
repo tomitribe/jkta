@@ -57,6 +57,6 @@ public class Dependencies {
 
     public static void classStream(final DependencyVisitor dependencyVisitor, final InputStream in) throws IOException {
         final ClassReader classReader = new ClassReader(in);
-        classReader.accept(dependencyVisitor, ClassWriter.COMPUTE_MAXS);
+        classReader.accept(dependencyVisitor, 0);
     }
 }

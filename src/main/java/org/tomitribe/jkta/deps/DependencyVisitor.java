@@ -47,16 +47,20 @@ package org.tomitribe.jkta.deps;
 import org.apache.xbean.asm7.AnnotationVisitor;
 import org.apache.xbean.asm7.Attribute;
 import org.apache.xbean.asm7.FieldVisitor;
+import org.apache.xbean.asm7.Handle;
 import org.apache.xbean.asm7.Label;
 import org.apache.xbean.asm7.MethodVisitor;
 import org.apache.xbean.asm7.Opcodes;
 import org.apache.xbean.asm7.Type;
+import org.apache.xbean.asm7.TypePath;
 import org.apache.xbean.asm7.shade.commons.EmptyVisitor;
 import org.apache.xbean.asm7.signature.SignatureReader;
 import org.apache.xbean.asm7.signature.SignatureVisitor;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -174,7 +178,7 @@ public class DependencyVisitor extends EmptyVisitor {
         addMethodDesc(desc);
     }
 
-    public void visitLdcInsn(final Object cst) {
+    public void visitLdcInsn(Object cst) {
         if (cst instanceof Type) {
             addType((Type) cst);
         }
@@ -209,6 +213,12 @@ public class DependencyVisitor extends EmptyVisitor {
     }
 
     public void visitFrame(final int type, final int nLocal, final Object[] local, final int nStack, final Object[] stack) {
+        System.out.println();
+        for (final Object o : local) {
+            if (o instanceof String) {
+                addDesc((String) o);
+            }
+        }
     }
 
     public void visitInsn(final int opcode) {
@@ -291,13 +301,20 @@ public class DependencyVisitor extends EmptyVisitor {
         return name;
     }
 
+    final List<Throwable> additions = new ArrayList<>();
+
     private void addName(final String name) {
         if (name == null) {
             return;
         }
 
-        currentClazz.getReferences().add(name.replace('/', '.'));
-
+        final String className = name.replace('/', '.');
+        currentClazz.getReferences().add(className);
+        if (className.startsWith("javax.ejb")) {
+            final Throwable e = new RuntimeException(className).fillInStackTrace();
+            additions.add(e);
+            e.printStackTrace();
+        }
         final String p = getGroupKey(name);
         if (current.containsKey(p)) {
             current.put(p, current.get(p) + 1);
