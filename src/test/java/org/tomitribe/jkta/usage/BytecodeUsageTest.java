@@ -19,32 +19,29 @@ package org.tomitribe.jkta.usage;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.tomitribe.jkta.Asmifier;
-import org.tomitribe.jkta.Bytecode;
-import org.tomitribe.util.Archive;
 
 import javax.ejb.EJBException;
+import javax.ejb.EnterpriseBean;
 import javax.ejb.LockType;
 import javax.ejb.SessionBean;
 import javax.ejb.Singleton;
 import javax.persistence.Id;
 import javax.transaction.Transaction;
 import javax.ws.rs.GET;
-import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
-import java.io.File;
-import java.io.IOException;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
-import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class BytecodeUsageTest extends Assert {
+import static org.tomitribe.jkta.usage.Scan.usage;
 
+@Ignore
+public class BytecodeUsageTest extends Assert {
+    
     @Test
     public void testReturn() throws Exception {
 
@@ -70,7 +67,6 @@ public class BytecodeUsageTest extends Assert {
         assertEquals(1, usage.get(Package.JAVAX_EJB));
     }
 
-    @Ignore
     @Test
     public void testField() throws Exception {
 
@@ -408,18 +404,9 @@ public class BytecodeUsageTest extends Assert {
 
     @Singleton
     public static class AnnotatedClass {
-        
+
     }
 
-    private static Usage<Jar> usage(final Object o) throws IOException, NoSuchAlgorithmException {
-        return usage(o.getClass());
-    }
-
-    private static Usage<Jar> usage(final Class<?> aClass) throws IOException, NoSuchAlgorithmException {
-        final ClassLoader loader = aClass.getClassLoader();
-        System.out.println(Asmifier.asmify(Bytecode.readClassFile(loader, aClass)));
-        System.out.println();
-        final File jar = Archive.archive().add(aClass).toJar();
-        return JarUsage.of(jar);
+    public static class MyBean implements EnterpriseBean {
     }
 }

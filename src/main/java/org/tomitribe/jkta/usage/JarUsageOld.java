@@ -16,27 +16,30 @@
  */
 package org.tomitribe.jkta.usage;
 
-import org.objectweb.asm.ClassReader;
+import org.tomitribe.jkta.deps.Clazz;
+import org.tomitribe.jkta.deps.Dependencies;
+import org.tomitribe.jkta.deps.DependencyVisitor;
 import org.tomitribe.util.Hex;
 import org.tomitribe.util.IO;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.OutputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.Collection;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-public class JarUsage {
+public class JarUsageOld {
 
-    private JarUsage() {
+    private JarUsageOld() {
     }
 
     public static Usage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
-        final Usage usage = new Usage();
+//        final Usage usage = new Usage();
+        final DependencyVisitor analysis = new DependencyVisitor();
 
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
         final DigestInputStream digestIn = new DigestInputStream(IO.read(jar), md);
@@ -47,7 +50,7 @@ public class JarUsage {
             final String path = entry.getName();
 
             if (path.endsWith(".class")) {
-                scan(zipInputStream, usage);
+                Dependencies.classStream(analysis, zipInputStream);
             } else {
                 IO.copy(zipInputStream, ignore);
             }
@@ -58,6 +61,13 @@ public class JarUsage {
 
         final byte[] messageDigest = md.digest();
         final String hash = Hex.toString(messageDigest);
+
+        final Usage<Jar> usage = new Usage(new Jar(jar, hash, jar.lastModified()));
+
+        analysis.getJar().getClasses().stream()
+                .map(Clazz::getReferences)
+                .flatMap(Collection::stream)
+                .forEach(usage::visit);
 
         return usage;
     }
@@ -108,9 +118,5 @@ public class JarUsage {
         }
     };
 
-    private static void scan(final InputStream in, final Usage usage) throws IOException {
-        final ClassScanner classScanner = new ClassScanner(usage);
-        final ClassReader classReader = new ClassReader(in);
-        classReader.accept(classScanner, 0);
-    }
+
 }

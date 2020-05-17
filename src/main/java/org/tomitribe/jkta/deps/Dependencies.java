@@ -17,7 +17,6 @@
 package org.tomitribe.jkta.deps;
 
 import org.apache.xbean.asm7.ClassReader;
-import org.apache.xbean.asm7.ClassWriter;
 import org.tomitribe.util.IO;
 
 import java.io.File;
