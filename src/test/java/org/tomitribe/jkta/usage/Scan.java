@@ -16,8 +16,6 @@
  */
 package org.tomitribe.jkta.usage;
 
-import org.tomitribe.jkta.Asmifier;
-import org.tomitribe.jkta.Bytecode;
 import org.tomitribe.util.Archive;
 
 import java.io.File;
@@ -36,9 +34,9 @@ public class Scan {
 
     public static Usage<Jar> usage(final Class<?> aClass)  {
         try {
-            final ClassLoader loader = aClass.getClassLoader();
-            System.out.println(Asmifier.asmify(Bytecode.readClassFile(loader, aClass)));
-            System.out.println();
+//            final ClassLoader loader = aClass.getClassLoader();
+//            System.out.println(Asmifier.asmify(Bytecode.readClassFile(loader, aClass)));
+//            System.out.println();
             final File jar = Archive.archive().add(aClass).toJar();
             return JarUsage.of(jar);
         } catch (IOException | NoSuchAlgorithmException e) {
