@@ -16,19 +16,19 @@
  */
 package org.tomitribe.jkta.usage;
 
+import org.objectweb.asm.ConstantDynamic;
+import org.objectweb.asm.Handle;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.signature.SignatureReader;
 
 public class BytecodeUsage {
 
     private final Usage usage;
+    private final int api;
 
-    public BytecodeUsage() {
-        this(new Usage());
-    }
-
-    public BytecodeUsage(final Usage usage) {
+    public BytecodeUsage(final Usage usage, final int api) {
         this.usage = usage;
+        this.api = api;
     }
 
     public void addName(final String name) {
@@ -57,13 +57,13 @@ public class BytecodeUsage {
 
     public void addSignature(final String signature) {
         if (signature != null) {
-            new SignatureReader(signature).accept(new SignatureScanner(this));
+            new SignatureReader(signature).accept(new SignatureScanner(api, this));
         }
     }
 
     public void addTypeSignature(final String signature) {
         if (signature != null) {
-            new SignatureReader(signature).acceptType(new SignatureScanner(this));
+            new SignatureReader(signature).acceptType(new SignatureScanner(api, this));
         }
     }
 
@@ -75,15 +75,46 @@ public class BytecodeUsage {
         }
     }
 
+    public void addHandle(final Handle handle) {
+        addObjectType(handle.getOwner());
+        addMethodDesc(handle.getDesc());
+    }
+
+    public void addHandleArgs(final Object... args) {
+        for (final Object arg : args) {
+            if (arg instanceof Type) {
+                addType((Type) arg);
+            } else if (arg instanceof Handle) {
+                addHandle((Handle) arg);
+            }
+        }
+    }
+
+    public void addObjectType(final String type) {
+        addType(Type.getObjectType(type));
+    }
+    
     public void addType(final Type t) {
         switch (t.getSort()) {
             case Type.ARRAY:
                 addType(t.getElementType());
                 break;
             case Type.OBJECT:
-                addName(t.getClassName().replace('.', '/'));
+                addName(t.getClassName());
+                break;
+            case Type.METHOD:
+                addMethodDesc(t.getDescriptor());
                 break;
             default: { /* ignored */}
+        }
+    }
+
+    public void addConstantDynamic(final ConstantDynamic constantDynamic) {
+        addDesc(constantDynamic.getDescriptor());
+        addHandle(constantDynamic.getBootstrapMethod());
+
+        for (int i = 0; i < constantDynamic.getBootstrapMethodArgumentCount(); i++) {
+            addHandleArgs(constantDynamic.getBootstrapMethodArgument(i));
         }
     }
 }

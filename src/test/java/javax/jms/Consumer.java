@@ -1,4 +1,4 @@
-/*
+/**
  * Licensed to the Apache Software Foundation (ASF) under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
@@ -14,35 +14,13 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.jkta.usage;
+//
+// This source code implements specifications defined by the Java
+// Community Process. In order to remain compliant with the specification
+// DO NOT add / change / or delete method signatures!
+//
+package javax.jms;
 
-import org.objectweb.asm.signature.SignatureVisitor;
-
-public class SignatureScanner extends SignatureVisitor {
-    private final BytecodeUsage bytecodeUsage;
-
-    public SignatureScanner(final int api, final BytecodeUsage bytecodeUsage) {
-        super(api);
-        this.bytecodeUsage = bytecodeUsage;
-    }
-
-    @Override
-    public SignatureVisitor visitArrayType() {
-        return this;
-    }
-
-    @Override
-    public void visitClassType(final String name) {
-        bytecodeUsage.addName(name);
-    }
-
-    @Override
-    public void visitInnerClassType(final String name) {
-        bytecodeUsage.addName(name);
-    }
-
-    @Override
-    public SignatureVisitor visitTypeArgument(final char wildcard) {
-        return this;
-    }
+public interface Consumer<T> {
+    void accept(T t);
 }

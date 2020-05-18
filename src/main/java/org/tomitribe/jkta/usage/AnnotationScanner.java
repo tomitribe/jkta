@@ -16,33 +16,14 @@
  */
 package org.tomitribe.jkta.usage;
 
-import org.objectweb.asm.signature.SignatureVisitor;
+import org.objectweb.asm.AnnotationVisitor;
 
-public class SignatureScanner extends SignatureVisitor {
+public class AnnotationScanner extends AnnotationVisitor {
+
     private final BytecodeUsage bytecodeUsage;
 
-    public SignatureScanner(final int api, final BytecodeUsage bytecodeUsage) {
+    public AnnotationScanner(final int api, final BytecodeUsage bytecodeUsage) {
         super(api);
         this.bytecodeUsage = bytecodeUsage;
-    }
-
-    @Override
-    public SignatureVisitor visitArrayType() {
-        return this;
-    }
-
-    @Override
-    public void visitClassType(final String name) {
-        bytecodeUsage.addName(name);
-    }
-
-    @Override
-    public void visitInnerClassType(final String name) {
-        bytecodeUsage.addName(name);
-    }
-
-    @Override
-    public SignatureVisitor visitTypeArgument(final char wildcard) {
-        return this;
     }
 }

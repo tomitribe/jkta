@@ -60,7 +60,7 @@ public class ClassScannerTest {
     public void visit_SuperClass() {
         final Usage<Jar> usage = usage(HasSuper.class);
 
-        assertUsage(usage, Package.JAVAX_SERVLET);
+        assertUsage(usage, Package.JAVAX_SERVLET, Package.JAVAX_SERVLET);
 
     }
 
@@ -115,6 +115,7 @@ public class ClassScannerTest {
         assertUsage(usage,
                 Package.JAVAX_EJB,
                 Package.JAVAX_SERVLET,
+                Package.JAVAX_SERVLET,
                 Package.JAVAX_PERSISTENCE
         );
 
@@ -156,7 +157,7 @@ public class ClassScannerTest {
     @Test
     public void visitField() {
         final Usage<Jar> usage = usage(new Object() {
-            final SessionBean sb = null;
+             SessionBean sb;
         });
 
         assertUsage(usage, Package.JAVAX_EJB);
@@ -183,7 +184,7 @@ public class ClassScannerTest {
     @Test
     public void visitField_SignatureNoDuplicate() {
         final Usage<Jar> usage = usage(new Object() {
-            final Bean<SessionBean> bean = null;
+            Bean<SessionBean> bean;
         });
 
         assertUsage(usage, Package.JAVAX_EJB, Package.JAVAX_ENTERPRISE);

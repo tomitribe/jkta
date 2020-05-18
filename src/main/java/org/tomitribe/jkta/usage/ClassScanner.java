@@ -30,7 +30,7 @@ public class ClassScanner extends ClassVisitor {
 
     public ClassScanner(final Usage usage) {
         super(Opcodes.ASM8);
-        this.bytecodeUsage = new BytecodeUsage(usage);
+        this.bytecodeUsage = new BytecodeUsage(usage, this.api);
     }
 
     public Usage getUsage() {
@@ -84,7 +84,7 @@ public class ClassScanner extends ClassVisitor {
 
         bytecodeUsage.addNames(exceptions);
 
-        return super.visitMethod(access, name, descriptor, signature, exceptions);
+        return new MethodScanner(this.api, bytecodeUsage);
     }
 
     @Override
