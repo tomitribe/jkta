@@ -15,8 +15,7 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -27,13 +26,13 @@
 
   <groupId>org.tomitribe.jkta</groupId>
   <artifactId>jkta</artifactId>
-  <version>0.4-SNAPSHOT</version>
+  <version>0.4</version>
 
   <scm>
     <connection>scm:git:git@github.com:tomitribe/jkta.git</connection>
     <url>scm:git:git@github.com:tomitribe/jkta.git</url>
     <developerConnection>scm:git:git@github.com:tomitribe/jkta.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>jkta-0.4</tag>
   </scm>
 
   <dependencies>

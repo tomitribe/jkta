@@ -27,7 +27,7 @@ public interface Dir extends org.tomitribe.util.dir.Dir {
     /**
      * Recursively find all *.java files contained anywhere in this Git repository
      *
-     * @return the equivalent of `find <repo> -name '*.java'` as a Java Stream
+     * @return the equivalent of `find repo -name '*.java'` as a Java Stream
      */
     @Walk
     @Filter(Is.Jar.class)
