@@ -59,7 +59,7 @@ public class JarUsage {
         final byte[] messageDigest = md.digest();
         final String hash = Hex.toString(messageDigest);
 
-        return usage;
+        return new Usage<>(new Jar(jar, hash, jar.lastModified())).add(usage);
     }
 
     public static String toTsv(final Usage<Jar> jarUsage, final File parent) {

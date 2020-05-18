@@ -31,6 +31,7 @@ import org.tomitribe.jkta.usage.Dir;
 import org.tomitribe.jkta.usage.Format;
 import org.tomitribe.jkta.usage.UsageCommand;
 import org.tomitribe.jkta.util.Paths;
+import org.tomitribe.jkta.Version;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -138,7 +139,7 @@ public class ScanCommand {
 
         final String date = new SimpleDateFormat("yyyy_MM_dd_HH_mm").format(new Date());
 
-        final String keyName = String.format("scan-%s-%s.tsv.gz", date, Id.generate().get());
+        final String keyName = String.format("scan-%s-%s-%s.tsv.gz", date, Id.generate().get(), Version.VERSION);
         stdout.printf("Scanning '%s' to %s %s/%s%n", Paths.childPath(repository.dir(), dir.dir()), region, bucket, keyName);
         final Bucket javax2jakarta = new Bucket(client, bucket);
         final OutputStream entry = javax2jakarta.upload(keyName);

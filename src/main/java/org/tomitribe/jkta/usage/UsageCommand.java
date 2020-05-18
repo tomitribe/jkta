@@ -128,6 +128,7 @@ public class UsageCommand {
         try {
             return JarUsage.of(file);
         } catch (Exception e) {
+            e.printStackTrace();
             System.err.println("Skipping jar: " + JarUsage.childPath(new File(""), file) + " : " + e.getMessage());
             return null;
         }

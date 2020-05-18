@@ -91,9 +91,10 @@ public class BytecodeUsage {
     }
 
     public void addObjectType(final String type) {
+        if (type == null) return;
         addType(Type.getObjectType(type));
     }
-    
+
     public void addType(final Type t) {
         switch (t.getSort()) {
             case Type.ARRAY:
