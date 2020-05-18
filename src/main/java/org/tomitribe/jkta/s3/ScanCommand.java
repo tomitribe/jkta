@@ -77,15 +77,19 @@ public class ScanCommand {
      * to avoid collisions when doing parallel processing.  For example a scan at
      * May 7, 2020 4:11 PM:
      *
-     *      scan-2020_05_07_16_11-a6f0usy.tsv.gz
+     *      scan-2020_05_07_16_11-a6f0usy-0.4.tsv.gz
      *
-     * The suffix on the end is a Base32 encoded 32-bit hash of random data.  For
-     * example a scan kicked off in parallel also at May 7, 2020 4:11 PM may look
-     * as follows:
+     * The suffix on the end is a Base32 encoded 32-bit hash of random data plus
+     * the version number of the jkta binary.  For example a scan kicked off in
+     * parallel also at May 7, 2020 4:11 PM may look as follows:
      *
-     *      scan-2020_05_07_16_11-reqsd6a.tsv.gz
+     *      scan-2020_05_07_16_11-reqsd6a-0.4.tsv.gz
      *
      * The S3 entry name is printed to the console output at the start of the scan.
+     *
+     * The use of a version number in the file name is intended to help identify
+     * any scans that might need to be rerun due to updates in the scanning tool
+     * as well as bring transparency to ensure the scanning tool is being updated.
      *
      * ENVIRONMENT
      *
