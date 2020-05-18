@@ -26,6 +26,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.spi.Bean;
 import javax.persistence.Persistence;
 import javax.servlet.http.HttpServlet;
+import javax.ws.rs.Path;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.ref.Reference;
@@ -143,6 +144,19 @@ public class ClassScannerTest {
     // ------------------------------------------------------
 
     @Test
+    public void visitAnnotation_Deep() {
+        final Usage<Jar> usage = usage(HasAnnotationData.class);
+
+        assertUsage(usage, Package.JAVAX_WS_RS, Package.JAVAX_SERVLET);
+    }
+
+    @ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)})
+    public static class HasAnnotationData {
+    }
+
+    // ------------------------------------------------------
+
+    @Test
     public void visitTypeAnnotation() {
         final Usage<Jar> usage = usage(HasTypeAnnotation.class);
 
@@ -152,6 +166,17 @@ public class ClassScannerTest {
     public static class HasTypeAnnotation implements Generic<@MockScoped Reference> {
     }
 
+    // ------------------------------------------------------
+
+    @Test
+    public void visitTypeAnnotation_Deep() {
+        final Usage<Jar> usage = usage(HasAnnotationData.class);
+
+        assertUsage(usage, Package.JAVAX_WS_RS, Package.JAVAX_SERVLET);
+    }
+
+    public static class HasTypeAnnotationDeep implements Generic<@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) Reference> {
+    }
     // ------------------------------------------------------
 
     @Test

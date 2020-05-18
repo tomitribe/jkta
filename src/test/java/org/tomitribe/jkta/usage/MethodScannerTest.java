@@ -32,7 +32,9 @@ import javax.jms.EnterpriseBeanConsumer;
 import javax.persistence.EntityBean;
 import javax.persistence.Persist;
 import javax.persistence.PersistenceException;
+import javax.servlet.http.HttpServlet;
 import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Cookie;
 import java.util.ArrayList;
@@ -59,6 +61,19 @@ public class MethodScannerTest {
     // ------------------------------------------------------
 
     @Test
+    public void visitAnnotation_Deep() {
+        final Usage<Jar> usage = usage(new Object() {
+            @ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)})
+            public void get() {
+            }
+        });
+
+        assertUsage(usage, Package.JAVAX_SERVLET, Package.JAVAX_WS_RS);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
     public void visitTypeAnnotation() {
         final Usage<Jar> usage = usage(new Object() {
             public <@MockScoped V> V get() {
@@ -72,6 +87,19 @@ public class MethodScannerTest {
     // ------------------------------------------------------
 
     @Test
+    public void visitTypeAnnotation_Deep() {
+        final Usage<Jar> usage = usage(new Object() {
+            public <@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) V> V get() {
+                return null;
+            }
+        });
+
+        assertUsage(usage, Package.JAVAX_SERVLET, Package.JAVAX_WS_RS);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
     public void visitParameterAnnotation() {
         final Usage<Jar> usage = usage(new Object() {
             public void m(@PathParam("id") int id) {
@@ -79,6 +107,31 @@ public class MethodScannerTest {
         });
 
         assertUsage(usage, Package.JAVAX_WS_RS);
+    }
+
+    // ------------------------------------------------------
+
+    @Ignore
+    @Test
+    public void visitParameterAnnotation_Deep_PotentialAsmBug() {
+        final Usage<Jar> usage = usage(new Object() {
+            public void m(@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) int id) {
+            }
+        });
+
+        assertUsage(usage, Package.JAVAX_WS_RS, Package.JAVAX_SERVLET);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitParameterAnnotation_Deep() {
+        final Usage<Jar> usage = usage(new Object() {
+            public void m(@Data(type = HttpServlet.class) int id) {
+            }
+        });
+
+        assertUsage(usage, Package.JAVAX_SERVLET);
     }
 
     // ------------------------------------------------------
@@ -278,6 +331,22 @@ public class MethodScannerTest {
     // ------------------------------------------------------
 
     @Test
+    public void visitInsnAnnotation_Deep() {
+        final Usage<Jar> usage = usage(new Object() {
+            public void m() {
+                final List list = (@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) ArrayList) null;
+            }
+        });
+
+        assertUsage(usage,
+                Package.JAVAX_SERVLET,
+                Package.JAVAX_WS_RS
+        );
+    }
+
+    // ------------------------------------------------------
+
+    @Test
     public void visitTryCatchBlock() {
         final Usage<Jar> usage = usage(new Object() {
             public void m() {
@@ -319,6 +388,28 @@ public class MethodScannerTest {
     // ------------------------------------------------------
 
     @Test
+    public void visitTryCatchAnnotation_Deep() {
+        final Usage<Jar> usage = usage(new Object() {
+            public void m() {
+                try {
+                    System.out.println();
+                } catch (@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) PersistenceException e) {
+                    System.out.println();
+                }
+            }
+        });
+
+        assertUsage(usage,
+                Package.JAVAX_SERVLET,
+                Package.JAVAX_WS_RS,
+                Package.JAVAX_PERSISTENCE,
+                Package.JAVAX_PERSISTENCE
+        );
+    }
+
+    // ------------------------------------------------------
+
+    @Test
     public void visitLocalVariableAnnotation() {
         final Usage<Jar> usage = usage(new Object() {
             public void m() {
@@ -328,6 +419,21 @@ public class MethodScannerTest {
 
         assertUsage(usage,
                 Package.JAVAX_ENTERPRISE
+        );
+    }
+    // ------------------------------------------------------
+
+    @Test
+    public void visitLocalVariableAnnotation_Deep() {
+        final Usage<Jar> usage = usage(new Object() {
+            public void m() {
+                @ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) long e = System.nanoTime();
+            }
+        });
+
+        assertUsage(usage,
+                Package.JAVAX_SERVLET,
+                Package.JAVAX_WS_RS
         );
     }
 }

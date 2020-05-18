@@ -50,7 +50,7 @@ public class ClassScanner extends ClassVisitor {
     @Override
     public AnnotationVisitor visitAnnotation(final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return super.visitAnnotation(descriptor, visible);
+        return new AnnotationScanner(this.api, bytecodeUsage);
     }
 
     @Override

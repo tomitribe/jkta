@@ -26,4 +26,25 @@ public class AnnotationScanner extends AnnotationVisitor {
         super(api);
         this.bytecodeUsage = bytecodeUsage;
     }
+
+    @Override
+    public void visit(final String name, final Object value) {
+        bytecodeUsage.addHandleArgs(value);
+    }
+
+    @Override
+    public void visitEnum(final String name, final String descriptor, final String value) {
+        bytecodeUsage.addDesc(descriptor);
+    }
+
+    @Override
+    public AnnotationVisitor visitAnnotation(final String name, final String descriptor) {
+        bytecodeUsage.addDesc(descriptor);
+        return this;
+    }
+
+    @Override
+    public AnnotationVisitor visitArray(final String name) {
+        return this;
+    }
 }
