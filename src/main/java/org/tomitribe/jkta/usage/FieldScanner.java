@@ -16,7 +16,9 @@
  */
 package org.tomitribe.jkta.usage;
 
+import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.FieldVisitor;
+import org.objectweb.asm.TypePath;
 
 public class FieldScanner extends FieldVisitor {
 
@@ -25,5 +27,17 @@ public class FieldScanner extends FieldVisitor {
     public FieldScanner(final int api, final BytecodeUsage bytecodeUsage) {
         super(api);
         this.bytecodeUsage = bytecodeUsage;
+    }
+
+    @Override
+    public AnnotationVisitor visitAnnotation(final String descriptor, final boolean visible) {
+        bytecodeUsage.addDesc(descriptor);
+        return new AnnotationScanner(this.api, bytecodeUsage);
+    }
+
+    @Override
+    public AnnotationVisitor visitTypeAnnotation(final int typeRef, final TypePath typePath, final String descriptor, final boolean visible) {
+        bytecodeUsage.addDesc(descriptor);
+        return new AnnotationScanner(this.api, bytecodeUsage);
     }
 }

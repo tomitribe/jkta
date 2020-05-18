@@ -71,7 +71,7 @@ public class ClassScanner extends ClassVisitor {
             bytecodeUsage.addType((Type) value);
         }
 
-        return super.visitField(access, name, descriptor, signature, value);
+        return new FieldScanner(this.api, bytecodeUsage);
     }
 
     @Override
