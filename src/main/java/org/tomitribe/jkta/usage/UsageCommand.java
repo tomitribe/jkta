@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
@@ -40,7 +41,6 @@ import java.util.stream.Stream;
 @Command("usage")
 public class UsageCommand {
 
-    @Command("tsv-columns")
     public String tsvColumns() {
         final ArrayList<String> columns = new ArrayList<>();
         columns.add("SHA-1");
@@ -56,20 +56,34 @@ public class UsageCommand {
     }
 
     @Command
-    public String jar(@Option("format") @Default("tsv") final Format format,
-                      @Exists @Readable final File jar) throws IOException, NoSuchAlgorithmException {
+    public PrintOutput jar(@Exists @Readable final File jar) throws IOException, NoSuchAlgorithmException {
 
-        final Usage<Jar> usage = JarUsage.of(jar);
+        return out -> {
+            { // print the TSV header
+                final ArrayList<String> columns = new ArrayList<>();
+                columns.add("class name");
+                columns.add("javax uses total");
+                columns.add("jakarta uses total");
+                Stream.of(Package.values())
+                        .map(Package::getName)
+                        .forEach(columns::add);
 
-        switch (format) {
-            case tsv:
-                return JarUsage.toTsv(usage, new File(""));
-            case plain:
-                return toPlain(usage);
-            default: { /* ignored */}
-        }
+                out.println(Join.join("\t", columns));
+            }
 
-        return "Unsupported format: " + format;
+            final AtomicInteger scanned = new AtomicInteger();
+            final AtomicInteger affected = new AtomicInteger();
+
+            final AtomicReference<Usage<String>> total = new AtomicReference<>(new Usage<>("total"));
+            ClassUsage.forEachClass(jar, usage -> {
+                total.accumulateAndGet(usage, Usage::add);
+                scanned.incrementAndGet();
+                if (usage.getJavax() > 0) affected.incrementAndGet();
+                out.printf("%s\t%s\n", usage.getContext(), usage.toTsv());
+            });
+
+            out.printf("%s\t%s\n", summary(scanned.get(), affected.get()), total.get().toTsv());
+        };
     }
 
     @Command
@@ -150,12 +164,16 @@ public class UsageCommand {
     }
 
     public static String toTotalTsv(final double scanned, final double affected, final Usage total) {
-        final int percent = (int) ((affected / scanned) * 100);
         final String t = "\t";
         return "0000000000000000000000000000000000000000" + t +
                 System.currentTimeMillis() + t +
-                String.format("total affected %s%% (%s of %s scanned)", percent, (int) affected, (int) scanned) + t +
+                summary((int) scanned, (int) affected) + t +
                 total.toTsv();
+    }
+
+    private static String summary(final int scanned, final int affected) {
+        final int percent = (int) ((affected / scanned) * 100);
+        return String.format("total affected %s%% (%s of %s scanned)", percent, affected, scanned);
     }
 
 }
