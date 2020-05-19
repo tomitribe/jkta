@@ -16,9 +16,7 @@
  */
 package org.tomitribe.jkta;
 
-import org.tomitribe.jkta.repos.Javax;
-import org.tomitribe.jkta.repos.Repos;
-import org.tomitribe.jkta.s3.ScanCommand;
+import org.tomitribe.jkta.central.CentralCommand;
 import org.tomitribe.jkta.usage.UsageCommand;
 
 import java.util.Arrays;
@@ -29,9 +27,7 @@ public class Loader implements org.tomitribe.crest.api.Loader {
     @Override
     public Iterator<Class<?>> iterator() {
         return Arrays.asList(
-                Javax.class,
-                Repos.class,
-                ScanCommand.class,
+                CentralCommand.class,
                 UsageCommand.class
         ).iterator();
     }

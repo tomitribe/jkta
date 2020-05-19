@@ -14,13 +14,22 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.jkta.s3;
+package org.tomitribe.jkta.central;
 
-import org.tomitribe.crest.api.Exit;
+import com.amazonaws.services.s3.AmazonS3;
 
-@Exit(21)
-public class AccessKeyNotSpecified extends RuntimeException {
-    public AccessKeyNotSpecified() {
-        super("Environment variable JKTA_ACCESS_KEY must be set");
+import java.io.OutputStream;
+
+public class Bucket {
+    private final AmazonS3 client;
+    private final String name;
+
+    public Bucket(final AmazonS3 client, final String name) {
+        this.client = client;
+        this.name = name;
+    }
+
+    public OutputStream upload(final String key) {
+        return new S3OutputStream(client, name, key);
     }
 }
