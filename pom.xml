@@ -186,7 +186,7 @@
       <plugin>
         <groupId>org.skife.maven</groupId>
         <artifactId>really-executable-jar-maven-plugin</artifactId>
-        <version>1.1.0</version>
+        <version>1.4.0</version>
         <executions>
           <execution>
             <phase>package</phase>
@@ -198,6 +198,7 @@
         <configuration>
           <flags>-Dcmd="$0" $JKTA_OPTS -Xmx1G</flags>
           <programFile>${project.artifactId}</programFile>
+          <attachProgramFile>true</attachProgramFile>
         </configuration>
       </plugin>
       <plugin>

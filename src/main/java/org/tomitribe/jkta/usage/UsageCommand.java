@@ -18,6 +18,7 @@ package org.tomitribe.jkta.usage;
 
 import org.tomitribe.crest.api.Command;
 import org.tomitribe.crest.api.Default;
+import org.tomitribe.crest.api.In;
 import org.tomitribe.crest.api.Option;
 import org.tomitribe.crest.api.PrintOutput;
 import org.tomitribe.crest.val.Exists;
@@ -26,8 +27,11 @@ import org.tomitribe.jkta.util.Predicates;
 import org.tomitribe.util.Join;
 import org.tomitribe.util.PrintString;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -90,10 +94,16 @@ public class UsageCommand {
     public PrintOutput dir(@Option("format") @Default("tsv") final Format format,
                            @Option("include") Pattern include,
                            @Option("exclude") Pattern exclude,
-                           @Option("repository") @Default("${user.dir}") Dir root,
+                           @Option("repository") @Default("${user.dir}") Dir repository,
                            final Dir dir) {
+        final Stream<File> fileStream = dir.searcJars();
+
+        return scanFiles(format, include, exclude, repository, fileStream);
+    }
+
+    private PrintOutput scanFiles(final Format format, final Pattern include, final Pattern exclude, final Dir repository, final Stream<File> fileStream) {
         final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
-        final Stream<Usage<Jar>> usageStream = dir.searcJars()
+        final Stream<Usage<Jar>> usageStream = fileStream
                 .filter(fileFilter)
                 .map(this::jarUsage)
                 .filter(Objects::nonNull);
@@ -110,7 +120,7 @@ public class UsageCommand {
                             .peek(jarUsage -> {
                                 if (jarUsage.getJavax() > 0) affected.incrementAndGet();
                             })
-                            .peek(jarUsage -> out.println(JarUsage.toTsv(jarUsage, root.dir())))
+                            .peek(jarUsage -> out.println(JarUsage.toTsv(jarUsage, repository.dir())))
                             .reduce(Usage::add)
                             .orElse(null);
 
@@ -136,6 +146,38 @@ public class UsageCommand {
         }
 
         return printStream -> printStream.println("Unsupported format: " + format);
+    }
+
+    /**
+     * Read a list of jars from STDIN and scan each one for usages of the affected
+     * javax and jakarta namespaces.
+     *
+     * @param format
+     * @param include
+     * @param exclude
+     * @param repository
+     * @param stdin
+     * @return
+     */
+    @Command
+    public PrintOutput jars(@Option("format") @Default("tsv") final Format format,
+                            @Option("include") Pattern include,
+                            @Option("exclude") Pattern exclude,
+                            @Option("repository") @Default("${user.dir}") Dir repository,
+                            @In InputStream stdin
+    ) {
+        final Stream<File> fileStream = lines(stdin)
+                .map(repository::file)
+                .filter(File::isFile)
+                .filter(new Is.Jar()::accept);
+
+        return scanFiles(format, include, exclude, repository, fileStream);
+    }
+
+    private static Stream<String> lines(@In final InputStream stdin) {
+        final InputStreamReader reader = new InputStreamReader(stdin);
+        final BufferedReader bufferedReader = new BufferedReader(reader);
+        return bufferedReader.lines();
     }
 
     private Usage<Jar> jarUsage(final File file) {

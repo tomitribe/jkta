@@ -23,16 +23,17 @@ import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.tomitribe.crest.api.Command;
 import org.tomitribe.crest.api.Default;
+import org.tomitribe.crest.api.In;
 import org.tomitribe.crest.api.Option;
 import org.tomitribe.crest.api.Out;
 import org.tomitribe.crest.api.PrintOutput;
 import org.tomitribe.crest.api.Required;
+import org.tomitribe.jkta.Version;
 import org.tomitribe.jkta.usage.Dir;
 import org.tomitribe.jkta.usage.Format;
 import org.tomitribe.jkta.usage.UsageCommand;
-import org.tomitribe.jkta.util.Paths;
-import org.tomitribe.jkta.Version;
 
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.text.SimpleDateFormat;
@@ -44,18 +45,19 @@ import java.util.zip.GZIPOutputStream;
 public class CentralCommand {
 
     /**
-     * Scan jars in the specified directory and stream the results into
-     * the specified Amazon S3 bucket.
+     * Scan the list of jars for usage of javax and jakarta namespaces, generate a
+     * compressed tsv and and stream the results into the specified Amazon S3 bucket.
      *
      * SCAN
      *
-     * The specified directory is walked recursively and all archives matching
-     * the --include and --exclude pattern are read and scanned for references
-     * to the affected `javax` and `jakarta` namespaces.
+     * Jar paths are read from STDIN and resolved relative to the local repository
+     * identified by the --repository flag.  All archives that exist and match the
+     * --include and --exclude pattern are scanned for references to the affected
+     * `javax` and `jakarta` namespaces.
      *
-     * It's very important the paths in the resulting report contain the full
+     * It's very important the paths passed to this command consist of the full
      * groupId, artifactId and version.  Either of the following two methods
-     * will work to ensure the paths are complete and start with the groupId:
+     * will work to ensure the paths can be properly resolved:
      *
      *   - Change to the root of the maven repository before executing the
      *     command, ensuring `$PWD` evaluates to the base of the repository itself.
@@ -113,23 +115,22 @@ public class CentralCommand {
      * @param bucket The AWS S3 bucket where the scan tsv.gz files will be uploaded
      * @param region The AWS region where the S3 bucket lives.  S3 bucket names
      *               are unique per region
-     * @param dir The directory inside the local maven repository that should be recursively
-     *           walked and all matching artifacts scanned.
      * @param repository The path to the local maven repository itself.  Used to ensure
      *                   only the path starting at the groupId is reported in the tsv.
      *                   Defaults to the current working directory.
      */
     @Command("scan-and-stream")
     public void scanAndStream(@Out PrintStream stdout,
+                              @In InputStream stdin,
                               @Option("include") Pattern include,
                               @Option("exclude") Pattern exclude,
                               @Option("bucket") @Required final String bucket,
                               @Option("region") @Required final Regions region,
-                              @Option("repository") @Default("${user.dir}") Dir repository,
-                              final Dir dir
+                              @Option("repository") @Default("${user.dir}") Dir repository
     ) throws Exception {
+
         final UsageCommand usage = new UsageCommand();
-        final PrintOutput results = usage.dir(Format.tsv, include, exclude, repository, dir);
+        final PrintOutput results = usage.jars(Format.tsv, include, exclude, repository, stdin);
 
         final String accessKey = System.getenv("JKTA_ACCESS_KEY");
         final String secretKey = System.getenv("JKTA_SECRET_KEY");
@@ -145,7 +146,7 @@ public class CentralCommand {
         final String date = new SimpleDateFormat("yyyy_MM_dd_HH_mm").format(new Date());
 
         final String keyName = String.format("scan-%s-%s-%s.tsv.gz", date, Id.generate().get(), Version.VERSION);
-        stdout.printf("Scanning '%s' to %s %s/%s%n", Paths.childPath(repository.dir(), dir.dir()), region, bucket, keyName);
+        stdout.printf("Scanning '%s' to %s %s/%s%n", repository.dir(), region, bucket, keyName);
         final Bucket javax2jakarta = new Bucket(client, bucket);
         final OutputStream entry = javax2jakarta.upload(keyName);
         final GZIPOutputStream gzip = new GZIPOutputStream(entry);
