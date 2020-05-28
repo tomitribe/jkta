@@ -18,7 +18,7 @@ package org.tomitribe.jkta.usage;
 
 public enum Package {
     JAVAX_ACTIVATION("javax.activation"),
-    JAVAX_ANNOTATION("javax.annotation"),
+    JAVAX_ANNOTATION("javax.annotation", "javax.annotation.processing"),
     JAVAX_BATCH("javax.batch"),
     JAVAX_DECORATOR("javax.decorator"),
     JAVAX_EJB("javax.ejb"),
