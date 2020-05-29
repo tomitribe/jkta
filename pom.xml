@@ -26,13 +26,13 @@
 
   <groupId>org.tomitribe.jkta</groupId>
   <artifactId>jkta</artifactId>
-  <version>0.7-SNAPSHOT</version>
+  <version>0.7</version>
 
   <scm>
     <connection>scm:git:git@github.com:tomitribe/jkta.git</connection>
     <url>scm:git:git@github.com:tomitribe/jkta.git</url>
     <developerConnection>scm:git:git@github.com:tomitribe/jkta.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>jkta-0.7</tag>
   </scm>
 
   <dependencies>
