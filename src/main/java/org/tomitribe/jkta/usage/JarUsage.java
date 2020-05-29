@@ -49,6 +49,7 @@ public class JarUsage {
     public static Usage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
         final Usage usage = new Usage();
         final SynchronizedDescriptiveStatistics entryDates = new SynchronizedDescriptiveStatistics();
+        final SynchronizedDescriptiveStatistics versions = new SynchronizedDescriptiveStatistics();
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
         final DigestInputStream digestIn = new DigestInputStream(IO.read(jar), md);
         final ZipInputStream zipInputStream = new ZipInputStream(digestIn);
@@ -65,7 +66,8 @@ public class JarUsage {
 
             if (path.endsWith(".class")) {
                 classes.incrementAndGet();
-                scan(zipInputStream, usage);
+                final int version = scan(zipInputStream, usage);
+                versions.addValue(version);
             } else {
                 IO.copy(zipInputStream, ignore);
             }
@@ -77,7 +79,8 @@ public class JarUsage {
         final byte[] messageDigest = md.digest();
         final String hash = Hex.toString(messageDigest);
         final long internalDate = (long) entryDates.getPercentile(0.9);
-        return new Usage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length())).add(usage);
+        final int version = (int) Math.round(versions.getPercentile(0.9));
+        return new Usage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length(), version)).add(usage);
     }
 
     private static long getTime(final ZipEntry entry) {
@@ -100,6 +103,7 @@ public class JarUsage {
         columns.add("Internal Date");
         columns.add("Size");
         columns.add("Classes");
+        columns.add("Java Version");
         columns.add("Path");
         columns.add("javax uses total");
         columns.add("jakarta uses total");
@@ -116,6 +120,7 @@ public class JarUsage {
         sb.append(jar.getInternalDate()).append(t);
         sb.append(jar.getSize()).append(t);
         sb.append(jar.getClasses()).append(t);
+        sb.append(jar.getJavaVersion()).append(t);
         sb.append(childPath(parent, jar.getJar())).append(t);
         sb.append(jarUsage.toTsv());
         return sb.toString();
@@ -135,8 +140,9 @@ public class JarUsage {
         final long internalDate = Long.parseLong(parts.next());
         final long size = Long.parseLong(parts.next());
         final long classes = Long.parseLong(parts.next());
+        final int javaVersion = Integer.parseInt(parts.next());
         final File file = new File(parts.next());
-        final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size);
+        final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, javaVersion);
 
         return Usage.fromTsv(jar, parts.next());
     }
@@ -160,10 +166,11 @@ public class JarUsage {
         }
     };
 
-    private static void scan(final InputStream in, final Usage usage) throws IOException {
+    private static int scan(final InputStream in, final Usage usage) throws IOException {
         final ClassScanner classScanner = new ClassScanner(usage);
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);
+        return classScanner.getVersion();
     }
 
     public static String toTotalTsv(final double scanned, final double affected, final Usage total) {
@@ -171,6 +178,7 @@ public class JarUsage {
         return "0000000000000000000000000000000000000000" + t +
                 System.currentTimeMillis() + t +
                 System.currentTimeMillis() + t +
+                0 + t +
                 0 + t +
                 0 + t +
                 summary((int) scanned, (int) affected) + t +

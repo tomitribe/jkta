@@ -27,6 +27,7 @@ import org.objectweb.asm.TypePath;
 public class ClassScanner extends ClassVisitor {
 
     private final BytecodeUsage bytecodeUsage;
+    private int version;
 
     public ClassScanner(final Usage usage) {
         super(Opcodes.ASM8);
@@ -39,12 +40,17 @@ public class ClassScanner extends ClassVisitor {
 
     @Override
     public void visit(final int version, final int access, final String name, final String signature, final String superName, final String[] interfaces) {
+        this.version = version;
         if (signature == null) {
             bytecodeUsage.addName(superName);
             bytecodeUsage.addNames(interfaces);
         } else {
             bytecodeUsage.addSignature(signature);
         }
+    }
+
+    public int getVersion() {
+        return version;
     }
 
     @Override

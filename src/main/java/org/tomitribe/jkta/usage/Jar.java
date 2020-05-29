@@ -25,6 +25,7 @@ public class Jar {
     private final long internalDate;
     private final long classes;
     private final long size;
+    private final int javaVersion;
 
     /**
      * @param jar the file reference for this jar
@@ -33,14 +34,16 @@ public class Jar {
      * @param lastModified1
      * @param classes
      * @param size
+     * @param javaVersion
      */
-    public Jar(final File jar, final String sha1, final long lastModified, final long lastModified1, final long classes, final long size) {
+    public Jar(final File jar, final String sha1, final long lastModified, final long lastModified1, final long classes, final long size, final int javaVersion) {
         this.jar = jar;
         this.sha1 = sha1;
         this.lastModified = lastModified;
         this.internalDate = lastModified1;
         this.classes = classes;
         this.size = size;
+        this.javaVersion = javaVersion;
     }
 
     public File getJar() {
@@ -66,4 +69,9 @@ public class Jar {
     public long getSize() {
         return size;
     }
+
+    public int getJavaVersion() {
+        return javaVersion;
+    }
+    
 }
