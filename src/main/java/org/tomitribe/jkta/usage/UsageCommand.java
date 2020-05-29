@@ -49,11 +49,7 @@ public class UsageCommand {
 
     public String tsvColumns() {
         final ArrayList<String> columns = new ArrayList<>();
-        columns.add("SHA-1");
-        columns.add("Date stamp");
-        columns.add("name");
-        columns.add("javax uses total");
-        columns.add("jakarta uses total");
+        columns.addAll(JarUsage.tsvColumns());
         Stream.of(Package.values())
                 .map(Package::getName)
                 .forEach(columns::add);
@@ -88,7 +84,7 @@ public class UsageCommand {
                 out.printf("%s\t%s\n", usage.getContext(), usage.toTsv());
             });
 
-            out.printf("%s\t%s\n", summary(scanned.get(), affected.get()), total.get().toTsv());
+            out.printf("%s\t%s\n", JarUsage.summary(scanned.get(), affected.get()), total.get().toTsv());
         };
     }
 
@@ -131,7 +127,7 @@ public class UsageCommand {
                         return;
                     }
 
-                    out.println(toTotalTsv(scanned.get(), affected.get(), total));
+                    out.println(JarUsage.toTotalTsv(scanned.get(), affected.get(), total));
                 };
             case plain:
                 return out -> {
@@ -216,20 +212,8 @@ public class UsageCommand {
         return out.toString();
     }
 
-    public static String toTotalTsv(final double scanned, final double affected, final Usage total) {
-        final String t = "\t";
-        return "0000000000000000000000000000000000000000" + t +
-                System.currentTimeMillis() + t +
-                summary((int) scanned, (int) affected) + t +
-                total.toTsv();
-    }
-
-    private static String summary(final int scanned, final int affected) {
-        final int percent = (int) ((affected / scanned) * 100);
-        return String.format("total affected %s%% (%s of %s scanned)", percent, affected, scanned);
-    }
-
     //CHECKSTYLE:OFF
+
     /**
      * Greps the specified jar usage tsv report for records containing specific count ranges.
      *

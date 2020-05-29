@@ -16,6 +16,7 @@
  */
 package org.tomitribe.jkta.usage;
 
+import org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatistics;
 import org.objectweb.asm.ClassReader;
 import org.tomitribe.util.Hex;
 import org.tomitribe.util.IO;
@@ -27,6 +28,12 @@ import java.io.OutputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
+import java.util.function.Supplier;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -35,18 +42,29 @@ public class JarUsage {
     private JarUsage() {
     }
 
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
+        final Usage<Jar> of = of(new File("/tmp/apache-tomcat-10.0.0-M5/lib/tomcat-i18n-ja.jar"));
+    }
+
     public static Usage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
         final Usage usage = new Usage();
-
+        final SynchronizedDescriptiveStatistics entryDates = new SynchronizedDescriptiveStatistics();
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
         final DigestInputStream digestIn = new DigestInputStream(IO.read(jar), md);
         final ZipInputStream zipInputStream = new ZipInputStream(digestIn);
 
+        final AtomicLong classes = new AtomicLong();
         ZipEntry entry;
         while ((entry = zipInputStream.getNextEntry()) != null) {
             final String path = entry.getName();
 
+            final long time = getTime(entry);
+            if (time != -1) {
+                entryDates.addValue(time);
+            }
+
             if (path.endsWith(".class")) {
+                classes.incrementAndGet();
                 scan(zipInputStream, usage);
             } else {
                 IO.copy(zipInputStream, ignore);
@@ -58,8 +76,34 @@ public class JarUsage {
 
         final byte[] messageDigest = md.digest();
         final String hash = Hex.toString(messageDigest);
+        final long internalDate = (long) entryDates.getPercentile(0.9);
+        return new Usage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length())).add(usage);
+    }
 
-        return new Usage<>(new Jar(jar, hash, jar.lastModified())).add(usage);
+    private static long getTime(final ZipEntry entry) {
+        final Supplier<Long>[] times = new Supplier[]{
+                entry::getTime,
+                () -> entry.getLastModifiedTime() != null ? entry.getLastModifiedTime().toMillis() : 0,
+                () -> entry.getCreationTime() != null ? entry.getCreationTime().toMillis() : 0
+        };
+        for (final Supplier<Long> time : times) {
+            final Long aLong = time.get();
+            if (aLong > 0) return aLong;
+        }
+        return 0;
+    }
+
+    public static List<String> tsvColumns() {
+        final ArrayList<String> columns = new ArrayList<>();
+        columns.add("SHA-1");
+        columns.add("Last Modified");
+        columns.add("Internal Date");
+        columns.add("Size");
+        columns.add("Classes");
+        columns.add("Path");
+        columns.add("javax uses total");
+        columns.add("jakarta uses total");
+        return columns;
     }
 
     public static String toTsv(final Usage<Jar> jarUsage, final File parent) {
@@ -69,24 +113,32 @@ public class JarUsage {
         final String t = "\t";
         sb.append(jar.getSha1()).append(t);
         sb.append(jar.getLastModified()).append(t);
+        sb.append(jar.getInternalDate()).append(t);
+        sb.append(jar.getSize()).append(t);
+        sb.append(jar.getClasses()).append(t);
         sb.append(childPath(parent, jar.getJar())).append(t);
         sb.append(jarUsage.toTsv());
         return sb.toString();
     }
 
     public static Usage<Jar> fromTsv(final String line) {
-        final String[] strings = line.split("\t", 4);
+        final String[] strings = line.split("\t", 7);
 
-        if (strings.length != 4) {
+        if (strings.length != 7) {
             throw new IllegalStateException("Incomplete TSV format: " + line);
         }
 
-        final String hash = strings[0];
-        final long lastModified = new Long(strings[1]);
-        final File file = new File(strings[2]);
-        final Jar jar = new Jar(file, hash, lastModified);
+        final Iterator<String> parts = new ArrayList<>(Arrays.asList(strings)).iterator();
 
-        return Usage.fromTsv(jar, strings[3]);
+        final String hash = parts.next();
+        final long lastModified = Long.parseLong(parts.next());
+        final long internalDate = Long.parseLong(parts.next());
+        final long size = Long.parseLong(parts.next());
+        final long classes = Long.parseLong(parts.next());
+        final File file = new File(parts.next());
+        final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size);
+
+        return Usage.fromTsv(jar, parts.next());
     }
 
     public static String childPath(final File parent, final File file) {
@@ -112,5 +164,21 @@ public class JarUsage {
         final ClassScanner classScanner = new ClassScanner(usage);
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);
+    }
+
+    public static String toTotalTsv(final double scanned, final double affected, final Usage total) {
+        final String t = "\t";
+        return "0000000000000000000000000000000000000000" + t +
+                System.currentTimeMillis() + t +
+                System.currentTimeMillis() + t +
+                0 + t +
+                0 + t +
+                summary((int) scanned, (int) affected) + t +
+                total.toTsv();
+    }
+
+    static String summary(final int scanned, final int affected) {
+        final int percent = (int) ((affected / scanned) * 100);
+        return String.format("total affected %s%% (%s of %s scanned)", percent, affected, scanned);
     }
 }

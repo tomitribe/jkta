@@ -117,12 +117,12 @@ public class MethodScanner extends MethodVisitor {
         } else if (cst instanceof String) {
             // ...
         } else if (cst instanceof Type) {
-            bytecodeUsage.addType((Type)cst);
+            bytecodeUsage.addType((Type) cst);
         } else if (cst instanceof Handle) {
             bytecodeUsage.addHandle((Handle) cst);
             // ...
         } else if (cst instanceof ConstantDynamic) {
-            bytecodeUsage.addConstantDynamic((ConstantDynamic)cst);
+            bytecodeUsage.addConstantDynamic((ConstantDynamic) cst);
             // ...
         } else {
             // throw an exception
