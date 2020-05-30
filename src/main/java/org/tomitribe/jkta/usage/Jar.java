@@ -25,25 +25,25 @@ public class Jar {
     private final long internalDate;
     private final long classes;
     private final long size;
-    private final int javaVersion;
+    private final int[] javaVersions;
 
     /**
      * @param jar the file reference for this jar
      * @param sha1 the SHA-1 hash of this jar's content
      * @param lastModified last modified time at the exact time the hash was created
-     * @param lastModified1
+     * @param internalDate
      * @param classes
      * @param size
-     * @param javaVersion
+     * @param javaVersions
      */
-    public Jar(final File jar, final String sha1, final long lastModified, final long lastModified1, final long classes, final long size, final int javaVersion) {
+    public Jar(final File jar, final String sha1, final long lastModified, final long internalDate, final long classes, final long size, final int[] javaVersions) {
         this.jar = jar;
         this.sha1 = sha1;
         this.lastModified = lastModified;
-        this.internalDate = lastModified1;
+        this.internalDate = internalDate;
         this.classes = classes;
         this.size = size;
-        this.javaVersion = javaVersion;
+        this.javaVersions = javaVersions;
     }
 
     public File getJar() {
@@ -70,8 +70,8 @@ public class Jar {
         return size;
     }
 
-    public int getJavaVersion() {
-        return javaVersion;
+    public int[] getJavaVersions() {
+        return javaVersions;
     }
     
 }

@@ -16,6 +16,8 @@
  */
 package org.tomitribe.jkta.usage;
 
+import java.util.stream.Stream;
+
 public enum Package {
     JAVAX_ACTIVATION("javax.activation"),
     JAVAX_ANNOTATION("javax.annotation", "javax.annotation.processing"),
@@ -101,5 +103,10 @@ public enum Package {
             if (classOrPackage.startsWith(s)) return false;
         }
         return classOrPackage.startsWith(name);
+    }
+
+    public static Stream<String> names() {
+        return Stream.of(Package.values())
+                .map(Package::getName);
     }
 }

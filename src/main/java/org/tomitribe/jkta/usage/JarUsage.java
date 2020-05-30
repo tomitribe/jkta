@@ -30,26 +30,26 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Supplier;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import static org.tomitribe.jkta.usage.tsv.ScanTsv.parseVersions;
 
 public class JarUsage {
 
     private JarUsage() {
     }
 
-    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
-        final Usage<Jar> of = of(new File("/tmp/apache-tomcat-10.0.0-M5/lib/tomcat-i18n-ja.jar"));
-    }
-
     public static Usage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
         final Usage usage = new Usage();
         final SynchronizedDescriptiveStatistics entryDates = new SynchronizedDescriptiveStatistics();
-        final SynchronizedDescriptiveStatistics versions = new SynchronizedDescriptiveStatistics();
+        final Set<Integer> versions = new HashSet<>();
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
         final DigestInputStream digestIn = new DigestInputStream(IO.read(jar), md);
         final ZipInputStream zipInputStream = new ZipInputStream(digestIn);
@@ -67,7 +67,7 @@ public class JarUsage {
             if (path.endsWith(".class")) {
                 classes.incrementAndGet();
                 final int version = scan(zipInputStream, usage);
-                versions.addValue(version);
+                versions.add(version);
             } else {
                 IO.copy(zipInputStream, ignore);
             }
@@ -79,8 +79,16 @@ public class JarUsage {
         final byte[] messageDigest = md.digest();
         final String hash = Hex.toString(messageDigest);
         final long internalDate = (long) entryDates.getPercentile(0.9);
-        final int version = (int) Math.round(versions.getPercentile(0.9));
-        return new Usage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length(), version)).add(usage);
+        return new Usage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length(), versions(versions))).add(usage);
+    }
+
+    private static int[] versions(final Set<Integer> set) {
+        final int[] ints = new int[set.size()];
+        final Iterator<Integer> iterator = set.iterator();
+        for (int i = 0; i < ints.length; i++) {
+            ints[i] = iterator.next();
+        }
+        return ints;
     }
 
     private static long getTime(final ZipEntry entry) {
@@ -110,22 +118,6 @@ public class JarUsage {
         return columns;
     }
 
-    public static String toTsv(final Usage<Jar> jarUsage, final File parent) {
-        final StringBuilder sb = new StringBuilder();
-
-        final Jar jar = jarUsage.getContext();
-        final String t = "\t";
-        sb.append(jar.getSha1()).append(t);
-        sb.append(jar.getLastModified()).append(t);
-        sb.append(jar.getInternalDate()).append(t);
-        sb.append(jar.getSize()).append(t);
-        sb.append(jar.getClasses()).append(t);
-        sb.append(jar.getJavaVersion()).append(t);
-        sb.append(childPath(parent, jar.getJar())).append(t);
-        sb.append(jarUsage.toTsv());
-        return sb.toString();
-    }
-
     public static Usage<Jar> fromTsv(final String line) {
         final String[] strings = line.split("\t", 7);
 
@@ -140,23 +132,11 @@ public class JarUsage {
         final long internalDate = Long.parseLong(parts.next());
         final long size = Long.parseLong(parts.next());
         final long classes = Long.parseLong(parts.next());
-        final int javaVersion = Integer.parseInt(parts.next());
+        final int[] javaVersions = parseVersions(parts.next());
         final File file = new File(parts.next());
-        final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, javaVersion);
+        final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, javaVersions);
 
         return Usage.fromTsv(jar, parts.next());
-    }
-
-    public static String childPath(final File parent, final File file) {
-        final String parentPath = parent.getAbsolutePath();
-        final String childPath = file.getAbsolutePath();
-
-        if (childPath.startsWith(parentPath)) {
-            final int base = parentPath.length();
-            return childPath.substring(base + 1);
-        } else {
-            return childPath;
-        }
     }
 
 

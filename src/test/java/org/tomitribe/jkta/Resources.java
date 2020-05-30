@@ -18,7 +18,6 @@
  */
 package org.tomitribe.jkta;
 
-import org.tomitribe.jkta.repos.PathsTest;
 import org.tomitribe.util.IO;
 
 import java.io.IOException;
@@ -30,7 +29,7 @@ public class Resources {
     }
 
     public static URL find(final String name) {
-        final URL resource = PathsTest.class.getClassLoader().getResource(name);
+        final URL resource = Resources.class.getClassLoader().getResource(name);
         if (resource == null) throw new IllegalStateException("Not found: " + name);
         return resource;
     }

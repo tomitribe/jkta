@@ -23,6 +23,7 @@ import org.tomitribe.crest.api.Option;
 import org.tomitribe.crest.api.PrintOutput;
 import org.tomitribe.crest.val.Exists;
 import org.tomitribe.crest.val.Readable;
+import org.tomitribe.jkta.usage.tsv.ScanTsv;
 import org.tomitribe.jkta.util.Predicates;
 import org.tomitribe.util.Join;
 import org.tomitribe.util.PrintString;
@@ -109,26 +110,7 @@ public class UsageCommand {
 
         switch (format) {
             case tsv:
-                return out -> {
-                    out.println(tsvColumns());
-                    final AtomicInteger scanned = new AtomicInteger();
-                    final AtomicInteger affected = new AtomicInteger();
-                    final Usage<Jar> total = usageStream
-                            .peek(jarUsage -> scanned.incrementAndGet())
-                            .peek(jarUsage -> {
-                                if (jarUsage.getJavax() > 0) affected.incrementAndGet();
-                            })
-                            .peek(jarUsage -> out.println(JarUsage.toTsv(jarUsage, repository.dir())))
-                            .reduce(Usage::add)
-                            .orElse(null);
-
-                    if (total == null) {
-                        out.println("No jars found");
-                        return;
-                    }
-
-                    out.println(JarUsage.toTotalTsv(scanned.get(), affected.get(), total));
-                };
+                return out -> ScanTsv.toJarTsv(out, usageStream, repository.dir());
             case plain:
                 return out -> {
                     final Usage<Jar> total = usageStream
@@ -192,7 +174,7 @@ public class UsageCommand {
             return JarUsage.of(file);
         } catch (Exception e) {
             e.printStackTrace();
-            System.err.println("Skipping jar: " + JarUsage.childPath(new File(""), file) + " : " + e.getMessage());
+            System.err.println("Skipping jar: " + ScanTsv.childPath(new File(""), file) + " : " + e.getMessage());
             return null;
         }
     }
@@ -203,7 +185,7 @@ public class UsageCommand {
 
         out.printf("sha1: %s%n", jar.getSha1());
         out.printf("last-modified: %tc%n", new Date(jar.getLastModified()));
-        out.printf("name: %s%n", JarUsage.childPath(new File(""), jar.getJar()));
+        out.printf("name: %s%n", ScanTsv.childPath(new File(""), jar.getJar()));
         for (int i = 0; i < usage.getPackages().length; i++) {
             final int count = usage.getPackages()[i];
             final Package aPackage = Package.values()[i];
@@ -456,7 +438,7 @@ public class UsageCommand {
                 .filter(s -> !s.startsWith("0000000000000000000000000000000000000000")) // Skip the summary
                 .map(JarUsage::fromTsv)
                 .filter(usagePredicate)
-                .map(jarUsage -> JarUsage.toTsv(jarUsage, new File("")));
+                .map(jarUsage -> ScanTsv.toTsv(jarUsage, new File("")));
 
         return Stream.concat(
                 Stream.of(tsvColumns()),
