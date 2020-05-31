@@ -50,16 +50,6 @@ import java.util.stream.Stream;
 @Command("usage")
 public class UsageCommand {
 
-    public String tsvColumns() {
-        final ArrayList<String> columns = new ArrayList<>();
-        columns.addAll(JarUsage.tsvColumns());
-        Stream.of(Package.values())
-                .map(Package::getName)
-                .forEach(columns::add);
-
-        return Join.join("\t", columns);
-    }
-
     @Command
     public PrintOutput jar(@Exists @Readable final File jar) throws IOException, NoSuchAlgorithmException {
 

@@ -28,18 +28,13 @@ import java.io.OutputStream;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.function.Supplier;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-
-import static org.tomitribe.jkta.usage.tsv.ScanTsv.parseVersions;
 
 public class JarUsage {
 
@@ -104,41 +99,6 @@ public class JarUsage {
         return 0;
     }
 
-    public static List<String> tsvColumns() {
-        final ArrayList<String> columns = new ArrayList<>();
-        columns.add("SHA-1");
-        columns.add("Last Modified");
-        columns.add("Internal Date");
-        columns.add("Size");
-        columns.add("Classes");
-        columns.add("Java Version");
-        columns.add("Path");
-        columns.add("javax uses total");
-        columns.add("jakarta uses total");
-        return columns;
-    }
-
-    public static Usage<Jar> fromTsv(final String line) {
-        final String[] strings = line.split("\t", 7);
-
-        if (strings.length != 7) {
-            throw new IllegalStateException("Incomplete TSV format: " + line);
-        }
-
-        final Iterator<String> parts = new ArrayList<>(Arrays.asList(strings)).iterator();
-
-        final String hash = parts.next();
-        final long lastModified = Long.parseLong(parts.next());
-        final long internalDate = Long.parseLong(parts.next());
-        final long size = Long.parseLong(parts.next());
-        final long classes = Long.parseLong(parts.next());
-        final int[] javaVersions = parseVersions(parts.next());
-        final File file = new File(parts.next());
-        final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, javaVersions);
-
-        return Usage.fromTsv(jar, parts.next());
-    }
-
 
     private static final OutputStream ignore = new OutputStream() {
         @Override
@@ -151,18 +111,6 @@ public class JarUsage {
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);
         return classScanner.getVersion();
-    }
-
-    public static String toTotalTsv(final double scanned, final double affected, final Usage total) {
-        final String t = "\t";
-        return "0000000000000000000000000000000000000000" + t +
-                System.currentTimeMillis() + t +
-                System.currentTimeMillis() + t +
-                0 + t +
-                0 + t +
-                0 + t +
-                summary((int) scanned, (int) affected) + t +
-                total.toTsv();
     }
 
     static String summary(final int scanned, final int affected) {
