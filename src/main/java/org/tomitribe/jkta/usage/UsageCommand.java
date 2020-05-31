@@ -20,6 +20,7 @@ import org.tomitribe.crest.api.Command;
 import org.tomitribe.crest.api.Default;
 import org.tomitribe.crest.api.In;
 import org.tomitribe.crest.api.Option;
+import org.tomitribe.crest.api.Out;
 import org.tomitribe.crest.api.PrintOutput;
 import org.tomitribe.crest.val.Exists;
 import org.tomitribe.crest.val.Readable;
@@ -33,6 +34,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -289,76 +291,77 @@ public class UsageCommand {
      */
     @Command
     @SuppressWarnings("checkstyle:ParameterNumber")
-    public Stream<String> grep(@In final InputStream in,
-                               @Option("javax") final Pattern javax,
-                               @Option("jakarta") final Pattern jakarta,
-                               @Option("javax-activation") final Pattern javaxActivation,
-                               @Option("javax-annotation") final Pattern javaxAnnotation,
-                               @Option("javax-batch") final Pattern javaxBatch,
-                               @Option("javax-decorator") final Pattern javaxDecorator,
-                               @Option("javax-ejb") final Pattern javaxEjb,
-                               @Option("javax-el") final Pattern javaxEl,
-                               @Option("javax-enterprise") final Pattern javaxEnterprise,
-                               @Option("javax-enterprise-concurrent") final Pattern javaxEnterpriseConcurrent,
-                               @Option("javax-enterprise-deploy") final Pattern javaxEnterpriseDeploy,
-                               @Option("javax-faces") final Pattern javaxFaces,
-                               @Option("javax-inject") final Pattern javaxInject,
-                               @Option("javax-interceptor") final Pattern javaxInterceptor,
-                               @Option("javax-jms") final Pattern javaxJms,
-                               @Option("javax-json") final Pattern javaxJson,
-                               @Option("javax-json-bind") final Pattern javaxJsonBind,
-                               @Option("javax-jws") final Pattern javaxJws,
-                               @Option("javax-mail") final Pattern javaxMail,
-                               @Option("javax-management-j2ee") final Pattern javaxManagementJ2ee,
-                               @Option("javax-persistence") final Pattern javaxPersistence,
-                               @Option("javax-resource") final Pattern javaxResource,
-                               @Option("javax-security-auth-message") final Pattern javaxSecurityAuthMessage,
-                               @Option("javax-security-enterprise") final Pattern javaxSecurityEnterprise,
-                               @Option("javax-security-jacc") final Pattern javaxSecurityJacc,
-                               @Option("javax-servlet") final Pattern javaxServlet,
-                               @Option("javax-servlet-jsp") final Pattern javaxServletJsp,
-                               @Option("javax-servlet-jsp-jstl") final Pattern javaxServletJspJstl,
-                               @Option("javax-transaction") final Pattern javaxTransaction,
-                               @Option("javax-validation") final Pattern javaxValidation,
-                               @Option("javax-websocket") final Pattern javaxWebsocket,
-                               @Option("javax-ws-rs") final Pattern javaxWsRs,
-                               @Option("javax-xml-bind") final Pattern javaxXmlBind,
-                               @Option("javax-xml-registry") final Pattern javaxXmlRegistry,
-                               @Option("javax-xml-rpc") final Pattern javaxXmlRpc,
-                               @Option("javax-xml-soap") final Pattern javaxXmlSoap,
-                               @Option("javax-xml-ws") final Pattern javaxXmlWs,
-                               @Option("jakarta-activation") final Pattern jakartaActivation,
-                               @Option("jakarta-annotation") final Pattern jakartaAnnotation,
-                               @Option("jakarta-batch") final Pattern jakartaBatch,
-                               @Option("jakarta-decorator") final Pattern jakartaDecorator,
-                               @Option("jakarta-ejb") final Pattern jakartaEjb,
-                               @Option("jakarta-el") final Pattern jakartaEl,
-                               @Option("jakarta-enterprise") final Pattern jakartaEnterprise,
-                               @Option("jakarta-enterprise-concurrent") final Pattern jakartaEnterpriseConcurrent,
-                               @Option("jakarta-faces") final Pattern jakartaFaces,
-                               @Option("jakarta-inject") final Pattern jakartaInject,
-                               @Option("jakarta-interceptor") final Pattern jakartaInterceptor,
-                               @Option("jakarta-jms") final Pattern jakartaJms,
-                               @Option("jakarta-json") final Pattern jakartaJson,
-                               @Option("jakarta-json-bind") final Pattern jakartaJsonBind,
-                               @Option("jakarta-jws") final Pattern jakartaJws,
-                               @Option("jakarta-mail") final Pattern jakartaMail,
-                               @Option("jakarta-persistence") final Pattern jakartaPersistence,
-                               @Option("jakarta-resource") final Pattern jakartaResource,
-                               @Option("jakarta-security-auth-message") final Pattern jakartaSecurityAuthMessage,
-                               @Option("jakarta-security-enterprise") final Pattern jakartaSecurityEnterprise,
-                               @Option("jakarta-security-jacc") final Pattern jakartaSecurityJacc,
-                               @Option("jakarta-servlet") final Pattern jakartaServlet,
-                               @Option("jakarta-servlet-jsp") final Pattern jakartaServletJsp,
-                               @Option("jakarta-servlet-jsp-jstl") final Pattern jakartaServletJspJstl,
-                               @Option("jakarta-transaction") final Pattern jakartaTransaction,
-                               @Option("jakarta-validation") final Pattern jakartaValidation,
-                               @Option("jakarta-websocket") final Pattern jakartaWebsocket,
-                               @Option("jakarta-ws-rs") final Pattern jakartaWsRs,
-                               @Option("jakarta-xml-bind") final Pattern jakartaXmlBind,
-                               @Option("jakarta-xml-soap") final Pattern jakartaXmlSoap,
-                               @Option("jakarta-xml-ws") final Pattern jakartaXmlWs,
-                               @Option("mode") @Default("AND") final Mode mode
+    public void grep(@In final InputStream in,
+                     @Out final PrintStream out,
+                     @Option("javax") final Pattern javax,
+                     @Option("jakarta") final Pattern jakarta,
+                     @Option("javax-activation") final Pattern javaxActivation,
+                     @Option("javax-annotation") final Pattern javaxAnnotation,
+                     @Option("javax-batch") final Pattern javaxBatch,
+                     @Option("javax-decorator") final Pattern javaxDecorator,
+                     @Option("javax-ejb") final Pattern javaxEjb,
+                     @Option("javax-el") final Pattern javaxEl,
+                     @Option("javax-enterprise") final Pattern javaxEnterprise,
+                     @Option("javax-enterprise-concurrent") final Pattern javaxEnterpriseConcurrent,
+                     @Option("javax-enterprise-deploy") final Pattern javaxEnterpriseDeploy,
+                     @Option("javax-faces") final Pattern javaxFaces,
+                     @Option("javax-inject") final Pattern javaxInject,
+                     @Option("javax-interceptor") final Pattern javaxInterceptor,
+                     @Option("javax-jms") final Pattern javaxJms,
+                     @Option("javax-json") final Pattern javaxJson,
+                     @Option("javax-json-bind") final Pattern javaxJsonBind,
+                     @Option("javax-jws") final Pattern javaxJws,
+                     @Option("javax-mail") final Pattern javaxMail,
+                     @Option("javax-management-j2ee") final Pattern javaxManagementJ2ee,
+                     @Option("javax-persistence") final Pattern javaxPersistence,
+                     @Option("javax-resource") final Pattern javaxResource,
+                     @Option("javax-security-auth-message") final Pattern javaxSecurityAuthMessage,
+                     @Option("javax-security-enterprise") final Pattern javaxSecurityEnterprise,
+                     @Option("javax-security-jacc") final Pattern javaxSecurityJacc,
+                     @Option("javax-servlet") final Pattern javaxServlet,
+                     @Option("javax-servlet-jsp") final Pattern javaxServletJsp,
+                     @Option("javax-servlet-jsp-jstl") final Pattern javaxServletJspJstl,
+                     @Option("javax-transaction") final Pattern javaxTransaction,
+                     @Option("javax-validation") final Pattern javaxValidation,
+                     @Option("javax-websocket") final Pattern javaxWebsocket,
+                     @Option("javax-ws-rs") final Pattern javaxWsRs,
+                     @Option("javax-xml-bind") final Pattern javaxXmlBind,
+                     @Option("javax-xml-registry") final Pattern javaxXmlRegistry,
+                     @Option("javax-xml-rpc") final Pattern javaxXmlRpc,
+                     @Option("javax-xml-soap") final Pattern javaxXmlSoap,
+                     @Option("javax-xml-ws") final Pattern javaxXmlWs,
+                     @Option("jakarta-activation") final Pattern jakartaActivation,
+                     @Option("jakarta-annotation") final Pattern jakartaAnnotation,
+                     @Option("jakarta-batch") final Pattern jakartaBatch,
+                     @Option("jakarta-decorator") final Pattern jakartaDecorator,
+                     @Option("jakarta-ejb") final Pattern jakartaEjb,
+                     @Option("jakarta-el") final Pattern jakartaEl,
+                     @Option("jakarta-enterprise") final Pattern jakartaEnterprise,
+                     @Option("jakarta-enterprise-concurrent") final Pattern jakartaEnterpriseConcurrent,
+                     @Option("jakarta-faces") final Pattern jakartaFaces,
+                     @Option("jakarta-inject") final Pattern jakartaInject,
+                     @Option("jakarta-interceptor") final Pattern jakartaInterceptor,
+                     @Option("jakarta-jms") final Pattern jakartaJms,
+                     @Option("jakarta-json") final Pattern jakartaJson,
+                     @Option("jakarta-json-bind") final Pattern jakartaJsonBind,
+                     @Option("jakarta-jws") final Pattern jakartaJws,
+                     @Option("jakarta-mail") final Pattern jakartaMail,
+                     @Option("jakarta-persistence") final Pattern jakartaPersistence,
+                     @Option("jakarta-resource") final Pattern jakartaResource,
+                     @Option("jakarta-security-auth-message") final Pattern jakartaSecurityAuthMessage,
+                     @Option("jakarta-security-enterprise") final Pattern jakartaSecurityEnterprise,
+                     @Option("jakarta-security-jacc") final Pattern jakartaSecurityJacc,
+                     @Option("jakarta-servlet") final Pattern jakartaServlet,
+                     @Option("jakarta-servlet-jsp") final Pattern jakartaServletJsp,
+                     @Option("jakarta-servlet-jsp-jstl") final Pattern jakartaServletJspJstl,
+                     @Option("jakarta-transaction") final Pattern jakartaTransaction,
+                     @Option("jakarta-validation") final Pattern jakartaValidation,
+                     @Option("jakarta-websocket") final Pattern jakartaWebsocket,
+                     @Option("jakarta-ws-rs") final Pattern jakartaWsRs,
+                     @Option("jakarta-xml-bind") final Pattern jakartaXmlBind,
+                     @Option("jakarta-xml-soap") final Pattern jakartaXmlSoap,
+                     @Option("jakarta-xml-ws") final Pattern jakartaXmlWs,
+                     @Option("mode") @Default("AND") final Mode mode
     ) {
 
         final Predicate<Usage> usagePredicate = new GrepBuilder(mode)
@@ -432,18 +435,10 @@ public class UsageCommand {
                 .with(jakarta, Usage::getJavax)
                 .build();
 
-        final AtomicInteger lines = new AtomicInteger();
-        final Stream<String> matching = lines(in)
-                .filter(s -> lines.incrementAndGet() != 1) // Skip the headers
-                .filter(s -> !s.startsWith("0000000000000000000000000000000000000000")) // Skip the summary
-                .map(JarUsage::fromTsv)
-                .filter(usagePredicate)
-                .map(jarUsage -> ScanTsv.toTsv(jarUsage, new File("")));
+        final Stream<Usage<Jar>> matching = ScanTsv.fromJarTsv(in)
+                .filter(usagePredicate);
 
-        return Stream.concat(
-                Stream.of(tsvColumns()),
-                matching
-        );
+        ScanTsv.toJarTsv(out, matching, new File(""));
     }
     //CHECKSTYLE:ON
 

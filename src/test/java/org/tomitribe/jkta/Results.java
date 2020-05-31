@@ -14,16 +14,22 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.jkta.usage;
+package org.tomitribe.jkta;
 
-import org.junit.Test;
+public class Results {
+    private final String expected;
+    private final String actual;
 
-import static org.junit.Assert.*;
+    public Results(final String expected, final String actual) {
+        this.expected = expected;
+        this.actual = actual;
+    }
 
-public class UsageCommandTest {
+    public String getExpected() {
+        return expected;
+    }
 
-    @Test
-    public void dir() {
-        
+    public String getActual() {
+        return actual;
     }
 }
