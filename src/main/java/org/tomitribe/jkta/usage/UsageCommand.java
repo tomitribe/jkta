@@ -129,7 +129,6 @@ public class UsageCommand {
      * @param exclude
      * @param repository
      * @param stdin
-     * @return
      */
     @Command
     public PrintOutput jars(@Option("format") @Default("tsv") final Format format,
@@ -277,7 +276,6 @@ public class UsageCommand {
      * @param jakartaXmlSoap
      * @param jakartaXmlWs
      * @param mode
-     * @return
      */
     @Command
     @SuppressWarnings("checkstyle:ParameterNumber")
