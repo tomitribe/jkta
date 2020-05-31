@@ -30,8 +30,8 @@ public interface Dir extends org.tomitribe.util.dir.Dir {
      * @return the equivalent of `find repo -name '*.java'` as a Java Stream
      */
     @Walk
-    @Filter(Is.Jar.class)
-    Stream<File> searcJars();
+    @Filter(Is.Scannable.class)
+    Stream<File> searchScannables();
 
 
     /**

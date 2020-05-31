@@ -42,14 +42,42 @@ public class JarUsage {
     }
 
     public static Usage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
+        if (jar.getName().endsWith(".class")) {
+            return ofClass(jar);
+        }
+        final InputStream inputStream = IO.read(jar);
         final Usage usage = new Usage();
-        final SynchronizedDescriptiveStatistics entryDates = new SynchronizedDescriptiveStatistics();
+
         final Set<Integer> versions = new HashSet<>();
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
-        final DigestInputStream digestIn = new DigestInputStream(IO.read(jar), md);
-        final ZipInputStream zipInputStream = new ZipInputStream(digestIn);
-
+        final DigestInputStream digestIn = new DigestInputStream(inputStream, md);
         final AtomicLong classes = new AtomicLong();
+
+        final long internalDate = scanJar(usage, versions, digestIn, classes);
+
+        final byte[] messageDigest = md.digest();
+        final String hash = Hex.toString(messageDigest);
+        return new Usage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length(), versions(versions))).add(usage);
+    }
+
+    private static Usage<Jar> ofClass(final File clazz) throws IOException, NoSuchAlgorithmException {
+        final InputStream inputStream = IO.read(clazz);
+        final Usage usage = new Usage();
+
+        final MessageDigest md = MessageDigest.getInstance("SHA-1");
+        final DigestInputStream digestIn = new DigestInputStream(inputStream, md);
+
+        final int version = scanClass(digestIn, usage);
+
+        final byte[] messageDigest = md.digest();
+        final String hash = Hex.toString(messageDigest);
+        return new Usage<>(new Jar(clazz, hash, clazz.lastModified(), clazz.lastModified(), 1, clazz.length(), new int[]{version})).add(usage);
+    }
+
+    private static long scanJar(final Usage usage, final Set<Integer> versions, final InputStream inputStream, final AtomicLong classes) throws IOException {
+        final SynchronizedDescriptiveStatistics entryDates = new SynchronizedDescriptiveStatistics();
+        final ZipInputStream zipInputStream = new ZipInputStream(inputStream);
+
         ZipEntry entry;
         while ((entry = zipInputStream.getNextEntry()) != null) {
             final String path = entry.getName();
@@ -61,20 +89,22 @@ public class JarUsage {
 
             if (path.endsWith(".class")) {
                 classes.incrementAndGet();
-                final int version = scan(zipInputStream, usage);
+                final int version = scanClass(zipInputStream, usage);
                 versions.add(version);
+            } else if (isZip(path)) {
+                scanJar(usage, versions, zipInputStream, classes);
             } else {
                 IO.copy(zipInputStream, ignore);
             }
         }
 
         // make sure all bytes are read just in case
-        IO.copy(digestIn, ignore);
+        IO.copy(inputStream, ignore);
+        return (long) entryDates.getPercentile(0.9);
+    }
 
-        final byte[] messageDigest = md.digest();
-        final String hash = Hex.toString(messageDigest);
-        final long internalDate = (long) entryDates.getPercentile(0.9);
-        return new Usage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length(), versions(versions))).add(usage);
+    private static boolean isZip(final String path) {
+        return Is.Zip.accept(path);
     }
 
     private static int[] versions(final Set<Integer> set) {
@@ -106,7 +136,7 @@ public class JarUsage {
         }
     };
 
-    private static int scan(final InputStream in, final Usage usage) throws IOException {
+    private static int scanClass(final InputStream in, final Usage usage) throws IOException {
         final ClassScanner classScanner = new ClassScanner(usage);
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);

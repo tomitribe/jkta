@@ -87,7 +87,7 @@ public class UsageCommand {
                            @Option("exclude") final Pattern exclude,
                            @Option("repository") @Default("${user.dir}") Dir repository,
                            final Dir dir) {
-        final Stream<File> fileStream = dir.searcJars();
+        final Stream<File> fileStream = dir.searchScannables();
 
         return scanFiles(format, include, exclude, repository, fileStream);
     }
@@ -141,7 +141,7 @@ public class UsageCommand {
         final Stream<File> fileStream = lines(stdin)
                 .map(repository::file)
                 .filter(File::isFile)
-                .filter(new Is.Jar()::accept);
+                .filter(new Is.Scannable()::accept);
 
         return scanFiles(format, include, exclude, repository, fileStream);
     }

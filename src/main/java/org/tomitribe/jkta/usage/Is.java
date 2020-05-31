@@ -20,10 +20,42 @@ import java.io.File;
 import java.io.FileFilter;
 
 public interface Is {
-    class Jar implements FileFilter {
+
+    class Scannable implements FileFilter {
+
+        private Clazz clazz = new Clazz();
+        private Zip zip = new Zip();
+
         @Override
         public boolean accept(final File pathname) {
-            return pathname.isFile() && pathname.getName().endsWith(".jar");
+            return zip.accept(pathname) || clazz.accept(pathname);
+        }
+    }
+
+    class Clazz implements FileFilter {
+        @Override
+        public boolean accept(final File pathname) {
+            return pathname.isFile() && accept(pathname.getName());
+        }
+
+        public static boolean accept(final String path) {
+            return path.endsWith(".class");
+        }
+    }
+
+    class Zip implements FileFilter {
+        @Override
+        public boolean accept(final File pathname) {
+            return pathname.isFile() && accept(pathname.getName());
+        }
+
+        public static boolean accept(final String path) {
+            if (path.endsWith(".zip")) return true;
+            if (!path.endsWith("ar")) return false; // optimization
+            return path.endsWith(".jar") ||
+                    path.endsWith(".ear") ||
+                    path.endsWith(".war") ||
+                    path.endsWith(".rar");
         }
     }
 }

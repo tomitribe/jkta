@@ -20,6 +20,7 @@ import org.junit.Test;
 import org.tomitribe.jkta.Results;
 import org.tomitribe.jkta.usage.tsv.ScanTsvTest;
 import org.tomitribe.util.Files;
+import org.tomitribe.util.IO;
 import org.tomitribe.util.Mvn;
 import org.tomitribe.util.Zips;
 
@@ -39,6 +40,22 @@ public class JarsTest {
         command(UsageCommand.class)
                 .input(list)
                 .output(load("tomcat-10.0.0-M5.tsv"))
+                .results(this::normalize)
+                .exec("usage", "jars", "--repository=" + tmpdir.getAbsolutePath());
+    }
+
+    @Test
+    public void testZip() throws Exception {
+        final File zip = Mvn.mvn("org.apache.tomcat:tomcat:zip:10.0.0-M5");
+        final File tmpdir = Files.tmpdir();
+        final File target = new File(tmpdir, zip.getName());
+        IO.copy(zip, target);
+        target.setLastModified(1588732796000L);
+
+        final String list = list(tmpdir);
+        command(UsageCommand.class)
+                .input(list)
+                .output(load("tomcat-10.0.0-M5-zip.tsv"))
                 .results(this::normalize)
                 .exec("usage", "jars", "--repository=" + tmpdir.getAbsolutePath());
     }
