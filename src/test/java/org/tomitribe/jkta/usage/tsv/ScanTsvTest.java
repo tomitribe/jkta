@@ -131,43 +131,101 @@ public class ScanTsvTest {
         assertConvertedTsv(usages, "scan-v0.7-converted.tsv");
     }
 
-    @Ignore
     @Test
     public void version6() throws Exception {
         final String content = load("scan-v0.6.tsv");
         final List<Usage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(content))
                 .collect(Collectors.toList());
-        assertEquals(9, usages.size());
+        assertEquals(27, usages.size());
 
         final Usage<Jar> usage = usages.get(10);
         assertEquals(new File("org/catools/tms.etl/0.1.32/tms.etl-0.1.32.jar"), usage.getContext().getJar());
-        assertEquals("49a8e05010566bd513e162238ca4ca2d2b0a7fea", usage.getContext().getSha1());
-        assertEquals(1590789046000L, usage.getContext().getLastModified());
-        assertEquals(1590763808000L, usage.getContext().getInternalDate());
-        assertEquals(29038, usage.getContext().getClasses());
-        assertEquals(50668175, usage.getContext().getSize());
-        assertArrayEquals(new int[]{47}, usage.getContext().getJavaVersions());
+        assertEquals("d393ef6a82b25cdf5d70980d97683aa0d8f6a036", usage.getContext().getSha1());
+        assertEquals(1590789559000L, usage.getContext().getLastModified());
+        assertEquals(1590701910000L, usage.getContext().getInternalDate());
+        assertEquals(38, usage.getContext().getClasses());
+        assertEquals(60156, usage.getContext().getSize());
+        assertArrayEquals(new int[]{}, usage.getContext().getJavaVersions());
 
-        assertEquals(96657, usage.getJavax());
+        assertEquals(275, usage.getJavax());
         assertEquals(0, usage.getJakarta());
 
         final String jars = usages.stream()
                 .map(jarUsage -> jarUsage.getContext().getJar().getName())
                 .reduce((s, s2) -> s + "\n" + s2).get();
 
-        assertEquals("" +
-                "jkta-0.7.jar\n" +
-                "jkta-0.7-javadoc.jar\n" +
-                "jkta-0.7-sources.jar\n" +
-                "google-api-services-file-v1-rev20200520-1.30.9.jar\n" +
-                "google-api-services-dns-v2beta1-rev20200515-1.30.9.jar\n" +
-                "google-api-services-file-v1-rev20200520-1.30.9-javadoc.jar\n" +
-                "google-api-services-file-v1-rev20200520-1.30.9-sources.jar\n" +
-                "google-api-services-dns-v2beta1-rev20200515-1.30.9-javadoc.jar\n" +
-                "google-api-services-dns-v2beta1-rev20200515-1.30.9-sources.jar", jars
+        assertEquals("base-2.1.1.jar\n" +
+                "ws-0.1.32.jar\n" +
+                "sql-0.1.32.jar\n" +
+                "media-0.1.32.jar\n" +
+                "base-2.1.1-javadoc.jar\n" +
+                "base-2.1.1-sources.jar\n" +
+                "ws-0.1.32-javadoc.jar\n" +
+                "ws-0.1.32-sources.jar\n" +
+                "sql-0.1.32-javadoc.jar\n" +
+                "sql-0.1.32-sources.jar\n" +
+                "tms.etl-0.1.32.jar\n" +
+                "web.axe-0.1.32.jar\n" +
+                "ws.core-0.1.32.jar\n" +
+                "java-path-0.2.2.jar\n" +
+                "media-0.1.32-javadoc.jar\n" +
+                "media-0.1.32-sources.jar\n" +
+                "web.table-0.1.32.jar\n" +
+                "web.driver-0.1.32.jar\n" +
+                "tms.etl-0.1.32-javadoc.jar\n" +
+                "tms.etl-0.1.32-sources.jar\n" +
+                "web.axe-0.1.32-javadoc.jar\n" +
+                "web.axe-0.1.32-sources.jar\n" +
+                "web.element-0.1.32.jar\n" +
+                "ws.core-0.1.32-javadoc.jar\n" +
+                "ws.core-0.1.32-sources.jar\n" +
+                "java-path-0.2.2-javadoc.jar\n" +
+                "java-path-0.2.2-sources.jar", jars
         );
 
-        assertConvertedTsv(usages, "scan-v0.7-converted.tsv");
+        assertConvertedTsv(usages, "scan-v0.6-converted.tsv");
+    }
+
+    @Test
+    public void version5() throws Exception {
+        final String content = load("scan-v0.5.tsv");
+        final List<Usage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(content))
+                .collect(Collectors.toList());
+        assertEquals(14, usages.size());
+
+        final Usage<Jar> usage = usages.get(3);
+        assertEquals(new File("com/fortitudetec/elucidation-bundle/2.1.0/elucidation-bundle-2.1.0.jar"), usage.getContext().getJar());
+        assertEquals("8b89f22aa16858cc54bdc6a2f525b4b6510bec63", usage.getContext().getSha1());
+        assertEquals(1590779360000L, usage.getContext().getLastModified());
+        assertEquals(0, usage.getContext().getInternalDate());
+        assertEquals(-1, usage.getContext().getClasses());
+        assertEquals(-1, usage.getContext().getSize());
+        assertArrayEquals(new int[]{}, usage.getContext().getJavaVersions());
+
+        assertEquals(91, usage.getJavax());
+        assertEquals(0, usage.getJakarta());
+
+        final String jars = usages.stream()
+                .map(jarUsage -> jarUsage.getContext().getJar().getName())
+                .reduce((s, s2) -> s + "\n" + s2).get();
+
+        assertEquals("curses4j-1.1.0.jar\n" +
+                "curses4j-1.1.0-javadoc.jar\n" +
+                "curses4j-1.1.0-sources.jar\n" +
+                "elucidation-bundle-2.1.0.jar\n" +
+                "elucidation-client-2.1.0.jar\n" +
+                "elucidation-common-2.1.0.jar\n" +
+                "elucidation-common-2.1.0-tests.jar\n" +
+                "elucidation-bundle-2.1.0-javadoc.jar\n" +
+                "elucidation-bundle-2.1.0-sources.jar\n" +
+                "elucidation-client-2.1.0-javadoc.jar\n" +
+                "elucidation-client-2.1.0-sources.jar\n" +
+                "elucidation-common-2.1.0-javadoc.jar\n" +
+                "elucidation-common-2.1.0-sources.jar\n" +
+                "elucidation-common-2.1.0-test-sources.jar", jars
+        );
+
+        assertConvertedTsv(usages, "scan-v0.5-converted.tsv");
     }
 
     /**

@@ -40,9 +40,11 @@ public class JarSummary {
     }
 
     public JarSummary add(final JarSummary that) {
+        final long size = that.size == -1 ? 0 : that.size;
+        final long classes = that.classes == -1 ? 0 : that.classes;
         return new JarSummary(
-                this.size + that.size,
-                this.classes + that.classes
+                this.size + size,
+                this.classes + classes
         );
     }
 }

@@ -57,15 +57,6 @@ public class ScanTsv {
         return new JarTsv7(repository);
     }
 
-//    public static Stream<Usage<Jar>> fromJarTsv(final File tsv) {
-//
-//    }
-//
-//    public static Stream<Usage<Jar>> fromJarTsv(final String content) {
-//
-//    }
-//
-
     public static void toJarTsv(final PrintStream out, final Stream<Usage<Jar>> usages, final File repository) {
         final org.tomitribe.jkta.usage.tsv.Format<Jar> formatter = jarFormatter(repository);
         out.println(formatter.heading());
@@ -88,6 +79,20 @@ public class ScanTsv {
                     .filter(ScanTsv::skipHeader) // skip header
                     .filter(ScanTsv::skipFooter) // skip summary
                     .map(new JarTsv7()::read);
+        }
+
+        if (version == version6) {
+            return bufferedReader.lines()
+                    .filter(ScanTsv::skipHeader) // skip header
+                    .filter(ScanTsv::skipFooter) // skip summary
+                    .map(new JarTsv6()::read);
+        }
+
+        if (version == version5) {
+            return bufferedReader.lines()
+                    .filter(ScanTsv::skipHeader) // skip header
+                    .filter(ScanTsv::skipFooter) // skip summary
+                    .map(new JarTsv5()::read);
         }
 
         throw new UnsupportedTsvFormatException();
