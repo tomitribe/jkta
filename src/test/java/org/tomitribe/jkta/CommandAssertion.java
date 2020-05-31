@@ -41,13 +41,13 @@ public class CommandAssertion {
         return new CommandAssertion(commandClass);
     }
 
-    public CommandAssertion input(final String s) throws IOException {
-        input = Resources.load(s);
+    public CommandAssertion input(final String content) {
+        input = content;
         return this;
     }
 
-    public CommandAssertion output(final String s) throws IOException {
-        this.output = Resources.load(s);
+    public CommandAssertion output(final String content) {
+        this.output = content;
         return this;
     }
 

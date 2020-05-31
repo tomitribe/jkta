@@ -19,40 +19,38 @@ package org.tomitribe.jkta.usage;
 import org.junit.Test;
 import org.tomitribe.jkta.Results;
 import org.tomitribe.jkta.usage.tsv.ScanTsvTest;
+import org.tomitribe.util.Files;
+import org.tomitribe.util.Mvn;
+import org.tomitribe.util.Zips;
+
+import java.io.File;
 
 import static org.tomitribe.jkta.CommandAssertion.command;
 import static org.tomitribe.jkta.Resources.load;
 
-public class GrepTest {
+public class JarsTest {
 
-    /**
-     * By default grep should keep all results
-     */
     @Test
-    public void noArgs() throws Exception {
+    public void test() throws Exception {
+        final File zip = Mvn.mvn("org.apache.tomcat:tomcat:zip:10.0.0-M5");
+        final File tmpdir = Files.tmpdir();
+        Zips.unzip(zip, tmpdir);
+        final String list = list(tmpdir);
         command(UsageCommand.class)
-                .input(load("scan-v0.5.tsv"))
-                .output(load("scan-v0.5-converted.tsv"))
+                .input(list)
+                .output(load("tomcat-10.0.0-M5.tsv"))
                 .results(this::normalize)
-                .exec("usage", "grep");
+                .exec("usage", "jars", "--repository=" + tmpdir.getAbsolutePath());
     }
 
-    @Test
-    public void javaxMatches() throws Exception {
-        command(UsageCommand.class)
-                .input(load("scan-v0.5.tsv"))
-                .output(load("grep-javax.tsv"))
-                .results(this::normalize)
-                .exec("usage", "grep", "--javax=[1-9].*");
-    }
-
-    @Test
-    public void javaxWsRsMatches() throws Exception {
-        command(UsageCommand.class)
-                .input(load("scan-v0.5.tsv"))
-                .output(load("grep-javax-ws-rs.tsv"))
-                .results(this::normalize)
-                .exec("usage", "grep", "--javax=[1-9].*", "--javax-ws-rs=[1-9].*");
+    private String list(final File tmpdir) {
+        final int length = tmpdir.getAbsolutePath().length() + 1;
+        final Dir from = Dir.from(tmpdir);
+        return from.files()
+                .map(File::getAbsolutePath)
+                .map(s -> s.substring(length))
+                .reduce((s, s2) -> s + System.lineSeparator() + s2)
+                .get();
     }
 
     private Results normalize(final Results results) {
