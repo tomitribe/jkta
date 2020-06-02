@@ -32,6 +32,8 @@ import javax.ws.rs.Path;
 import java.io.IOException;
 import java.io.Serializable;
 import java.lang.ref.Reference;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 import static org.tomitribe.jkta.usage.Scan.assertUsage;
@@ -180,7 +182,7 @@ public class ClassScannerTest {
 
     public static class HasTypeAnnotationDeep implements Generic<@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) Reference> {
     }
-    
+
     // ------------------------------------------------------
 
     @Test
@@ -294,5 +296,141 @@ public class ClassScannerTest {
                 Package.JAVAX_XML_SOAP,
                 Package.JAVAX_XML_SOAP,
                 Package.JAVAX_JMS);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitStringNegative() {
+        final Usage<Jar> usage = usage(VisitNegative.class, true);
+
+        assertUsage(usage);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitStringAnnotation() {
+        final Usage<Jar> usage = usage(HasAnnotationWithString.class, true);
+
+        assertUsage(usage, Package.JAVAX_MAIL);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitStringAnnotation_Deep() {
+        final Usage<Jar> usage = usage(HasAnnotationDataWithString.class, true);
+
+        assertUsage(usage, Package.JAVAX_EJB);
+    }
+
+    @Data(name = "javax.mail.Session")
+    public static class HasAnnotationWithString {
+
+    }
+
+    @ArrayData(data = {@Data(name = "foo"), @Data(name = "javax.ejb.SessionBean")})
+    public static class HasAnnotationDataWithString {
+    }
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitStringStaticField() {
+        final Usage<Jar> usage = usage(new Object() {
+            private static final String PKG = "javax.ejb";
+
+        }, true);
+
+        assertUsage(usage, Package.JAVAX_EJB);
+    }
+
+    @Test
+    public void visitStringField() {
+        final Usage<Jar> usage = usage(new Object() {
+            private String pkg = "javax.ejb";
+
+            public String getPkg() {
+                return this.pkg;
+            }
+        }, true);
+
+        assertUsage(usage, Package.JAVAX_EJB);
+    }
+
+    @Test
+    public void visitStringArrayField() {
+        final Usage<Jar> usage = usage(new Object() {
+            final String[] pkg = { "javax.ejb", "javax.jms" };
+        }, true);
+
+        assertUsage(usage, Package.JAVAX_EJB, Package.JAVAX_JMS);
+    }
+
+    @Test
+    public void visitStringCollectionField() {
+        final Usage<Jar> usage = usage(new Object() {
+            final List<String> pkgs = Arrays.asList("javax.ejb", "javax.jms");
+        }, true);
+
+        assertUsage(usage, Package.JAVAX_EJB, Package.JAVAX_JMS);
+    }
+
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitStringMethodReturn() {
+        final Usage<Jar> usage = usage(new Object() {
+            public String get() {
+                return "javax.ejb";
+            }
+        }, true);
+
+        assertUsage(usage, Package.JAVAX_EJB);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitStringMethodReturnArray() {
+        final Usage<Jar> usage = usage(new Object() {
+            public String[] get() {
+                return new String[] { "javax.ejb", "javax.jms"};
+            }
+        }, true);
+
+        assertUsage(usage, Package.JAVAX_EJB, Package.JAVAX_JMS);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitStringMethodParameter() {
+        final Usage<Jar> usage = usage(new Object() {
+            public void get() {
+                System.out.println("javax.ejb");
+            }
+        }, true);
+
+        assertUsage(usage, Package.JAVAX_EJB);
+    }
+
+    // ------------------------------------------------------
+
+    @Test
+    public void visitStringArrayMethodParameter() {
+        final Usage<Jar> usage = usage(new Object() {
+            public void print(final String[] lines) {
+                Arrays.stream(lines).forEach(System.out::println);
+            }
+
+            public void work() {
+                print(new String [] { "javax.ejb", "javax.jms" });
+            }
+        }, true);
+
+        assertUsage(usage, Package.JAVAX_EJB, Package.JAVAX_JMS);
     }
 }

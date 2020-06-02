@@ -29,7 +29,11 @@ public class Scan {
     }
 
     public static Usage<Jar> usage(final Object o) {
-        return usage(o.getClass());
+        return usage(o, false);
+    }
+
+    public static Usage<Jar> usage(final Object o, final boolean includeStrings) {
+        return usage(o.getClass(), includeStrings);
     }
 
     public static Usage<Jar> usage(final Class<?> aClass) {

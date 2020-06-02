@@ -86,17 +86,21 @@ public class UsageCommand {
                            @Option("include") final Pattern include,
                            @Option("exclude") final Pattern exclude,
                            @Option("repository") @Default("${user.dir}") Dir repository,
+                           @Option("include-strings") @Default("false") Boolean includeStrings,
                            final Dir dir) {
         final Stream<File> fileStream = dir.searchScannables();
 
-        return scanFiles(format, include, exclude, repository, fileStream);
+        return scanFiles(format, include, exclude, repository, fileStream, includeStrings);
     }
 
-    private PrintOutput scanFiles(final Format format, final Pattern include, final Pattern exclude, final Dir repository, final Stream<File> fileStream) {
+    private PrintOutput scanFiles(final Format format, final Pattern include, final Pattern exclude, final Dir repository, final Stream<File> fileStream,
+                                  final Boolean includeStrings) {
+
         final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
+        final Function<File, Usage<Jar>> jarUsage = includeStrings ? this::jarUsageWithStrings : this::jarUsage;
         final Stream<Usage<Jar>> usageStream = fileStream
                 .filter(fileFilter)
-                .map(this::jarUsage)
+                .map(jarUsage)
                 .filter(Objects::nonNull);
 
 
@@ -135,6 +139,7 @@ public class UsageCommand {
                             @Option("include") final Pattern include,
                             @Option("exclude") final Pattern exclude,
                             @Option("repository") @Default("${user.dir}") Dir repository,
+                            @Option("include-strings") @Default("false") Boolean includeStrings,
                             @In InputStream stdin
     ) {
         final Stream<File> fileStream = lines(stdin)
@@ -142,7 +147,7 @@ public class UsageCommand {
                 .filter(File::isFile)
                 .filter(new Is.Scannable()::accept);
 
-        return scanFiles(format, include, exclude, repository, fileStream);
+        return scanFiles(format, include, exclude, repository, fileStream, includeStrings);
     }
 
     //    public static void main(String[] args) {
@@ -161,8 +166,16 @@ public class UsageCommand {
     }
 
     private Usage<Jar> jarUsage(final File file) {
+        return jarUsage(file, false);
+    }
+
+    private Usage<Jar> jarUsageWithStrings(final File file) {
+        return jarUsage(file, true);
+    }
+
+    private Usage<Jar> jarUsage(final File file, final boolean includeStrings) {
         try {
-            return JarUsage.of(file);
+            return JarUsage.of(file, includeStrings);
         } catch (Exception e) {
             e.printStackTrace();
             System.err.println("Skipping jar: " + ScanTsv.childPath(new File(""), file) + " : " + e.getMessage());

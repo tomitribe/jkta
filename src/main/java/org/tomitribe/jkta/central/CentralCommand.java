@@ -130,7 +130,7 @@ public class CentralCommand {
     ) throws Exception {
 
         final UsageCommand usage = new UsageCommand();
-        final PrintOutput results = usage.jars(Format.tsv, include, exclude, repository, stdin);
+        final PrintOutput results = usage.jars(Format.tsv, include, exclude, repository, false, stdin);
 
         final String accessKey = System.getenv("JKTA_ACCESS_KEY");
         final String secretKey = System.getenv("JKTA_SECRET_KEY");
