@@ -32,13 +32,17 @@ public class Scan {
         return usage(o.getClass());
     }
 
-    public static Usage<Jar> usage(final Class<?> aClass)  {
+    public static Usage<Jar> usage(final Class<?> aClass) {
+        return usage(aClass, false);
+    }
+
+    public static Usage<Jar> usage(final Class<?> aClass, final boolean includeStrings)  {
         try {
 //            final ClassLoader loader = aClass.getClassLoader();
 //            System.out.println(Asmifier.asmify(Bytecode.readClassFile(loader, aClass)));
 //            System.out.println();
             final File jar = Archive.archive().add(aClass).toJar();
-            return JarUsage.of(jar);
+            return JarUsage.of(jar, includeStrings);
         } catch (IOException | NoSuchAlgorithmException e) {
             throw new RuntimeException(e);
         }

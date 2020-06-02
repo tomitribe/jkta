@@ -26,33 +26,39 @@ import org.objectweb.asm.TypePath;
 
 public class MethodScanner extends MethodVisitor {
     private final BytecodeUsage bytecodeUsage;
+    private final boolean includeStrings;
 
     public MethodScanner(final int api, final BytecodeUsage bytecodeUsage) {
+        this (api, bytecodeUsage, false);
+    }
+
+    public MethodScanner(final int api, final BytecodeUsage bytecodeUsage, boolean includeStrings) {
         super(api);
         this.bytecodeUsage = bytecodeUsage;
+        this.includeStrings = includeStrings;
     }
 
     @Override
     public AnnotationVisitor visitAnnotationDefault() {
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override
     public AnnotationVisitor visitAnnotation(final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override
     public AnnotationVisitor visitTypeAnnotation(final int typeRef, final TypePath typePath, final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override
     public AnnotationVisitor visitParameterAnnotation(final int parameter, final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override
@@ -115,7 +121,9 @@ public class MethodScanner extends MethodVisitor {
         } else if (cst instanceof Double) {
             // ...
         } else if (cst instanceof String) {
-            // ...
+            if (includeStrings) {
+                bytecodeUsage.visitString((String) cst);
+            }
         } else if (cst instanceof Type) {
             bytecodeUsage.addType((Type) cst);
         } else if (cst instanceof Handle) {
@@ -138,7 +146,7 @@ public class MethodScanner extends MethodVisitor {
     @Override
     public AnnotationVisitor visitInsnAnnotation(final int typeRef, final TypePath typePath, final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override
@@ -150,14 +158,14 @@ public class MethodScanner extends MethodVisitor {
     @Override
     public AnnotationVisitor visitTryCatchAnnotation(final int typeRef, final TypePath typePath, final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override
     public AnnotationVisitor visitLocalVariableAnnotation(final int typeRef, final TypePath typePath, final Label[] start, final Label[] end,
                                                           final int[] index, final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     private static void add(final BytecodeUsage bytecodeUsage, final Object[] references) {

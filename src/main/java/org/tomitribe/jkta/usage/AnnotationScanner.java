@@ -18,18 +18,57 @@ package org.tomitribe.jkta.usage;
 
 import org.objectweb.asm.AnnotationVisitor;
 
+import java.lang.reflect.Array;
+
 public class AnnotationScanner extends AnnotationVisitor {
 
     private final BytecodeUsage bytecodeUsage;
+    private boolean includeStrings;
 
     public AnnotationScanner(final int api, final BytecodeUsage bytecodeUsage) {
+        this(api, bytecodeUsage, false);
+    }
+
+    public AnnotationScanner(final int api, final BytecodeUsage bytecodeUsage, final boolean includeStrings) {
         super(api);
         this.bytecodeUsage = bytecodeUsage;
+        this.includeStrings = includeStrings;
     }
 
     @Override
     public void visit(final String name, final Object value) {
         bytecodeUsage.addHandleArgs(value);
+
+
+        if (includeStrings) {
+            if (value != null) {
+                final Class<?> valueClass = value.getClass();
+                if (String.class.equals(valueClass)) {
+                    bytecodeUsage.visitString((String) value);
+                }
+
+                if (valueClass.isArray()) {
+                    scanArray(value);
+                }
+            }
+        }
+    }
+
+    private void scanArray(final Object array) {
+        for (int i = 0; i < Array.getLength(array); i++) {
+            final Object value = Array.get(array, i);
+
+            if (value == null) continue;
+
+            final Class<?> valueClass = value.getClass();
+            if (valueClass.isArray()) {
+                scanArray(value);
+            }
+
+            if (String.class.equals(valueClass)) {
+                bytecodeUsage.visitString((String) value);
+            }
+        }
     }
 
     @Override

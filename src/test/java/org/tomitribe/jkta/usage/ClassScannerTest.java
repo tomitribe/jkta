@@ -18,6 +18,7 @@ package org.tomitribe.jkta.usage;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import org.tomitribe.jkta.strings.StringSample;
 
 import javax.ejb.EJBException;
 import javax.ejb.EnterpriseBean;
@@ -278,5 +279,20 @@ public class ClassScannerTest {
         });
 
         assertUsage(usage, Package.JAVAX_EJB);
+    }
+
+    @Test
+    public void testStringReferences() {
+        final Usage<Jar> usage = usage(StringSample.class, true);
+        assertUsage(usage,
+                Package.JAVAX_WS_RS,
+                Package.JAVAX_WS_RS,
+                Package.JAVAX_SERVLET,
+                Package.JAVAX_EJB,
+                Package.JAVAX_EJB,
+                Package.JAVAX_MAIL,
+                Package.JAVAX_XML_SOAP,
+                Package.JAVAX_XML_SOAP,
+                Package.JAVAX_JMS);
     }
 }

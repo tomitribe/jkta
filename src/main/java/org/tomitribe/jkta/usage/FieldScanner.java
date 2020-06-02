@@ -23,21 +23,27 @@ import org.objectweb.asm.TypePath;
 public class FieldScanner extends FieldVisitor {
 
     private final BytecodeUsage bytecodeUsage;
+    private final boolean includeStrings;
 
     public FieldScanner(final int api, final BytecodeUsage bytecodeUsage) {
+        this(api, bytecodeUsage, false);
+    }
+
+    public FieldScanner(final int api, final BytecodeUsage bytecodeUsage, final boolean includeStrings) {
         super(api);
         this.bytecodeUsage = bytecodeUsage;
+        this.includeStrings = includeStrings;
     }
 
     @Override
     public AnnotationVisitor visitAnnotation(final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override
     public AnnotationVisitor visitTypeAnnotation(final int typeRef, final TypePath typePath, final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 }

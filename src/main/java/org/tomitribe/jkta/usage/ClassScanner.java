@@ -19,19 +19,26 @@ package org.tomitribe.jkta.usage;
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ClassVisitor;
 import org.objectweb.asm.FieldVisitor;
-import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.TypePath;
 
+import java.lang.reflect.Array;
+
 public class ClassScanner extends ClassVisitor {
 
     private final BytecodeUsage bytecodeUsage;
+    private boolean includeStrings;
     private int version;
 
     public ClassScanner(final Usage usage) {
+        this(usage, false);
+    }
+
+    public ClassScanner(final Usage usage, boolean includeStrings) {
         super(Opcodes.ASM8);
         this.bytecodeUsage = new BytecodeUsage(usage, this.api);
+        this.includeStrings = includeStrings;
     }
 
     public Usage getUsage() {
@@ -56,7 +63,7 @@ public class ClassScanner extends ClassVisitor {
     @Override
     public AnnotationVisitor visitAnnotation(final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return new AnnotationScanner(this.api, bytecodeUsage);
+        return new AnnotationScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override
@@ -77,11 +84,41 @@ public class ClassScanner extends ClassVisitor {
             bytecodeUsage.addType((Type) value);
         }
 
-        return new FieldScanner(this.api, bytecodeUsage);
+        if (includeStrings) {
+            if (value != null) {
+                final Class<?> valueClass = value.getClass();
+                if (String.class.equals(valueClass)) {
+                    bytecodeUsage.visitString((String) value);
+                }
+
+                if (valueClass.isArray()) {
+                    scanArray(value);
+                }
+            }
+        }
+
+        return new FieldScanner(this.api, bytecodeUsage, includeStrings);
+    }
+
+    private void scanArray(final Object array) {
+        for (int i = 0; i < Array.getLength(array); i++) {
+            final Object value = Array.get(array, i);
+
+            if (value == null) continue;
+
+            final Class<?> valueClass = value.getClass();
+            if (valueClass.isArray()) {
+                scanArray(value);
+            }
+
+            if (String.class.equals(valueClass)) {
+                bytecodeUsage.visitString((String) value);
+            }
+        }
     }
 
     @Override
-    public MethodVisitor visitMethod(final int access, final String name, final String descriptor, final String signature, final String[] exceptions) {
+    public MethodScanner visitMethod(final int access, final String name, final String descriptor, final String signature, final String[] exceptions) {
         if (signature == null) {
             bytecodeUsage.addMethodDesc(descriptor);
         } else {
@@ -90,7 +127,7 @@ public class ClassScanner extends ClassVisitor {
 
         bytecodeUsage.addNames(exceptions);
 
-        return new MethodScanner(this.api, bytecodeUsage);
+        return new MethodScanner(this.api, bytecodeUsage, includeStrings);
     }
 
     @Override

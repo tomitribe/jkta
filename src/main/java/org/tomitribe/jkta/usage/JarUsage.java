@@ -42,6 +42,10 @@ public class JarUsage {
     }
 
     public static Usage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
+        return of(jar, false);
+    }
+
+    public static Usage<Jar> of(final File jar, final boolean includeStrings) throws NoSuchAlgorithmException, IOException {
         if (jar.getName().endsWith(".class")) {
             return ofClass(jar);
         }
@@ -53,7 +57,7 @@ public class JarUsage {
         final DigestInputStream digestIn = new DigestInputStream(inputStream, md);
         final AtomicLong classes = new AtomicLong();
 
-        final long internalDate = scanJar(usage, versions, digestIn, classes);
+        final long internalDate = scanJar(usage, versions, digestIn, classes, includeStrings);
 
         final byte[] messageDigest = md.digest();
         final String hash = Hex.toString(messageDigest);
@@ -75,6 +79,10 @@ public class JarUsage {
     }
 
     private static long scanJar(final Usage usage, final Set<Integer> versions, final InputStream inputStream, final AtomicLong classes) throws IOException {
+        return scanJar(usage, versions, inputStream, classes, false);
+    }
+
+    private static long scanJar(final Usage usage, final Set<Integer> versions, final InputStream inputStream, final AtomicLong classes, final boolean includeStrings) throws IOException {
         final SynchronizedDescriptiveStatistics entryDates = new SynchronizedDescriptiveStatistics();
         final ZipInputStream zipInputStream = new ZipInputStream(inputStream);
 
@@ -89,10 +97,10 @@ public class JarUsage {
 
             if (path.endsWith(".class")) {
                 classes.incrementAndGet();
-                final int version = scanClass(zipInputStream, usage);
+                final int version = scanClass(zipInputStream, usage, includeStrings);
                 versions.add(version);
             } else if (isZip(path)) {
-                scanJar(usage, versions, zipInputStream, classes);
+                scanJar(usage, versions, zipInputStream, classes, includeStrings);
             } else {
                 IO.copy(zipInputStream, ignore);
             }
@@ -137,7 +145,11 @@ public class JarUsage {
     };
 
     private static int scanClass(final InputStream in, final Usage usage) throws IOException {
-        final ClassScanner classScanner = new ClassScanner(usage);
+        return scanClass(in, usage, false);
+    }
+
+    private static int scanClass(final InputStream in, final Usage usage, final boolean includeStrings) throws IOException {
+        final ClassScanner classScanner = new ClassScanner(usage, includeStrings);
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);
         return classScanner.getVersion();

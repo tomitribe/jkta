@@ -118,4 +118,8 @@ public class BytecodeUsage {
             addHandleArgs(constantDynamic.getBootstrapMethodArgument(i));
         }
     }
+
+    public void visitString(final String value) {
+        usage.visit(value);
+    }
 }
