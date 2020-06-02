@@ -82,7 +82,9 @@ public class JarUsage {
         return scanJar(usage, versions, inputStream, classes, false);
     }
 
-    private static long scanJar(final Usage usage, final Set<Integer> versions, final InputStream inputStream, final AtomicLong classes, final boolean includeStrings) throws IOException {
+    private static long scanJar(final Usage usage, final Set<Integer> versions, final InputStream inputStream,
+                                final AtomicLong classes, final boolean includeStrings) throws IOException {
+
         final SynchronizedDescriptiveStatistics entryDates = new SynchronizedDescriptiveStatistics();
         final ZipInputStream zipInputStream = new ZipInputStream(inputStream);
 
