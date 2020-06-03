@@ -33,6 +33,10 @@ public class ClassUsage {
     }
 
     public static void forEachClass(final File jar, final Consumer<Usage<String>> consumer) throws IOException {
+        forEachClass(jar, false, consumer);
+    }
+
+    public static void forEachClass(final File jar, final boolean includeStrings, final Consumer<Usage<String>> consumer) throws IOException {
         final ZipInputStream zipInputStream = new ZipInputStream(IO.read(jar));
 
         ZipEntry entry;
@@ -41,7 +45,7 @@ public class ClassUsage {
 
             if (path.endsWith(".class")) {
                 final Usage<String> usage = new Usage<>(path);
-                scan(zipInputStream, usage);
+                scan(zipInputStream, usage, includeStrings);
                 consumer.accept(usage);
             } else {
                 IO.copy(zipInputStream, ignore);
@@ -67,7 +71,11 @@ public class ClassUsage {
     };
 
     private static void scan(final InputStream in, final Usage usage) throws IOException {
-        final ClassScanner classScanner = new ClassScanner(usage);
+        scan(in, usage, false);
+    }
+
+    private static void scan(final InputStream in, final Usage usage, final boolean includeStrings) throws IOException {
+        final ClassScanner classScanner = new ClassScanner(usage, includeStrings);
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);
     }

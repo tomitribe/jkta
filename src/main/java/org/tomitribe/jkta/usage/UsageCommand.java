@@ -51,7 +51,8 @@ import java.util.stream.Stream;
 public class UsageCommand {
 
     @Command
-    public PrintOutput jar(@Exists @Readable final File jar) throws IOException, NoSuchAlgorithmException {
+    public PrintOutput jar(@Option("include-strings") @Default("false") Boolean includeStrings,
+                           @Exists @Readable final File jar) throws IOException, NoSuchAlgorithmException {
 
         return out -> {
             { // print the TSV header
