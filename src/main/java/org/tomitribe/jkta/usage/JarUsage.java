@@ -31,8 +31,8 @@ import java.security.NoSuchAlgorithmException;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.TimeZone;
 import java.util.concurrent.atomic.AtomicLong;
-import java.util.function.Supplier;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -126,17 +126,40 @@ public class JarUsage {
         return ints;
     }
 
+    /**
+     * Zip files use MS-DOS time format which does not have
+     * the time zone in it.  The JVM made the decision to
+     * use the timezone of the system viewing the zip as the
+     * implied timezone.
+     *
+     * The impact of this is that the times inside a zip file
+     * can have more than 24 interpretations depending on who
+     * is "looking" at the zip and what time zone they are
+     * currently in.
+     *
+     * As Maven Central is a very global repository, we know
+     * that the timezone of the person looking at the jar has
+     * no relationship to the timezone of the person who made
+     * the jar.  Thus, we want to interpret all times inside
+     * jars found in Maven Central as being in UTC so the
+     * default is the same for everyone and everyone sees the
+     * same time.
+     *
+     * We'll never know the actual timezone of the creator
+     * of the jar, but we will at least all agree on the
+     * same "wrong" answer.
+     */
     private static long getTime(final ZipEntry entry) {
-        final Supplier<Long>[] times = new Supplier[]{
-                entry::getTime,
-                () -> entry.getLastModifiedTime() != null ? entry.getLastModifiedTime().toMillis() : 0,
-                () -> entry.getCreationTime() != null ? entry.getCreationTime().toMillis() : 0
-        };
-        for (final Supplier<Long> time : times) {
-            final Long aLong = time.get();
-            if (aLong > 0) return aLong;
+        long time = entry.getTime();
+
+        if (time < 1 && entry.getLastModifiedTime() != null) {
+            time = entry.getLastModifiedTime().toMillis();
         }
-        return 0;
+
+        if (time < 0) return 0;
+
+        final int offset = TimeZone.getDefault().getOffset(time);
+        return time + offset;
     }
 
 

@@ -25,6 +25,7 @@ import org.tomitribe.util.Mvn;
 import org.tomitribe.util.Zips;
 
 import java.io.File;
+import java.util.TimeZone;
 
 import static org.tomitribe.jkta.CommandAssertion.command;
 import static org.tomitribe.jkta.Resources.load;
@@ -50,9 +51,10 @@ public class JarsTest {
         final File tmpdir = Files.tmpdir();
         final File target = new File(tmpdir, zip.getName());
         IO.copy(zip, target);
-        target.setLastModified(1588732796000L);
 
         final String list = list(tmpdir);
+        target.setLastModified(1588732796000L);
+
         command(UsageCommand.class)
                 .input(list)
                 .output(load("tomcat-10.0.0-M5-zip.tsv"))
@@ -64,12 +66,19 @@ public class JarsTest {
         final int length = tmpdir.getAbsolutePath().length() + 1;
         final Dir from = Dir.from(tmpdir);
         return from.files()
+                .peek(this::adjustTimeZone)
                 .map(File::getAbsolutePath)
                 .map(s -> s.substring(length))
                 .reduce((s, s2) -> s + System.lineSeparator() + s2)
                 .get();
     }
 
+    public void adjustTimeZone(final File file) {
+        final long localTime = file.lastModified();
+        final int offset = TimeZone.getDefault().getOffset(localTime);
+        final long utcTime = localTime + offset;
+        file.setLastModified(utcTime);
+    }
     private Results normalize(final Results results) {
         return new Results(results.getExpected(), ScanTsvTest.normalize(results.getActual()));
     }

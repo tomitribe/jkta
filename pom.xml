@@ -26,7 +26,7 @@
 
   <groupId>org.tomitribe.jkta</groupId>
   <artifactId>jkta</artifactId>
-  <version>0.9-SNAPSHOT</version>
+  <version>0.11-SNAPSHOT</version>
 
   <scm>
     <connection>scm:git:git@github.com:tomitribe/jkta.git</connection>
@@ -153,10 +153,10 @@
       <version>1.11.769</version>
     </dependency>
     <dependency>
-        <groupId>org.apache.tomcat</groupId>
-        <artifactId>tomcat</artifactId>
-        <version>10.0.0-M5</version>
-        <type>zip</type>
+      <groupId>org.apache.tomcat</groupId>
+      <artifactId>tomcat</artifactId>
+      <version>10.0.0-M5</version>
+      <type>zip</type>
     </dependency>
   </dependencies>
   <build>
@@ -249,4 +249,23 @@
       </plugin>
     </plugins>
   </build>
+  <profiles>
+    <profile>
+      <id>central</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <skipTests>true</skipTests>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
