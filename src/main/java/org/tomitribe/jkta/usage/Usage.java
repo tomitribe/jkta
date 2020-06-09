@@ -17,6 +17,7 @@
 package org.tomitribe.jkta.usage;
 
 import java.util.Iterator;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -26,7 +27,7 @@ import java.util.stream.Stream;
  * It could be the total of a class.  It could be the total of a jar.  It could be the total of a groupId
  * It could be the total of a local maven repo.  It could be the total of all of Maven Central.
  */
-public class Usage<Context> {
+public class Usage<Context> implements Predicate<String> {
 
     private final Context context;
     private int javax = 0;
@@ -41,14 +42,15 @@ public class Usage<Context> {
         this.context = context;
     }
 
-    public void visit(final String reference) {
+    public boolean test(final String reference) {
         final Package match = match(reference);
-        if (match == null) return;
+        if (match == null) return false;
 
         packages[match.ordinal()]++;
 
         if (match.getName().startsWith("javax")) javax++;
         if (match.getName().startsWith("jakarta")) jakarta++;
+        return true;
     }
 
     private Package match(final String reference) {

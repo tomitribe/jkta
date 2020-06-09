@@ -19,17 +19,23 @@ package org.tomitribe.jkta;
 import org.objectweb.asm.ClassReader;
 import org.objectweb.asm.util.ASMifier;
 import org.objectweb.asm.util.TraceClassVisitor;
+import org.tomitribe.jkta.usage.Is;
 import org.tomitribe.util.Hex;
 import org.tomitribe.util.IO;
+import org.tomitribe.util.PrintString;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintStream;
 import java.io.PrintWriter;
+import java.io.UncheckedIOException;
 import java.net.URL;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 /**
  * @version $Revision$ $Date$
@@ -111,5 +117,52 @@ public class Asmifier {
         final ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         write(new ClassReader(actualBytes), byteArrayOutputStream);
         return new String(byteArrayOutputStream.toByteArray());
+    }
+
+    public static String asmifyJar(final File jar) throws IOException {
+        final PrintString printString = new PrintString();
+        final InputStream read = IO.read(jar);
+        asmifyJar(read, printString);
+        return printString.toString();
+    }
+
+    private static void asmifyJar(final InputStream inputStream, final PrintStream out) throws IOException {
+        final ZipInputStream zipInputStream = new ZipInputStream(inputStream);
+
+        ZipEntry entry;
+        while ((entry = zipInputStream.getNextEntry()) != null) {
+
+            entryMetadata(entry, out);
+
+            final String path = entry.getName();
+
+            if (path.endsWith(".class")) {
+                asmifyClass(zipInputStream, out);
+            } else if (isZip(path)) {
+                asmifyJar(zipInputStream, out);
+            } else {
+                IO.copy(zipInputStream, out);
+            }
+        }
+    }
+
+    private static void entryMetadata(final ZipEntry entry, final PrintStream out) {
+        out.printf("%n-----------------------------------------------%n");
+        out.printf("name: %s%n", entry.getName());
+        out.printf("----%n");
+    }
+
+    private static void asmifyClass(final InputStream inputStream, final PrintStream out) {
+        try {
+            final byte[] bytes = IO.readBytes(inputStream);
+            final String asmify = Asmifier.asmify(bytes);
+            out.println(asmify);
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
+    private static boolean isZip(final String path) {
+        return Is.Zip.accept(path);
     }
 }

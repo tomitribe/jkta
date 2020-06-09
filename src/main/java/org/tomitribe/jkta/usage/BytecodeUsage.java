@@ -38,7 +38,7 @@ public class BytecodeUsage {
 
         final String className = name.replace('/', '.');
 
-        usage.visit(className);
+        usage.test(className);
     }
 
     public Usage getUsage() {

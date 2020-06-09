@@ -139,7 +139,7 @@ public class JarUsage {
      * of the jar, but we will at least all agree on the
      * same "wrong" answer.
      */
-    private static long getTime(final ZipEntry entry) {
+    public static long getTime(final ZipEntry entry) {
         long time = entry.getTime();
 
         if (time < 1 && entry.getLastModifiedTime() != null) {
