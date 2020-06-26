@@ -20,17 +20,25 @@ import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.Usage;
 
 import java.io.File;
+import java.util.function.Consumer;
 
 public class JarTsv6 implements Format<Jar> {
 
-    private JarTsv7 tsv7;
+    private final JarTsv7 tsv7;
+    private final Consumer<String> failed;
 
-    public JarTsv6(final File repository) {
+    public JarTsv6(final File repository, final Consumer<String> failed) {
         this.tsv7 = new JarTsv7(repository);
+        this.failed = failed;
+    }
+
+    public JarTsv6(final Consumer<String> failed) {
+        this(new File(""), failed);
     }
 
     public JarTsv6() {
-        this(new File(""));
+        this(s -> {
+        });
     }
 
     @Override
@@ -45,19 +53,24 @@ public class JarTsv6 implements Format<Jar> {
 
     @Override
     public Usage<Jar> read(final String line) {
-        final Columns columns = new Columns(line, 7);
+        try {
+            final Columns columns = new Columns(line, 7);
 
-        // These are order sensitive
-        final String hash = columns.nextString();
-        final long lastModified = columns.nextLong();
-        final long internalDate = columns.nextLong();
-        final long size = columns.nextLong();
-        final long classes = columns.nextLong();
-        final File file = new File(columns.nextString());
+            // These are order sensitive
+            final String hash = columns.nextString();
+            final long lastModified = columns.nextLong();
+            final long internalDate = columns.nextLong();
+            final long size = columns.nextLong();
+            final long classes = columns.nextLong();
+            final File file = new File(columns.nextString());
 
-        final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, new int[0]);
+            final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, new int[0]);
 
-        return Usage.fromTsv(jar, columns.nextString());
+            return Usage.fromTsv(jar, columns.nextString());
+        } catch (Exception e) {
+            failed.accept(line);
+            return null;
+        }
     }
 
     @Override

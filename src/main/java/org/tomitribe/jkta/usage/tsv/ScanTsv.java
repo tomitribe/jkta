@@ -31,6 +31,8 @@ import java.io.PrintStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -63,8 +65,13 @@ public class ScanTsv {
         usages.map(formatter::write).forEach(out::println);
         out.println(formatter.summary());
     }
-    
+
     public static Stream<Usage<Jar>> fromJarTsv(final InputStream content) {
+        return fromJarTsv(content, s -> {
+        });
+    }
+
+    public static Stream<Usage<Jar>> fromJarTsv(final InputStream content, final Consumer<String> failed) {
         final InputStreamReader reader = new InputStreamReader(content);
         final BufferedReader bufferedReader = new BufferedReader(reader);
 
@@ -76,23 +83,26 @@ public class ScanTsv {
 
         if (version == version7) {
             return bufferedReader.lines()
-                    .filter(ScanTsv::skipHeader) // skip header
                     .filter(ScanTsv::skipFooter) // skip summary
-                    .map(new JarTsv7()::read);
+                    .map(new JarTsv7(failed)::read)
+                    .filter(Objects::nonNull);
         }
 
         if (version == version6) {
             return bufferedReader.lines()
                     .filter(ScanTsv::skipHeader) // skip header
                     .filter(ScanTsv::skipFooter) // skip summary
-                    .map(new JarTsv6()::read);
+                    .map(new JarTsv6(failed)::read)
+                    .filter(Objects::nonNull);
         }
 
         if (version == version5) {
             return bufferedReader.lines()
                     .filter(ScanTsv::skipHeader) // skip header
                     .filter(ScanTsv::skipFooter) // skip summary
-                    .map(new JarTsv5()::read);
+                    .map(new JarTsv5(failed)::read)
+                    .filter(Objects::nonNull);
+
         }
 
         throw new UnsupportedTsvFormatException();

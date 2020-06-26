@@ -76,9 +76,18 @@ public class Repos {
             final PrintStream out = new PrintStream(os);
 
             for (final GHRepository repo : github.getOrganization("eclipse-ee4j").listRepositories()) {
+                final File file = new File(dir, repo.getName());
+                if (file.exists()) {
+                    if (new File(file, ".git").exists()) {
+                        out.printf("Existing repo %s%n", repo.getName());
+                    } else {
+                        out.printf("Conflict repo %s%n", repo.getName());
+                    }
+                    continue;
+                }
                 out.printf("Cloning repo %s%n", repo.getName());
                 try {
-                    jgit("clone", repo.getSshUrl(), new File(dir, repo.getName()).getAbsolutePath());
+                    jgit("clone", repo.getSshUrl(), file.getAbsolutePath());
                 } catch (Exception e) {
                     e.printStackTrace(out);
                 }

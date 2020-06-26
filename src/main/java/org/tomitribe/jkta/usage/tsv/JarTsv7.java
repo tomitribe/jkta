@@ -22,19 +22,32 @@ import org.tomitribe.jkta.usage.Usage;
 
 import java.io.File;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.function.Consumer;
 import java.util.stream.Stream;
 
 public class JarTsv7 implements Format<Jar> {
     private final Summary summary = new Summary();
     private final File repository;
     private final AtomicReference<JarSummary> jars = new AtomicReference<>(new JarSummary(0, 0));
+    private final Consumer<String> failed;
 
     public JarTsv7(final File repository) {
-        this.repository = repository;
+        this(repository, s -> {
+        });
     }
 
     public JarTsv7() {
-        this(new File(""));
+        this(s -> {
+        });
+    }
+
+    public JarTsv7(final Consumer<String> failed) {
+        this(new File(""), failed);
+    }
+
+    public JarTsv7(final File repository, final Consumer<String> failed) {
+        this.failed = failed;
+        this.repository = repository;
     }
 
     @Override
@@ -73,20 +86,25 @@ public class JarTsv7 implements Format<Jar> {
 
     @Override
     public Usage<Jar> read(final String line) {
-        final Columns columns = new Columns(line, 8);
+        try {
+            final Columns columns = new Columns(line, 8);
 
-        // These are order sensitive
-        final String hash = columns.nextString();
-        final long lastModified = columns.nextLong();
-        final long internalDate = columns.nextLong();
-        final long size = columns.nextLong();
-        final long classes = columns.nextLong();
-        final int[] javaVersions = columns.nextInts();
-        final File file = new File(columns.nextString());
+            // These are order sensitive
+            final String hash = columns.nextString();
+            final long lastModified = columns.nextLong();
+            final long internalDate = columns.nextLong();
+            final long size = columns.nextLong();
+            final long classes = columns.nextLong();
+            final int[] javaVersions = columns.nextInts();
+            final File file = new File(columns.nextString());
 
-        final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, javaVersions);
+            final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, javaVersions);
 
-        return Usage.fromTsv(jar, columns.nextString());
+            return Usage.fromTsv(jar, columns.nextString());
+        } catch (Exception e) {
+            failed.accept(line);
+            return null;
+        }
     }
 
     @Override
