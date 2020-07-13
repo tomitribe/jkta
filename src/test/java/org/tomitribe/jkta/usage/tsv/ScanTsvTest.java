@@ -16,7 +16,6 @@
  */
 package org.tomitribe.jkta.usage.tsv;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.Usage;

@@ -148,6 +148,10 @@ public class Usage<Context> implements Predicate<String> {
         return new Mutable<Context>(new Usage<>(this.context, this.javax, this.jakarta, this.packages));
     }
 
+    public static Builder builder() {
+        return new Builder();
+    }
+
     public static class Mutable<Context> {
         private final Usage<Context> usage;
 

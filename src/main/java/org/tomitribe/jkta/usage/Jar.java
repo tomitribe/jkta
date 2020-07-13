@@ -16,8 +16,13 @@
  */
 package org.tomitribe.jkta.usage;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.io.File;
 
+@Data
+@Builder(builderClassName = "Builder", toBuilder = true)
 public class Jar {
     private final File jar;
     private final String sha1;
@@ -46,32 +51,4 @@ public class Jar {
         this.javaVersions = javaVersions;
     }
 
-    public File getJar() {
-        return jar;
-    }
-
-    public String getSha1() {
-        return sha1;
-    }
-
-    public long getLastModified() {
-        return lastModified;
-    }
-
-    public long getInternalDate() {
-        return internalDate;
-    }
-
-    public long getClasses() {
-        return classes;
-    }
-
-    public long getSize() {
-        return size;
-    }
-
-    public int[] getJavaVersions() {
-        return javaVersions;
-    }
-    
 }
