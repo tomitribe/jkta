@@ -57,6 +57,7 @@ public class UsageCommand {
             { // print the TSV header
                 final ArrayList<String> columns = new ArrayList<>();
                 columns.add("class name");
+                columns.add("java version");
                 columns.add("javax uses total");
                 columns.add("jakarta uses total");
                 Stream.of(Package.values())
@@ -69,15 +70,16 @@ public class UsageCommand {
             final AtomicInteger scanned = new AtomicInteger();
             final AtomicInteger affected = new AtomicInteger();
 
-            final AtomicReference<Usage<String>> total = new AtomicReference<>(new Usage<>("total"));
+            final AtomicReference<Usage<ClassUsage.Clazz>> total = new AtomicReference<>(new Usage<>());
             ClassUsage.forEachClass(jar, usage -> {
                 total.accumulateAndGet(usage, Usage::add);
                 scanned.incrementAndGet();
                 if (usage.getJavax() > 0) affected.incrementAndGet();
-                out.printf("%s\t%s\n", usage.getContext(), usage.toTsv());
+                final ClassUsage.Clazz clazz = usage.getContext();
+                out.printf("%s\t%s\t%s\n", clazz.getName(), clazz.getVersion(), usage.toTsv());
             });
 
-            out.printf("%s\t%s\n", JarUsage.summary(scanned.get(), affected.get()), total.get().toTsv());
+            out.printf("%s\t%s\t%s\n", JarUsage.summary(scanned.get(), affected.get()), "-", total.get().toTsv());
         };
     }
 

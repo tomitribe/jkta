@@ -32,7 +32,7 @@ public class ClassUsage {
     private ClassUsage() {
     }
 
-    public static void forEachClass(final File jar, final Consumer<Usage<String>> consumer) throws IOException {
+    public static void forEachClass(final File jar, final Consumer<Usage<Clazz>> consumer) throws IOException {
         final ZipInputStream zipInputStream = new ZipInputStream(IO.read(jar));
 
         ZipEntry entry;
@@ -40,15 +40,34 @@ public class ClassUsage {
             final String path = entry.getName();
 
             if (path.endsWith(".class")) {
-                final Usage<String> usage = new Usage<>(path);
-                scan(zipInputStream, usage);
-                consumer.accept(usage);
+                final Usage<Clazz> usage = new Usage<>();
+                final int version = scan(zipInputStream, usage);
+
+                consumer.accept(new Usage<>(new Clazz(path, version)).add(usage));
             } else {
                 IO.copy(zipInputStream, ignore);
             }
         }
     }
 
+    public static class Clazz {
+        private final String name;
+        private final int version;
+
+        public Clazz(final String name, final int version) {
+            this.name = name;
+            this.version = version;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public int getVersion() {
+            return version;
+        }
+    }
+    
     public static String toTsv(final Usage<String> classUsage) {
         final StringBuilder sb = new StringBuilder();
 
@@ -66,9 +85,10 @@ public class ClassUsage {
         }
     };
 
-    private static void scan(final InputStream in, final Usage usage) throws IOException {
+    private static int scan(final InputStream in, final Usage usage) throws IOException {
         final ClassScanner classScanner = new ClassScanner(usage);
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);
+        return classScanner.getVersion();
     }
 }
