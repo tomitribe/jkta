@@ -134,6 +134,7 @@ public class ScanTsv {
 
     public static String versions(final Jar jar) {
         final int[] versions = jar.getJavaVersions();
+        if (versions == null) return "0";
         if (versions.length == 0) return "0";
         if (versions.length == 1) return versions[0] + "";
 

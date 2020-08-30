@@ -30,15 +30,16 @@ import java.util.stream.Stream;
 public class Usage<Context> implements Predicate<String> {
 
     private final Context context;
-    private int javax = 0;
-    private int jakarta = 0;
-    private final int[] packages = new int[Package.values().length];
+    protected int javax = 0;
+    protected int jakarta = 0;
+
+    protected final int[] packages = new int[Package.values().length];
 
     public Usage() {
         this(null);
     }
 
-    private Usage(final Context context, final int javax, final int jakarta, final int[] packages) {
+    public Usage(final Context context, final int javax, final int jakarta, final int[] packages) {
         this.context = context;
         this.javax = javax;
         this.jakarta = jakarta;

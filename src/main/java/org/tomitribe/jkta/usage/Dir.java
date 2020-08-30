@@ -33,6 +33,10 @@ public interface Dir extends org.tomitribe.util.dir.Dir {
     @Filter(Is.Scannable.class)
     Stream<File> searchScannables();
 
+    default Stream<File> sources() {
+        return files()
+                .filter(file -> !file.getAbsolutePath().contains("/.git/"));
+    }
 
     /**
      * JAX-RS and CREST compatible constructor.  Do not delete.

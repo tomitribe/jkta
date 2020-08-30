@@ -20,12 +20,19 @@ package org.tomitribe.jkta;
 
 import org.tomitribe.util.IO;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 
 public class Resources {
     public static String load(final String name) throws IOException {
         return IO.slurp(find(name));
+    }
+
+    public static File loadAsFile(final String name) throws IOException {
+        final File file = File.createTempFile("resource-", ".file");
+        IO.copy(find(name), file);
+        return file;
     }
 
     public static URL find(final String name) {

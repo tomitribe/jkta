@@ -51,4 +51,11 @@ public class Jar {
         this.javaVersions = javaVersions;
     }
 
+    public static class Builder {
+
+        public Builder path(final String path) {
+            return jar(new File(path));
+        }
+    }
+
 }
