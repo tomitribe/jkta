@@ -14,18 +14,24 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.review;
+package org.tomitribe.jkta.review;
 
-public class MissingIndexMdFieldException extends IllegalStateException {
+import org.tomitribe.util.dir.Dir;
 
-    private final String title;
+import java.io.File;
+import java.util.stream.Stream;
 
-    public MissingIndexMdFieldException(final String title) {
-        super(String.format("Missing '%s' field in _index.md file", title));
-        this.title = title;
+public interface Specifications extends Dir {
+    Stream<Specification> specifications();
+
+    Specification specification(final String name);
+
+
+    static Specifications from(final String name) {
+        return from(new File(name));
     }
 
-    public String getTitle() {
-        return title;
+    static Specifications from(final File file) {
+        return Dir.of(Specifications.class, file);
     }
 }

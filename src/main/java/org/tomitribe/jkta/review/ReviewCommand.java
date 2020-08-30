@@ -14,24 +14,22 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.review;
+package org.tomitribe.jkta.review;
 
-import org.tomitribe.util.dir.Dir;
+import org.tomitribe.crest.api.Command;
+import org.tomitribe.jkta.usage.Dir;
 
-import java.io.File;
-import java.util.stream.Stream;
+public class ReviewCommand {
 
-public interface Specifications extends Dir {
-    Stream<Specification> specifications();
+    @Command("review")
+    public void review(final Dir dir) {
 
-    Specification specification(final String name);
-
-
-    static Specifications from(final String name) {
-        return from(new File(name));
     }
 
-    static Specifications from(final File file) {
-        return Dir.of(Specifications.class, file);
+
+    public interface Apidocs extends org.tomitribe.util.dir.Dir {
+
     }
+
+
 }

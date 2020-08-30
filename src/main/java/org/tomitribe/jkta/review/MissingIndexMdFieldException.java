@@ -14,22 +14,18 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.review;
+package org.tomitribe.jkta.review;
 
-import org.tomitribe.crest.api.Command;
-import org.tomitribe.jkta.usage.Dir;
+public class MissingIndexMdFieldException extends IllegalStateException {
 
-public class ReviewCommand {
+    private final String title;
 
-    @Command("review")
-    public void review(final Dir dir) {
-
+    public MissingIndexMdFieldException(final String title) {
+        super(String.format("Missing '%s' field in _index.md file", title));
+        this.title = title;
     }
 
-
-    public interface Apidocs extends org.tomitribe.util.dir.Dir {
-
+    public String getTitle() {
+        return title;
     }
-
-
 }
