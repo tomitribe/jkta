@@ -42,8 +42,13 @@ public class Usage<Context> {
     }
 
     public void visit(final String reference) {
+//        if (reference != null && reference.contains("javax")) {
+//            System.out.println(reference);
+//        }
+        
         final Package match = match(reference);
         if (match == null) return;
+
 
         packages[match.ordinal()]++;
 
