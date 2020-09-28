@@ -59,6 +59,32 @@ public class TextCommands {
                 .forEach(this::fixBadRenames);
     }
 
+    @Command("replace-branding")
+    public void fixBranding(@Option("include") final Pattern include,
+                              @Option("exclude") final Pattern exclude,
+                              final Dir dir) {
+
+        final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
+        dir.files()
+           .filter(File::isFile)
+           .filter(file -> !file.getAbsolutePath().contains("/.git/"))
+           .filter(fileFilter)
+           .forEach(this::fixBranding);
+    }
+
+    @Command("replace-ejb")
+    public void fixEjb(@Option("include") final Pattern include,
+                            @Option("exclude") final Pattern exclude,
+                            final Dir dir) {
+
+        final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
+        dir.files()
+           .filter(File::isFile)
+           .filter(file -> !file.getAbsolutePath().contains("/.git/"))
+           .filter(fileFilter)
+           .forEach(this::fixEjb);
+    }
+
     private void jakartize(final File file) {
         try {
             final InputStream inputStream = StreamBuilder.create(IO.read(file))
@@ -268,4 +294,78 @@ public class TextCommands {
 
     }
 
+    private void fixBranding(final File file) {
+        try {
+            final InputStream inputStream = StreamBuilder
+                .create(IO.read(file))
+
+                // common typos
+                .replace("Jarkarta", "Jakarta")
+                .replace("Jakara", "Jakarta")
+                .replace("Jakata", "Jakarta")
+
+                 // replace all Java EE with Jakarta EE
+                .replace("Java EE", "Jakarta EE")
+
+                 // put back Java when it's allowed
+                 // Correct                                    Incorrect
+                 //
+                 // - J2EE 1.2                              Java EE 1.2, Jakarta EE 1.2
+                 // - J2EE 1.3                              Java EE 1.3, Jakarta EE 1.3
+                 // - J2EE 1.4                              Java EE 1.4, Jakarta EE 1.4
+                 // - Java EE 5                             J2EE 1.5, Jakarta EE 5
+                 // - Java EE 6                             J2EE 1.6, Jakarta EE 6
+                 // - Java EE 7                             J2EE 1.7, Jakarta EE 7
+                 // - Java EE 8                             J2EE 1.8
+                 // - Jakarta EE 8                          J2EE 1.8
+                 // - Jakarta EE 9                          J2EE 1.9, Java EE 9
+
+                .replace("Java EE 1.2", "J2EE 1.2")
+                .replace("Jakarta EE 1.2", "J2EE 1.2")
+
+                .replace("Java EE 1.3", "J2EE 1.3")
+                .replace("Jakarta EE 1.3", "J2EE 1.3")
+
+                .replace("Java EE 1.4", "J2EE 1.4")
+                .replace("Jakarta EE 1.4", "J2EE 1.4")
+
+                .replace("J2EE 1.5", "Java EE 5")
+                .replace("Jakarta EE 5", "Java EE 5")
+
+                .replace("J2EE 1.6", "Java EE 6")
+                .replace("Jakarta EE 6", "Java EE 6")
+
+                .replace("J2EE 1.7", "Java EE 7")
+                .replace("Jakarta EE 7", "Java EE 7")
+
+                .replace("J2EE 1.8", "Java EE 8")
+                .replace("Jakarta EE 8", "Java EE 8")
+
+                .replace("J2EE 1.9", "Jakarta EE 9")
+                .replace("Java EE 9", "Jakarta EE 9")
+
+                 .get();
+
+            final String content = IO.slurp(inputStream);
+            IO.copy(IO.read(content), file);
+        } catch (final IOException e) {
+            throw new UncheckedIOException("Failed to process file: " + file.getAbsolutePath(), e);
+        }
+    }
+
+    private void fixEjb(final File file) {
+        try {
+            final InputStream inputStream = StreamBuilder
+                .create(IO.read(file))
+
+
+
+                .get();
+
+            final String content = IO.slurp(inputStream);
+            IO.copy(IO.read(content), file);
+        } catch (final IOException e) {
+            throw new UncheckedIOException("Failed to process file: " + file.getAbsolutePath(), e);
+        }
+    }
 }
