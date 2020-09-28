@@ -16,15 +16,6 @@
  */
 package org.tomitribe.jkta.review;
 
-import org.tomitribe.crest.api.Command;
-import org.tomitribe.jkta.usage.Dir;
-
-public class ReviewCommand {
-
-    @Command("review")
-    public void review(final Dir dir) {
-
-    }
-
+public interface Apidocs extends org.tomitribe.util.dir.Dir {
 
 }

@@ -40,6 +40,10 @@ public interface Version extends org.tomitribe.util.dir.Dir {
     @Name("_index.md")
     public File indexMd();
 
+    default Index getIndex() {
+        return Index.from(indexMd());
+    }
+
     default String name() {
         return get().getName();
     }
@@ -57,7 +61,7 @@ public interface Version extends org.tomitribe.util.dir.Dir {
 //                .filter(file -> file.getName().endsWith(".html"));
 //    }
 
-    ReviewCommand.Apidocs apidocs();
+    Apidocs apidocs();
 
     static Version from(final String name) {
         return from(new File(name));
