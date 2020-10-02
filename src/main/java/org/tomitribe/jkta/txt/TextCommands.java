@@ -21,6 +21,11 @@ import org.tomitribe.crest.api.Option;
 import org.tomitribe.jkta.usage.Dir;
 import org.tomitribe.jkta.util.Predicates;
 import org.tomitribe.swizzle.stream.StreamBuilder;
+import org.tomitribe.tio.ColoredMatches;
+import org.tomitribe.tio.Grep;
+import org.tomitribe.tio.GrepCommand;
+import org.tomitribe.tio.Match;
+import org.tomitribe.tio.PatternMatcher;
 import org.tomitribe.util.IO;
 
 import java.io.File;
@@ -29,9 +34,143 @@ import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.util.function.Predicate;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 @Command("text")
 public class TextCommands {
+
+    @Command(interceptedBy = ColoredMatches.class)
+    public Stream<Match> grep(@Option("include") final Pattern include,
+                              @Option("exclude") final Pattern exclude,
+                              final org.tomitribe.tio.Dir dir) {
+
+        final String invalidPackages = "" +
+                "javax\\.activation" +
+                "|javax\\.annotation" +
+                "|javax\\.batch" +
+                "|javax\\.decorator" +
+                "|javax\\.ejb" +
+                "|javax\\.el" +
+                "|javax\\.enterprise" +
+                "|javax\\.faces" +
+                "|javax\\.inject" +
+                "|javax\\.interceptor" +
+                "|javax\\.jms" +
+                "|javax\\.json" +
+                "|javax\\.json\\.bind" +
+                "|javax\\.jws" +
+                "|javax\\.mail" +
+                "|javax\\.persistence" +
+                "|javax\\.resource" +
+                "|javax\\.security\\.auth\\.message" +
+                "|javax\\.security\\.enterprise" +
+                "|javax\\.security\\.jacc" +
+                "|javax\\.servlet" +
+                "|javax\\.transaction" +
+                "|javax\\.validation" +
+                "|javax\\.websocket" +
+                "|javax\\.ws\\.rs" +
+                "|javax\\.xml\\.bind" +
+                "|javax\\.xml\\.soap" +
+                "|javax\\.xml\\.ws" +
+                "|jakarta\\.annotation\\.process" +
+                "|jakarta\\.enterprise\\.deploy" +
+                "|jakarta\\.transaction\\.xa" +
+                "|jakarta\\.accessibility" +
+                "|jakarta\\.annotation\\.processing" +
+                "|jakarta\\.cache" +
+                "|jakarta\\.crypto" +
+                "|jakarta\\.imageio" +
+                "|jakarta\\.jdo" +
+                "|jakarta\\.jmdns" +
+                "|jakarta\\.lang" +
+                "|jakarta\\.lang\\.model" +
+                "|jakarta\\.management" +
+                "|jakarta\\.naming" +
+                "|jakarta\\.net" +
+                "|jakarta\\.portlet" +
+                "|jakarta\\.print" +
+                "|jakarta\\.rmi" +
+                "|jakarta\\.script" +
+                "|jakarta\\.security\\.Principal" +
+                "|jakarta\\.security\\.auth\\.AuthPermission" +
+                "|jakarta\\.security\\.auth\\.Deprecated" +
+                "|jakarta\\.security\\.auth\\.DestroyFailedException" +
+                "|jakarta\\.security\\.auth\\.Destroyable" +
+                "|jakarta\\.security\\.auth\\.LdapPrincipal" +
+                "|jakarta\\.security\\.auth\\.NTDomainPrincipal" +
+                "|jakarta\\.security\\.auth\\.NTNumericCredential" +
+                "|jakarta\\.security\\.auth\\.NTSid" +
+                "|jakarta\\.security\\.auth\\.NTSidDomainPrincipal" +
+                "|jakarta\\.security\\.auth\\.NTSidGroupPrincipal" +
+                "|jakarta\\.security\\.auth\\.NTSidPrimaryGroupPrincipal" +
+                "|jakarta\\.security\\.auth\\.NTSidUserPrincipal" +
+                "|jakarta\\.security\\.auth\\.NTUserPrincipal" +
+                "|jakarta\\.security\\.auth\\.PolicyFile" +
+                "|jakarta\\.security\\.auth\\.PrincipalComparator" +
+                "|jakarta\\.security\\.auth\\.PrivateCredentialPermission" +
+                "|jakarta\\.security\\.auth\\.RefreshFailedException" +
+                "|jakarta\\.security\\.auth\\.Refreshable" +
+                "|jakarta\\.security\\.auth\\.SolarisNumericGroupPrincipal" +
+                "|jakarta\\.security\\.auth\\.SolarisNumericUserPrincipal" +
+                "|jakarta\\.security\\.auth\\.SolarisPrincipal" +
+                "|jakarta\\.security\\.auth\\.Subject" +
+                "|jakarta\\.security\\.auth\\.SubjectDomainCombiner" +
+                "|jakarta\\.security\\.auth\\.UnixNumericGroupPrincipal" +
+                "|jakarta\\.security\\.auth\\.UnixNumericUserPrincipal" +
+                "|jakarta\\.security\\.auth\\.UnixPrincipal" +
+                "|jakarta\\.security\\.auth\\.UserPrincipal" +
+                "|jakarta\\.security\\.auth\\.X500Principal" +
+                "|jakarta\\.security\\.auth\\.callback" +
+                "|jakarta\\.security\\.auth\\.kerberos" +
+                "|jakarta\\.security\\.auth\\.login" +
+                "|jakarta\\.security\\.auth\\.spi" +
+                "|jakarta\\.security\\.auth\\.subject" +
+                "|jakarta\\.security\\.auth\\.x500" +
+                "|jakarta\\.security\\.cert" +
+                "|jakarta\\.security\\.sasl" +
+                "|jakarta\\.smartcardio" +
+                "|jakarta\\.sound" +
+                "|jakarta\\.sql" +
+                "|jakarta\\.swing" +
+                "|jakarta\\.tools" +
+                "|jakarta\\.transaction\\.xa" +
+                "|jakarta\\.wsdl" +
+                "|jakarta\\.xml\\.XML" +
+                "|jakarta\\.xml\\.access" +
+                "|jakarta\\.xml\\.catalog" +
+                "|jakarta\\.xml\\.crypto" +
+                "|jakarta\\.xml\\.datatype" +
+                "|jakarta\\.xml\\.messaging" +
+                "|jakarta\\.xml\\.namespace" +
+                "|jakarta\\.xml\\.parser" +
+                "|jakarta\\.xml\\.parsers" +
+                "|jakarta\\.xml\\.registry" +
+                "|jakarta\\.xml\\.rpc" +
+                "|jakarta\\.xml\\.stream" +
+                "|jakarta\\.xml\\.transform" +
+                "|jakarta\\.xml\\.validation" +
+                "|jakarta\\.xml\\.xpath";
+
+        /*
+         * The following packages are excluded from the above matches
+         */
+        final String excludedPackages = "javax\\.annotation\\.process|javax\\.enterprise\\.deploy|javax\\.transaction\\.xa";
+        final Pattern exclusions = Pattern.compile(excludedPackages);
+        final Predicate<File> fileFilter = org.tomitribe.tio.Predicates.fileFilter(include, exclude)
+                .and(file -> GrepCommand.binaries.asPredicate().negate().test(file.getName()));
+
+        final Grep firstGrep = Grep.builder()
+                .dir(dir)
+                .matcher(PatternMatcher.from(invalidPackages))
+                .build();
+
+        return dir.searchFiles()
+                .filter(Grep::excludeGitFiles)
+                .filter(fileFilter)
+                .flatMap(firstGrep::file)
+                .filter(match -> !exclusions.matcher(match.getLine().getText()).find());
+    }
 
     @Command
     public void replace(@Option("include") final Pattern include,
@@ -61,28 +200,28 @@ public class TextCommands {
 
     @Command("replace-branding")
     public void fixBranding(@Option("include") final Pattern include,
-                              @Option("exclude") final Pattern exclude,
-                              final Dir dir) {
-
-        final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
-        dir.files()
-           .filter(File::isFile)
-           .filter(file -> !file.getAbsolutePath().contains("/.git/"))
-           .filter(fileFilter)
-           .forEach(this::fixBranding);
-    }
-
-    @Command("replace-ejb")
-    public void fixEjb(@Option("include") final Pattern include,
                             @Option("exclude") final Pattern exclude,
                             final Dir dir) {
 
         final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
         dir.files()
-           .filter(File::isFile)
-           .filter(file -> !file.getAbsolutePath().contains("/.git/"))
-           .filter(fileFilter)
-           .forEach(this::fixEjb);
+                .filter(File::isFile)
+                .filter(file -> !file.getAbsolutePath().contains("/.git/"))
+                .filter(fileFilter)
+                .forEach(this::fixBranding);
+    }
+
+    @Command("replace-ejb")
+    public void fixEjb(@Option("include") final Pattern include,
+                       @Option("exclude") final Pattern exclude,
+                       final Dir dir) {
+
+        final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
+        dir.files()
+                .filter(File::isFile)
+                .filter(file -> !file.getAbsolutePath().contains("/.git/"))
+                .filter(fileFilter)
+                .forEach(this::fixEjb);
     }
 
     private void jakartize(final File file) {
@@ -195,7 +334,7 @@ public class TextCommands {
         }
 
     }
-    
+
     private void fixBadRenames(final File file) {
         try {
             final InputStream inputStream = StreamBuilder.create(IO.read(file))
@@ -297,54 +436,54 @@ public class TextCommands {
     private void fixBranding(final File file) {
         try {
             final InputStream inputStream = StreamBuilder
-                .create(IO.read(file))
+                    .create(IO.read(file))
 
-                // common typos
-                .replace("Jarkarta", "Jakarta")
-                .replace("Jakara", "Jakarta")
-                .replace("Jakata", "Jakarta")
+                    // common typos
+                    .replace("Jarkarta", "Jakarta")
+                    .replace("Jakara", "Jakarta")
+                    .replace("Jakata", "Jakarta")
 
-                 // replace all Java EE with Jakarta EE
-                .replace("Java EE", "Jakarta EE")
+                    // replace all Java EE with Jakarta EE
+                    .replace("Java EE", "Jakarta EE")
 
-                 // put back Java when it's allowed
-                 // Correct                                    Incorrect
-                 //
-                 // - J2EE 1.2                              Java EE 1.2, Jakarta EE 1.2
-                 // - J2EE 1.3                              Java EE 1.3, Jakarta EE 1.3
-                 // - J2EE 1.4                              Java EE 1.4, Jakarta EE 1.4
-                 // - Java EE 5                             J2EE 1.5, Jakarta EE 5
-                 // - Java EE 6                             J2EE 1.6, Jakarta EE 6
-                 // - Java EE 7                             J2EE 1.7, Jakarta EE 7
-                 // - Java EE 8                             J2EE 1.8
-                 // - Jakarta EE 8                          J2EE 1.8
-                 // - Jakarta EE 9                          J2EE 1.9, Java EE 9
+                    // put back Java when it's allowed
+                    // Correct                                    Incorrect
+                    //
+                    // - J2EE 1.2                              Java EE 1.2, Jakarta EE 1.2
+                    // - J2EE 1.3                              Java EE 1.3, Jakarta EE 1.3
+                    // - J2EE 1.4                              Java EE 1.4, Jakarta EE 1.4
+                    // - Java EE 5                             J2EE 1.5, Jakarta EE 5
+                    // - Java EE 6                             J2EE 1.6, Jakarta EE 6
+                    // - Java EE 7                             J2EE 1.7, Jakarta EE 7
+                    // - Java EE 8                             J2EE 1.8
+                    // - Jakarta EE 8                          J2EE 1.8
+                    // - Jakarta EE 9                          J2EE 1.9, Java EE 9
 
-                .replace("Java EE 1.2", "J2EE 1.2")
-                .replace("Jakarta EE 1.2", "J2EE 1.2")
+                    .replace("Java EE 1.2", "J2EE 1.2")
+                    .replace("Jakarta EE 1.2", "J2EE 1.2")
 
-                .replace("Java EE 1.3", "J2EE 1.3")
-                .replace("Jakarta EE 1.3", "J2EE 1.3")
+                    .replace("Java EE 1.3", "J2EE 1.3")
+                    .replace("Jakarta EE 1.3", "J2EE 1.3")
 
-                .replace("Java EE 1.4", "J2EE 1.4")
-                .replace("Jakarta EE 1.4", "J2EE 1.4")
+                    .replace("Java EE 1.4", "J2EE 1.4")
+                    .replace("Jakarta EE 1.4", "J2EE 1.4")
 
-                .replace("J2EE 1.5", "Java EE 5")
-                .replace("Jakarta EE 5", "Java EE 5")
+                    .replace("J2EE 1.5", "Java EE 5")
+                    .replace("Jakarta EE 5", "Java EE 5")
 
-                .replace("J2EE 1.6", "Java EE 6")
-                .replace("Jakarta EE 6", "Java EE 6")
+                    .replace("J2EE 1.6", "Java EE 6")
+                    .replace("Jakarta EE 6", "Java EE 6")
 
-                .replace("J2EE 1.7", "Java EE 7")
-                .replace("Jakarta EE 7", "Java EE 7")
+                    .replace("J2EE 1.7", "Java EE 7")
+                    .replace("Jakarta EE 7", "Java EE 7")
 
-                .replace("J2EE 1.8", "Java EE 8")
-                .replace("Jakarta EE 8", "Java EE 8")
+                    .replace("J2EE 1.8", "Java EE 8")
+                    .replace("Jakarta EE 8", "Java EE 8")
 
-                .replace("J2EE 1.9", "Jakarta EE 9")
-                .replace("Java EE 9", "Jakarta EE 9")
+                    .replace("J2EE 1.9", "Jakarta EE 9")
+                    .replace("Java EE 9", "Jakarta EE 9")
 
-                 .get();
+                    .get();
 
             final String content = IO.slurp(inputStream);
             IO.copy(IO.read(content), file);
@@ -356,11 +495,10 @@ public class TextCommands {
     private void fixEjb(final File file) {
         try {
             final InputStream inputStream = StreamBuilder
-                .create(IO.read(file))
+                    .create(IO.read(file))
 
 
-
-                .get();
+                    .get();
 
             final String content = IO.slurp(inputStream);
             IO.copy(IO.read(content), file);

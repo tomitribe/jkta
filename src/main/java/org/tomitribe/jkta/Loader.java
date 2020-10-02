@@ -18,6 +18,7 @@ package org.tomitribe.jkta;
 
 import org.tomitribe.jkta.central.CentralCommand;
 import org.tomitribe.jkta.usage.UsageCommand;
+import org.tomitribe.tio.ColoredMatches;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -28,6 +29,7 @@ public class Loader implements org.tomitribe.crest.api.Loader {
     public Iterator<Class<?>> iterator() {
         return Arrays.asList(
                 CentralCommand.class,
+                ColoredMatches.class,
                 UsageCommand.class
         ).iterator();
     }
