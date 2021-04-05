@@ -41,12 +41,12 @@ public class JarUsage {
     private JarUsage() {
     }
 
-    public static Usage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
+    public static PackageUsage<Jar> of(final File jar) throws NoSuchAlgorithmException, IOException {
         if (jar.getName().endsWith(".class")) {
             return ofClass(jar);
         }
         final InputStream inputStream = IO.read(jar);
-        final Usage usage = new Usage();
+        final PackageUsage usage = new PackageUsage();
 
         final Set<Integer> versions = new HashSet<>();
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
@@ -57,12 +57,12 @@ public class JarUsage {
 
         final byte[] messageDigest = md.digest();
         final String hash = Hex.toString(messageDigest);
-        return new Usage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length(), versions(versions))).add(usage);
+        return new PackageUsage<>(new Jar(jar, hash, jar.lastModified(), internalDate, classes.get(), jar.length(), versions(versions))).add(usage);
     }
 
-    private static Usage<Jar> ofClass(final File clazz) throws IOException, NoSuchAlgorithmException {
+    private static PackageUsage<Jar> ofClass(final File clazz) throws IOException, NoSuchAlgorithmException {
         final InputStream inputStream = IO.read(clazz);
-        final Usage usage = new Usage();
+        final PackageUsage usage = new PackageUsage();
 
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
         final DigestInputStream digestIn = new DigestInputStream(inputStream, md);
@@ -71,7 +71,7 @@ public class JarUsage {
 
         final byte[] messageDigest = md.digest();
         final String hash = Hex.toString(messageDigest);
-        return new Usage<>(new Jar(clazz, hash, clazz.lastModified(), clazz.lastModified(), 1, clazz.length(), new int[]{version})).add(usage);
+        return new PackageUsage<>(new Jar(clazz, hash, clazz.lastModified(), clazz.lastModified(), 1, clazz.length(), new int[]{version})).add(usage);
     }
 
     private static long scanJar(final Usage usage, final Set<Integer> versions, final InputStream inputStream, final AtomicLong classes) throws IOException {

@@ -18,7 +18,7 @@ package org.tomitribe.jkta.usage.tsv;
 
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.Package;
-import org.tomitribe.jkta.usage.Usage;
+import org.tomitribe.jkta.usage.PackageUsage;
 
 import java.io.File;
 import java.util.concurrent.atomic.AtomicReference;
@@ -66,7 +66,7 @@ public class JarTsv7 implements Format<Jar> {
     }
 
     @Override
-    public String write(final Usage<Jar> usage) {
+    public String write(final PackageUsage<Jar> usage) {
         final Jar jar = usage.getContext();
 
         summary.add(usage);
@@ -85,7 +85,7 @@ public class JarTsv7 implements Format<Jar> {
     }
 
     @Override
-    public Usage<Jar> read(final String line) {
+    public PackageUsage<Jar> read(final String line) {
         try {
             final Columns columns = new Columns(line, 8);
 
@@ -100,7 +100,7 @@ public class JarTsv7 implements Format<Jar> {
 
             final Jar jar = new Jar(file, hash, lastModified, internalDate, classes, size, javaVersions);
 
-            return Usage.fromTsv(jar, columns.nextString());
+            return PackageUsage.fromTsv(jar, columns.nextString());
         } catch (Exception e) {
             failed.accept(line);
             return null;

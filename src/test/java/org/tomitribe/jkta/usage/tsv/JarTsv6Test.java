@@ -20,8 +20,8 @@ import org.junit.Test;
 import org.tomitribe.jkta.Resources;
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.Package;
+import org.tomitribe.jkta.usage.PackageUsage;
 import org.tomitribe.jkta.usage.Scan;
-import org.tomitribe.jkta.usage.Usage;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class JarTsv6Test {
     @Test
     public void write() {
         final Jar jar = new Jar(new File("/foo/bar"), "12345678901234567890123456789", 12345L, 34567L, 67, 5555, new int[]{34, 56});
-        final Usage<Jar> usage = new Usage<>(jar);
+        final PackageUsage<Jar> usage = new PackageUsage<>(jar);
 
         Package.names().forEach(usage::test);
         Package.names().filter(s -> s.contains("e")).forEach(usage::test);
@@ -58,7 +58,7 @@ public class JarTsv6Test {
     @Test
     public void read() {
 
-        final Usage<Jar> actual = new JarTsv6().read("d393ef6a82b25cdf5d70980d97683aa0d8f6a036\t1590789559000\t1590701910000\t60156\t38\t" +
+        final PackageUsage<Jar> actual = new JarTsv6().read("d393ef6a82b25cdf5d70980d97683aa0d8f6a036\t1590789559000\t1590701910000\t60156\t38\t" +
                 "org/catools/tms.etl/0.1.32/tms.etl-0.1.32.jar\t275\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t275\t0\t0\t0\t0\t0" +
                 "\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0");
 
@@ -81,7 +81,7 @@ public class JarTsv6Test {
     @Test
     public void summary() {
 
-        final Usage<Jar> usage = new JarTsv6().read("d393ef6a82b25cdf5d70980d97683aa0d8f6a036\t1590789559000\t1590701910000\t60156\t38\t" +
+        final PackageUsage<Jar> usage = new JarTsv6().read("d393ef6a82b25cdf5d70980d97683aa0d8f6a036\t1590789559000\t1590701910000\t60156\t38\t" +
                 "org/catools/tms.etl/0.1.32/tms.etl-0.1.32.jar\t275\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t275\t0\t0\t0\t0\t0" +
                 "\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0\t0");
 

@@ -34,7 +34,7 @@ public class ExclusionsTest {
     public void javaxAnnotationProcessor() {
 
         { // Count javax.annotation
-            final Usage<Jar> usage = usage(new Object() {
+            final PackageUsage<Jar> usage = usage(new Object() {
                 public Object m1(final javax.annotation.Generated foo) {
                     return foo;
                 }
@@ -44,7 +44,7 @@ public class ExclusionsTest {
         }
 
         { // Do NOT count javax.annotation.processor
-            final Usage<Jar> usage = usage(new Object() {
+            final PackageUsage<Jar> usage = usage(new Object() {
                 public Object m1(final javax.annotation.processing.AbstractProcessor abstractProcessor) {
                     return abstractProcessor;
                 }
@@ -64,7 +64,7 @@ public class ExclusionsTest {
     public void javaxTransactionXa() {
 
         { // Count javax.annotation
-            final Usage<Jar> usage = usage(new Object() {
+            final PackageUsage<Jar> usage = usage(new Object() {
                 public Object m1(final javax.transaction.Transaction foo) {
                     return foo;
                 }
@@ -74,7 +74,7 @@ public class ExclusionsTest {
         }
 
         { // Do NOT count javax.annotation.processor
-            final Usage<Jar> usage = usage(new Object() {
+            final PackageUsage<Jar> usage = usage(new Object() {
                 public Object m1(final javax.transaction.xa.XAResource foo) {
                     return foo;
                 }

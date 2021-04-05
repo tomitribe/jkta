@@ -20,7 +20,7 @@ import org.junit.Test;
 import org.tomitribe.jkta.Resources;
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.Package;
-import org.tomitribe.jkta.usage.Usage;
+import org.tomitribe.jkta.usage.PackageUsage;
 
 import java.io.File;
 
@@ -38,7 +38,7 @@ public class JarTsv7Test {
     @Test
     public void write() {
         final Jar jar = new Jar(new File("/foo/bar"), "12345678901234567890123456789", 12345L, 34567L, 67, 5555, new int[]{34, 56});
-        final Usage<Jar> usage = new Usage<>(jar);
+        final PackageUsage<Jar> usage = new PackageUsage<>(jar);
 
         Package.names().forEach(usage::test);
         Package.names().filter(s -> s.contains("e")).forEach(usage::test);
@@ -54,7 +54,7 @@ public class JarTsv7Test {
     @Test
     public void read() {
 
-        final Usage<Jar> actual = new JarTsv7().read("12345678901234567890123456789\t12345\t34567\t5555\t67\t34,56\t/foo/bar" +
+        final PackageUsage<Jar> actual = new JarTsv7().read("12345678901234567890123456789\t12345\t34567\t5555\t67\t34,56\t/foo/bar" +
                 "\t55\t48\t1\t1\t1\t2\t2\t2\t2\t2\t2\t2\t2\t2\t1\t1\t1\t1\t1\t2\t2\t2\t2\t2\t2\t2\t2\t" +
                 "2\t1\t1\t2\t1\t1\t2\t1\t1\t1\t1\t1\t1\t2\t2\t2\t2\t2\t2\t2\t2\t1\t1\t1\t1\t1\t2\t2\t2" +
                 "\t2\t2\t2\t2\t2\t1\t1\t2\t1\t1\t1\t1");
@@ -141,7 +141,7 @@ public class JarTsv7Test {
     @Test
     public void summary() {
 
-        final Usage<Jar> usage = new JarTsv7().read("12345678901234567890123456789\t12345\t34567\t5555\t67\t34,56\t/foo/bar" +
+        final PackageUsage<Jar> usage = new JarTsv7().read("12345678901234567890123456789\t12345\t34567\t5555\t67\t34,56\t/foo/bar" +
                 "\t55\t48\t1\t1\t1\t2\t2\t2\t2\t2\t2\t2\t2\t2\t1\t1\t1\t1\t1\t2\t2\t2\t2\t2\t2\t2\t2\t" +
                 "2\t1\t1\t2\t1\t1\t2\t1\t1\t1\t1\t1\t1\t2\t2\t2\t2\t2\t2\t2\t2\t1\t1\t1\t1\t1\t2\t2\t2" +
                 "\t2\t2\t2\t2\t2\t1\t1\t2\t1\t1\t1\t1");

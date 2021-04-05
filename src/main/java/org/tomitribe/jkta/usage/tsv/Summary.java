@@ -17,7 +17,7 @@
 package org.tomitribe.jkta.usage.tsv;
 
 import org.tomitribe.jkta.usage.Jar;
-import org.tomitribe.jkta.usage.Usage;
+import org.tomitribe.jkta.usage.PackageUsage;
 
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
@@ -25,10 +25,10 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Summary {
     final AtomicInteger scanned = new AtomicInteger();
     final AtomicInteger affected = new AtomicInteger();
-    final AtomicReference<Usage> total = new AtomicReference<>(new Usage());
+    final AtomicReference<PackageUsage> total = new AtomicReference<>(new PackageUsage());
 
-    public void add(final Usage<Jar> usage) {
-        total.accumulateAndGet(usage, Usage::add);
+    public void add(final PackageUsage<Jar> usage) {
+        total.accumulateAndGet(usage, PackageUsage::add);
         scanned.incrementAndGet();
         if (usage.getJavax() > 0) affected.incrementAndGet();
     }
@@ -41,7 +41,7 @@ public class Summary {
         return affected.get();
     }
 
-    public Usage getTotal() {
+    public PackageUsage getTotal() {
         return total.get();
     }
 
@@ -49,6 +49,6 @@ public class Summary {
         final double affected = this.affected.get();
         final double scanned = this.scanned.get();
         final int percent = (int) ((affected / scanned) * 100);
-        return String.format("total affected %s%% (%s of %s scanned)", percent, (int)affected, (int)scanned);
+        return String.format("total affected %s%% (%s of %s scanned)", percent, (int) affected, (int) scanned);
     }
 }

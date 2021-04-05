@@ -18,6 +18,7 @@ package org.tomitribe.jkta.usage.tsv;
 
 import org.junit.Test;
 import org.tomitribe.jkta.usage.Jar;
+import org.tomitribe.jkta.usage.PackageUsage;
 import org.tomitribe.jkta.usage.Usage;
 import org.tomitribe.util.IO;
 import org.tomitribe.util.PrintString;
@@ -35,11 +36,11 @@ public class ScanTsvTest {
 
     @Test
     public void version8() throws Exception {
-        final List<Usage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(load("scan-v0.8.tsv")))
+        final List<PackageUsage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(load("scan-v0.8.tsv")))
                 .collect(Collectors.toList());
         assertEquals(32, usages.size());
 
-        final Usage<Jar> usage = usages.get(12);
+        final PackageUsage<Jar> usage = usages.get(12);
         assertEquals("83997d867ea54f5e555a0865957d975875c5aa2d", usage.getContext().getSha1());
         assertEquals(new File("lib/catalina.jar"), usage.getContext().getJar());
         assertEquals(1588703994000L, usage.getContext().getLastModified());
@@ -95,11 +96,11 @@ public class ScanTsvTest {
     @Test
     public void version7() throws Exception {
         final String content = load("scan-v0.7.tsv");
-        final List<Usage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(content))
+        final List<PackageUsage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(content))
                 .collect(Collectors.toList());
         assertEquals(9, usages.size());
 
-        final Usage<Jar> usage = usages.get(0);
+        final PackageUsage<Jar> usage = usages.get(0);
         assertEquals("49a8e05010566bd513e162238ca4ca2d2b0a7fea", usage.getContext().getSha1());
         assertEquals(new File("org/tomitribe/jkta/jkta/0.7/jkta-0.7.jar"), usage.getContext().getJar());
         assertEquals(1590789046000L, usage.getContext().getLastModified());
@@ -133,11 +134,11 @@ public class ScanTsvTest {
     @Test
     public void version6() throws Exception {
         final String content = load("scan-v0.6.tsv");
-        final List<Usage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(content))
+        final List<PackageUsage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(content))
                 .collect(Collectors.toList());
         assertEquals(27, usages.size());
 
-        final Usage<Jar> usage = usages.get(10);
+        final PackageUsage<Jar> usage = usages.get(10);
         assertEquals(new File("org/catools/tms.etl/0.1.32/tms.etl-0.1.32.jar"), usage.getContext().getJar());
         assertEquals("d393ef6a82b25cdf5d70980d97683aa0d8f6a036", usage.getContext().getSha1());
         assertEquals(1590789559000L, usage.getContext().getLastModified());
@@ -188,11 +189,11 @@ public class ScanTsvTest {
     @Test
     public void version5() throws Exception {
         final String content = load("scan-v0.5.tsv");
-        final List<Usage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(content))
+        final List<PackageUsage<Jar>> usages = ScanTsv.fromJarTsv(IO.read(content))
                 .collect(Collectors.toList());
         assertEquals(14, usages.size());
 
-        final Usage<Jar> usage = usages.get(3);
+        final PackageUsage<Jar> usage = usages.get(3);
         assertEquals(new File("com/fortitudetec/elucidation-bundle/2.1.0/elucidation-bundle-2.1.0.jar"), usage.getContext().getJar());
         assertEquals("8b89f22aa16858cc54bdc6a2f525b4b6510bec63", usage.getContext().getSha1());
         assertEquals(1590779360000L, usage.getContext().getLastModified());
@@ -230,7 +231,7 @@ public class ScanTsvTest {
     /**
      * Asserts the expected results when an older tsv is written back out into the newer format
      */
-    private void assertConvertedTsv(final List<Usage<Jar>> usages, final String name) throws IOException {
+    private void assertConvertedTsv(final List<PackageUsage<Jar>> usages, final String name) throws IOException {
         final String expected = load(name);
         final PrintString out = new PrintString();
         ScanTsv.toJarTsv(out, usages.stream(), new File(""));

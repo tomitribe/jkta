@@ -49,7 +49,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Schedule
             public void get() {
             }
@@ -62,7 +62,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)})
             public void get() {
             }
@@ -75,7 +75,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitTypeAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public <@MockScoped V> V get() {
                 return null;
             }
@@ -88,7 +88,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitTypeAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public <@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) V> V get() {
                 return null;
             }
@@ -101,7 +101,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitParameterAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m(@PathParam("id") int id) {
             }
         });
@@ -114,7 +114,7 @@ public class MethodScannerTest {
     @Ignore
     @Test
     public void visitParameterAnnotation_Deep_PotentialAsmBug() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m(@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) int id) {
             }
         });
@@ -126,7 +126,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitParameterAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m(@Data(type = HttpServlet.class) int id) {
             }
         });
@@ -138,7 +138,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitFrame() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m(Object o) {
                 EnterpriseBean bean = (SessionBean) o;
                 try {
@@ -156,7 +156,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitTypeInsn() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m(Object o) {
                 final Object bean = (SessionBean) o;
                 System.out.println(bean);
@@ -170,7 +170,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitFieldInsn() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             final SessionBean bean = null;
         });
 
@@ -181,7 +181,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitMethodInsn() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
 
             public void m() {
                 new ScheduleExpression();
@@ -195,7 +195,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitMethodInsn_Descriptor() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m(final EnterpriseBeanConsumer consumer, final EntityBean bean) {
                 consumer.accept(bean);
             }
@@ -208,7 +208,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitInvokeDynamicInsn_Direct() {
-        final Usage usage = new Usage();
+        final PackageUsage usage = new PackageUsage();
         final MethodScanner methodScanner = new MethodScanner(Opcodes.ASM8, new BytecodeUsage(usage, Opcodes.ASM8));
         methodScanner.visitInvokeDynamicInsn(
                 "accept",
@@ -241,7 +241,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitInvokeDynamicInsn() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void invokedynamic(Persist<EnterpriseBean> persist, Process process) {
                 persist.forEach(process::process);
             }
@@ -266,7 +266,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitLdcInsn_Type() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 System.out.println(GET.class);
             }
@@ -302,7 +302,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitMultiANewArrayInsn() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 final Cookie[][][] cookies = new Cookie[4][8][16];
             }
@@ -317,7 +317,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitInsnAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 final List list = (@MockScoped ArrayList) null;
             }
@@ -332,7 +332,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitInsnAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 final List list = (@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) ArrayList) null;
             }
@@ -348,7 +348,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitTryCatchBlock() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 try {
                     System.out.println();
@@ -368,7 +368,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitTryCatchAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 try {
                     System.out.println();
@@ -389,7 +389,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitTryCatchAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 try {
                     System.out.println();
@@ -411,7 +411,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitLocalVariableAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 @MockScoped long e = System.nanoTime();
             }
@@ -425,7 +425,7 @@ public class MethodScannerTest {
 
     @Test
     public void visitLocalVariableAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void m() {
                 @ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) long e = System.nanoTime();
             }

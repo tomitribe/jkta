@@ -20,6 +20,7 @@ import org.junit.Assert;
 import org.tomitribe.jkta.Asmifier;
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.JarUsage;
+import org.tomitribe.jkta.usage.PackageUsage;
 import org.tomitribe.jkta.usage.Usage;
 import org.tomitribe.util.Archive;
 
@@ -33,11 +34,11 @@ public class Transform {
     private Transform() {
     }
 
-    public static Usage<Jar> usage(final Object o) {
+    public static PackageUsage<Jar> usage(final Object o) {
         return usage(o.getClass());
     }
 
-    public static Usage<Jar> usage(final Class<?> aClass)  {
+    public static PackageUsage<Jar> usage(final Class<?> aClass)  {
         try {
             final File jar = new TestArchive().add(aClass).toJar();
 

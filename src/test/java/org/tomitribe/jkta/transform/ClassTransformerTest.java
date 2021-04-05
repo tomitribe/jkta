@@ -23,7 +23,7 @@ import org.tomitribe.jkta.usage.ClassScannerTest;
 import org.tomitribe.jkta.usage.Data;
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.Package;
-import org.tomitribe.jkta.usage.Usage;
+import org.tomitribe.jkta.usage.PackageUsage;
 
 import javax.ejb.EJBException;
 import javax.ejb.EnterpriseBean;
@@ -47,7 +47,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visit_Negative() {
-        final Usage<Jar> usage = usage(ClassScannerTest.VisitNegative.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.VisitNegative.class);
 
         assertUsage(usage);
     }
@@ -65,7 +65,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visit_SuperClass() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasSuper.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasSuper.class);
 
         assertUsage(usage, Package.JAVAX_SERVLET, Package.JAVAX_SERVLET);
 
@@ -78,7 +78,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visit_Interfaces() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasInterface.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasInterface.class);
 
         assertUsage(usage, Package.JAVAX_EJB);
 
@@ -91,7 +91,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visit_Signature() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasSignature.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasSignature.class);
 
         assertUsage(usage, Package.JAVAX_EJB);
 
@@ -104,7 +104,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visit_Signature2() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasSignature2.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasSignature2.class);
 
         assertUsage(usage, Package.JAVAX_EJB);
 
@@ -117,7 +117,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visit_All() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasAll.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasAll.class);
 
         assertUsage(usage,
                 Package.JAVAX_EJB,
@@ -138,7 +138,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitAnnotation() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasAnnotation.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasAnnotation.class);
 
         assertUsage(usage, Package.JAVAX_ENTERPRISE);
     }
@@ -151,7 +151,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitAnnotation_Deep() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasAnnotationData.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasAnnotationData.class);
 
         assertUsage(usage, Package.JAVAX_WS_RS, Package.JAVAX_SERVLET);
     }
@@ -164,7 +164,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitTypeAnnotation() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasTypeAnnotation.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasTypeAnnotation.class);
 
         assertUsage(usage, Package.JAVAX_ENTERPRISE);
     }
@@ -177,7 +177,7 @@ public class ClassTransformerTest {
     @Ignore
     @Test
     public void visitTypeAnnotation_Deep_PossibleAsmBug() {
-        final Usage<Jar> usage = usage(ClassScannerTest.HasTypeAnnotationDeep.class);
+        final PackageUsage<Jar> usage = usage(ClassScannerTest.HasTypeAnnotationDeep.class);
 
         assertUsage(usage, Package.JAVAX_WS_RS, Package.JAVAX_SERVLET);
     }
@@ -189,7 +189,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitField() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             SessionBean sb;
         });
 
@@ -200,7 +200,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitField_Signature1() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             final Reference<SessionBean> sb = null;
         });
 
@@ -216,7 +216,7 @@ public class ClassTransformerTest {
      */
     @Test
     public void visitField_SignatureNoDuplicate() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             Bean<SessionBean> bean;
         });
 
@@ -227,7 +227,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitMethod_Return() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public SessionBean get() {
                 return null;
             }
@@ -240,7 +240,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitMethod_ReturnGeneric() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public ClassScannerTest.Generic<SessionBean> get() {
                 return null;
             }
@@ -253,7 +253,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitMethod_Parameter() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(SessionBean sb) {
             }
         });
@@ -265,7 +265,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitMethod_ParameterGeneric() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(Object o, ClassScannerTest.Generic<SessionBean> sb, int i) {
             }
         });
@@ -277,7 +277,7 @@ public class ClassTransformerTest {
 
     @Test
     public void visitMethod_Throws() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(Serializable s) throws EJBException, IOException {
             }
         });

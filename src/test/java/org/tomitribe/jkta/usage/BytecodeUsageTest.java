@@ -45,7 +45,7 @@ public class BytecodeUsageTest extends Assert {
     @Test
     public void testReturn() throws Exception {
 
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public Transaction get() {
                 return null;
             }
@@ -58,7 +58,7 @@ public class BytecodeUsageTest extends Assert {
     @Test
     public void testParameter() throws Exception {
 
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(SessionBean s) {
             }
         });
@@ -70,7 +70,7 @@ public class BytecodeUsageTest extends Assert {
     @Test
     public void testField() throws Exception {
 
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             private SessionBean sb = null;
         });
 
@@ -81,7 +81,7 @@ public class BytecodeUsageTest extends Assert {
     @Test
     public void testFieldGenericDeclaration() throws Exception {
 
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             private AtomicReference<SessionBean> sb = null;
         });
 
@@ -95,7 +95,7 @@ public class BytecodeUsageTest extends Assert {
     @Test
     public void testVariableGenericAssignment() throws Exception {
 
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void foo() {
                 AtomicReference<?> sb = new AtomicReference<SessionBean>();
             }
@@ -109,7 +109,7 @@ public class BytecodeUsageTest extends Assert {
     @Test
     public void testVariableDeclaration() throws Exception {
 
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void foo() {
                 SessionBean sb = null;
                 if (sb == null) {
@@ -125,7 +125,7 @@ public class BytecodeUsageTest extends Assert {
     @Test
     public void testVariableGenericDeclaration() throws Exception {
 
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void foo() {
                 AtomicReference<?> sb = new AtomicReference<SessionBean>();
             }
@@ -137,7 +137,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testThrows() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get() throws EJBException {
             }
         });
@@ -148,7 +148,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testIf() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final Class c) {
                 if (c == SessionBean.class) {
                     c.getSimpleName();
@@ -162,7 +162,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testSwitch() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final LockType c) {
                 switch (c) {
                     case READ:
@@ -183,7 +183,7 @@ public class BytecodeUsageTest extends Assert {
     @Ignore
     @Test
     public void testFor() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final LockType... c) {
                 for (final LockType lockType : c) {
                     System.out.println(lockType);
@@ -197,7 +197,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testInstanceof() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final Object o) {
                 boolean b = o instanceof SessionBean;
             }
@@ -209,7 +209,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testIfInstanceof() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final Object o) {
                 if (o instanceof SessionBean) {
                     System.out.println();
@@ -223,7 +223,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testTernaryInstanceof() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final Object o) {
                 final Object o2 = o instanceof SessionBean ? "" : null;
             }
@@ -235,7 +235,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testWhileInstanceof() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(Object o) {
                 while (o instanceof SessionBean) {
                     o = System.currentTimeMillis();
@@ -249,7 +249,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testHardEquals() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final Object o) {
                 boolean b = o == SessionBean.class;
             }
@@ -261,7 +261,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testIfHardEquals() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final Object o) {
                 if (o == SessionBean.class) {
                     System.out.println();
@@ -275,7 +275,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testTernaryHardEquals() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final Object o) {
                 final Object o2 = o == SessionBean.class ? "" : null;
             }
@@ -287,7 +287,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testWhileHardEquals() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(Object o) {
                 while (o == SessionBean.class) {
                     o = System.currentTimeMillis();
@@ -302,7 +302,7 @@ public class BytecodeUsageTest extends Assert {
     @Ignore
     @Test
     public void testGenericMethodParam() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(final Reference<SessionBean> c) {
             }
         });
@@ -314,7 +314,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testGenericField() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             final Reference<SessionBean> c = new WeakReference<>(null);
 
             public void get() {
@@ -327,7 +327,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testGenericMethodReturn() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public <T extends SessionBean> T get() {
                 return null;
             }
@@ -346,7 +346,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testAnnotationParameter() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Clazz(SessionBean.class)
             public void get() {
             }
@@ -358,7 +358,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testFieldAnnotation() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Id
             private long foo;
         });
@@ -369,7 +369,7 @@ public class BytecodeUsageTest extends Assert {
 
     @Test
     public void testMethodAnnotation() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @GET
             public String get() {
                 return null;
@@ -383,7 +383,7 @@ public class BytecodeUsageTest extends Assert {
     @Ignore
     @Test
     public void testParameterAnnotation() throws Exception {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public String get(@PathParam("foo") String foo) {
                 return null;
             }
@@ -396,7 +396,7 @@ public class BytecodeUsageTest extends Assert {
     @Ignore
     @Test
     public void testClassAnnotation() throws Exception {
-        final Usage<Jar> usage = usage(AnnotatedClass.class);
+        final PackageUsage<Jar> usage = usage(AnnotatedClass.class);
 
         assertEquals(1, usage.getJavax());
         assertEquals(1, usage.get(Package.JAVAX_EJB));

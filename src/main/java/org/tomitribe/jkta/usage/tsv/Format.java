@@ -16,14 +16,14 @@
  */
 package org.tomitribe.jkta.usage.tsv;
 
-import org.tomitribe.jkta.usage.Usage;
+import org.tomitribe.jkta.usage.PackageUsage;
 
 public interface Format<Context> {
     String heading();
 
-    String write(final Usage<Context> usage);
+    String write(final PackageUsage<Context> usage);
 
-    Usage<Context> read(final String line);
+    PackageUsage<Context> read(final String line);
 
     String summary();
 }

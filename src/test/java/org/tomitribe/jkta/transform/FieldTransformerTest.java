@@ -22,7 +22,7 @@ import org.tomitribe.jkta.usage.ArrayData;
 import org.tomitribe.jkta.usage.Data;
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.Package;
-import org.tomitribe.jkta.usage.Usage;
+import org.tomitribe.jkta.usage.PackageUsage;
 
 import javax.enterprise.context.MockScoped;
 import javax.persistence.Id;
@@ -39,7 +39,7 @@ public class FieldTransformerTest {
 
     @Test
     public void visitAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Id
             private Object o;
         });
@@ -52,7 +52,7 @@ public class FieldTransformerTest {
     @Ignore
     @Test
     public void visitAnnotation_Deep_PossibleAsmBug() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)})
             private Object o;
         });
@@ -64,7 +64,7 @@ public class FieldTransformerTest {
 
     @Test
     public void visitAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Data(type = HttpServlet.class)
             private Object o;
         });
@@ -76,7 +76,7 @@ public class FieldTransformerTest {
 
     @Test
     public void visitTypeAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             Set<@MockScoped Long> set;
         });
 
@@ -87,7 +87,7 @@ public class FieldTransformerTest {
 
     @Test
     public void visitTypeAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             Set<@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) Long> set;
         });
 

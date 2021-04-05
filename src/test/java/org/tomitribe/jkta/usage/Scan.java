@@ -28,11 +28,11 @@ public class Scan {
     private Scan() {
     }
 
-    public static Usage<Jar> usage(final Object o) {
+    public static PackageUsage<Jar> usage(final Object o) {
         return usage(o.getClass());
     }
 
-    public static Usage<Jar> usage(final Class<?> aClass)  {
+    public static PackageUsage<Jar> usage(final Class<?> aClass)  {
         try {
 //            final ClassLoader loader = aClass.getClassLoader();
 //            System.out.println(Asmifier.asmify(Bytecode.readClassFile(loader, aClass)));
@@ -44,7 +44,7 @@ public class Scan {
         }
     }
 
-    public static void assertUsage(final Usage<Jar> usage, final Package... expectedUses) {
+    public static void assertUsage(final PackageUsage<Jar> usage, final Package... expectedUses) {
         int javax = 0;
         int jakarta = 0;
         int[] uses = new int[Package.values().length];

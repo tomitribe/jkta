@@ -35,7 +35,7 @@ public class FieldScannerTest {
 
     @Test
     public void visitAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Id
             private Object o;
         });
@@ -48,7 +48,7 @@ public class FieldScannerTest {
     @Ignore
     @Test
     public void visitAnnotation_Deep_PossibleAsmBug() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)})
             private Object o;
         });
@@ -60,7 +60,7 @@ public class FieldScannerTest {
 
     @Test
     public void visitAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Data(type = HttpServlet.class)
             private Object o;
         });
@@ -72,7 +72,7 @@ public class FieldScannerTest {
 
     @Test
     public void visitTypeAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             Set<@MockScoped Long> set;
         });
 
@@ -83,7 +83,7 @@ public class FieldScannerTest {
 
     @Test
     public void visitTypeAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             Set<@ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)}) Long> set;
         });
 

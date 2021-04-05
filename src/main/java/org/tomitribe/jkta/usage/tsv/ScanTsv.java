@@ -17,7 +17,7 @@
 package org.tomitribe.jkta.usage.tsv;
 
 import org.tomitribe.jkta.usage.Jar;
-import org.tomitribe.jkta.usage.Usage;
+import org.tomitribe.jkta.usage.PackageUsage;
 import org.tomitribe.util.IO;
 import org.tomitribe.util.Join;
 import org.tomitribe.util.hash.XxHash64;
@@ -59,19 +59,19 @@ public class ScanTsv {
         return new JarTsv7(repository);
     }
 
-    public static void toJarTsv(final PrintStream out, final Stream<Usage<Jar>> usages, final File repository) {
+    public static void toJarTsv(final PrintStream out, final Stream<PackageUsage<Jar>> usages, final File repository) {
         final org.tomitribe.jkta.usage.tsv.Format<Jar> formatter = jarFormatter(repository);
         out.println(formatter.heading());
         usages.map(formatter::write).forEach(out::println);
         out.println(formatter.summary());
     }
 
-    public static Stream<Usage<Jar>> fromJarTsv(final InputStream content) {
+    public static Stream<PackageUsage<Jar>> fromJarTsv(final InputStream content) {
         return fromJarTsv(content, s -> {
         });
     }
 
-    public static Stream<Usage<Jar>> fromJarTsv(final InputStream content, final Consumer<String> failed) {
+    public static Stream<PackageUsage<Jar>> fromJarTsv(final InputStream content, final Consumer<String> failed) {
         final InputStreamReader reader = new InputStreamReader(content);
         final BufferedReader bufferedReader = new BufferedReader(reader);
 
@@ -116,7 +116,7 @@ public class ScanTsv {
         return !s.startsWith("SHA-1\t");
     }
 
-    public static String toTsv(final Usage<Jar> jarUsage, final File parent) {
+    public static String toTsv(final PackageUsage<Jar> jarUsage, final File parent) {
         final StringBuilder sb = new StringBuilder();
 
         final Jar jar = jarUsage.getContext();

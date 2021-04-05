@@ -32,7 +32,7 @@ public class AnnotationScannerTest {
 
     @Test
     public void visit_primitive() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Data(length = 4)
             public void get() {
             }
@@ -46,7 +46,7 @@ public class AnnotationScannerTest {
 
     @Test
     public void visit_String() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Data(name = "javax.ejb.EnterpriseBean")
             public void m1() {
             }
@@ -68,7 +68,7 @@ public class AnnotationScannerTest {
 
     @Test
     public void visit_Class() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Data(type = EnterpriseBean.class)
             public void get() {
             }
@@ -81,7 +81,7 @@ public class AnnotationScannerTest {
 
     @Test
     public void visitEnum() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Data(lock = LockType.WRITE)
             public void get() {
             }
@@ -95,7 +95,7 @@ public class AnnotationScannerTest {
 
     @Test
     public void visitAnnotation() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @Data(path = @Path("/foo"))
             public void get() {
             }
@@ -108,7 +108,7 @@ public class AnnotationScannerTest {
 
     @Test
     public void visitAnnotation_Deep() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @ArrayData(data = @Data(path = @Path("/foo")))
             public void m() {
             }
@@ -126,7 +126,7 @@ public class AnnotationScannerTest {
 
     @Test
     public void visitArray() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             @ArrayData(data = {@Data(path = @Path("/foo")), @Data(type = HttpServlet.class)})
             public void m() {
             }

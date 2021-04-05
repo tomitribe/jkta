@@ -70,9 +70,9 @@ public class UsageCommand {
             final AtomicInteger scanned = new AtomicInteger();
             final AtomicInteger affected = new AtomicInteger();
 
-            final AtomicReference<Usage<ClassUsage.Clazz>> total = new AtomicReference<>(new Usage<>());
+            final AtomicReference<PackageUsage<ClassUsage.Clazz>> total = new AtomicReference<>(new PackageUsage<>());
             ClassUsage.forEachClass(jar, usage -> {
-                total.accumulateAndGet(usage, Usage::add);
+                total.accumulateAndGet(usage, PackageUsage::add);
                 scanned.incrementAndGet();
                 if (usage.getJavax() > 0) affected.incrementAndGet();
                 final ClassUsage.Clazz clazz = usage.getContext();
@@ -96,7 +96,7 @@ public class UsageCommand {
 
     private PrintOutput scanFiles(final Format format, final Pattern include, final Pattern exclude, final Dir repository, final Stream<File> fileStream) {
         final Predicate<File> fileFilter = Predicates.fileFilter(include, exclude);
-        final Stream<Usage<Jar>> usageStream = fileStream
+        final Stream<PackageUsage<Jar>> usageStream = fileStream
                 .filter(fileFilter)
                 .map(this::jarUsage)
                 .filter(Objects::nonNull);
@@ -107,8 +107,8 @@ public class UsageCommand {
                 return out -> ScanTsv.toJarTsv(out, usageStream, repository.dir());
             case plain:
                 return out -> {
-                    final Usage<Jar> total = usageStream
-                            .reduce(Usage::add)
+                    final PackageUsage<Jar> total = usageStream
+                            .reduce(PackageUsage::add)
                             .orElse(null);
                     if (total == null) {
                         out.println("No jars found");
@@ -162,7 +162,7 @@ public class UsageCommand {
         return bufferedReader.lines();
     }
 
-    private Usage<Jar> jarUsage(final File file) {
+    private PackageUsage<Jar> jarUsage(final File file) {
         try {
             return JarUsage.of(file);
         } catch (Exception e) {
@@ -172,7 +172,7 @@ public class UsageCommand {
         }
     }
 
-    private String toPlain(final Usage<Jar> usage) {
+    private String toPlain(final PackageUsage<Jar> usage) {
         final Jar jar = usage.getContext();
         final PrintString out = new PrintString();
 
@@ -354,7 +354,7 @@ public class UsageCommand {
                      @Option("mode") @Default("AND") final Mode mode
     ) {
 
-        final Predicate<Usage> usagePredicate = new GrepBuilder(mode)
+        final Predicate<PackageUsage> usagePredicate = new GrepBuilder(mode)
                 .with(javaxActivation, Package.JAVAX_ACTIVATION)
                 .with(javaxAnnotation, Package.JAVAX_ANNOTATION)
                 .with(javaxBatch, Package.JAVAX_BATCH)
@@ -421,11 +421,11 @@ public class UsageCommand {
                 .with(jakartaXmlBind, Package.JAKARTA_XML_BIND)
                 .with(jakartaXmlSoap, Package.JAKARTA_XML_SOAP)
                 .with(jakartaXmlWs, Package.JAKARTA_XML_WS)
-                .with(javax, Usage::getJavax)
-                .with(jakarta, Usage::getJavax)
+                .with(javax, PackageUsage::getJavax)
+                .with(jakarta, PackageUsage::getJavax)
                 .build();
 
-        final Stream<Usage<Jar>> matching = ScanTsv.fromJarTsv(in)
+        final Stream<PackageUsage<Jar>> matching = ScanTsv.fromJarTsv(in)
                 .filter(usagePredicate);
 
         ScanTsv.toJarTsv(out, matching, new File(""));
@@ -455,14 +455,14 @@ public class UsageCommand {
 
     public static class GrepBuilder {
         private final Mode mode;
-        private Predicate<Usage> compoundPredicate;
+        private Predicate<PackageUsage> compoundPredicate;
 
         public GrepBuilder(final Mode mode) {
             this.mode = mode;
             this.compoundPredicate = mode.getInitial();
         }
 
-        public GrepBuilder with(final Predicate<Usage> predicate) {
+        public GrepBuilder with(final Predicate<PackageUsage> predicate) {
             if (predicate == null) return this;
             this.compoundPredicate = mode.apply(this.compoundPredicate, predicate);
             return this;
@@ -473,12 +473,12 @@ public class UsageCommand {
             return with(usage -> pattern.matcher(usage.get(aPackage) + "").matches());
         }
 
-        public GrepBuilder with(final Pattern pattern, final Function<Usage, Integer> getter) {
+        public GrepBuilder with(final Pattern pattern, final Function<PackageUsage, Integer> getter) {
             if (pattern == null) return this;
             return with(usage -> pattern.matcher(getter.apply(usage) + "").matches());
         }
 
-        public Predicate<Usage> build() {
+        public Predicate<PackageUsage> build() {
             return compoundPredicate;
         }
     }

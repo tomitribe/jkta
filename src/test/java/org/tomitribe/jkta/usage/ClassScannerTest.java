@@ -42,7 +42,7 @@ public class ClassScannerTest {
 
     @Test
     public void visit_Negative() {
-        final Usage<Jar> usage = usage(VisitNegative.class);
+        final PackageUsage<Jar> usage = usage(VisitNegative.class);
 
         assertUsage(usage);
     }
@@ -60,7 +60,7 @@ public class ClassScannerTest {
 
     @Test
     public void visit_SuperClass() {
-        final Usage<Jar> usage = usage(HasSuper.class);
+        final PackageUsage<Jar> usage = usage(HasSuper.class);
 
         assertUsage(usage, Package.JAVAX_SERVLET, Package.JAVAX_SERVLET);
 
@@ -73,7 +73,7 @@ public class ClassScannerTest {
 
     @Test
     public void visit_Interfaces() {
-        final Usage<Jar> usage = usage(HasInterface.class);
+        final PackageUsage<Jar> usage = usage(HasInterface.class);
 
         assertUsage(usage, Package.JAVAX_EJB);
 
@@ -86,7 +86,7 @@ public class ClassScannerTest {
 
     @Test
     public void visit_Signature() {
-        final Usage<Jar> usage = usage(HasSignature.class);
+        final PackageUsage<Jar> usage = usage(HasSignature.class);
 
         assertUsage(usage, Package.JAVAX_EJB);
 
@@ -99,7 +99,7 @@ public class ClassScannerTest {
 
     @Test
     public void visit_Signature2() {
-        final Usage<Jar> usage = usage(HasSignature2.class);
+        final PackageUsage<Jar> usage = usage(HasSignature2.class);
 
         assertUsage(usage, Package.JAVAX_EJB);
 
@@ -112,7 +112,7 @@ public class ClassScannerTest {
 
     @Test
     public void visit_All() {
-        final Usage<Jar> usage = usage(HasAll.class);
+        final PackageUsage<Jar> usage = usage(HasAll.class);
 
         assertUsage(usage,
                 Package.JAVAX_EJB,
@@ -133,7 +133,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitAnnotation() {
-        final Usage<Jar> usage = usage(HasAnnotation.class);
+        final PackageUsage<Jar> usage = usage(HasAnnotation.class);
 
         assertUsage(usage, Package.JAVAX_ENTERPRISE);
     }
@@ -146,7 +146,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitAnnotation_Deep() {
-        final Usage<Jar> usage = usage(HasAnnotationData.class);
+        final PackageUsage<Jar> usage = usage(HasAnnotationData.class);
 
         assertUsage(usage, Package.JAVAX_WS_RS, Package.JAVAX_SERVLET);
     }
@@ -159,7 +159,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitTypeAnnotation() {
-        final Usage<Jar> usage = usage(HasTypeAnnotation.class);
+        final PackageUsage<Jar> usage = usage(HasTypeAnnotation.class);
 
         assertUsage(usage, Package.JAVAX_ENTERPRISE);
     }
@@ -172,7 +172,7 @@ public class ClassScannerTest {
     @Ignore
     @Test
     public void visitTypeAnnotation_Deep_PossibleAsmBug() {
-        final Usage<Jar> usage = usage(HasTypeAnnotationDeep.class);
+        final PackageUsage<Jar> usage = usage(HasTypeAnnotationDeep.class);
 
         assertUsage(usage, Package.JAVAX_WS_RS, Package.JAVAX_SERVLET);
     }
@@ -184,7 +184,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitField() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
              SessionBean sb;
         });
 
@@ -195,7 +195,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitField_Signature1() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             final Reference<SessionBean> sb = null;
         });
 
@@ -211,7 +211,7 @@ public class ClassScannerTest {
      */
     @Test
     public void visitField_SignatureNoDuplicate() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             Bean<SessionBean> bean;
         });
 
@@ -222,7 +222,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitMethod_Return() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public SessionBean get() {
                 return null;
             }
@@ -235,7 +235,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitMethod_ReturnGeneric() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public Generic<SessionBean> get() {
                 return null;
             }
@@ -248,7 +248,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitMethod_Parameter() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(SessionBean sb) {
             }
         });
@@ -260,7 +260,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitMethod_ParameterGeneric() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(Object o, Generic<SessionBean> sb, int i) {
             }
         });
@@ -272,7 +272,7 @@ public class ClassScannerTest {
 
     @Test
     public void visitMethod_Throws() {
-        final Usage<Jar> usage = usage(new Object() {
+        final PackageUsage<Jar> usage = usage(new Object() {
             public void get(Serializable s) throws EJBException, IOException {
             }
         });
