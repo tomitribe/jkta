@@ -56,15 +56,14 @@ public class PackageUsage<Context> implements Usage<Context> {
     }
 
     @Override
-    public boolean test(final String reference) {
+    public void accept(final String reference) {
         final Package match = match(reference);
-        if (match == null) return false;
+        if (match == null) return;
 
         packages[match.ordinal()]++;
 
         if (match.getName().startsWith("javax")) javax++;
         if (match.getName().startsWith("jakarta")) jakarta++;
-        return true;
     }
 
     private Package match(final String reference) {

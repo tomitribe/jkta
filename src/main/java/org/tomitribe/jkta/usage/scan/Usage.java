@@ -16,10 +16,9 @@
  */
 package org.tomitribe.jkta.usage.scan;
 
-import java.util.function.Predicate;
+import java.util.function.Consumer;
 
-public interface Usage<Context> extends Predicate<String> {
-    boolean test(String reference);
+public interface Usage<Context> extends Consumer<String> {
 
     Context getContext();
 }

@@ -40,8 +40,8 @@ public class JarTsv7Test {
         final Jar jar = new Jar(new File("/foo/bar"), "12345678901234567890123456789", 12345L, 34567L, 67, 5555, new int[]{34, 56});
         final PackageUsage<Jar> usage = new PackageUsage<>(jar);
 
-        Package.names().forEach(usage::test);
-        Package.names().filter(s -> s.contains("e")).forEach(usage::test);
+        Package.names().forEach(usage);
+        Package.names().filter(s -> s.contains("e")).forEach(usage);
 
         final JarTsv7 tsv7 = new JarTsv7();
         final String actual = tsv7.write(usage);
