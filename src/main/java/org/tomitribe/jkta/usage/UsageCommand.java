@@ -354,7 +354,7 @@ public class UsageCommand {
                      @Option("mode") @Default("AND") final Mode mode
     ) {
 
-        final Predicate<PackageUsage> usagePredicate = new GrepBuilder(mode)
+        final Predicate<PackageUsage<?>> usagePredicate = new GrepBuilder(mode)
                 .with(javaxActivation, Package.JAVAX_ACTIVATION)
                 .with(javaxAnnotation, Package.JAVAX_ANNOTATION)
                 .with(javaxBatch, Package.JAVAX_BATCH)
@@ -436,33 +436,33 @@ public class UsageCommand {
         AND(o -> true, Predicate::and),
         OR(o -> false, Predicate::or);
 
-        private final Predicate initial;
-        private final BiFunction<Predicate, Predicate<?>, Predicate<?>> accumulate;
+        private final Predicate<PackageUsage<?>> initial;
+        private final BiFunction<Predicate<PackageUsage<?>>, Predicate<PackageUsage<?>>, Predicate<PackageUsage<?>>> accumulate;
 
-        Mode(final Predicate initial, final BiFunction<Predicate, Predicate<?>, Predicate<?>> accumulate) {
+        Mode(final Predicate<PackageUsage<?>> initial, final BiFunction<Predicate<PackageUsage<?>>, Predicate<PackageUsage<?>>, Predicate<PackageUsage<?>>> accumulate) {
             this.initial = initial;
             this.accumulate = accumulate;
         }
 
-        public Predicate getInitial() {
+        public Predicate<PackageUsage<?>> getInitial() {
             return initial;
         }
 
-        public <T> Predicate<T> apply(final Predicate<T> one, Predicate<T> two) {
-            return (Predicate<T>) accumulate.apply(one, two);
+        public Predicate<PackageUsage<?>> apply(final Predicate<PackageUsage<?>> one, Predicate<PackageUsage<?>> two) {
+            return accumulate.apply(one, two);
         }
     }
 
     public static class GrepBuilder {
         private final Mode mode;
-        private Predicate<PackageUsage> compoundPredicate;
+        private Predicate<PackageUsage<?>> compoundPredicate;
 
         public GrepBuilder(final Mode mode) {
             this.mode = mode;
             this.compoundPredicate = mode.getInitial();
         }
 
-        public GrepBuilder with(final Predicate<PackageUsage> predicate) {
+        public GrepBuilder with(final Predicate<PackageUsage<?>> predicate) {
             if (predicate == null) return this;
             this.compoundPredicate = mode.apply(this.compoundPredicate, predicate);
             return this;
@@ -473,12 +473,12 @@ public class UsageCommand {
             return with(usage -> pattern.matcher(usage.get(aPackage) + "").matches());
         }
 
-        public GrepBuilder with(final Pattern pattern, final Function<PackageUsage, Integer> getter) {
+        public GrepBuilder with(final Pattern pattern, final Function<PackageUsage<?>, Integer> getter) {
             if (pattern == null) return this;
             return with(usage -> pattern.matcher(getter.apply(usage) + "").matches());
         }
 
-        public Predicate<PackageUsage> build() {
+        public Predicate<PackageUsage<?>> build() {
             return compoundPredicate;
         }
     }
