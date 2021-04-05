@@ -21,7 +21,7 @@ import org.tomitribe.jkta.Asmifier;
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.JarUsage;
 import org.tomitribe.jkta.usage.PackageUsage;
-import org.tomitribe.jkta.usage.Usage;
+import org.tomitribe.jkta.usage.scan.Usage;
 import org.tomitribe.util.Archive;
 
 import java.io.File;

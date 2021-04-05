@@ -19,7 +19,7 @@ package org.tomitribe.jkta.transform;
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.FieldVisitor;
 import org.objectweb.asm.TypePath;
-import org.tomitribe.jkta.usage.BytecodeUsage;
+import org.tomitribe.jkta.usage.scan.BytecodeUsage;
 
 public class FieldTransformer extends FieldVisitor {
 

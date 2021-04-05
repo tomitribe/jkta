@@ -19,7 +19,6 @@ package org.tomitribe.jkta.usage.tsv;
 import org.junit.Test;
 import org.tomitribe.jkta.usage.Jar;
 import org.tomitribe.jkta.usage.PackageUsage;
-import org.tomitribe.jkta.usage.Usage;
 import org.tomitribe.util.IO;
 import org.tomitribe.util.PrintString;
 

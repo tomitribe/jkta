@@ -18,6 +18,8 @@ package org.tomitribe.jkta.usage;
 
 import org.apache.commons.math3.stat.descriptive.SynchronizedDescriptiveStatistics;
 import org.objectweb.asm.ClassReader;
+import org.tomitribe.jkta.usage.scan.ClassScanner;
+import org.tomitribe.jkta.usage.scan.Usage;
 import org.tomitribe.util.Hex;
 import org.tomitribe.util.IO;
 

@@ -17,6 +17,8 @@
 package org.tomitribe.jkta.usage;
 
 import org.objectweb.asm.ClassReader;
+import org.tomitribe.jkta.usage.scan.ClassScanner;
+import org.tomitribe.jkta.usage.scan.Usage;
 import org.tomitribe.util.IO;
 
 import java.io.File;

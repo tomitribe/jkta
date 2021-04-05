@@ -14,37 +14,30 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.jkta.usage;
+package org.tomitribe.jkta.usage.scan;
 
 import org.objectweb.asm.AnnotationVisitor;
+import org.objectweb.asm.FieldVisitor;
+import org.objectweb.asm.TypePath;
 
-public class AnnotationScanner extends AnnotationVisitor {
+public class FieldScanner extends FieldVisitor {
 
     private final BytecodeUsage bytecodeUsage;
 
-    public AnnotationScanner(final int api, final BytecodeUsage bytecodeUsage) {
+    public FieldScanner(final int api, final BytecodeUsage bytecodeUsage) {
         super(api);
         this.bytecodeUsage = bytecodeUsage;
     }
 
     @Override
-    public void visit(final String name, final Object value) {
-        bytecodeUsage.addHandleArgs(value);
-    }
-
-    @Override
-    public void visitEnum(final String name, final String descriptor, final String value) {
+    public AnnotationVisitor visitAnnotation(final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
+        return new AnnotationScanner(this.api, bytecodeUsage);
     }
 
     @Override
-    public AnnotationVisitor visitAnnotation(final String name, final String descriptor) {
+    public AnnotationVisitor visitTypeAnnotation(final int typeRef, final TypePath typePath, final String descriptor, final boolean visible) {
         bytecodeUsage.addDesc(descriptor);
-        return this;
-    }
-
-    @Override
-    public AnnotationVisitor visitArray(final String name) {
-        return this;
+        return new AnnotationScanner(this.api, bytecodeUsage);
     }
 }

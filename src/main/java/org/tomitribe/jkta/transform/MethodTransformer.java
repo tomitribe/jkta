@@ -23,7 +23,7 @@ import org.objectweb.asm.Label;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Type;
 import org.objectweb.asm.TypePath;
-import org.tomitribe.jkta.usage.BytecodeUsage;
+import org.tomitribe.jkta.usage.scan.BytecodeUsage;
 
 public class MethodTransformer extends MethodVisitor {
     private final BytecodeUsage bytecodeUsage;

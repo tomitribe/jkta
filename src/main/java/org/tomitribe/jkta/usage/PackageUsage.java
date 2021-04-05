@@ -16,6 +16,8 @@
  */
 package org.tomitribe.jkta.usage;
 
+import org.tomitribe.jkta.usage.scan.Usage;
+
 import java.util.Iterator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

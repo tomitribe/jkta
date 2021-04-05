@@ -22,10 +22,10 @@ import org.objectweb.asm.Handle;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
 import org.tomitribe.jkta.usage.ArrayData;
-import org.tomitribe.jkta.usage.BytecodeUsage;
+import org.tomitribe.jkta.usage.scan.BytecodeUsage;
 import org.tomitribe.jkta.usage.Data;
 import org.tomitribe.jkta.usage.Jar;
-import org.tomitribe.jkta.usage.MethodScanner;
+import org.tomitribe.jkta.usage.scan.MethodScanner;
 import org.tomitribe.jkta.usage.Package;
 import org.tomitribe.jkta.usage.PackageUsage;
 

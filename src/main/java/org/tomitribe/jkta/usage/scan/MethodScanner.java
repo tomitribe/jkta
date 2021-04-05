@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package org.tomitribe.jkta.usage;
+package org.tomitribe.jkta.usage.scan;
 
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.ConstantDynamic;

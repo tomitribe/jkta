@@ -21,6 +21,8 @@ import org.junit.Test;
 import org.objectweb.asm.Handle;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
+import org.tomitribe.jkta.usage.scan.BytecodeUsage;
+import org.tomitribe.jkta.usage.scan.MethodScanner;
 
 import javax.ejb.EnterpriseBean;
 import javax.ejb.Process;
