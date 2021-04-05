@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Summary {
     final AtomicInteger scanned = new AtomicInteger();
     final AtomicInteger affected = new AtomicInteger();
-    final AtomicReference<PackageUsage> total = new AtomicReference<>(new PackageUsage());
+    final AtomicReference<PackageUsage<?>> total = new AtomicReference<>(new PackageUsage<>());
 
     public void add(final PackageUsage<Jar> usage) {
         total.accumulateAndGet(usage, PackageUsage::add);
@@ -41,7 +41,7 @@ public class Summary {
         return affected.get();
     }
 
-    public PackageUsage getTotal() {
+    public PackageUsage<?> getTotal() {
         return total.get();
     }
 

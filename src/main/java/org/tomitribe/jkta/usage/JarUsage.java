@@ -48,7 +48,7 @@ public class JarUsage {
             return ofClass(jar);
         }
         final InputStream inputStream = IO.read(jar);
-        final PackageUsage usage = new PackageUsage();
+        final PackageUsage<?> usage = new PackageUsage<>();
 
         final Set<Integer> versions = new HashSet<>();
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
@@ -64,7 +64,7 @@ public class JarUsage {
 
     private static PackageUsage<Jar> ofClass(final File clazz) throws IOException, NoSuchAlgorithmException {
         final InputStream inputStream = IO.read(clazz);
-        final PackageUsage usage = new PackageUsage();
+        final PackageUsage<?> usage = new PackageUsage<>();
 
         final MessageDigest md = MessageDigest.getInstance("SHA-1");
         final DigestInputStream digestIn = new DigestInputStream(inputStream, md);
@@ -76,7 +76,7 @@ public class JarUsage {
         return new PackageUsage<>(new Jar(clazz, hash, clazz.lastModified(), clazz.lastModified(), 1, clazz.length(), new int[]{version})).add(usage);
     }
 
-    private static long scanJar(final Usage usage, final Set<Integer> versions, final InputStream inputStream, final AtomicLong classes) throws IOException {
+    private static long scanJar(final Usage<?> usage, final Set<Integer> versions, final InputStream inputStream, final AtomicLong classes) throws IOException {
         final SynchronizedDescriptiveStatistics entryDates = new SynchronizedDescriptiveStatistics();
         final ZipInputStream zipInputStream = new ZipInputStream(inputStream);
 
@@ -161,7 +161,7 @@ public class JarUsage {
         }
     };
 
-    private static int scanClass(final InputStream in, final Usage usage) throws IOException {
+    private static int scanClass(final InputStream in, final Usage<?> usage) throws IOException {
         final ClassScanner classScanner = new ClassScanner(usage);
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);

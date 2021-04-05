@@ -87,7 +87,7 @@ public class ClassUsage {
         }
     };
 
-    private static int scan(final InputStream in, final Usage usage) throws IOException {
+    private static int scan(final InputStream in, final Usage<?> usage) throws IOException {
         final ClassScanner classScanner = new ClassScanner(usage);
         final ClassReader classReader = new ClassReader(in);
         classReader.accept(classScanner, 0);

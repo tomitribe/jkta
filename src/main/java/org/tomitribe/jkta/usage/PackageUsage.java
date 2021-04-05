@@ -106,8 +106,8 @@ public class PackageUsage<Context> implements Usage<Context> {
      * Several groupId Usage instances could be added together
      * to represent Maven Central
      */
-    public PackageUsage<Context> add(final PackageUsage that) {
-        final PackageUsage<Context> total = new PackageUsage(this.context);
+    public PackageUsage<Context> add(final PackageUsage<?> that) {
+        final PackageUsage<Context> total = new PackageUsage<>(this.context);
         total.javax = this.javax + that.javax;
         total.jakarta = this.jakarta + that.jakarta;
         for (int i = 0; i < packages.length; i++) {
@@ -127,7 +127,7 @@ public class PackageUsage<Context> implements Usage<Context> {
         return sb.toString();
     }
 
-    public static Usage fromTsv(final String line) {
+    public static Usage<?> fromTsv(final String line) {
         return fromTsv(null, line);
     }
 
@@ -149,7 +149,7 @@ public class PackageUsage<Context> implements Usage<Context> {
     }
 
     public Mutable<Context> mutate() {
-        return new Mutable<Context>(new PackageUsage<>(this.context, this.javax, this.jakarta, this.packages));
+        return new Mutable<>(new PackageUsage<>(this.context, this.javax, this.jakarta, this.packages));
     }
 
     public static Builder builder() {
@@ -1053,7 +1053,7 @@ public class PackageUsage<Context> implements Usage<Context> {
             return this;
         }
 
-        public Usage build() {
+        public Usage<?> build() {
             return build(null);
         }
 
