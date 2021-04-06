@@ -20,17 +20,16 @@ import org.objectweb.asm.ClassReader;
 import org.tomitribe.jkta.usage.scan.ClassScanner;
 import org.tomitribe.jkta.usage.scan.Usage;
 import org.tomitribe.util.IO;
-import org.tomitribe.util.Join;
 import org.tomitribe.util.dir.Filter;
 import org.tomitribe.util.dir.Walk;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.UncheckedIOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -110,45 +109,50 @@ public class EjbTestAnalysis {
             }
         }
 
-        try (final PrintStream out = IO.print(new File("/tmp/sections.txt"))) {
-            for (final Map.Entry<String, Set<String>> entry : sections.entrySet()) {
-                final List<String> flags = new ArrayList<String>(entry.getValue());
+        for (final Map.Entry<String, Set<String>> entry : sections.entrySet()) {
+            final Set<String> flags = entry.getValue();
 
-                /*
-                 * Was this marked as optional but doesn't actually use something optional?
-                 */
+            /*
+             * Should this be marked as optional and actually is not marked optional?
+             */
+            if (flags.contains("entitybeans") || flags.contains("ejb2x")) {
                 if (flags.contains("optional")) {
-                    if (!flags.contains("entitybeans") && flags.contains("ejb2x")) {
-                        flags.add("bad_optional");
-                    }
+                    flags.add("new_optional");
                 }
+            }
 
-                /*
-                 * Should this be marked as optional and actually is not marked optional?
-                 */
+            /*
+             * Should this be marked as optional and actually is not marked optional?
+             */
+            if (flags.contains("optional")) {
                 if (flags.contains("entitybeans") || flags.contains("ejb2x")) {
-                    if (flags.contains("optional")) {
-                        flags.add("new_optional");
-                    }
+                    flags.add("good_optional");
+                } else {
+                    flags.add("bad_optional");
                 }
-
-                /*
-                 * Should this be marked as optional and actually is not marked optional?
-                 */
-                if (flags.contains("optional")) {
-                    if (!flags.contains("new_exclude") && !flags.contains("bad_optional")) {
-                        flags.remove("optional");
-                        flags.add("good_optional");
-                    }
-                }
-
-                out.print(entry.getKey());
-                out.print(" = ");
-                out.print(Join.join(" ", flags));
-                out.println();
             }
         }
 
+        final Map<String, PrintStream> reports = new HashMap<>();
+
+        sections.entrySet().stream()
+                .sorted(Map.Entry.comparingByKey())
+                .forEach(entry -> {
+                    for (final String flag : entry.getValue()) {
+                        final PrintStream out = reports.computeIfAbsent(flag, EjbTestAnalysis::openReportStream);
+                        out.println(entry.getKey());
+                    }
+                });
+
+        reports.values().forEach(PrintStream::close);
+    }
+
+    private static PrintStream openReportStream(final String s) {
+        try {
+            return IO.print(new File("/tmp/sections/" + s + ".txt"));
+        } catch (FileNotFoundException e) {
+            throw new UncheckedIOException(e);
+        }
     }
 
     private static void scanArchive(final InputStream read, final EjbUsage ejbUsage) throws IOException {
@@ -172,18 +176,6 @@ public class EjbTestAnalysis {
                 IO.copy(zipInputStream, ignore);
             }
         }
-    }
-
-    public static class TestPackage {
-        private final String name;
-        private final List<EjbUsage> archives;
-
-        public TestPackage(final String name, final List<EjbUsage> archives) {
-            this.name = name;
-            this.archives = archives;
-        }
-
-
     }
 
     public static class EjbUsage implements Usage<File> {
